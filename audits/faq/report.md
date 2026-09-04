@@ -12,6 +12,8 @@ verdict: **PASS**
 | box-hover | 375 | 0 | 0/0 | 0 | ✅ |
 | stripe | 375 | 0 | 0/0 | 0 | ✅ |
 | stripe-hover | 375 | 0 | 0/0 | 0 | ✅ |
+| rich-answer | 375 | 0 | 0/0 | 0 | ✅ |
+| rich-answer-hover | 375 | 0 | 0/0 | 0 | ✅ |
 | default | 768 | 0 | 0/0 | 0 | ✅ |
 | default-hover | 768 | 0 | 0/0 | 0 | ✅ |
 | border | 768 | 0 | 0/0 | 0 | ✅ |
@@ -20,6 +22,8 @@ verdict: **PASS**
 | box-hover | 768 | 0 | 0/0 | 0 | ✅ |
 | stripe | 768 | 0 | 0/0 | 0 | ✅ |
 | stripe-hover | 768 | 0 | 0/0 | 0 | ✅ |
+| rich-answer | 768 | 0 | 0/0 | 0 | ✅ |
+| rich-answer-hover | 768 | 0 | 0/0 | 0 | ✅ |
 | default | 1200 | 0 | 0/0 | 0 | ✅ |
 | default-hover | 1200 | 0 | 0/0 | 0 | ✅ |
 | border | 1200 | 0 | 0/0 | 0 | ✅ |
@@ -28,5 +32,7 @@ verdict: **PASS**
 | box-hover | 1200 | 0 | 0/0 | 0 | ✅ |
 | stripe | 1200 | 0 | 0/0 | 0 | ✅ |
 | stripe-hover | 1200 | 0 | 0/0 | 0 | ✅ |
+| rich-answer | 1200 | 0 | 0/0 | 0 | ✅ |
+| rich-answer-hover | 1200 | 0 | 0/0 | 0 | ✅ |
 
 ## style diffs

@@ -42,7 +42,7 @@
   vertical-align: baseline;
   border-radius: 50%;
 }
-.un-balloon--square .un-balloon__img {
+.un-balloon--square > :where(.un-balloon__icon) > :where(.un-balloon__img) {
   border: 0;
   border-radius: 0;
 }
@@ -82,8 +82,11 @@
 .un-balloon--border .un-balloon__text {
   border: 1px solid var(--_line);
 }
-.un-balloon__text > p {
+.un-balloon__text > * {
   margin-top: 0;
+  margin-bottom: 0;
+}
+.un-balloon__text > p {
   margin-bottom: 0;
 }
 .un-balloon__text > :first-child {
@@ -93,7 +96,7 @@
   margin-bottom: 0;
 }
 
-.un-balloon--think .un-balloon__body {
+.un-balloon--think > :where(.un-balloon__body) {
   /* the small bubble sits above the balloon, so it needs more room on top */
   padding-top: 8px;
 }
@@ -113,7 +116,7 @@
   .un-balloon__text {
     font-size: 1em;
   }
-  .un-balloon--think .un-balloon__body {
+  .un-balloon--think > :where(.un-balloon__body) {
     padding-top: 16px;
   }
 }
@@ -131,13 +134,13 @@
   border-color: var(--_line);
   background-color: var(--_bg);
 }
-.un-balloon--right .un-balloon__tail {
+.un-balloon--right > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) {
   right: 0;
   left: auto;
   /* mirrored rather than re-drawn, so both directions stay one shape */
   transform: rotateY(180deg); /* 3D flip, matching the reference's matrix */
 }
-.un-balloon--right .un-balloon__body {
+.un-balloon--right > :where(.un-balloon__body) {
   justify-content: flex-end;
 }
 .un-balloon__tail > * {
@@ -145,7 +148,7 @@
   position: absolute;
   top: 0;
 }
-.un-balloon__tail > :first-child {
+.un-balloon__tail > :where(:first-child) {
   /* the filled triangle, drawn as the right border of a zero-width box */
   z-index: 3;
   left: -10px;
@@ -154,7 +157,7 @@
   border-color: transparent var(--_bg) transparent transparent;
   background-color: transparent;
 }
-.un-balloon__tail > :last-child {
+.un-balloon__tail > :where(:last-child) {
   /* the outline behind it, only drawn when the balloon has a border */
   display: none;
   z-index: 2;
@@ -166,17 +169,20 @@
   border-color: transparent var(--_line) transparent transparent;
   background-color: transparent;
 }
-.un-balloon--border .un-balloon__tail > :first-child {
+.un-balloon--border .un-balloon__tail > :where(:first-child) {
   left: -8px;
 }
-.un-balloon--border .un-balloon__tail > :last-child {
+.un-balloon--think .un-balloon__tail > :where(:first-child) {
+  left: -21px;
+}
+.un-balloon--border > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:last-child) {
   display: block;
   width: 10px;
   height: 16px;
 }
 
 /* ---- thinking tail: two bubbles instead of a triangle ---- */
-.un-balloon--think .un-balloon__tail > * {
+.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > * {
   display: block;
   /* the outline is switched on by the border modifier on the root */
   border: var(--_outline-width, 0) var(--_outline-style, none) var(--_outline-color, currentColor);
@@ -184,13 +190,13 @@
   background: var(--_bg);
 }
 
-.un-balloon--think .un-balloon__tail > :first-child {
+.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:first-child) {
   top: 0;
   left: -21px;
   width: 8px;
   height: 8px;
 }
-.un-balloon--think .un-balloon__tail > :last-child {
+.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:last-child) {
   top: 8px;
   left: -16px;
   width: 12px;

@@ -31,6 +31,8 @@ const CRITICAL = ['content', 'position', 'display', 'box-sizing', 'color', 'back
 // headings, the article-body element defaults, and a plain (unmodified) list
 const DECORATED = '[class*="un-"]:not([class*="un-heading"]):not([class*="un-content"])'
   + ':not([class*="un-image"]):not([class*="un-table"]):not(.un-list:not([class*="--"]))';
+// the places a part invites the user to put blocks into
+const CONTENT_AREA = ':is(.un-box--group, [class$="__body"], [class$="__text"], [class$="__a"], [class$="__panel"])';
 const VIEWPORT = 900; // wide enough for the 600px min-width rules, narrow enough to skip 960/1200
 const TYPO = 'color:#333;font-family:var(--un-font-family);font-size:1rem;font-weight:500;line-height:1.8';
 
@@ -41,8 +43,11 @@ const partsDir = path.join(ROOT, 'src', 'styles', 'parts');
 const CONTAINER_SCOPED = new Set(['heading.css']);
 const rules = [];
 // the blanket rules first: every decorated element and every pseudo, whatever the CSS declares
-for (const [selector, pseudo] of [[DECORATED, null], [DECORATED, '::before'], [DECORATED, '::after'], [`${DECORATED} li`, '::before'], [`${DECORATED} li`, '::after']]) {
-  rules.push({ file: '(critical)', selector, pseudo, props: CRITICAL });
+for (const [selector, pseudo] of [[DECORATED, null], [DECORATED, '::before'], [DECORATED, '::after'], [`${DECORATED} li`, '::before'], [`${DECORATED} li`, '::after'],
+  // a part that hosts arbitrary content owns the rhythm inside it, container or not
+  [`${CONTENT_AREA} > :where(p, ul, ol, dl, blockquote, figure, table)`, null]]) {
+  const keepMargins = selector.startsWith(CONTENT_AREA);
+  rules.push({ file: '(critical)', selector, pseudo, props: keepMargins ? ['margin-top', 'margin-bottom'] : CRITICAL, keepMargins });
 }
 for (const file of (await readdir(partsDir)).filter((f) => f.endsWith('.css'))) {
   let css = await readFile(path.join(partsDir, file), 'utf8');
@@ -60,7 +65,17 @@ for (const file of (await readdir(partsDir)).filter((f) => f.endsWith('.css'))) 
         .filter((d) => !/^(width|height|min-|max-|top|right|bottom|left|inset)/.test(d.split(':')[0].trim()) || !/%|calc\(/.test(d))
         .map((d) => d.split(':')[0].trim());
       if (!props.length) continue;
-      for (const sel of m[1].split(',').map((x) => x.trim()).filter(Boolean)) {
+      // split the selector list on top-level commas only: `:where(a, b)` must stay in one piece
+      const selectors = [];
+      let depth = 0, buf = '';
+      for (const ch of m[1]) {
+        if (ch === '(') depth++;
+        else if (ch === ')') depth--;
+        if (ch === ',' && depth === 0) { selectors.push(buf); buf = ''; continue; }
+        buf += ch;
+      }
+      selectors.push(buf);
+      for (const sel of selectors.map((x) => x.trim()).filter(Boolean)) {
         // heading.css styles bare elements and is container-scoped on purpose (spec/01 §3);
         // a `.un-content` prefix in any other part file is itself the failure
         if (sel.includes('.un-content')) {

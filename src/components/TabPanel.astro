@@ -1,0 +1,16 @@
+---
+/** TabPanel — タブ 1 枚の中身. spec: spec/parts/tab.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  index: number;
+  class?: string;
+  id?: string;
+}
+
+const { index, class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-tab__panel', cls]} role="tabpanel" hidden={index !== 0} {...rest}>
+  <slot />
+</div>

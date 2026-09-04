@@ -37,6 +37,7 @@ slot: Faq は FaqItem の並び、FaqItem は回答。
 | `border` | `variant="border"` | `.is-style-faq-border` | 項目の間に 1px の実線、左右に 8px の余白 |
 | `box` | `variant="box"` | `.is-style-faq-box` | 項目を 1px の枠で囲み、質問の下に破線 |
 | `stripe` | `variant="stripe"` | `.is-style-faq-stripe` | 質問に灰色の帯、項目間 24px |
+| `rich-answer` | 回答が段落 2 つ＋リスト | `.is-style-faq-border` | 回答内ブロックの余白 |
 
 ## 4. マークアップ
 
@@ -58,6 +59,7 @@ slot: Faq は FaqItem の並び、FaqItem は回答。
 | item（2 つめ以降）| margin-top | 1em |
 | q | padding / font-weight | 1em 1em 1em 3em / 700 |
 | a | padding / margin-left | 1em 1em 1em 3em / 0（dd の既定を打ち消す）|
+| a の子 | margin | 上 0 / 下 1em（最後の子は 0）|
 | q::before / a::before | content | `"Q"` / `"A"` |
 | q::before / a::before | 位置 / 寸法 | absolute（left 0 / top 0.75em）/ 2em 角 |
 | q::before / a::before | line-height / font-family / font-weight / text-align | 2em / `Arial, sans-serif` / 400 / center |
@@ -83,7 +85,7 @@ slot: Faq は FaqItem の並び、FaqItem は回答。
 
 ## 6. 受け入れ基準
 
-- [ ] 全 4 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
+- [ ] 全 5 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
 - [ ] Q/A の印が行頭に揃い、回答が複数行でもぶら下がる
 - [ ] 項目の区切り（線・枠・帯）がバリアントごとに正しい
 - [ ] `.un-content` の外でも成立する

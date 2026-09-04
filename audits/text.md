@@ -1,185 +1,203 @@
-# audit: text  (2026-09-04)
+# audit: text  (2026-09-04) — 再審査（4 回目 / 最終確認）
 
 verdict: **FAIL**
 
 参照 = `reference/fixtures/text.html`（SWELL）/ 実装 = `dist/catalog/text/index.html`。
-`node scripts/audit/run.mjs text --no-build --port 4405` は **57 セル（19 バリアント × 375/768/1200）すべてで pixel 0 / box 0 / style diff 0**、
-`cleanroom.mjs` OK、`standalone.mjs` OK。前回 FAIL 5 件のうち **4 件は実際に直っている**ことを、
-CSS を意図的に壊す退行テストで裏取りした（下記「前回 FAIL 項目の検証」）。
+`node scripts/audit/run.mjs text --no-build --port 4405` は **57 セル（19 バリアント × 375/768/1200）すべてで
+pixel diff 0.000 % / box Δ 0px / style diff 0**。`cleanroom.mjs` OK、`standalone.mjs` OK。
+前回の FAIL 項目（`style` prop のオブジェクト形式）は **完全に解消**していることを実レンダリングで確認した。
 
-ただし前回 FAIL #3（利用者の `style` prop が捨てられる）は **文字列形式だけの部分修正** であり、
-`interface Props extends HTMLAttributes<'span'>` が型として許可しているオブジェクト形式（`CSSProperties`）を渡すと
-利用者のスタイルは依然として破棄され、さらに `style="…;[object Object]"` という不正な属性値が出力される。
-spec/parts/text.md §2「利用者の `style` は破棄せず…連結する」に対する未達のため FAIL とする。
+**実装（`Mark.astro` / `Text.astro` / `text.css` / `lib/style.ts`）に不備は 1 件も見つからなかった。**
+それでも FAIL とするのは、**参照 fixture と spec §3 の記述が食い違っており、その食い違いが
+`color-link` / `color-*` バリアントの比較を成立させている**（＝自動判定がすり抜ける穴になっている）ためである。
+修正はすべて `spec/parts/text.md` と `reference/fixtures/text.html` 側で、コンポーネントの変更は不要。
 
 ---
 
-## 前回 FAIL 項目の検証（最優先）
+## 1. 前回 FAIL 項目の解消確認（最優先）
 
-| # | 前回の FAIL | 結果 | 検証方法（審査側で実施） |
+| # | 前回の FAIL | 状態 | 根拠（審査側で実施） |
 |---|---|---|---|
-| 1 | `--un-text-size` / `--un-text-color` / `--un-mark-color` が子孫に継承され二重適用 | **解消** | `text.css` から `--un-*: initial` の 3 行を削除して再ビルド → `nest-size-color` が pixel 3.99 / 3.45 / 2.66 %、box Δ 高さ 16.875 / 9 / 9 px、style diff 4 で ❌ に転落。fixture が退行を確実に捕まえることを確認。さらに独自 fixture で `lg>sm` / `red>blue` / `mark>mark` / `lg>素の span>mark` の 3〜4 段まで参照と一致 |
-| 2 | 色付きテキスト内のリンク色 | **解消（`.un-content` 内）** | `Text.astro` から `--un-color-link:currentColor` を削除して再ビルド → `color-link` が style diff 6 で ❌。ただし後述の「所見 2」の制約あり |
-| 3 | 利用者の `style` prop が捨てられる | **未達（下記 FAIL 1）** | 実際にコンポーネントをレンダリングして出力 HTML を確認 |
-| 4 | fixture が定義的性質を出していない | **解消** | 19 バリアントが spec §3 と 1:1、参照 fixture と実装カタログのバリアント名・順序・ダミーテキストが完全一致。`mark-wrap` は `.un-mark{display:inline-block}` を注入した退行テストで pixel 16.0 % / box Δ 27 px と、`mark-yellow`（3.18 %）より強く反応することを確認（折り返しの定義的性質が効いている） |
-| 5 | `standalone.mjs` がこのパーツを検証できない | **解消** | 2 種類の壊し方で確認（下記） |
+| 1 | `style` prop にオブジェクトを渡すと破棄され `style="…;[object Object]"` が出力される | **解消** | `src/lib/style.ts` の `styleToString` / `joinStyles` を両コンポーネントが使用。隔離コピーに検証ページを追加してビルドし、出力 HTML と computed style の両方を実測（下表）|
+| 2 | 所見 4: `color-link` の pixel diff の余裕が薄い（0.197〜0.272 %）| **解消** | fixture / カタログとも「その中に置いたリンクのテキストで、色が文字色に追従することを確認します」に伸長済み。`color-link` は 1200 で 1 行の大半を占め、リンクが赤で描画されていることを目視確認 |
 
-### standalone.mjs の実効性テスト（審査側で CSS を意図的に破壊）
+### `style` prop 透過の実測
 
-| 壊し方 | 検出 |
+隔離コピー（`scratchpad/probe`、`src` は本体と `diff` 一致）に検証ページを置いてビルドし、出力 HTML を確認した。
+
+| 入力 | 出力 `style` 属性 | 判定 |
+|---|---|---|
+| `<Text color="red" style="text-decoration:underline;letter-spacing:2px">` | `--un-text-color:var(--un-color-deep-1);--un-color-link:currentColor;text-decoration:underline;letter-spacing:2px` | OK |
+| `<Text size="lg" style={{ textDecoration:'underline', letterSpacing:'2px' }}>` | `--un-text-size:var(--un-fz-lg);text-decoration:underline;letter-spacing:2px` | OK（camelCase → kebab-case 変換あり）|
+| `<Mark style={{ fontWeight: 900, paddingLeft:'10px' }}>` | `--un-mark-color:var(--un-color-mark-yellow);font-weight:900;padding-left:10px` | OK（数値も可）|
+| `<Text color="red" style="--un-text-color:green">` | 後勝ちで computed `color: rgb(0,128,0)` | OK（利用者の上書きが効く）|
+
+computed 実測（vw375 / vw900 とも）: `text-decoration-line: underline`、`letter-spacing: 2px`、`font-weight: 900`、
+`padding-left: 10px`、かつ `background-image` / `color` / `font-size` はパーツ側の値を保持。
+`style` 属性は 1 個だけ（要素の属性は `class,style` の 2 個のみ）で二重出力なし。`[object Object]` は消滅。
+
+---
+
+## 2. 自動計測（run.mjs / 公式 fixture）
+
+19 バリアント × 3 viewport = 57 セル。**全セルが同値**のため viewport を横に畳んで記載する（値は 375 / 768 / 1200）。
+
+| variant | vw | pixel diff % | box Δ (w/h) | style diffs | pass |
+|---|---|---|---|---|---|
+| mark-yellow | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| mark-blue | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| mark-green | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| mark-orange | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-red | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-blue | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-green | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-main | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-xs | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-sm | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-md | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-lg | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-xl | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| size-inline | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-inline | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| thin | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| mark-wrap | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| nest-size-color | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+| color-link | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 | OK |
+
+本体リポジトリは他エージェントが `dist` を再ビルドし続けているため、**`src` と `dist` を隔離コピーに固定して再実行**し
+（`scratchpad/probe`、port 4451）、同じ 57/57 PASS を再現した。
+
+### 感度確認（審査側で dist の CSS を意図的に破壊）
+
+| 壊し方 | 結果 |
 |---|---|
-| `.un-mark` → `.un-content .un-mark` にセレクタを変更 | **検出**。`text.css: rule ".un-content .un-mark" depends on .un-content` を 19/19 バリアントで報告。加えて CRITICAL プロパティ経由でも `background-image: in=linear-gradient(...) out=none` を検出 |
-| `.un-content` の文字列を使わない隠れた container 依存（`base.css` に `.un-content { --_ctx-col:#333; --_ctx-pad:0px }` を足し、`text.css` で `color:var(--un-text-color, var(--_ctx-col, rgb(1,2,3)))` / `padding-bottom:var(--_ctx-pad,4px)` として参照） | **検出**。`.un-mark[0] padding-bottom: in=0px out=4px`、`.un-text[0] color: in=rgb(51,51,51) out=rgb(1,2,3)` を報告 |
+| マーカーの停止位置 `transparent 64%` → `62%` | **検出**。`mark-yellow` / `mark-wrap` など 15 セルが FAIL。ただし pixel diff は 375 で 0.329 % / 0.907 %、**768・1200 では 0.000 %** にとどまり、検出は style diff（`background-image`）に依存した |
+| `standalone.mjs`: `.un-mark` → `.un-content .un-mark` | **検出**。19/19 バリアントで `text.css: rule ".un-content .un-mark" depends on .un-content` と `background-image: in=linear-gradient(...) out=none` を報告し `standalone: FAIL (19/19)` |
 
-`standalone.mjs` はこのパーツに対して実効性がある。修飾子なしのブロッククラス（`.un-mark` / `.un-text`）が `DECORATED` に含まれ、
-`text.css` が宣言する `color` / `font-size` / `background-image` / `box-sizing` が実際に突き合わされている。
-
-（補足: `standalone.mjs` は「container 依存の有無」の検査であって正しさの検査ではない。
-`.un-mark` の `background-image` 宣言を丸ごと削除しても内外で同値になるため NG にならない。これは設計どおりで、
-その退行は `run.mjs` の pixel diff が拾う。）
+`run.mjs` / `standalone.mjs` はこのパーツに対して実効性がある。
 
 ---
 
-## 自動計測（run.mjs / 公式 fixture）
+## 3. 審査側で独自に組んだ検証（fixture の穴を疑って）
 
-19 バリアント × 3 viewport = 57 セル。**全セルが同値**のため viewport を横に畳んで記載する（値は 375 / 768 / 1200 の順）。
+隔離コピーに SWELL 参照ページと uneri ページを新規に作り、同一 ID を振って computed style と bounding box を突き合わせた。
+**12 ケース × 375/1200 = 24 セル、比較プロパティ 14 種 + box、全て一致（差分 0）。**
 
-| variant | vw | pixel diff % | box Δ (w/h) | style diffs |
-|---|---|---|---|---|
-| mark-yellow | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| mark-blue | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| mark-green | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| mark-orange | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-red | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-blue | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-green | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-main | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-xs | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-sm | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-md | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-lg | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-xl | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| size-inline | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-inline | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| thin | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| mark-wrap | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| nest-size-color | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
-| color-link | 375 / 768 / 1200 | 0 / 0 / 0 | 0/0 | 0 |
+| ケース | 参照マークアップ | 実装 | 結果 |
+|---|---|---|---|
+| 色付きの中のマーカー | `.font_col_red.swl-inline-color > .mark_yellow` | `<Text color="red"><Mark>` | 一致 |
+| サイズの入れ子 | `.u-fz-l > .u-fz-s` | `<Text size="lg"><Text size="sm">` | 一致（二重 em なし）|
+| マーカーの中のテキスト | `.mark_orange > .u-fz-l.font_col_red` | `<Mark color="orange"><Text size="lg" color="red">` | 一致（内側に背景が漏れない: `background-image: none`）|
+| 全部盛り | `.u-fz-l.u-thin.font_col_blue.swl-inline-color` | `<Text size="lg" color="blue" thin>` | 一致 |
+| 任意色マーカー | `.mark_yellow` + inline gradient `#abcdef` | `<Mark color="#abcdef">` | 一致 |
+| 薄字の入れ子 | `.u-thin > .u-thin` | `<Text thin><Text thin>` | 一致（参照と同じ合成結果）|
+| サイズの中の色 | `.u-fz-xl > .font_col_green` | `<Text size="xl"><Text color="green">` | 一致 |
+| 素の `<Text>` を色付き `<Text>` の中に | 素の `span` | `<Text size="xl" color="blue"><Text>` | 一致（`--un-text-*: initial` のリセットが効き、font-size 25.6px / color が外側と同値）|
 
-57 枚の `-diff.png` を全走査したが、差分色（赤）ピクセルは 1 個もない。
+さらに `.un-content` の外（`color/font-family/font-size/font-weight/line-height` だけを与えた素の div）でも実測。
 
-## 独自検証（審査エージェントが自作した追加 fixture・19 ケース × 3 viewport）
-
-公式 fixture と同一のシェル（参照は SWELL の `post_content`、実装は `dist` のカタログ HTML と同一の CSS）に
-参照 SWELL クラスと実装コンポーネントの出力 HTML を並置し、pixel / bounding box / computed style
-（color, background-image, background-color, font-size, font-weight, line-height, letter-spacing, opacity,
-display, text-decoration-*, box-sizing, margin, padding）を要素ツリー全体で比較。
-
-`x-mark-in-size` / `x-size-in-size` / `x-mark-in-mark` / `x-color-in-color` / `x-plain-in-size` / `x-plain-in-color` /
-`x-deep-nest`（3 段） / `x-in-strong` / `x-in-h2` / `x-in-li` / `x-thin-in-thin` / `x-link-in-mark` /
-`x-link-nested-color`（赤 > lg > `a`） / `x-mark-in-color` / `x-color-in-mark` / `x-style-prop`（文字列 `style` の透過） /
-`x-mark-style-prop` / `x-arb-mark-color`（`#ff8800`） / `x-arb-size`（`2.25em`）
-
-→ **全 57 セルで参照と完全一致**（pixel > 0.3 % なし、box Δ ≤ 1px、上記プロパティの不一致 0）。
-入れ子の二重適用、折り返し、見出し・`strong`・`li` の中、リンク内包、任意色・任意サイズ、文字列 `style` の透過は
-いずれも参照どおり。opacity の入れ子（`thin` in `thin` = 0.64 相当）も一致。
-
-`.un-content` の外（`color:#333;font-family:var(--un-font-family);font-size:1rem;font-weight:500;line-height:1.8`
-だけを与えた素の div）でも 19 バリアント全ての `.un-mark` / `.un-text` の装飾プロパティは container 内と同値
-（差分は所見 2 の `a` のみ）。
+| 項目 | 値 | 判定 |
+|---|---|---|
+| `.un-mark` background-image | `linear-gradient(rgba(0,0,0,0) 64%, rgb(252,246,159) 0%)`（container 内と同値）| OK |
+| `.un-mark` box-sizing | `border-box` | OK（spec §5「`.un-content` の外でも同じ寸法」を満たす）|
+| `.un-text` font-size / color | vw375 `16.875px` / `rgb(228,65,65)`、vw900 `20px` / 同（container 内と同値）| OK |
+| `.un-text--thin` opacity | `0.8` | OK |
+| 色付き `Text` の中の `a` の color | **`rgb(0,0,238)`（UA 既定）**。container 内は `rgb(228,65,65)` | **NG → FAIL 3** |
 
 ---
 
-## FAIL 項目（実装者への指示）
+## 4. FAIL 項目（実装者への指示）
 
-1. **`Mark.astro` / `Text.astro`: `style` prop のオブジェクト形式が破棄され、不正な属性値になる。**
-   `interface Props extends HTMLAttributes<'span'>` は Astro の型定義上
-   `style?: string | CSSProperties | undefined | null`（`node_modules/astro/astro-jsx.d.ts:578`）であり、
-   オブジェクトを渡すのは型チェックを通る正当な入力。しかし両コンポーネントは
-   `[…, userStyle].filter(Boolean).join(';')` で文字列連結しているため、実出力は次のようになる（実際にビルドして確認）。
+> いずれも **spec / fixture の修正**であり、`Mark.astro` / `Text.astro` / `text.css` の変更は不要。
 
-   ```
-   入力:       <Text color="red" style={{ letterSpacing: '0.2em' }}>…</Text>
-   期待:       style="--un-text-color:var(--un-color-deep-1);--un-color-link:currentColor;letter-spacing:0.2em"
-   実際:       style="--un-text-color:var(--un-color-deep-1);--un-color-link:currentColor;[object Object]"
+1. **`spec/parts/text.md` §3 の `color-link` 行の「参照クラス」が実 fixture と食い違う（spec 不備）。**
+   - spec §3: `color-link` の参照クラスは **`.font_col_red` + `a`**。
+   - 実 fixture `reference/fixtures/text.html`（`color-link` の行）: `<span class="font_col_red swl-inline-color">` と、
+     **`.swl-inline-color` が追加で付いている**。
+   - この差は装飾ではなく**判定結果を左右する**。審査側で SWELL CSS に直接あてて実測した値:
 
-   入力:       <Mark style={{ letterSpacing: '0.2em' }}>…</Mark>
-   実際:       style="--un-mark-color:var(--un-color-mark-yellow);[object Object]"
-   ```
+     | 参照マークアップ | span の color | 中の `a` の color |
+     |---|---|---|
+     | `.font_col_red` 単独 | `rgb(228,65,65)` | **`rgb(17,118,212)`（青のまま）** |
+     | `.font_col_red.swl-inline-color` | `rgb(228,65,65)` | `rgb(228,65,65)` |
 
-   利用者のスタイルは適用されず（前回 FAIL #3 が未解消のまま）、加えて壊れた CSS 宣言がページに出る。
-   素の Astro 要素（`<span style={{ letterSpacing:'0.2em' }}>`）は `style="letter-spacing:0.2em"` を正しく出すため、
-   パーツを噛ませた瞬間に標準の挙動から退化する。
-   推定原因: `style` を string 前提で `join(';')` している（`Mark.astro` 24 行目 / `Text.astro` 29-34 行目）。
-   修正方針はいずれかで可 —
-   (a) `interface Props` で `style?: string` を明示的に再宣言し、型と実装を一致させる、
-   (b) オブジェクトを camelCase → kebab-case に変換して連結する。
-   なお文字列形式（末尾 `;` 付きを含む）と rest spread（`class` / `id` / `data-*` / `aria-*`）は正しく動作している。
+     根拠 CSS: `reference/swell/build/css/main.css` は `.font_col_red{color:var(--color_deep01)!important}` だけで
+     `--color_link` を触らず、`--color_link:currentcolor` を設定するのは `.swl-inline-color{--color_link:currentcolor}` のみ。
+   - つまり **spec §3 に書かれたとおりの参照マークアップ（`.font_col_red` 単独）だと、
+     参照はリンクが青・実装は赤になり `color-link` は FAIL する**。現状は fixture が spec より広い
+     クラスを黙って足しているため PASS しているだけで、比較の根拠が spec 上に存在しない。
+   - 指示: 次のどちらかに統一し、spec §3 の表・§2 の記述・fixture を一致させること。
+     - (a) uneri の「`color` 指定時は常にリンクが追従する」を仕様として維持するなら、
+       spec §3 の `color-link` 行の参照クラスを `.font_col_red` + `.swl-inline-color` + `a` に直し、
+       さらに `color-red` / `color-blue` / `color-green` / `color-main` の fixture にも `.swl-inline-color` を併記して
+       「uneri の named color = SWELL の `.font_col_*` + `.swl-inline-color`」という対応を spec に明記する。
+     - (b) SWELL の `.font_col_*` 単独に厳密に合わせるなら、`Text.astro` の `--un-color-link:currentColor` を
+       named color（red/blue/green/main）では出さず、任意色（`.swl-inline-color` 相当）のときだけ出す。
+
+2. **`color-red` / `color-blue` / `color-green` / `color-main` バリアントがリンクを含まないため、
+   上記 1 の挙動差が自動判定を素通りする（fixture 不備）。**
+   - 現在の 4 バリアントは `<span>色付きのテキスト</span>` のみで `a` を含まない。そのため
+     「uneri の named color はリンクを赤にする / SWELL の `.font_col_red` はしない」という
+     **実在する挙動差が pixel にも style diff にも一切現れない**。
+   - 指示: 1 の (a)(b) いずれを選ぶ場合でも、`color-*` のうち最低 1 つ（または新規バリアント）に
+     `a` を含め、選んだ仕様どおりの参照クラスを fixture に書くこと。
+     spec/04-audit.md §2.0 の「そのスタイルの定義的な性質が出るダミーテキストを選ぶこと」が
+     この 4 バリアントで満たされていない。
+
+3. **`spec/parts/text.md` §2 の「`color` 指定時にリンク色が追従」が `.un-content` 外では成立しない（spec 不備）。**
+   - `Text` は `--un-color-link:currentColor` を出すが、それを消費するのは
+     `src/styles/base.css:49` の `.un-content :where(a) { color: var(--un-color-link) }` だけ。
+   - 審査側の実測（`.un-content` の外に置いた `<Text color="red"><a href="#">…</a></Text>`）:
+     リンクの computed color は **`rgb(0,0,238)`（UA 既定）**。container 内は `rgb(228,65,65)`。
+   - spec/01-coding-rules.md §2.4「margin 以外の見た目は `.un-content` に依存しない」に対し、
+     spec/parts/text.md §2 が API 契約として書いた挙動が container 依存になっている。
+   - `standalone.mjs` はこの依存を検出できない（消費側の規則が `src/styles/parts/*.css` ではなく `base.css` にあり、
+     検査対象外のため）。前回審査でも所見 2 として記録されたが未処置。
+   - 指示: spec §2 に「`.un-content` の中でのみ」と明記して契約を実装に合わせるか、
+     `text.css` 側で `.un-text a` の色も引き受けるかを決めること。
 
 ---
 
-## 目視所見
+## 5. 目視所見
 
-- `audits/text/shots/` の `mark-yellow` `mark-orange` `mark-wrap` `size-xl` `thin` `nest-size-color` `color-link` を
-  375/768/1200 で ref / impl / diff とも確認。マーカーの位置（行の下 36 %）、太さ、折り返し 2 行目への追従、
+- `audits/text/shots/` を確認（`mark-yellow` `mark-orange` `mark-wrap` `size-xl` `nest-size-color` `color-link` を
+  375 / 768 / 1200 で ref / impl / diff とも）。マーカーの位置（行の下 36 %）・太さ・折り返し 2 行目への追従、
   テキストの折り返し位置、色、薄字の濃度いずれも参照と区別がつかない。diff は全面黒。
-- `mark-wrap`: 参照・実装とも 2 行それぞれの下端にマーカーが付き、行末での途切れ方も同じ。
-- `nest-size-color`: 内側の赤いテキストが外側の 1.25em を二重に受けず、参照と同じ字面幅。
-- `color-link`: リンクが `#e44141` で下線なし、参照と一致。
-- 疑似要素による装飾はこのパーツにないため、形状・グラデーション周期・影の観点は該当なし。
+- `mark-wrap` @375: 参照・実装とも 2 行それぞれの下端にマーカーが付き、行末での途切れ方も一致。
+- `nest-size-color` @768: 内側の赤いテキストが外側の 1.25em を二重に受けず、字面幅が一致。
+- `color-link` @1200: リンクが `#e44141`・下線なしで参照と一致。伸長後は 1 行の大半を占め pixel でも十分に効く。
+- `mark-orange` @1200: グラデーションの向き（下方向）と停止位置、色ともに一致。
+- 疑似要素による装飾はこのパーツにないため、形状・影の観点は該当なし。
 
-## 仕様適合
+## 6. 仕様適合
 
-- **バリアント網羅**: OK。spec/parts/text.md §3 の 19 バリアントが過不足なくカタログにあり、
-  参照 fixture と実装カタログでバリアント名・順序・ダミーテキスト（タグを除いた文字列）が完全一致。
-- **props**: NG（FAIL 1）。名前付きの値・既定値は spec §2 と一致
-  （`Mark { color = 'yellow' }`、`Text { size?, color?, thin = false }`、いずれも `class?` / `id?` / `(string & {})` 対応）、
-  トークン写像（`--un-color-mark-*` / `--un-color-deep-1..3` / `--un-color-main` / `--un-fz-*`）も §5 と一致するが、
-  継承した `style` の型と実装が食い違う。
-- **コーディング規則**: OK。`!important` なし、詳細度は最大 `(0,1,0)`
-  （`.un-mark` / `.un-text` / `.un-text--thin` / `.un-*::before|after`）、命名は `un-` 接頭辞 + BEM、
-  `swell` 文字列なし、`text.css` にリテラル hex なし（色は全てトークン経由）、単位は `em`、
-  `.un-content` 前置なし、`@media` なし、ベンダープレフィックスなし、`class:list` 使用、`interface Props` あり、
-  frontmatter 1 行コメントに spec へのポインタあり、ルート要素 1 つ、`id` prop 受け取りあり。
-  `src/index.ts` に `Mark` / `Text` の re-export、`src/styles/index.css` に `parts/text.css` の import あり。
-  カタログの `#f40540` は spec §3 の `color-inline` バリアントの実演値であり、パーツ CSS のリテラル色ではない。
+- **バリアント網羅**: OK。spec §3 の 19 バリアントが過不足なくカタログにあり、fixture と
+  バリアント名・順序・ダミーテキストが完全一致。spec にないバリアントもなし。
+- **props**: OK。`Mark { color = 'yellow', class?, id? }` / `Text { size?, color?, thin = false, class?, id? }` が
+  spec §2 と型・既定値とも一致。`(string & {})` による任意値、`extends HTMLAttributes<'span'>` の rest spread、
+  トークン写像（`--un-color-mark-*` / `--un-color-deep-1..3` / `--un-color-main` / `--un-fz-*`）も §5 と一致。
+  `style` はオブジェクト・文字列とも透過（§1 参照）。依存トークンは全て `tokens.css` に実在。
+- **コーディング規則**: OK。`text.css` の全セレクタを数え直し、**最大 `(0,1,0)`**
+  （`.un-mark` / `.un-text` / `.un-text--thin` と `::before` / `::after` の box-sizing 群のみ。`(0,2,0)` 超はゼロ）。
+  `!important` なし、`un-` 接頭辞 + BEM、`swell` 文字列なし、リテラル hex なし（色は全てトークン経由）、
+  単位は `em`、`.un-content` 前置なし、ベンダープレフィックスなし、`class:list` 使用、
+  `interface Props` あり、frontmatter に spec ポインタ、ルート要素 1 つ、`id` prop あり、
+  `src/index.ts` に `Mark` / `Text` の re-export あり。
 - **クリーンルーム**: OK（`cleanroom: OK (1900 reference runs indexed)`）。
-- **standalone**: OK（`standalone: OK (119 variants, 187 rules)`）。上記のとおり実効性も確認済み。
+- **standalone**: OK（`standalone: OK (133 variants, 231 rules)`）。感度確認済み（§2）。
 
-## 所見（FAIL 理由にはしないが記録）
+## 7. 所見（FAIL 理由にはしない）
 
-1. **`.un-mark` は `background-image` 単独指定、参照は `background` ショートハンド。**
-   参照は `background:linear-gradient(...)` なので `background-color` / `-position` / `-size` / `-repeat` も同時にリセットされるが、
-   uneri はしない。公式 fixture・独自 fixture のいずれでも差は出ず（span に他の背景がないため）、
-   `.un-mark` を背景色付き要素に付けた場合だけ挙動が分かれる。uneri 側の方が副作用が小さいので現状で可。
+1. `.un-mark` は `background-image` 単独指定、参照は `background` ショートハンド。参照は `background-color` /
+   `-position` / `-size` / `-repeat` も同時にリセットするが uneri はしない。公式・独自 fixture のいずれでも差は出ず
+   （span に他の背景がないため）、副作用は uneri の方が小さいので現状で可。
+2. `run.mjs` の pixel diff 閾値 0.3 % は、マーカーのような低コントラスト装飾の退行に対して単独では不十分
+   （停止位置を 2 % ずらす退行で 768/1200 の pixel diff は 0.000 %）。実効的な検出は computed style 差分が担っている。
+   閾値そのものは spec どおりなので指摘に留める。
 
-2. **`.un-content` の外では、色付き `Text` の中のリンクが文字色に追従しない。**
-   `Text` は `--un-color-link:currentColor` を出すが、それを消費するのは `base.css` の
-   `.un-content :where(a) { color: var(--un-color-link) }` だけ。container 外では
-   `a` が UA 既定（`rgb(0,0,238)` + 下線）に戻る（審査側の inside/outside 比較で確認）。
-   spec/01 §3 が「素の要素に既定を与える規則は `.un-content` に閉じる」を許しており、
-   参照 SWELL も `.swl-inline-color` + `.post_content a` という同じ構造なので **参照との差はゼロ**。
-   ただし spec/parts/text.md §2 は「`color` を指定したときは装飾範囲内のリンク色も追従させる」を
-   Text パーツの API 契約として書いているため、container 外の挙動を spec に明記するか、
-   `.un-text` 側で `a` の色も引き受けるかを決めておくのが望ましい（現状は spec の記述が実装より広い）。
+## 8. 審査中の後始末
 
-3. **参照 fixture 内でのマークアップの不統一。**
-   `color-red` / `color-blue` / `color-green` / `color-main` は `.font_col_*` 単独、`color-link` だけ `.font_col_red swl-inline-color`。
-   一方 uneri は `color` 指定時に常に `--un-color-link:currentColor` を出す。
-   spec §2 が「参照の `.swl-inline-color` と同じ」と明言しているので判定には影響しないが、
-   参照側も `color-*` 全バリアントで `swl-inline-color` を併記した方が対応関係が明確
-   （現状はリンクを含まないバリアントで差が出ないため露見しないだけ）。
-
-4. **`color-link` の pixel diff の余裕が薄い。**
-   `--un-color-link:currentColor` を削除した退行テストで pixel diff は 0.197〜0.272 % にとどまり、
-   閾値 0.3 % を **下回った**（FAIL 判定は style diff 6 件で成立）。
-   fixture のリンク文字列（「その中のリンク」8 文字）が短いことが原因。
-   pixel 側にも余裕を持たせるため、`color-link` のリンクテキストを 1 行の半分程度まで長くすることを推奨する。
-
-## 審査中に行った破壊テストの後始末
-
-`src/styles/parts/text.css` / `src/styles/base.css` / `src/components/Text.astro` を一時的に改変したが、
-バックアップから復元し `diff` で完全一致を確認済み。`npx astro build` 済みで
-`run.mjs` = PASS / `standalone.mjs` = OK / `cleanroom.mjs` = OK の状態に戻してある。
-一時ファイル（`.audit-tmp/`、`src/pages/probetmp.astro`、`dist/probetmp/`）は削除済み。
-審査エージェントは製品コードを恒久的に変更していない。
+破壊テストと独自 fixture は **すべて隔離コピー（`scratchpad/probe`、`node_modules` と `reference` は symlink）** で行い、
+本体リポジトリの `src` / `reference` / `spec` は一切変更していない
+（`src/styles/parts/text.css` ほか 8 ファイルを `diff` で一致確認済み）。
+本体で実行したのは `run.mjs`（`audits/text/` の出力更新のみ）、`cleanroom.mjs`、`standalone.mjs` の読み取り系だけ。

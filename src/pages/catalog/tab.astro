@@ -1,0 +1,37 @@
+---
+/** catalog: Tab (spec/parts/tab.md §3). Variant order/text must match reference/fixtures/tab.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Tab from '../../components/Tab.astro';
+import TabPanel from '../../components/TabPanel.astro';
+---
+<Catalog title="Tab">
+  <Content data-variant="default">
+    <Tab labels={["タブ 1", "タブ 2"]}>
+      <TabPanel index={0}><p>タブ 1 の中身です。</p></TabPanel>
+      <TabPanel index={1}><p>タブ 2 の中身です。</p></TabPanel>
+    </Tab>
+  </Content>
+
+  <Content data-variant="simple">
+    <Tab variant="simple" labels={["タブ 1", "タブ 2"]}>
+      <TabPanel index={0}><p>タブ 1 の中身です。</p></TabPanel>
+      <TabPanel index={1}><p>タブ 2 の中身です。</p></TabPanel>
+    </Tab>
+  </Content>
+
+  <Content data-variant="bb">
+    <Tab variant="bb" width="50" widthSp="50" labels={["タブ 1", "タブ 2"]}>
+      <TabPanel index={0}><p>タブ 1 の中身です。</p></TabPanel>
+      <TabPanel index={1}><p>タブ 2 の中身です。</p></TabPanel>
+    </Tab>
+  </Content>
+
+  <Content data-variant="balloon">
+    <Tab variant="balloon" width="auto" widthSp="auto" labels={["タブ 1", "タブ 2"]}>
+      <TabPanel index={0}><p>タブ 1 の中身です。</p></TabPanel>
+      <TabPanel index={1}><p>タブ 2 の中身です。</p></TabPanel>
+    </Tab>
+  </Content>
+
+</Catalog>

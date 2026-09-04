@@ -1,0 +1,197 @@
+/* Tab — static tab display. spec: spec/parts/tab.md */
+
+.un-tab,
+.un-tab *,
+.un-tab::before,
+.un-tab::after,
+.un-tab ::before,
+.un-tab ::after {
+  box-sizing: border-box;
+}
+
+.un-tab__list {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.un-tab__item {
+  flex: 0 0 var(--_tab-width-sp, 50%);
+  position: relative;
+  margin: 0;
+  text-align: center;
+}
+.un-tab__body {
+  position: relative;
+}
+.un-tab__panel {
+  width: 100%;
+  position: relative;
+}
+.un-tab .un-tab__panel > * {
+  /* the panel owns the rhythm inside it, container or not */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.un-tab .un-tab__panel > :last-child {
+  margin-bottom: 0;
+}
+.un-tab__button {
+  display: block;
+  position: relative;
+  background-color: transparent;
+  background-image: none;
+  transition: background-color 0.25s, color 0.25s;
+  width: 100%;
+  margin: 0;
+  padding: 0.75em 0.5em;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---- default: filled tab over a framed body ---- */
+.un-tab--default > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button) {
+  color: var(--un-color-text);
+  opacity: 0.5;
+}
+.un-tab--default > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"] {
+  background: var(--un-color-text);
+  color: var(--un-color-bg);
+  opacity: 1;
+}
+.un-tab--default > :where(.un-tab__body) {
+  position: relative;
+  margin-top: -1px;
+  padding: 1.5em;
+  border: 1px solid var(--un-color-text);
+}
+
+/* ---- simple ---- */
+.un-tab--simple > :where(.un-tab__list),
+.un-tab--bb > :where(.un-tab__list),
+.un-tab--balloon > :where(.un-tab__list) {
+  justify-content: center;
+}
+.un-tab--simple > :where(.un-tab__list) > :where(.un-tab__item) {
+  margin-bottom: 0.5em;
+}
+.un-tab--simple > :where(.un-tab__list) > :where(.un-tab__item) + :where(.un-tab__item) {
+  /* the borders of neighbouring tabs overlap into one line */
+  margin-left: -1px;
+}
+.un-tab--simple > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button) {
+  padding: 1em 0.5em;
+  border: 1px solid var(--un-color-tab-line);
+  color: #666;
+}
+.un-tab--simple > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"] {
+  background: var(--un-color-tab-line);
+  color: var(--un-color-text);
+}
+
+/* ---- bb: a rule under the selected tab ---- */
+.un-tab--bb > :where(.un-tab__list) {
+  flex-wrap: nowrap;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) {
+  flex-shrink: 1;
+  margin-bottom: 0.75em;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button) {
+  padding: 0.25em 0.5em 1em;
+  color: var(--un-color-text);
+  opacity: 0.7;
+  transition: color 0.25s, opacity 0.25s;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)::before {
+  /* the base rule every tab sits on */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--un-color-text);
+  opacity: 0.4;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"] {
+  color: var(--un-color-main);
+  font-weight: 700;
+  opacity: 1;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)::after {
+  /* the thicker rule under the selected tab */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  background: var(--un-color-main);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.un-tab--bb > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"]::after {
+  opacity: 1;
+}
+
+/* ---- balloon ---- */
+.un-tab--balloon > :where(.un-tab__list) > :where(.un-tab__item) {
+  flex-shrink: 1;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  transition: background-color 0.1s, color 0.1s;
+}
+.un-tab--balloon > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button) {
+  padding: 1em;
+  background: var(--un-color-gray);
+  box-shadow: var(--un-shadow-box);
+  color: var(--un-color-text);
+}
+.un-tab--balloon > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"] {
+  background: var(--un-color-main);
+  color: #fff;
+}
+.un-tab--balloon > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)::before {
+  /* the tail: drawn on every tab, but only coloured in on the selected one */
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  border-width: 8px 8px 0;
+  border-style: solid solid none;
+  border-top-color: var(--un-color-main);
+  border-right-color: transparent;
+  border-left-color: transparent;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.25s;
+}
+.un-tab--balloon > :where(.un-tab__list) > :where(.un-tab__item) > :where(.un-tab__button)[aria-selected="true"]::before {
+  opacity: 1;
+}
+
+@media (min-width: 600px) {
+  .un-tab__button {
+    font-size: 14px;
+  }
+  .un-tab--default > :where(.un-tab__body) {
+    padding: 2em;
+  }
+}
+
+@media (min-width: 960px) {
+  .un-tab__item {
+    flex-basis: var(--_tab-width-pc, 25%);
+  }
+}

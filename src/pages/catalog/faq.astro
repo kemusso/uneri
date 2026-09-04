@@ -34,4 +34,15 @@ import FaqItem from '../../components/FaqItem.astro';
     </Faq>
   </Content>
 
+  <Content data-variant="rich-answer">
+    <Faq variant="border">
+      <FaqItem q="よくある質問の1つめです。">
+        <p>一つめの段落です。</p>
+        <p>二つめの段落で、少し長めの文章にして折り返しの見え方も確認します。</p>
+        <ul><li>リスト項目</li></ul>
+      </FaqItem>
+      <FaqItem q="よくある質問の2つめです。"><p>質問への回答です。</p></FaqItem>
+    </Faq>
+  </Content>
+
 </Catalog>

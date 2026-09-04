@@ -44,6 +44,7 @@ slot: default（ふきだしの中身）
 | `col-yellow` | `color="yellow"` | `data-col="yellow"` | #f9f7d2 / #fbe593 |
 | `think-border` | `tail="think" border` | `.-thinking.-border-on` | 丸のしっぽに 1px の輪郭 |
 | `rich` | 見出し・段落 2 つ・リストを含む | 同上 | ふきだし内のブロック余白 |
+| `nested` | ふきだしの中にふきだし（同じ色）| 同上 | 修飾子が内側に漏れない（角アイコン・思考・枠線が内側に効かない）|
 
 ## 4. マークアップ
 
@@ -68,7 +69,7 @@ slot: default（ふきだしの中身）
 | body（`think`）| padding-top | 16px（<600 は 8px。丸が上にはみ出す分）|
 | text（ふきだし本体）| max-width / border-radius / padding / font-size | 560px / 8px / 1em / 0.95em（<600）・1em（≥600）|
 | text | background / color / border-color / font-size / line-height / position | 色セットの背景 / `--un-color-text` / 色セットの線 / 0.95em / 1.6 / relative |
-| text の `p` | margin | 0（上下とも）|
+| text の子 | margin | 0（上下とも。参照は記事本文側の規則で同じ結果になる）|
 | text の最初/最後の子 | margin-top / margin-bottom | 0（参照では記事本文側の `div > :first-child` / `:last-child` 由来。uneri はパーツ側で持つ）|
 | icon img | object-fit / vertical-align | cover / baseline |
 | icon name | opacity | 0.8 |
@@ -84,13 +85,16 @@ slot: default（ふきだしの中身）
 
 ## 6. 受け入れ基準
 
-- [ ] 全 11 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
+- [ ] 全 12 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
 - [ ] `right` でアイコンとしっぽの向きが反転する
 - [ ] `think` のしっぽが 2 つの丸になる
 - [ ] `border` で枠線としっぽの二重線が出る
 - [ ] アイコンが <600 で 60px、≥600 で 80px
 
 ## 7. 備考
+
+- 修飾子の規則は原則 `> :where(...)` の連鎖で自分のふきだしだけに効かせる（詳細度は 1 クラスのまま）。ただし参照が子孫セレクタで内側にも効かせている箇所（`border` の枠線としっぽの位置）は、参照の見た目に合わせて子孫のままにする。
+- 色は custom property をふきだしごとに置くため、入れ子でも内側が自分の色を持つ。参照は `[data-col] .c-balloon__text` の子孫セレクタで外側の色が内側に漏れるが、そこは追随しない（`nested` バリアントは内外同色にして比較する）。
 
 - 参照には <600px で縦積みにする `-sp-vrtcl`（しっぽを 90° 回転）があるが、まだ再現していない。別途 spec 化する。
 

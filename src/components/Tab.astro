@@ -1,0 +1,34 @@
+---
+/** Tab — タブ表示（切り替えは持たない）. spec: spec/parts/tab.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'simple' | 'bb' | 'balloon';
+  /** タブ 1 つの幅（≥600px）*/
+  width?: '25' | '33' | '50' | 'auto';
+  /** タブ 1 つの幅（<600px）*/
+  widthSp?: '25' | '33' | '50' | 'auto';
+  labels: string[];
+  class?: string;
+  id?: string;
+}
+
+const WIDTHS: Record<string, string> = { '25': '25%', '33': '33.3333%', '50': '50%', auto: 'auto' };
+const { variant = 'default', width = '25', widthSp = '50', labels, class: cls, id, style: userStyle, ...rest } = Astro.props;
+---
+
+<div
+  id={id}
+  class:list={['un-tab', `un-tab--${variant}`, cls]}
+  style={[`--_tab-width-pc:${WIDTHS[width] ?? width};--_tab-width-sp:${WIDTHS[widthSp] ?? widthSp}`, userStyle].filter(Boolean).join(';')}
+  {...rest}
+>
+  <ul class="un-tab__list" role="tablist">
+    {labels.map((label, i) => (
+      <li class="un-tab__item" role="presentation">
+        <button class="un-tab__button" role="tab" aria-selected={i === 0 ? 'true' : 'false'}>{label}</button>
+      </li>
+    ))}
+  </ul>
+  <div class="un-tab__body"><slot /></div>
+</div>

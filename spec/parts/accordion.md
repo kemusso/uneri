@@ -38,6 +38,7 @@ slot: Accordion は AccordionItem の並び、AccordionItem は本文。
 | `simple` | `variant="simple"` | `.is-style-simple` | 帯なし、項目の上下に 1px の線 |
 | `border` | `variant="border"` | `.is-style-border` | 項目全体を 1px の枠で囲む |
 | `main` | `variant="main"` | `.is-style-main` | 見出しがメインカラー・白文字 |
+| `long` | 見出しが長い URL | 同上 | `word-break` で枠内に収まる |
 
 ## 4. マークアップ
 
@@ -58,15 +59,16 @@ slot: Accordion は AccordionItem の並び、AccordionItem は本文。
 | 対象 | プロパティ | 値 |
 |---|---|---|
 | item | margin-bottom / margin-top（2 つめ以降）| 1em（最後は 0、`simple` は 0）/ 0.5em |
-| label | flex-grow / padding-right | 1 / 1em |
+| label | flex-grow / padding-right / word-break | 1 / 1em / break-all（長い URL でもはみ出さない）|
 | item | list-style（`summary` のマーカー消し）| `::marker` を出さない |
 | title | display / align-items / justify-content | flex / center / space-between |
 | title | padding / cursor / font-weight | 1em / pointer / 400 |
 | title（default）| background | `--un-color-gray` |
 | title（main）| background / color | `--un-color-main` / #fff |
-| body（閉）| height / opacity / overflow / transition | 0 / 0 / hidden / `padding, height, opacity, visibility` 0.25s |
-| body | padding-left / padding-right | 1em / 1em |
-| icon | font-size / 寸法 / line-height / position / text-align / flex-shrink | 1.25em / 1em × calc(1em + 1px)（自身の font-size 基準）/ 1.8em / relative / right / 0 |
+| body | padding / overflow | 0 1em（閉）→ 1em（開）/ hidden |
+| body（閉）| height / opacity / transition | 0 / 0 / `padding, height, opacity, visibility` 0.25s |
+
+| icon | font-size / 寸法 / position / text-align / flex-shrink | 1.25em / 1em × calc(1em + 1px)（自身の font-size 基準）/ relative / right / 0（line-height は継承）|
 | icon（閉）| display / opacity / transform / transition | block / 1 / `scale(1)` / `transform .25s, opacity .25s` |
 | icon（開）| position / opacity / transform | absolute（top 0 / left 0）/ 0 / `scale(-0.5)` |
 | icon（開）| transition | `transform .25s, opacity .25s` |
@@ -81,12 +83,12 @@ slot: Accordion は AccordionItem の並び、AccordionItem は本文。
 
 ## 6. 受け入れ基準
 
-- [ ] 全 4 バリアントが 375 / 768 / 1200 で（閉じた状態の）pixel diff ≤ 0.3%、box Δ ≤ 1px
+- [ ] 全 5 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
 - [ ] `summary` の既定マーカーが出ない
 - [ ] 開いたときに本文が出る（`details` の標準動作）
 - [ ] `.un-content` の外でも成立する
 
 ## 7. 備考
 
-- 参照は JS で高さをアニメーションさせながら開閉するが、uneri は `details` の標準動作に任せる（`00-overview.md` の非目標「装飾以外の JS」）。したがって開いた状態は参照と一致しない。審査は閉じた状態で行う。
+- 参照は JS で開閉する（`details` の `open` 属性では開かず、`[open]` を付けても本文は閉じたまま）。uneri は `details` の標準動作に任せるため、**開いた状態は参照に対応物が無く比較できない**。閉じた状態を審査対象とし、開いた状態は uneri の設計として `padding: 1em` / `height: auto` / `opacity: 1` を戻す。
 - アイコンは参照ではアイコンフォント。uneri は data URI の SVG（`caret`）を `mask-image` で `::before` に描く（参照が glyph を疑似要素で描くのと同じ位置。spec/04-audit.md §2.1）。

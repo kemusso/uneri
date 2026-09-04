@@ -21,6 +21,7 @@
 .un-accordion__label {
   flex-grow: 1;
   padding-right: 1em;
+  word-break: break-all;
 }
 
 .un-accordion__title {
@@ -37,19 +38,26 @@
   display: none;
 }
 
+.un-accordion .un-accordion__body > * {
+  /* the panel owns the rhythm inside it, container or not */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.un-accordion .un-accordion__body > :last-child {
+  margin-bottom: 0;
+}
 .un-accordion__body {
   /* collapsed by default; `details` reveals it, and the values match the reference's closed state */
   height: 0;
-  padding-right: 1em;
-  padding-left: 1em;
+  padding: 0 1em;
   opacity: 0;
   overflow: hidden;
   transition: padding 0.25s, height 0.25s, opacity 0.25s, visibility 0.25s;
 }
 [open] > .un-accordion__body {
   height: auto;
+  padding: 1em;
   opacity: 1;
-  overflow: visible;
 }
 
 /* ---- the caret, swapped by the open state ---- */
@@ -59,7 +67,6 @@
   width: 1em;
   height: calc(1em + 1px);
   font-size: 1.25em;
-  line-height: 1.8em;
   text-align: right;
 }
 .un-accordion__icon > * {

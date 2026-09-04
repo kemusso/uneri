@@ -38,7 +38,7 @@
 | D1 | ボタン | `Button` | normal / solid / line / shiny; size: s / m / l; color: main / red / blue / green（任意色可）; align; `sponsored` | `.swell-block-button` | pass |
 | D2 | FAQ | `Faq` + `FaqItem` | default / border / box / stripe | `.swell-block-faq` | impl |
 | D3 | アコーディオン | `Accordion` + `AccordionItem` | default / simple / border / main | `.swell-block-accordion` | impl |
-| D4 | タブ | `Tab` | default / simple / bb (下線) / balloon | `.swell-block-tab` | todo |
+| D4 | タブ | `Tab` + `TabPanel` | default / simple / bb (下線) / balloon | `.swell-block-tab` | impl |
 | D5 | ステップ | `Step` | default / big / small; numStyle: circle / num / horizontal / vertical | `.swell-block-step` | pass |
 
 ## E. 表・比較

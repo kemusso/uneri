@@ -22,6 +22,14 @@
 .un-faq__q {
   font-weight: 700;
 }
+.un-faq .un-faq__a > * {
+  /* the answer owns its own rhythm, container or not */
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.un-faq .un-faq__a > :last-child {
+  margin-bottom: 0;
+}
 .un-faq__q::before,
 .un-faq__a::before {
   /* the Q / A marks, sitting in the indent the text leaves for them */

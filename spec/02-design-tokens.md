@@ -10,7 +10,7 @@
 | `sm` | `600px` | スマホ→タブレット境界 |
 | `lg` | `960px` | タブレット→PC 境界（サイドバー出現） |
 
-`@media (min-width: 600px)` / `@media (min-width: 960px)` の 2 つを基本とする。サイト最大幅の切り替えのみ `@media (min-width: 1200px)` を追加で使う（`--un-container-pad`）。
+`@media (min-width: 600px)` / `@media (min-width: 960px)` の 2 つを基本とする。サイト最大幅の切り替えのみ `@media (min-width: 1200px)` を追加で使う（`--un-container-pad`）。タブの列幅だけ参照が 960px で切り替えるため、そこも実測どおりにする。
 
 ## 2. 色
 
@@ -48,6 +48,7 @@
 | `--un-color-balloon-yellow-bg` / `-line` | `#f9f7d2` / `#fbe593` | ふきだし（黄）|
 | `--un-color-balloon-icon-border` | `#ececec` | ふきだしアイコンの縁 |
 | `--un-color-step-arrow` | `#dedede` | ステップ（big）の矢印 |
+| `--un-color-tab-line` | `#ddd` | タブ（simple）の帯と線 |
 
 ### 2.1 濃色 / 淡色セット（キャプションボックス・カラム等の色セット）
 

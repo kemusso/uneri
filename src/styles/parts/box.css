@@ -20,6 +20,9 @@
   /* tighter rhythm inside a box; headings keep their own top margin */
   margin-bottom: 1em;
 }
+.un-box.un-box--group > :where(p, ul, ol, dl, blockquote, figure, table) {
+  margin-top: 0;
+}
 .un-box.un-box--group > :first-child {
   margin-top: 0;
 }
