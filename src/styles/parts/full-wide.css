@@ -1,0 +1,40 @@
+/* FullWide — a band that breaks out of the article to the window edges. spec: spec/parts/full-wide.md */
+
+.un-full-wide,
+.un-full-wide *,
+.un-full-wide::before,
+.un-full-wide::after,
+.un-full-wide ::before,
+.un-full-wide ::after {
+  box-sizing: border-box;
+}
+
+.un-full-wide {
+  /* pulled left by the distance from the window edge to the article's content box */
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  padding-block: var(--un-full-wide-py, 2em);
+}
+.un-full-wide :where(.un-full-wide__inner) {
+  /* above anything the band paints behind it */
+  position: relative;
+  z-index: 1;
+}
+.un-full-wide--container :where(.un-full-wide__inner) {
+  max-width: calc(var(--un-container-width) + var(--un-container-pad) * 2);
+  margin-inline: auto;
+  padding-inline: var(--un-container-pad);
+}
+.un-full-wide--article :where(.un-full-wide__inner) {
+  max-width: var(--un-article-width);
+  margin-inline: auto;
+  padding-inline: var(--un-container-pad);
+}
+
+@media (min-width: 960px) {
+  .un-full-wide--article :where(.un-full-wide__inner) {
+    padding-inline: 16px;
+  }
+}

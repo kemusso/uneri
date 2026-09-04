@@ -62,7 +62,7 @@
 
 | # | パーツ | コンポーネント | バリアント | 参照 | 状態 |
 |---|---|---|---|---|---|
-| G1 | フルワイド | `FullWide` | 上下余白 0/20/40/60/80; 内幅 container / article / full; 区切り形状 wave / circle / line / tilt | `.swell-block-fullWide` | todo |
+| G1 | フルワイド | `FullWide` | 上下余白 0/20/40/60/80; 内幅 full / container / article; 背景色 | `.swell-block-fullWide` | impl |
 | G2 | セクション見出し | `SecTitle` | default | `.c-secTitle` | impl |
 
 ## 対象外（spec/00-overview.md §2 参照）

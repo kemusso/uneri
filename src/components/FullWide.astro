@@ -1,0 +1,32 @@
+---
+/** FullWide — 画面幅いっぱいの帯. spec: spec/parts/full-wide.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  /** 上下の余白。20 で 2em、40 で 4em… 既定 20 */
+  py?: 0 | 20 | 40 | 60 | 80;
+  /** 中身の幅 */
+  inner?: 'full' | 'container' | 'article';
+  /** 帯の背景色 */
+  bg?: string;
+  class?: string;
+  id?: string;
+}
+
+const { py, inner = 'full', bg, class: cls, id, style: userStyle, ...rest } = Astro.props;
+const style = joinStyles(
+  py !== undefined && `--un-full-wide-py:${py / 10}em`,
+  bg && `background-color:${bg}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={['un-full-wide', inner !== 'full' && `un-full-wide--${inner}`, cls]}
+  style={style}
+  {...rest}
+>
+  <div class="un-full-wide__inner"><slot /></div>
+</div>

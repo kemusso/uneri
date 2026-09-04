@@ -1,0 +1,56 @@
+---
+/** catalog: FullWide (spec/parts/full-wide.md §3). Variant order/text must match reference/fixtures/full-wide.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import FullWide from '../../components/FullWide.astro';
+---
+<Catalog title="FullWide">
+  <Content data-variant="default">
+    <FullWide bg="#f7f7f7">
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="py-0">
+    <FullWide bg="#f7f7f7" py={0}>
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="py-40">
+    <FullWide bg="#f7f7f7" py={40}>
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="py-80">
+    <FullWide bg="#f7f7f7" py={80}>
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="py-20">
+    <FullWide bg="#f7f7f7" py={20}>
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="py-60">
+    <FullWide bg="#f7f7f7" py={60}>
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="inner-container">
+    <FullWide bg="#f7f7f7" inner="container">
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+  <Content data-variant="inner-article">
+    <FullWide bg="#f7f7f7" inner="article">
+      <p>フルワイドの中に入るテキストです。</p>
+    </FullWide>
+  </Content>
+
+</Catalog>

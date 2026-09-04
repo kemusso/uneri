@@ -28,3 +28,4 @@ export { default as BlogCard } from './components/BlogCard.astro';
 export { default as BoxMenu } from './components/BoxMenu.astro';
 export { default as BoxMenuItem } from './components/BoxMenuItem.astro';
 export { default as SecTitle } from './components/SecTitle.astro';
+export { default as FullWide } from './components/FullWide.astro';
