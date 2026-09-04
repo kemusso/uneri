@@ -1,6 +1,7 @@
 ---
 /** Tab — タブ表示（切り替えは持たない）. spec: spec/parts/tab.md */
 import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
 
 interface Props extends HTMLAttributes<'div'> {
   variant?: 'default' | 'simple' | 'bb' | 'balloon';
@@ -20,7 +21,11 @@ const { variant = 'default', width = '25', widthSp = '50', labels, class: cls, i
 <div
   id={id}
   class:list={['un-tab', `un-tab--${variant}`, cls]}
-  style={[`--_tab-width-pc:${WIDTHS[width] ?? width};--_tab-width-sp:${WIDTHS[widthSp] ?? widthSp}`, userStyle].filter(Boolean).join(';')}
+  style={joinStyles(
+    `--_tab-width-pc:${WIDTHS[width] ?? width}`,
+    `--_tab-width-sp:${WIDTHS[widthSp] ?? widthSp}`,
+    styleToString(userStyle),
+  )}
   {...rest}
 >
   <ul class="un-tab__list" role="tablist">
