@@ -1,0 +1,150 @@
+---
+/** catalog: List (spec/parts/list.md §3). Variant order/text must match reference/fixtures/list.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import List from '../../components/List.astro';
+---
+<Catalog title="List">
+  <Content data-variant="default">
+    <List>
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="note">
+    <List variant="note">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="check">
+    <List variant="check">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="good">
+    <List variant="good">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="bad">
+    <List variant="bad">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="triangle">
+    <List variant="triangle">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="num-circle">
+    <List variant="num-circle">
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="ordered-default">
+    <List ordered>
+      <li>リスト項目の一つめです。</li>
+      <li>リスト項目の二つめです。少し長めの文章にして折り返しの見え方も確認します。</li>
+      <li>リスト項目の三つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="check-nested">
+    <List variant="check">
+      <li>親のリスト項目です。
+        <ul><li>入れ子のリスト項目です。</li><li>入れ子の二つめです。</li></ul>
+      </li>
+      <li>親の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="num-circle-nested">
+    <List variant="num-circle">
+      <li>親のリスト項目です。
+        <ol><li>入れ子のリスト項目です。</li><li>入れ子の二つめです。</li></ol>
+      </li>
+      <li>親の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="note-ordered">
+    <List variant="note" ordered>
+      <li>注釈の一つめです。</li>
+      <li>注釈の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="num-circle-ul">
+    <List variant="num-circle">
+      <li>親のリスト項目です。
+        <ul><li>入れ子の箇条書きです。</li><li>入れ子の二つめです。</li></ul>
+      </li>
+      <li>親の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="note-nested">
+    <List variant="note">
+      <li>注釈の一つめです。
+        <ul><li>入れ子の注釈です。</li></ul>
+      </li>
+      <li>注釈の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="num-circle-reversed">
+    <List variant="num-circle" reversed>
+      <li>逆順の項目です。
+        <ol><li>入れ子は逆順にならない</li><li>入れ子の二つめ</li></ol>
+      </li>
+      <li>逆順の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="note-ordered-nested">
+    <List variant="note" ordered>
+      <li>注釈の一つめです。
+        <ul><li>入れ子の注釈です。</li></ul>
+      </li>
+      <li>注釈の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="note-reversed">
+    <List variant="note" ordered reversed>
+      <li>逆順の注釈です。</li>
+      <li>逆順の注釈の二つめです。</li>
+    </List>
+  </Content>
+
+  <Content data-variant="num-circle-deep">
+    <List variant="num-circle">
+      <li>親の項目です。
+        <ul><li>子の箇条書きです。
+          <ol><li>孫の連番です。</li></ol>
+        </li></ul>
+      </li>
+    </List>
+  </Content>
+
+</Catalog>

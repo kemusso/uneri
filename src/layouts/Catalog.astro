@@ -1,0 +1,32 @@
+---
+/**
+ * Catalog page shell. Mirrors the reference fixture geometry (spec/04-audit.md §1):
+ * container 1200px / 4vw side padding, article 900px. Not part of the package.
+ */
+import '../styles/index.css';
+interface Props { title: string }
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — uneri catalog</title>
+    <style>
+      html { font-size: var(--un-fz-root); }
+      body { margin: 0; background: var(--un-color-bg); color: var(--un-color-text); font-family: var(--un-font-family); }
+      .cat-container { max-width: var(--un-container-width); margin: 0 auto; padding: 0 var(--un-container-pad); box-sizing: border-box; }
+      .cat-article { max-width: var(--un-article-width); margin: 0 auto; padding-top: 64px; }
+      /* variant wrappers: same vertical rhythm as the reference article (4em of the content font) */
+      :global([data-variant]) { margin: 4em 0; }
+    </style>
+  </head>
+  <body>
+    <div class="cat-container">
+      <article class="cat-article">
+        <slot />
+      </article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+/* Balloon — speech balloon with an icon. spec: spec/parts/balloon.md */
+
+.un-balloon,
+.un-balloon *,
+.un-balloon::before,
+.un-balloon::after,
+.un-balloon ::before,
+.un-balloon ::after {
+  box-sizing: border-box;
+}
+
+.un-balloon {
+  --_bg: var(--un-balloon-bg, var(--un-color-balloon-gray-bg));
+  --_line: var(--un-balloon-line, var(--un-color-balloon-gray-line));
+  /* reset per instance, so a balloon nested in a bordered one is not outlined too */
+  --_outline-width: 0;
+  --_outline-style: none;
+  --_outline-color: currentColor;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.un-balloon--right {
+  flex-direction: row-reverse;
+}
+
+/* ---- icon ---- */
+.un-balloon__icon {
+  flex: 0 0 auto;
+  position: relative;
+  width: 60px;
+  text-align: center;
+}
+.un-balloon__img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--un-color-balloon-icon-border);
+  object-fit: cover;
+  vertical-align: baseline;
+  border-radius: 50%;
+}
+.un-balloon--square .un-balloon__img {
+  border: 0;
+  border-radius: 0;
+}
+.un-balloon__name {
+  display: block;
+  opacity: 0.8;
+  padding-top: 4px;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+}
+
+/* ---- body ---- */
+.un-balloon__body {
+  display: flex;
+  flex: 0 1 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4px 24px;
+}
+.un-balloon__text {
+  position: relative;
+  max-width: 560px;
+  padding: 1em;
+  border: 0 none var(--_line);
+  border-radius: var(--un-radius-balloon);
+  background: var(--_bg);
+  color: var(--un-color-text);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+.un-balloon--border {
+  --_outline-width: 1px;
+  --_outline-style: solid;
+  --_outline-color: var(--_line);
+}
+.un-balloon--border .un-balloon__text {
+  border: 1px solid var(--_line);
+}
+.un-balloon__text > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.un-balloon__text > :first-child {
+  margin-top: 0;
+}
+.un-balloon__text > :last-child {
+  margin-bottom: 0;
+}
+
+.un-balloon--think .un-balloon__body {
+  /* the small bubble sits above the balloon, so it needs more room on top */
+  padding-top: 8px;
+}
+
+@media (min-width: 600px) {
+  .un-balloon__icon,
+  .un-balloon__img {
+    width: 80px;
+  }
+  .un-balloon__img {
+    height: 80px;
+  }
+  .un-balloon__body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .un-balloon__text {
+    font-size: 1em;
+  }
+  .un-balloon--think .un-balloon__body {
+    padding-top: 16px;
+  }
+}
+
+/* ---- tail ---- */
+.un-balloon__tail {
+  /* a zero-sized anchor at the balloon's edge; the shapes inherit their colours from here */
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-color: var(--_line);
+  background-color: var(--_bg);
+}
+.un-balloon--right .un-balloon__tail {
+  right: 0;
+  left: auto;
+  /* mirrored rather than re-drawn, so both directions stay one shape */
+  transform: rotateY(180deg); /* 3D flip, matching the reference's matrix */
+}
+.un-balloon--right .un-balloon__body {
+  justify-content: flex-end;
+}
+.un-balloon__tail > * {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.un-balloon__tail > :first-child {
+  /* the filled triangle, drawn as the right border of a zero-width box */
+  z-index: 3;
+  left: -10px;
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--_bg) transparent transparent;
+  background-color: transparent;
+}
+.un-balloon__tail > :last-child {
+  /* the outline behind it, only drawn when the balloon has a border */
+  display: none;
+  z-index: 2;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--_line) transparent transparent;
+  background-color: transparent;
+}
+.un-balloon--border .un-balloon__tail > :first-child {
+  left: -8px;
+}
+.un-balloon--border .un-balloon__tail > :last-child {
+  display: block;
+  width: 10px;
+  height: 16px;
+}
+
+/* ---- thinking tail: two bubbles instead of a triangle ---- */
+.un-balloon--think .un-balloon__tail > * {
+  display: block;
+  /* the outline is switched on by the border modifier on the root */
+  border: var(--_outline-width, 0) var(--_outline-style, none) var(--_outline-color, currentColor);
+  border-radius: 50%;
+  background: var(--_bg);
+}
+
+.un-balloon--think .un-balloon__tail > :first-child {
+  top: 0;
+  left: -21px;
+  width: 8px;
+  height: 8px;
+}
+.un-balloon--think .un-balloon__tail > :last-child {
+  top: 8px;
+  left: -16px;
+  width: 12px;
+  height: 12px;
+}

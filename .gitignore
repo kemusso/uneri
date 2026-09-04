@@ -1,0 +1,7 @@
+node_modules
+dist
+.astro
+# SWELL reference material (GPL, local only — never commit)
+reference/swell/
+reference/fixtures/
+audits/**/shots/

@@ -1,0 +1,48 @@
+---
+/** catalog: Heading (spec/parts/heading.md §3). Variant order/text must match reference/fixtures/heading.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Heading from '../../components/Heading.astro';
+---
+<Catalog title="Heading">
+  <Content data-variant="h2">
+    <p>見出しの前の段落テキストです。</p>
+    <Heading level={2}>見出しレベル2のサンプル</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="h3">
+    <p>見出しの前の段落テキストです。</p>
+    <Heading level={3}>見出しレベル3のサンプル</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="h4">
+    <p>見出しの前の段落テキストです。</p>
+    <Heading level={4}>見出しレベル4のサンプル</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="h2-long">
+    <Heading level={2}>とても長い見出しが複数行に折り返したときの見た目を確認するためのサンプル見出しです。パソコンの幅でも折り返すようにさらに文章を足しておきます</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="h3-long">
+    <Heading level={3}>とても長い見出しが複数行に折り返したときの見た目を確認するためのサンプル見出しです。パソコンの幅でも折り返すようにさらに文章を足しておきます</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="sequence">
+    <h2>見出しレベル2</h2>
+    <h3>見出しレベル3</h3>
+    <h4>見出しレベル4</h4>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="section-title">
+    <Heading level={2} variant="section" align="center">セクションタイトル</Heading>
+    <Heading level={3} variant="section" align="left">セクションのサブタイトル</Heading>
+    <p>見出しの後の段落テキストです。</p>
+  </Content>
+</Catalog>

@@ -1,0 +1,161 @@
+/* Button — call-to-action link. spec: spec/parts/button.md */
+
+.un-button,
+.un-button *,
+.un-button::before,
+.un-button::after,
+.un-button *::before,
+.un-button *::after {
+  box-sizing: border-box;
+}
+
+.un-button {
+  /* any colour can be passed as --un-button-color / --un-button-color-dark; the named
+     modifiers below are just shorthands for the reference palette */
+  --_color: var(--un-button-color, var(--un-color-main));
+  --_color-dark: var(--un-button-color-dark, var(--un-color-main-dark));
+  --_min-width: 64%;
+  display: block;
+  position: relative;
+  margin: 0 auto 2em;
+  font-size: 1em;
+  text-align: center;
+}
+.un-button--left { text-align: left; }
+.un-button--right { text-align: right; }
+
+.un-button__link {
+  display: inline-block;
+  position: relative;
+  min-width: var(--_min-width);
+  padding: 0.75em 1.5em;
+  border-radius: var(--un-radius-btn);
+  background: var(--_color);
+  box-shadow: var(--un-shadow-btn);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.25s ease;
+}
+.un-button__link:hover {
+  box-shadow: var(--un-shadow-btn-hover);
+}
+
+/* ---- sizes ---- */
+.un-button--s {
+  --_min-width: 40%;
+  font-size: 0.9em;
+}
+.un-button--l {
+  --_min-width: 100%;
+}
+.un-button--l .un-button__link {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 600px) {
+  .un-button {
+    --_min-width: 40%;
+  }
+  .un-button--s {
+    --_min-width: 20%;
+  }
+  .un-button--l {
+    --_min-width: 80%;
+  }
+}
+
+/* ---- colors ---- */
+.un-button--red {
+  --_color: var(--un-button-color, var(--un-color-btn-red));
+  --_color-dark: var(--un-button-color-dark, var(--un-color-btn-red-dark));
+}
+.un-button--blue {
+  --_color: var(--un-button-color, var(--un-color-btn-blue));
+  --_color-dark: var(--un-button-color-dark, var(--un-color-btn-blue-dark));
+}
+.un-button--green {
+  --_color: var(--un-button-color, var(--un-color-btn-green));
+  --_color-dark: var(--un-button-color-dark, var(--un-color-btn-green-dark));
+}
+
+/* ---- styles ---- */
+.un-button--solid .un-button__link {
+  z-index: 1;
+  box-shadow: 0 4px 0 var(--_color-dark);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.un-button--solid .un-button__link:hover {
+  box-shadow: 0 0 0 transparent;
+  transform: translateY(4px);
+}
+
+.un-button--line .un-button__link {
+  border: 1px solid var(--_color);
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: var(--_color);
+  font-weight: 500;
+  transition: background-color 0.25s ease;
+}
+.un-button--line .un-button__link:hover {
+  border-color: transparent;
+  background-color: var(--_color);
+  box-shadow: none;
+  color: #fff;
+}
+
+.un-button--shiny .un-button__link {
+  z-index: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.un-button--shiny .un-button__link:hover {
+  /* the sheen is the hover feedback here, so the shadow stays put */
+  box-shadow: var(--un-shadow-btn);
+  transform: translateY(2px);
+}
+.un-button--shiny .un-button__link::before {
+  /* a wide, static sheen across the button */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -120px;
+  width: 80px;
+  height: 200px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6) 80%, rgba(255, 255, 255, 0));
+  transform: translateY(-50%) rotate(25deg);
+}
+.un-button--shiny .un-button__link:hover::before {
+  /* the sheen sweeps across on hover, and snaps back when the pointer leaves */
+  left: 110%;
+  transition: all 0.25s ease-in-out;
+}
+.un-button--shiny .un-button__link:hover::after {
+  animation: none;
+}
+.un-button__link::after {
+  content: none;
+}
+.un-button--shiny .un-button__link::after {
+  /* the travelling glint */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 50px;
+  height: 100%;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  animation: un-shine 3s ease-in-out infinite;
+}
+@keyframes un-shine {
+  /* hidden for most of the cycle, then one expanding flash */
+  0%, 84% { opacity: 0; transform: scale(0) rotate(25deg); }
+  85% { opacity: 0.9; transform: scale(1) rotate(25deg); }
+  100% { opacity: 0; transform: scale(50) rotate(25deg); }
+}

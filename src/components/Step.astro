@@ -1,0 +1,17 @@
+---
+/** Step — ステップの入れ物. spec: spec/parts/step.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'big' | 'small';
+  numStyle?: 'circle' | 'num' | 'horizontal' | 'vertical';
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', numStyle = 'circle', class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-step', `un-step--${variant}`, `un-step--${numStyle}`, cls]} {...rest}>
+  <slot />
+</div>

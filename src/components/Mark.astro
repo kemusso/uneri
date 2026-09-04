@@ -1,0 +1,29 @@
+---
+/** Mark — マーカー線. spec: spec/parts/text.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'span'> {
+  color?: 'yellow' | 'blue' | 'green' | 'orange' | (string & {});
+  class?: string;
+  id?: string;
+}
+
+const NAMED: Record<string, string> = {
+  yellow: 'var(--un-color-mark-yellow)',
+  blue: 'var(--un-color-mark-blue)',
+  green: 'var(--un-color-mark-green)',
+  orange: 'var(--un-color-mark-orange)',
+};
+
+const { color = 'yellow', class: cls, id, style: userStyle, ...rest } = Astro.props;
+---
+
+<span
+  id={id}
+  class:list={['un-mark', cls]}
+  style={joinStyles(`--un-mark-color:${NAMED[color] ?? color}`, styleToString(userStyle))}
+  {...rest}
+>
+  <slot />
+</span>

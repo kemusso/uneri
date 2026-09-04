@@ -1,0 +1,85 @@
+---
+/** catalog: Mark / Text (spec/parts/text.md §3). Variant order/text must match reference/fixtures/text.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Mark from '../../components/Mark.astro';
+import Text from '../../components/Text.astro';
+---
+<Catalog title="Text">
+  <Content data-variant="mark-yellow">
+    <p>本文中の<Mark>マーカーを引いたテキスト</Mark>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="mark-blue">
+    <p>本文中の<Mark color="blue">マーカーを引いたテキスト</Mark>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="mark-green">
+    <p>本文中の<Mark color="green">マーカーを引いたテキスト</Mark>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="mark-orange">
+    <p>本文中の<Mark color="orange">マーカーを引いたテキスト</Mark>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-red">
+    <p>本文中の<Text color="red">色付きのテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-blue">
+    <p>本文中の<Text color="blue">色付きのテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-green">
+    <p>本文中の<Text color="green">色付きのテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-main">
+    <p>本文中の<Text color="main">色付きのテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-xs">
+    <p>本文中の<Text size="xs">文字サイズを変えたテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-sm">
+    <p>本文中の<Text size="sm">文字サイズを変えたテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-md">
+    <p>本文中の<Text size="md">文字サイズを変えたテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-lg">
+    <p>本文中の<Text size="lg">文字サイズを変えたテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-xl">
+    <p>本文中の<Text size="xl">文字サイズを変えたテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="size-inline">
+    <p>本文中の<Text size="1.5em">1.5em のテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-inline">
+    <p>本文中の<Text color="#f40540">任意色のテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="thin">
+    <p>本文中の<Text thin>薄いテキスト</Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="mark-wrap">
+    <p>本文中の<Mark>マーカーを引いた長いテキストで、二行に折り返したときに各行へマーカーが付くことを確認します</Mark>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="nest-size-color">
+    <p>本文中の<Text size="lg">大きいテキストの中の<Text color="red">赤いテキスト</Text></Text>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="color-link">
+    <p>本文中の<Text color="red">色付きのテキストと<a href="#">その中に置いたリンクのテキストで、色が文字色に追従することを確認します</a></Text>と、その周囲の文章です。</p>
+  </Content>
+
+</Catalog>

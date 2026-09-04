@@ -1,0 +1,88 @@
+# audit(auto): box  2026-09-03
+
+verdict: **PASS**
+
+pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態で計測。グリフは ink box で比較。
+
+| variant | vw | pixel diff % | box Δ (w/h) | ink Δ (中心x/中心y/w/h) | style diffs | pass |
+|---|---|---|---|---|---|---|
+| border-sm | 375 | 0 | 0/0 | — | 0 | ✅ |
+| border-sg | 375 | 0 | 0/0 | — | 0 | ✅ |
+| border-dm | 375 | 0 | 0/0 | — | 0 | ✅ |
+| border-dg | 375 | 0 | 0/0 | — | 0 | ✅ |
+| border-left | 375 | 0 | 0/0 | — | 0 | ✅ |
+| bg-gray | 375 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main-thin | 375 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main | 375 | 0 | 0/0 | — | 0 | ✅ |
+| stripe | 375 | 0 | 0/0 | — | 0 | ✅ |
+| grid | 375 | 0 | 0/0 | — | 0 | ✅ |
+| dent | 375 | 0 | 0/0 | — | 0 | ✅ |
+| emboss | 375 | 0 | 0/0 | — | 0 | ✅ |
+| kakko | 375 | 0 | 0/0 | — | 0 | ✅ |
+| big-kakko | 375 | 0 | 0/0 | — | 0 | ✅ |
+| note | 375 | 0 | 0/0 | — | 0 | ✅ |
+| sticky | 375 | 0 | 0/0 | — | 0 | ✅ |
+| balloon | 375 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2 | 375 | 0 | 0/0 | — | 0 | ✅ |
+| group-border-sm | 375 | 0 | 0/0 | — | 0 | ✅ |
+| group-bg-gray | 375 | 0 | 0/0 | — | 0 | ✅ |
+| sticky-short | 375 | 0 | 0/0 | — | 0 | ✅ |
+| balloon-short | 375 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2-short | 375 | 0 | 0/0 | — | 0 | ✅ |
+| group-nested | 375 | 0 | 0/0 | 0.5/0/1/2 | 0 | ✅ |
+| balloon-center | 375 | 0 | 0/0 | — | 0 | ✅ |
+| group-heading | 375 | 0 | 0/0 | — | 0 | ✅ |
+| border-sm | 768 | 0 | 0/0 | — | 0 | ✅ |
+| border-sg | 768 | 0 | 0/0 | — | 0 | ✅ |
+| border-dm | 768 | 0 | 0/0 | — | 0 | ✅ |
+| border-dg | 768 | 0 | 0/0 | — | 0 | ✅ |
+| border-left | 768 | 0 | 0/0 | — | 0 | ✅ |
+| bg-gray | 768 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main-thin | 768 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main | 768 | 0 | 0/0 | — | 0 | ✅ |
+| stripe | 768 | 0 | 0/0 | — | 0 | ✅ |
+| grid | 768 | 0 | 0/0 | — | 0 | ✅ |
+| dent | 768 | 0 | 0/0 | — | 0 | ✅ |
+| emboss | 768 | 0 | 0/0 | — | 0 | ✅ |
+| kakko | 768 | 0 | 0/0 | — | 0 | ✅ |
+| big-kakko | 768 | 0 | 0/0 | — | 0 | ✅ |
+| note | 768 | 0 | 0/0 | — | 0 | ✅ |
+| sticky | 768 | 0 | 0/0 | — | 0 | ✅ |
+| balloon | 768 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2 | 768 | 0 | 0/0 | — | 0 | ✅ |
+| group-border-sm | 768 | 0 | 0/0 | — | 0 | ✅ |
+| group-bg-gray | 768 | 0 | 0/0 | — | 0 | ✅ |
+| sticky-short | 768 | 0 | 0/0 | — | 0 | ✅ |
+| balloon-short | 768 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2-short | 768 | 0 | 0/0 | — | 0 | ✅ |
+| group-nested | 768 | 0 | 0/0 | 0/0/0/0 | 0 | ✅ |
+| balloon-center | 768 | 0 | 0/0 | — | 0 | ✅ |
+| group-heading | 768 | 0 | 0/0 | — | 0 | ✅ |
+| border-sm | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| border-sg | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| border-dm | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| border-dg | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| border-left | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| bg-gray | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main-thin | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| bg-main | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| stripe | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| grid | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| dent | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| emboss | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| kakko | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| big-kakko | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| note | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| sticky | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| balloon | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2 | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| group-border-sm | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| group-bg-gray | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| sticky-short | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| balloon-short | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| balloon2-short | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| group-nested | 1200 | 0 | 0/0 | 0.5/0/1/0 | 0 | ✅ |
+| balloon-center | 1200 | 0 | 0/0 | — | 0 | ✅ |
+| group-heading | 1200 | 0 | 0/0 | — | 0 | ✅ |
+
+## style diffs

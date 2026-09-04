@@ -1,0 +1,43 @@
+---
+/** Box — ボックス装飾. spec: spec/parts/box.md */
+import type { HTMLAttributes } from 'astro/types';
+
+type IconName = 'good' | 'bad' | 'info' | 'announce' | 'pen' | 'book';
+type BigIconName = 'point' | 'good' | 'bad' | 'check' | 'batsu' | 'hatena' | 'caution' | 'memo';
+
+interface Props extends HTMLAttributes<'div'> {
+  /** 装飾スタイル。icon / bigIcon とは排他。 */
+  variant?:
+    | 'border-sm' | 'border-sg' | 'border-dm' | 'border-dg' | 'border-left'
+    | 'bg-gray' | 'bg-main-thin' | 'bg-main' | 'stripe' | 'grid'
+    | 'dent' | 'emboss' | 'kakko' | 'big-kakko' | 'note' | 'sticky' | 'balloon' | 'balloon2';
+  /** 小さいアイコン付きボックス（B2）。spec: spec/parts/icon-box.md */
+  icon?: IconName;
+  /** 大きいアイコン付きボックス（B3）。spec: spec/parts/icon-box.md */
+  bigIcon?: BigIconName;
+  /** balloon / balloon2 を中央に置く（吹き出しの尾も中央へ）。 */
+  align?: 'center';
+  group?: boolean;
+  as?: 'div' | 'p';
+  class?: string;
+  id?: string;
+}
+
+const { variant, icon, bigIcon, align, group = false, as: Tag = 'div', class: cls, id, ...rest } = Astro.props;
+---
+
+<Tag
+  id={id}
+  class:list={[
+    'un-box',
+    variant && `un-box--${variant}`,
+    icon && ['un-box--icon', `un-box--icon-${icon}`],
+    bigIcon && ['un-box--big-icon', `un-box--big-icon-${bigIcon}`],
+    align && `un-box--${align}`,
+    { 'un-box--group': group },
+    cls,
+  ]}
+  {...rest}
+>
+  <slot />
+</Tag>

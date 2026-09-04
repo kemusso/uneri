@@ -1,0 +1,149 @@
+/* uneri design tokens — spec/02-design-tokens.md. Override on :root (or any ancestor) to theme. */
+:root {
+  /* 2. colors */
+  --un-color-main: #04384c;
+  --un-color-main-thin: rgba(5, 70, 95, 0.05);
+  --un-color-main-dark: rgba(3, 42, 57, 1);
+  --un-color-text: #333;
+  --un-color-link: #1176d4;
+  --un-color-heading: #04384c;
+  --un-color-bg: #fdfdfd;
+  --un-color-border: hsla(0, 0%, 78%, 0.5);
+  --un-color-gray: hsla(0, 0%, 78%, 0.15);
+  --un-color-hover-gray: rgba(3, 2, 2, 0.05);
+  --un-color-gradient-1: #d8ffff;
+  --un-color-gradient-2: #87e7ff;
+  --un-color-code-bg: #f7f7f7;
+  --un-color-table-border: #dcdcdc;
+  --un-color-quote-rule: rgba(180, 180, 180, 0.75);
+  --un-color-heading-rule: rgba(150, 150, 150, 0.2);
+  --un-color-note-text: #5f5a59;
+  --un-color-note-bg: #f7f7f7;
+  --un-color-note-rule: rgba(199, 199, 199, 0.6);
+  --un-color-btn-red: #f74a4a;
+  --un-color-btn-blue: #338df4;
+  --un-color-btn-green: #62d847;
+  --un-color-btn-red-dark: #b93838;
+  --un-color-btn-blue-dark: #266ab7;
+  --un-color-btn-green-dark: #4aa235;
+
+  --un-color-balloon-gray-bg: #f7f7f7;
+  --un-color-balloon-gray-line: #ccc;
+  --un-color-balloon-red-bg: #ffebeb;
+  --un-color-balloon-red-line: #f48789;
+  --un-color-balloon-blue-bg: #e2f6ff;
+  --un-color-balloon-blue-line: #93d2f0;
+  --un-color-balloon-green-bg: #d1f8c2;
+  --un-color-balloon-green-line: #9ddd93;
+  --un-color-balloon-yellow-bg: #f9f7d2;
+  --un-color-balloon-yellow-line: #fbe593;
+  --un-color-balloon-icon-border: #ececec;
+  --un-color-step-arrow: #dedede;
+
+  --un-color-deep-1: #e44141;
+  --un-color-deep-2: #3d79d5;
+  --un-color-deep-3: #63a84d;
+  --un-color-deep-4: #f09f4d;
+  --un-color-pale-1: #fff2f0;
+  --un-color-pale-2: #f3f8fd;
+  --un-color-pale-3: #f1f9ee;
+  --un-color-pale-4: #fdf9ee;
+
+  --un-color-mark-yellow: #fcf69f;
+  --un-color-mark-blue: #b7e3ff;
+  --un-color-mark-green: #bdf9c3;
+  --un-color-mark-orange: #ffddbc;
+
+  --un-color-list-check: #04384c;
+  --un-color-list-num: #04384c;
+  --un-color-list-good: #86dd7b;
+  --un-color-list-triangle: #f4e03a;
+  --un-color-list-bad: #f36060;
+
+  --un-color-faq-q: #d55656;
+  --un-color-faq-a: #6599b7;
+
+  --un-color-icon-good: #3cd250;
+  --un-color-icon-good-bg: #ecffe9;
+  --un-color-icon-bad: #4b73eb;
+  --un-color-icon-bad-bg: #eafaff;
+  --un-color-icon-info: #f578b4;
+  --un-color-icon-info-bg: #fff0fa;
+  --un-color-icon-announce: #ffa537;
+  --un-color-icon-announce-bg: #fff5f0;
+  --un-color-icon-pen: #7a7a7a;
+  --un-color-icon-pen-bg: #f7f7f7;
+  --un-color-icon-book: #787364;
+  --un-color-icon-book-bg: #f8f6ef;
+  --un-color-icon-point: #ffa639;
+  --un-color-icon-check: #86d67c;
+  --un-color-icon-batsu: #f36060;
+  --un-color-icon-hatena: #5295cc;
+  --un-color-icon-caution: #f7da38;
+  --un-color-icon-memo: #84878a;
+
+  /* 3. typography */
+  --un-font-family: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --un-font-weight: 500;
+  --un-font-mono: Menlo, Consolas, メイリオ, sans-serif;
+  --un-fz-root: 3.6vw;
+  --un-fz-content: 4vw;
+  --un-fz-xs: 0.75em;
+  --un-fz-sm: 0.9em;
+  --un-fz-md: 1.1em;
+  --un-fz-lg: 1.25em;
+  --un-fz-xl: 1.6em;
+  --un-line-height: 1.8;
+
+  /* 4. spacing / size */
+  --un-block-margin: 2em;
+  --un-box-padding: 1.5em;
+  --un-list-padding-left: 1.5em;
+  --un-list-padding-bg: 1em 1em 1em 1.75em;
+  --un-radius-sm: 2px;
+  --un-radius-md: 4px;
+  --un-radius-pill: 40px;
+  --un-radius-btn: 80px;
+  --un-radius-balloon: 8px;
+  --un-container-pad: 4vw;
+  --un-content-pad: 0px;
+  --un-article-width: 900px;
+  --un-container-width: 1200px;
+  --un-sidebar-width: 280px;
+
+  /* 5. shadow / border */
+  --un-shadow-box: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 4px -4px rgba(0, 0, 0, 0.1);
+  --un-shadow-img: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.2);
+  --un-shadow-btn: 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.2);
+  --un-shadow-btn-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 12px 24px -12px rgba(0, 0, 0, 0.2);
+  --un-shadow-color: rgba(0, 0, 0, 0.12);
+  --un-border-1: solid 1px var(--un-color-main);
+  --un-border-2: double 4px var(--un-color-main);
+  --un-border-3: dashed 2px var(--un-color-border);
+  --un-border-4: solid 4px var(--un-color-gray);
+
+  /* 6. thumbnail ratios */
+  --un-ratio-card: 56.25%;
+  --un-ratio-list: 61.805%;
+  --un-ratio-blogcard: 56.25%;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --un-fz-root: 16px;
+    --un-fz-content: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --un-content-pad: 16px;
+    --un-container-pad: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --un-container-pad: 48px;
+  }
+}

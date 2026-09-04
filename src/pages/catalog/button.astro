@@ -1,0 +1,79 @@
+---
+/** catalog: Button (spec/parts/button.md §3). Variant order/text must match reference/fixtures/button.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Button from '../../components/Button.astro';
+---
+<Catalog title="Button">
+  <Content data-variant="normal">
+    <Button href="###">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="solid">
+    <Button href="###" variant="solid">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="line">
+    <Button href="###" variant="line">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="shiny">
+    <Button href="###" variant="shiny">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="size-s">
+    <Button href="###" size="s">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="size-l">
+    <Button href="###" size="l">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="color-red">
+    <Button href="###" color="red">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="color-blue">
+    <Button href="###" color="blue">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="color-green">
+    <Button href="###" color="green">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="align-left">
+    <Button href="###" align="left">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="align-right">
+    <Button href="###" align="right">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="solid-red">
+    <Button href="###" variant="solid" color="red">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="solid-blue">
+    <Button href="###" variant="solid" color="blue">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="solid-green">
+    <Button href="###" variant="solid" color="green">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="shiny-l">
+    <Button href="###" variant="shiny" size="l">ボタンのラベル</Button>
+  </Content>
+
+  <Content data-variant="shiny-long">
+    <Button href="###" variant="shiny">とても長いラベルのボタンで二行に折り返したときの見た目を確認します</Button>
+  </Content>
+
+  <Content data-variant="stacked">
+    <p>ボタンの前の段落です。</p>
+    <Button href="###">ひとつめのボタン</Button>
+    <Button href="###" variant="line">ふたつめのボタン</Button>
+    <p>ボタンの後の段落です。</p>
+  </Content>
+
+</Catalog>

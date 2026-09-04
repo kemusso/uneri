@@ -1,0 +1,10 @@
+export { default as Content } from './components/Content.astro';
+export { default as Heading } from './components/Heading.astro';
+export { default as Box } from './components/Box.astro';
+export { default as List } from './components/List.astro';
+export { default as Button } from './components/Button.astro';
+export { default as Mark } from './components/Mark.astro';
+export { default as Text } from './components/Text.astro';
+export { default as Balloon } from './components/Balloon.astro';
+export { default as Step } from './components/Step.astro';
+export { default as StepItem } from './components/StepItem.astro';

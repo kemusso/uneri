@@ -1,0 +1,188 @@
+/* List — decorated lists. spec: spec/parts/list.md
+   Marker glyphs are inline SVG data URIs masked with a token colour; ※ and the counter are text. */
+
+.un-list,
+.un-list *,
+.un-list::before,
+.un-list::after,
+.un-list ::before,
+.un-list ::after {
+  box-sizing: border-box;
+}
+.un-list--note li,
+.un-list--check li,
+.un-list--good li,
+.un-list--bad li,
+.un-list--triangle li,
+.un-list--num-circle li {
+  /* the marker box is sized against this line height */
+  margin: 0.25em 0;
+  line-height: 1.5;
+}
+
+.un-list--note,
+.un-list--check,
+.un-list--good,
+.un-list--bad,
+.un-list--triangle,
+.un-list--num-circle {
+  padding-left: 0.25em;
+  list-style: none;
+}
+
+/* ---- note: a small ※-prefixed aside list ---- */
+.un-list--note {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+.un-list--note li {
+  margin: 0.5em 0;
+  padding-left: 1.25em;
+}
+ol.un-list--note {
+  counter-reset: un-li;
+}
+ol.un-list--note > li {
+  padding-left: 1.75em;
+}
+ol.un-list--note > li::before {
+  content: "※" counter(un-li);
+  counter-increment: un-li;
+  letter-spacing: 1px;
+}
+.un-list--note li::before {
+  content: "※";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 1.5em;
+  white-space: nowrap;
+  transform: scale(0.75);
+  transform-origin: left center;
+}
+
+/* ---- icon markers ---- */
+.un-list--note li,
+.un-list--check li,
+.un-list--good li,
+.un-list--bad li,
+.un-list--triangle li,
+.un-list--num-circle li {
+  /* the anchor for the absolutely positioned marker */
+  position: relative;
+}
+.un-list--check li,
+.un-list--good li,
+.un-list--bad li,
+.un-list--triangle li {
+  padding-left: 1.5em;
+}
+.un-list--check li::before,
+.un-list--good li::before,
+.un-list--bad li::before,
+.un-list--triangle li::before {
+  /* the marker, drawn by masking the token colour with the glyph */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1.5em;
+  background-color: var(--_marker);
+  color: var(--_marker);
+  mask-image: var(--_glyph);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+.un-list--check {
+  --_marker: var(--un-color-list-check);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M8.8 19.8.6 11.6l2.6-2.6 5.6 5.6L20.8 2.6l2.6 2.6z'/%3E%3C/svg%3E");
+}
+.un-list--good {
+  --_marker: var(--un-color-list-good);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm0 19.5a8.5 8.5 0 1 1 0-17 8.5 8.5 0 0 1 0 17z'/%3E%3C/svg%3E");
+}
+.un-list--bad {
+  --_marker: var(--un-color-list-bad);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M23 3.1 20.9 1 12 9.9 3.1 1 1 3.1 9.9 12 1 20.9 3.1 23 12 14.1 20.9 23 23 20.9 14.1 12z'/%3E%3C/svg%3E");
+}
+.un-list--triangle {
+  --_marker: var(--un-color-list-triangle);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 1 0 22h24zm0 4.6L20 20H4z'/%3E%3C/svg%3E");
+}
+
+/* ---- nested lists keep the decoration, with a plain dot for the marker ---- */
+.un-list--note :where(ul, ol),
+.un-list--check :where(ul, ol),
+.un-list--good :where(ul, ol),
+.un-list--bad :where(ul, ol),
+.un-list--triangle :where(ul, ol) {
+  padding-left: 0;
+  list-style: none;
+}
+.un-list--check li li::before,
+.un-list--good li li::before,
+.un-list--bad li li::before,
+.un-list--triangle li li::before {
+  /* a small dot: the marker box painted flat and clipped to a circle */
+  content: "\00a0";
+  mask-image: none;
+  clip-path: circle(12% at 50% 50%);
+}
+
+/* ---- numbered circles ---- */
+.un-list--num-circle :where(ul, ol) {
+  padding-left: 0;
+  list-style: none;
+}
+.un-list--num-circle {
+  counter-reset: un-li;
+}
+.un-list--num-circle li {
+  padding-left: 2em;
+}
+.un-list--num-circle li::before {
+  /* the badge: the counter centred in a filled circle */
+  content: counter(un-li);
+  counter-increment: un-li;
+  display: block;
+  position: absolute;
+  box-sizing: content-box;
+  top: -0.15em;
+  left: 1px;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  background: var(--un-color-list-num);
+  box-shadow: 0 0 0 1px var(--un-color-list-num);
+  color: #fff;
+  line-height: 1.8;
+  text-align: center;
+  transform: scale(0.75);
+  transform-origin: left center;
+}
+.un-list--num-circle ol {
+  counter-reset: un-li;
+}
+.un-list--num-circle ol li::before {
+  /* nested badges are outlined instead of filled */
+  background-color: transparent;
+  color: var(--un-color-list-num);
+  opacity: 0.75;
+  transform: scale(0.7);
+}
+.un-list--num-circle ul li {
+  padding-left: 1.25em;
+}
+.un-list--num-circle ul li::before {
+  /* an unnumbered child: the badge shrunk to a dot */
+  content: "";
+  counter-increment: none;
+  transform: scale(0.15);
+}
+.un-list--num-circle[reversed] > li::before,
+ol.un-list--note[reversed] > li::before {
+  counter-increment: un-li -1;
+}

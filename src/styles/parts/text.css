@@ -1,0 +1,28 @@
+/* Mark / Text — inline text decoration. spec: spec/parts/text.md */
+
+.un-mark,
+.un-text,
+.un-mark::before,
+.un-mark::after,
+.un-text::before,
+.un-text::after {
+  box-sizing: border-box;
+}
+
+.un-mark {
+  --un-mark-color: initial;
+  /* the marker only paints the bottom third of the line box, so it follows wrapping */
+  background-image: linear-gradient(transparent 64%, var(--un-mark-color, var(--un-color-mark-yellow)) 0%);
+}
+
+.un-text {
+  /* reset first: without this the value set on an outer .un-text would be inherited and applied
+     again by a nested one (em on em). An inline style on the element itself still wins. */
+  --un-text-color: initial;
+  --un-text-size: initial;
+  color: var(--un-text-color, inherit);
+  font-size: var(--un-text-size, inherit);
+}
+.un-text--thin {
+  opacity: 0.8;
+}

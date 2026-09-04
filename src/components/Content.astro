@@ -1,0 +1,12 @@
+---
+/** Content — 記事本文コンテナ. spec: spec/parts/content.md */
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'div'> {
+  class?: string;
+  id?: string;
+}
+const { class: cls, id, ...rest } = Astro.props;
+---
+<div id={id} class:list={['un-content', cls]} {...rest}>
+  <slot />
+</div>

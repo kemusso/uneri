@@ -1,0 +1,133 @@
+---
+/** catalog: Box (spec/parts/box.md §3). Variant order/text must match reference/fixtures/box.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Box from '../../components/Box.astro';
+---
+<Catalog title="Box">
+  <Content data-variant="border-sm">
+    <Box variant="border-sm" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="border-sg">
+    <Box variant="border-sg" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="border-dm">
+    <Box variant="border-dm" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="border-dg">
+    <Box variant="border-dg" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="border-left">
+    <Box variant="border-left" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="bg-gray">
+    <Box variant="bg-gray" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="bg-main-thin">
+    <Box variant="bg-main-thin" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="bg-main">
+    <Box variant="bg-main" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="stripe">
+    <Box variant="stripe" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="grid">
+    <Box variant="grid" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="dent">
+    <Box variant="dent" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="emboss">
+    <Box variant="emboss" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="kakko">
+    <Box variant="kakko" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="big-kakko">
+    <Box variant="big-kakko" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="note">
+    <Box variant="note" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+  </Content>
+
+  <Content data-variant="sticky">
+    <Box variant="sticky" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="balloon">
+    <Box variant="balloon" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="balloon2">
+    <Box variant="balloon2" as="p">ボックス装飾のダミーテキストです。装飾の見た目を確認するために、二行目に折り返すくらいの長さの文章を入れておきます。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="group-border-sm">
+    <Box variant="border-sm" group>
+      <p>グループボックスの一段落目です。</p>
+      <p>グループボックスの二段落目です。段落間の余白を確認します。</p>
+    </Box>
+  </Content>
+
+  <Content data-variant="group-bg-gray">
+    <Box variant="bg-gray" group>
+      <p>グループボックスの一段落目です。</p>
+      <ul><li>リスト項目 1</li><li>リスト項目 2</li></ul>
+    </Box>
+  </Content>
+  <Content data-variant="sticky-short">
+    <Box variant="sticky" as="p">短い一行のテキスト。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="balloon-short">
+    <Box variant="balloon" as="p">短い一行のテキスト。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="balloon2-short">
+    <Box variant="balloon2" as="p">短い一行のテキスト。</Box>
+    <p>後続の段落テキストです。</p>
+  </Content>
+
+  <Content data-variant="group-nested">
+    <Box variant="bg-gray" group>
+      <Box variant="border-sm" as="p">入れ子のボックスです。</Box>
+      <Box icon="good" as="p">入れ子のアイコンボックスです。</Box>
+      <Box bigIcon="point" as="p">入れ子の大アイコンボックスです。</Box>
+    </Box>
+  </Content>
+
+  <Content data-variant="balloon-center">
+    <Box variant="balloon" align="center" as="p">中央寄せの吹き出しです。</Box>
+    <Box variant="balloon2" align="center" as="p">中央寄せの吹き出し2です。</Box>
+  </Content>
+
+  <Content data-variant="group-heading">
+    <Box variant="bg-gray" group>
+      <h3>グループ内の見出し</h3>
+      <p>グループ内の段落です。</p>
+      <h2>グループ内の見出し2</h2>
+      <p>もうひとつの段落です。</p>
+    </Box>
+  </Content>
+
+</Catalog>

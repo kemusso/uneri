@@ -1,0 +1,23 @@
+---
+/** Heading — 記事見出し h2/h3/h4. spec: spec/parts/heading.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'h2'> {
+  level: 2 | 3 | 4;
+  variant?: 'default' | 'section';
+  align?: 'left' | 'center' | 'right';
+  class?: string;
+  id?: string;
+}
+
+const { level, variant = 'default', align, class: cls, id, ...rest } = Astro.props;
+const Tag = `h${level}` as 'h2' | 'h3' | 'h4';
+---
+
+<Tag
+  id={id}
+  class:list={['un-heading', { 'un-heading--section': variant === 'section' }, align && `un-heading--${align}`, cls]}
+  {...rest}
+>
+  <slot />
+</Tag>

@@ -1,0 +1,2010 @@
+{
+  "part": "box",
+  "date": "2026-09-03T23:42:26.753Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "border-sm",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 128
+      },
+      "implBox": {
+        "w": 345,
+        "h": 128
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-sg",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 128
+      },
+      "implBox": {
+        "w": 345,
+        "h": 128
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dm",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 128
+      },
+      "implBox": {
+        "w": 345,
+        "h": 128
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dg",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 128
+      },
+      "implBox": {
+        "w": 345,
+        "h": 128
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-left",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 81
+      },
+      "implBox": {
+        "w": 345,
+        "h": 81
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-gray",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main-thin",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "stripe",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "grid",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "dent",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "emboss",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 128
+      },
+      "implBox": {
+        "w": 345,
+        "h": 128
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "kakko",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-kakko",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "note",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 126
+      },
+      "implBox": {
+        "w": 345,
+        "h": 126
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 142.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 142.5
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 135
+      },
+      "implBox": {
+        "w": 345,
+        "h": 135
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 137
+      },
+      "implBox": {
+        "w": 345,
+        "h": 137
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-border-sm",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 143
+      },
+      "implBox": {
+        "w": 345,
+        "h": 143
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-bg-gray",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 139.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 139.5
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky-short",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 100.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 100.5
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-short",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 93
+      },
+      "implBox": {
+        "w": 345,
+        "h": 93
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2-short",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 95
+      },
+      "implBox": {
+        "w": 345,
+        "h": 95
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-nested",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 333
+      },
+      "implBox": {
+        "w": 345,
+        "h": 333
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 53,
+          "y": 163,
+          "w": 23,
+          "h": 97
+        },
+        "impl": {
+          "x": 53,
+          "y": 162,
+          "w": 22,
+          "h": 99
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-center",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 104
+      },
+      "implBox": {
+        "w": 345,
+        "h": 104
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-heading",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 289.03125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 289.03125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-sm",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-sg",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dm",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dg",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-left",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 57.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 57.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-gray",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main-thin",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "stripe",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "grid",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "dent",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "emboss",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "kakko",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-kakko",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "note",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 129.578125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 129.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 121.578125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 121.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 123.578125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 123.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-border-sm",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 139.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 139.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-bg-gray",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 164.796875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 164.796875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky-short",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 107.1875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 107.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-short",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 99.1875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 99.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2-short",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 101.1875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 101.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-nested",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 377.1875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 377.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 73,
+          "y": 182,
+          "w": 28,
+          "h": 93
+        },
+        "impl": {
+          "x": 73,
+          "y": 182,
+          "w": 28,
+          "h": 93
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-center",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 110.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 110.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-heading",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 358.828125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 358.828125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-sm",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-sg",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dm",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-dg",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-left",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 57.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 57.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-gray",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main-thin",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "bg-main",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "stripe",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "grid",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "dent",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "emboss",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "kakko",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-kakko",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "note",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 105.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 129.578125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 129.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 121.578125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 121.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 123.578125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 123.578125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-border-sm",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 139.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 139.59375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-bg-gray",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 164.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 164.796875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "sticky-short",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 107.1875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 107.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-short",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 99.1875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 99.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon2-short",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 101.1875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 101.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-nested",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 377.1875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 377.1875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 89,
+          "y": 182,
+          "w": 29,
+          "h": 93
+        },
+        "impl": {
+          "x": 89,
+          "y": 182,
+          "w": 28,
+          "h": 93
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "balloon-center",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 110.78125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 110.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "group-heading",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 358.828125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 358.828125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

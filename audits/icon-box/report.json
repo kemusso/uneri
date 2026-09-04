@@ -1,0 +1,1695 @@
+{
+  "part": "icon-box",
+  "date": "2026-09-03T23:42:34.274Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "icon-good",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 31,
+          "y": 132,
+          "w": 21,
+          "h": 20
+        },
+        "impl": {
+          "x": 31,
+          "y": 131,
+          "w": 22,
+          "h": 21
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-bad",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 31,
+          "y": 134,
+          "w": 21,
+          "h": 20
+        },
+        "impl": {
+          "x": 31,
+          "y": 132,
+          "w": 21,
+          "h": 20
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-info",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 30,
+          "y": 131,
+          "w": 23,
+          "h": 23
+        },
+        "impl": {
+          "x": 30,
+          "y": 131,
+          "w": 23,
+          "h": 22
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-announce",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 30,
+          "y": 132,
+          "w": 23,
+          "h": 21
+        },
+        "impl": {
+          "x": 30,
+          "y": 131,
+          "w": 23,
+          "h": 21
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-pen",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 31,
+          "y": 132,
+          "w": 20,
+          "h": 22
+        },
+        "impl": {
+          "x": 31,
+          "y": 131,
+          "w": 22,
+          "h": 21
+        },
+        "delta": {
+          "x": 1,
+          "y": 1.5,
+          "w": 2,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-book",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 183
+      },
+      "implBox": {
+        "w": 345,
+        "h": 183
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 32,
+          "y": 131,
+          "w": 19,
+          "h": 23
+        },
+        "impl": {
+          "x": 32,
+          "y": 131,
+          "w": 19,
+          "h": 22
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-point",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 38,
+          "y": 79,
+          "w": 15,
+          "h": 19
+        },
+        "impl": {
+          "x": 38,
+          "y": 80,
+          "w": 15,
+          "h": 19
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-good",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 82,
+          "w": 18,
+          "h": 13
+        },
+        "impl": {
+          "x": 36,
+          "y": 82,
+          "w": 19,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-bad",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 80,
+          "w": 17,
+          "h": 17
+        },
+        "impl": {
+          "x": 37,
+          "y": 81,
+          "w": 17,
+          "h": 18
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-check",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 82,
+          "w": 18,
+          "h": 13
+        },
+        "impl": {
+          "x": 36,
+          "y": 82,
+          "w": 19,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-batsu",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 80,
+          "w": 17,
+          "h": 17
+        },
+        "impl": {
+          "x": 37,
+          "y": 81,
+          "w": 17,
+          "h": 18
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-hatena",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 40,
+          "y": 79,
+          "w": 12,
+          "h": 19
+        },
+        "impl": {
+          "x": 39,
+          "y": 80,
+          "w": 13,
+          "h": 19
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-caution",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 36,
+          "y": 79,
+          "w": 19,
+          "h": 18
+        },
+        "impl": {
+          "x": 36,
+          "y": 81,
+          "w": 19,
+          "h": 18
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-memo",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 229
+      },
+      "implBox": {
+        "w": 345,
+        "h": 229
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 79,
+          "w": 18,
+          "h": 19
+        },
+        "impl": {
+          "x": 38,
+          "y": 81,
+          "w": 17,
+          "h": 17
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-good",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 41,
+          "y": 112,
+          "w": 23,
+          "h": 22
+        },
+        "impl": {
+          "x": 41,
+          "y": 112,
+          "w": 23,
+          "h": 22
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-bad",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 41,
+          "y": 114,
+          "w": 23,
+          "h": 22
+        },
+        "impl": {
+          "x": 41,
+          "y": 113,
+          "w": 22,
+          "h": 22
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-info",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 40,
+          "y": 112,
+          "w": 24,
+          "h": 24
+        },
+        "impl": {
+          "x": 40,
+          "y": 111,
+          "w": 24,
+          "h": 24
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-announce",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 40,
+          "y": 113,
+          "w": 24,
+          "h": 22
+        },
+        "impl": {
+          "x": 40,
+          "y": 112,
+          "w": 24,
+          "h": 23
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-pen",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 41,
+          "y": 112,
+          "w": 22,
+          "h": 24
+        },
+        "impl": {
+          "x": 41,
+          "y": 111,
+          "w": 23,
+          "h": 24
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-book",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 42,
+          "y": 112,
+          "w": 20,
+          "h": 24
+        },
+        "impl": {
+          "x": 42,
+          "y": 111,
+          "w": 20,
+          "h": 24
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-point",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 53,
+          "y": 84,
+          "w": 16,
+          "h": 20
+        },
+        "impl": {
+          "x": 53,
+          "y": 84,
+          "w": 16,
+          "h": 20
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-good",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 52,
+          "y": 87,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 51,
+          "y": 86,
+          "w": 20,
+          "h": 15
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-bad",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 53,
+          "y": 85,
+          "w": 17,
+          "h": 18
+        },
+        "impl": {
+          "x": 52,
+          "y": 84,
+          "w": 18,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-check",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 52,
+          "y": 87,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 51,
+          "y": 86,
+          "w": 20,
+          "h": 15
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-batsu",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 53,
+          "y": 85,
+          "w": 17,
+          "h": 18
+        },
+        "impl": {
+          "x": 52,
+          "y": 84,
+          "w": 18,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-hatena",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 55,
+          "y": 84,
+          "w": 13,
+          "h": 20
+        },
+        "impl": {
+          "x": 54,
+          "y": 84,
+          "w": 14,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-caution",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 51,
+          "y": 84,
+          "w": 21,
+          "h": 19
+        },
+        "impl": {
+          "x": 51,
+          "y": 85,
+          "w": 20,
+          "h": 19
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-memo",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 52,
+          "y": 84,
+          "w": 19,
+          "h": 20
+        },
+        "impl": {
+          "x": 53,
+          "y": 84,
+          "w": 18,
+          "h": 18
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-good",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 57,
+          "y": 112,
+          "w": 23,
+          "h": 22
+        },
+        "impl": {
+          "x": 57,
+          "y": 112,
+          "w": 23,
+          "h": 22
+        },
+        "delta": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-bad",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 57,
+          "y": 114,
+          "w": 23,
+          "h": 22
+        },
+        "impl": {
+          "x": 57,
+          "y": 113,
+          "w": 22,
+          "h": 22
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-info",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 56,
+          "y": 112,
+          "w": 24,
+          "h": 24
+        },
+        "impl": {
+          "x": 56,
+          "y": 111,
+          "w": 24,
+          "h": 24
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-announce",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 56,
+          "y": 113,
+          "w": 24,
+          "h": 22
+        },
+        "impl": {
+          "x": 56,
+          "y": 112,
+          "w": 24,
+          "h": 23
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-pen",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 57,
+          "y": 112,
+          "w": 22,
+          "h": 24
+        },
+        "impl": {
+          "x": 57,
+          "y": 111,
+          "w": 23,
+          "h": 24
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-book",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 143.984375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 58,
+          "y": 112,
+          "w": 20,
+          "h": 24
+        },
+        "impl": {
+          "x": 58,
+          "y": 111,
+          "w": 20,
+          "h": 24
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-point",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 69,
+          "y": 84,
+          "w": 17,
+          "h": 20
+        },
+        "impl": {
+          "x": 69,
+          "y": 84,
+          "w": 16,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-good",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 68,
+          "y": 87,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 67,
+          "y": 86,
+          "w": 20,
+          "h": 15
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-bad",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 69,
+          "y": 85,
+          "w": 17,
+          "h": 18
+        },
+        "impl": {
+          "x": 68,
+          "y": 84,
+          "w": 18,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-check",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 68,
+          "y": 87,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 67,
+          "y": 86,
+          "w": 20,
+          "h": 15
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-batsu",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 69,
+          "y": 85,
+          "w": 17,
+          "h": 18
+        },
+        "impl": {
+          "x": 68,
+          "y": 84,
+          "w": 18,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-hatena",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 71,
+          "y": 84,
+          "w": 13,
+          "h": 20
+        },
+        "impl": {
+          "x": 70,
+          "y": 84,
+          "w": 14,
+          "h": 20
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-caution",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 67,
+          "y": 84,
+          "w": 21,
+          "h": 19
+        },
+        "impl": {
+          "x": 67,
+          "y": 85,
+          "w": 20,
+          "h": 19
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big-icon-memo",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 202.390625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 68,
+          "y": 84,
+          "w": 19,
+          "h": 20
+        },
+        "impl": {
+          "x": 69,
+          "y": 84,
+          "w": 18,
+          "h": 18
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

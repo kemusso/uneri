@@ -1,0 +1,66 @@
+---
+/** Balloon — ふきだし. spec: spec/parts/balloon.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  icon?: string;
+  name?: string;
+  dir?: 'left' | 'right';
+  shape?: 'circle' | 'square';
+  tail?: 'speech' | 'think';
+  border?: boolean;
+  color?: 'gray' | 'red' | 'blue' | 'green' | 'yellow' | (string & {});
+  class?: string;
+  id?: string;
+}
+
+const NAMED = new Set(['gray', 'red', 'blue', 'green', 'yellow']);
+const {
+  icon,
+  name,
+  dir = 'left',
+  shape = 'circle',
+  tail = 'speech',
+  border = false,
+  color = 'gray',
+  class: cls,
+  id,
+  style: userStyle,
+  ...rest
+} = Astro.props;
+
+const style = joinStyles(
+  NAMED.has(color)
+    ? `--un-balloon-bg:var(--un-color-balloon-${color}-bg);--un-balloon-line:var(--un-color-balloon-${color}-line)`
+    : `--un-balloon-bg:${color}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={[
+    'un-balloon',
+    dir === 'right' && 'un-balloon--right',
+    shape === 'square' && 'un-balloon--square',
+    tail === 'think' && 'un-balloon--think',
+    { 'un-balloon--border': border },
+    cls,
+  ]}
+  style={style}
+  {...rest}
+>
+  {icon && (
+    <div class="un-balloon__icon">
+      <img class="un-balloon__img" src={icon} alt="" width="80" height="80" />
+      {name && <span class="un-balloon__name">{name}</span>}
+    </div>
+  )}
+  <div class="un-balloon__body">
+    <div class="un-balloon__text">
+      <slot />
+      <span class="un-balloon__tail" aria-hidden="true"><span></span><span></span></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,226 @@
+/* uneri base — article body container. spec: spec/parts/content.md */
+
+.un-content {
+  max-width: 100%;
+  text-size-adjust: 100%;
+  padding-right: var(--un-content-pad);
+  padding-left: var(--un-content-pad);
+  color: var(--un-color-text);
+  font-family: var(--un-font-family);
+  font-size: var(--un-fz-content);
+  font-weight: var(--un-font-weight);
+  line-height: var(--un-line-height);
+  overflow-wrap: break-word;
+}
+.un-content,
+.un-content *,
+.un-content::before,
+.un-content::after,
+.un-content ::before,
+.un-content ::after {
+  box-sizing: border-box;
+}
+
+/* blocks carry their spacing below them, not above (headings set their own), and inside a box the
+   rhythm is the box's business — a nested block never adds a stray bottom margin of its own */
+.un-content :where(p, ul, ol, dl, blockquote, pre, figure, table, hr) {
+  margin-top: 0;
+}
+.un-content div :where(p, ul, ol, dl, blockquote, pre, figure, table, hr) {
+  margin-bottom: 0;
+}
+
+/* vertical rhythm between top-level blocks */
+.un-content > * {
+  clear: both; /* a floated block never bleeds into the next one */
+  margin-top: 0;
+  margin-bottom: var(--un-block-margin);
+}
+.un-content > :first-child,
+.un-content div > :first-child {
+  /* nothing pushes away from the top edge of the body or of any box inside it */
+  margin-top: 0;
+}
+.un-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---- inline ---- */
+.un-content :where(a) {
+  color: var(--un-color-link);
+  text-decoration: none;
+}
+.un-content :where(strong) {
+  font-weight: 700;
+}
+.un-content :where(code) {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.5em;
+  padding: 0.25em 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--un-radius-sm);
+  background: var(--un-color-code-bg);
+  font-family: var(--un-font-mono);
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+/* ---- image ---- */
+.un-content figure {
+  margin-right: 0;
+  margin-left: 0;
+}
+.un-content .un-image,
+.un-content figure:has(> img) {
+  display: block;
+  clear: both;
+  text-align: center;
+}
+.un-content .un-image::after,
+.un-content figure:has(> img)::after {
+  /* clearfix so floated images inside stay contained */
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+.un-content :where(img) {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.un-content figcaption {
+  margin-top: 0.75em;
+  font-size: 0.8em;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* ---- blockquote: gray panel with a thin double rule on the left ---- */
+.un-content blockquote {
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 1.5em 2em 1.5em 3em;
+  background: var(--un-color-gray);
+}
+.un-content blockquote::before {
+  /* the vertical double rule: a 5px-wide box drawing only its left/right borders */
+  content: "";
+  position: absolute;
+  top: 1.5em;
+  bottom: 1.5em;
+  left: 1.5em;
+  z-index: 0;
+  width: 5px;
+  line-height: 1;
+  border-right: 1px solid var(--un-color-quote-rule);
+  border-left: 1px solid var(--un-color-quote-rule);
+}
+.un-content blockquote > :last-child {
+  margin-bottom: 0;
+}
+.un-content blockquote p,
+.un-content blockquote cite {
+  /* above the rule drawn by ::before */
+  position: relative;
+  z-index: 1;
+}
+.un-content blockquote p {
+  margin: 0 0 0.5em;
+}
+.un-content blockquote cite {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.8em;
+  font-style: italic;
+  line-height: var(--un-line-height);
+  opacity: 0.8;
+}
+
+/* ---- code block ---- */
+.un-content pre {
+  padding: 0.5em;
+  border: 1px solid var(--un-color-border);
+  border-radius: var(--un-radius-sm);
+  font-family: var(--un-font-mono);
+  font-size: 0.85em;
+  line-height: var(--un-line-height);
+  white-space: pre;
+  overflow: auto;
+}
+@media (min-width: 600px) {
+  .un-content pre {
+    font-size: 0.875em;
+  }
+}
+.un-content :where(pre code) {
+  display: inline;
+  align-items: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+  font-size: 1em;
+  line-height: inherit;
+}
+
+/* ---- separator ---- */
+.un-content hr {
+  width: 100px;
+  max-width: 100px;
+  height: 1px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ---- lists ---- */
+.un-content :where(ul, ol) {
+  padding-left: var(--un-list-padding-left);
+}
+.un-content :where(ul) {
+  list-style: disc;
+}
+.un-content :where(ul ul) {
+  list-style: circle;
+}
+.un-content :where(ol) {
+  list-style: decimal;
+}
+.un-content :where(li) {
+  position: relative; /* anchor for markers drawn by list parts */
+  margin: 0.25em 0;
+  line-height: 1.5;
+}
+.un-content :where(li) > :where(ul, ol) {
+  margin: 0;
+}
+
+/* ---- table ---- */
+.un-content table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  line-height: 1.6;
+  text-align: left;
+}
+.un-content th,
+.un-content td {
+  position: relative;
+  z-index: 0;
+  padding: 0.5em 0.75em;
+  background-clip: padding-box;
+  border: 1px solid var(--un-color-table-border);
+  text-align: left;
+  vertical-align: top;
+}
+.un-content th {
+  background-color: var(--un-color-main);
+  color: #fff;
+  font-weight: 700;
+}

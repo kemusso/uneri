@@ -1,0 +1,100 @@
+/* Heading — h2/h3/h4 inside .un-content (the .un-heading class only carries modifiers). spec: spec/parts/heading.md */
+
+.un-content h2,
+.un-content h3,
+.un-content h4 {
+  position: relative;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ---- h2: filled bar with a thin rule 4px outside its top and bottom edges ---- */
+.un-content h2 {
+  --_bleed: 2vw; /* how far the bar pokes out past the content edge */
+  z-index: 1;
+  margin: 4em 0 2em;
+  padding: 0.75em 1em;
+  background: var(--un-color-main);
+  color: #fff;
+  font-size: 1.2em;
+}
+.un-content h2::before {
+  /* the two outer rules, drawn as the top/bottom borders of a box inset by -4px */
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  box-sizing: content-box; /* the 2px rules sit outside the -4px inset box */
+  pointer-events: none;
+  border-top: 2px solid var(--un-color-main);
+  border-bottom: 2px solid var(--un-color-main);
+}
+
+/* ---- h3: two-tone 2px underline ---- */
+.un-content h3 {
+  --_accent-width: 29.3%; /* portion of the underline in the main color */
+  margin: 3em 0 2em;
+  padding: 0 0.5em 0.5em;
+  color: var(--un-color-text);
+  font-size: 1.1em;
+}
+.un-content h3::before {
+  /* the underline: main color on the left, faint gray for the rest */
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: auto 0 0 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--un-color-main) 0% var(--_accent-width),
+    var(--un-color-heading-rule) var(--_accent-width) 100%
+  );
+}
+
+/* ---- h4: left rule ---- */
+.un-content h4 {
+  margin: 3em 0 1.5em;
+  padding-left: 16px;
+  border-left: 2px solid var(--un-color-main);
+  color: var(--un-color-text);
+  font-size: 1.05em;
+}
+
+.un-content > h2 {
+  /* the bar pokes out past the content edge, but only at the top level */
+  margin-right: calc(var(--_bleed) * -1);
+  margin-left: calc(var(--_bleed) * -1);
+}
+
+@media (min-width: 600px) {
+  .un-content h2 {
+    --_bleed: 16px;
+    font-size: 1.4em;
+  }
+  .un-content h3 {
+    font-size: 1.3em;
+  }
+  .un-content h4 {
+    font-size: 1.2em;
+  }
+}
+
+/* ---- section title: no decoration ---- */
+.un-content .un-heading--section {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: none;
+  color: var(--un-color-text);
+  letter-spacing: 0.2px;
+}
+.un-content .un-heading--section::before {
+  content: none;
+}
+
+.un-content .un-heading--left { text-align: left; }
+.un-content .un-heading--center { text-align: center; }
+.un-content .un-heading--right { text-align: right; }

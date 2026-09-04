@@ -1,0 +1,8 @@
+---
+import Catalog from '../layouts/Catalog.astro';
+const parts = ['content', 'heading', 'box', 'icon-box', 'list', 'button', 'text', 'balloon', 'step'];
+---
+<Catalog title="index">
+  <h1>uneri catalog</h1>
+  <ul>{parts.map((p) => <li><a href={`/catalog/${p}/`}>{p}</a></li>)}</ul>
+</Catalog>

@@ -1,0 +1,25 @@
+---
+/** StepItem — ステップ 1 項目. spec: spec/parts/step.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  title: string;
+  /** 番号の上（small では左）に出す短いラベル。null で出さない */
+  label?: string | null;
+  /** small で数字の前に出す丸 */
+  shape?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { title, label = 'STEP', shape = false, class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-step__item', cls]} {...rest}>
+  <div class="un-step__number">
+    {shape && <span class="un-step__shape" role="presentation"></span>}
+    {label && <span class="un-step__label">{label}</span>}
+  </div>
+  <div class="un-step__title">{title}</div>
+  <div class="un-step__body"><slot /></div>
+</div>

@@ -1,0 +1,218 @@
+/* Box — decorated paragraph / group container. spec: spec/parts/box.md */
+
+.un-box,
+.un-box *,
+.un-box ::before,
+.un-box ::after,
+.un-box::before,
+.un-box::after {
+  box-sizing: border-box;
+}
+
+.un-box {
+  padding: var(--un-box-padding);
+}
+.un-box--group {
+  /* the padding is handed down, so boxes nested inside a group grow with it */
+  --un-box-padding: 1.5em;
+}
+.un-box.un-box--group > * {
+  /* tighter rhythm inside a box; headings keep their own top margin */
+  margin-bottom: 1em;
+}
+.un-box.un-box--group > :first-child {
+  margin-top: 0;
+}
+.un-box.un-box--group > :last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+  .un-box--group {
+    --un-box-padding: 2em;
+  }
+}
+
+/* ---- borders ---- */
+.un-box--border-sm { border: 1px solid var(--un-color-main); }
+.un-box--border-sg { border: 1px solid var(--un-color-border); }
+.un-box--border-dm { border: 1px dashed var(--un-color-main); }
+.un-box--border-dg { border: 1px dashed var(--un-color-border); }
+.un-box--border-left {
+  padding: 0 0 0 10px;
+  border-left: 2px solid currentColor;
+}
+
+/* ---- backgrounds ---- */
+.un-box--bg-gray { background: var(--un-color-gray); }
+.un-box--bg-main-thin { background: var(--un-color-main-thin); }
+.un-box--bg-main {
+  background: var(--un-color-main);
+  color: #fff;
+}
+.un-box--stripe {
+  position: relative;
+  background-image: linear-gradient(
+    -45deg,
+    transparent 25%,
+    var(--un-color-gray) 25%,
+    var(--un-color-gray) 50%,
+    transparent 50%,
+    transparent 75%,
+    var(--un-color-gray) 75%,
+    var(--un-color-gray)
+  );
+  background-size: 6px 6px;
+  background-clip: padding-box;
+}
+.un-box--grid {
+  background-image:
+    linear-gradient(transparent calc(100% - 1px), var(--un-color-gray) 50%, var(--un-color-gray)),
+    linear-gradient(90deg, transparent calc(100% - 1px), var(--un-color-gray) 50%, var(--un-color-gray));
+  background-size: 16px 16px, 16px 16px;
+}
+
+/* ---- relief ---- */
+.un-box--dent {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.un-box--emboss {
+  border-top: 2px solid var(--un-color-main);
+  background: #fff;
+  color: var(--un-color-text);
+  box-shadow: var(--un-shadow-box);
+}
+
+/* ---- brackets ---- */
+.un-box--kakko {
+  position: relative;
+}
+.un-box--kakko::before,
+.un-box--kakko::after {
+  /* corner brackets: a 36×32 box showing two of its borders */
+  content: "";
+  position: absolute;
+  width: 2.25em;
+  height: 2em;
+  border-color: var(--un-color-main);
+}
+.un-box--kakko::before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+  border-style: solid none none solid;
+}
+.un-box--kakko::after {
+  right: 0;
+  bottom: 0;
+  border-width: 0 1px 1px 0;
+  border-style: none solid solid none;
+}
+.un-box--big-kakko {
+  position: relative;
+}
+.un-box--big-kakko::before,
+.un-box--big-kakko::after {
+  /* tall square brackets: a 12px-wide strip with three borders */
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0.75em;
+  border-color: var(--un-color-main);
+}
+.un-box--big-kakko::before {
+  left: 0;
+  border-width: 1px 0 1px 1px;
+  border-style: solid none solid solid;
+}
+.un-box--big-kakko::after {
+  right: 0;
+  border-width: 1px 1px 1px 0;
+  border-style: solid solid solid none;
+}
+
+/* ---- note ---- */
+.un-box--note {
+  position: relative;
+  background: var(--un-color-note-bg);
+  color: var(--un-color-note-text);
+}
+.un-box--note::before {
+  /* inner dashed frame 6px inside the edge */
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--un-color-note-rule);
+  border-radius: inherit;
+  pointer-events: none; /* the frame must not swallow clicks on the text below it */
+}
+
+/* ---- sticky note ---- */
+.un-box--sticky {
+  position: relative;
+  width: fit-content;
+  min-width: 6em;
+  padding: 0.75em 1em;
+  border-left: 8px solid var(--un-color-main);
+  background: #fff;
+  color: var(--un-color-text);
+  box-shadow: var(--un-shadow-box);
+  line-height: 1.4;
+}
+
+/* ---- centred balloon ---- */
+.un-box--center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.un-box--balloon.un-box--center::before {
+  left: calc(50% - 12px);
+}
+.un-box--balloon2.un-box--center::before {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* ---- speech balloons ---- */
+.un-box--balloon,
+.un-box--balloon2 {
+  position: relative;
+  width: fit-content;
+  min-width: 2em;
+  padding: 0.5em 1.25em;
+  border-radius: var(--un-radius-sm);
+  line-height: 1.4;
+}
+.un-box--balloon {
+  background: var(--un-color-main);
+  color: #fff;
+}
+.un-box--balloon::before {
+  /* downward tail: a 24px square whose only visible border is the top one */
+  content: "";
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 1.25em;
+  border: 12px solid transparent;
+  border-top-color: var(--un-color-main);
+}
+.un-box--balloon2 {
+  border: 1px solid currentColor;
+  background: #fff;
+  color: var(--un-color-text);
+}
+.un-box--balloon2::before {
+  /* downward tail: a 12px square rotated 45°, showing its right/bottom borders */
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 1.25em;
+  width: 12px;
+  height: 12px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  background: inherit;
+  transform: rotate(45deg);
+}

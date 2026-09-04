@@ -1,0 +1,18 @@
+---
+/** List — リスト装飾. spec: spec/parts/list.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'ul'> {
+  variant?: 'default' | 'note' | 'check' | 'good' | 'bad' | 'triangle' | 'num-circle';
+  ordered?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', ordered = false, class: cls, id, ...rest } = Astro.props;
+const Tag = ordered || variant === 'num-circle' ? 'ol' : 'ul';
+---
+
+<Tag id={id} class:list={['un-list', variant !== 'default' && `un-list--${variant}`, cls]} {...rest}>
+  <slot />
+</Tag>

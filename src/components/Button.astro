@@ -1,0 +1,65 @@
+---
+/** Button — ボタン. spec: spec/parts/button.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'a'> {
+  href: string;
+  variant?: 'normal' | 'solid' | 'line' | 'shiny';
+  size?: 's' | 'm' | 'l';
+  /** 名前付き 4 種か、任意の CSS 色 */
+  color?: 'main' | 'red' | 'blue' | 'green' | (string & {});
+  /** solid の押し込み影の色。任意色を使うときに指定する */
+  colorDark?: string;
+  align?: 'left' | 'center' | 'right';
+  /** アフィリエイトリンクとして rel / target を付ける */
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const NAMED = new Set(['main', 'red', 'blue', 'green']);
+const {
+  href,
+  variant = 'normal',
+  size = 'm',
+  color = 'main',
+  colorDark,
+  align = 'center',
+  sponsored = false,
+  class: cls,
+  id,
+  style: userStyle,
+  ...rest
+} = Astro.props;
+
+const named = NAMED.has(color);
+const style = joinStyles(
+  !named && `--un-button-color:${color}`,
+  colorDark && `--un-button-color-dark:${colorDark}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={[
+    'un-button',
+    `un-button--${variant}`,
+    size !== 'm' && `un-button--${size}`,
+    named && color !== 'main' && `un-button--${color}`,
+    align !== 'center' && `un-button--${align}`,
+    cls,
+  ]}
+  style={style}
+>
+  <a
+    class="un-button__link"
+    href={href}
+    rel={sponsored ? 'nofollow sponsored noopener' : undefined}
+    target={sponsored ? '_blank' : undefined}
+    {...rest}
+  >
+    <span><slot /></span>
+  </a>
+</div>

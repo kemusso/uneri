@@ -1,0 +1,39 @@
+---
+/** Text — 文字色・サイズ・薄字. spec: spec/parts/text.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'span'> {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
+  color?: 'red' | 'blue' | 'green' | 'main' | (string & {});
+  thin?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const SIZES: Record<string, string> = {
+  xs: 'var(--un-fz-xs)',
+  sm: 'var(--un-fz-sm)',
+  md: 'var(--un-fz-md)',
+  lg: 'var(--un-fz-lg)',
+  xl: 'var(--un-fz-xl)',
+};
+const COLORS: Record<string, string> = {
+  red: 'var(--un-color-deep-1)',
+  blue: 'var(--un-color-deep-2)',
+  green: 'var(--un-color-deep-3)',
+  main: 'var(--un-color-main)',
+};
+
+const { size, color, thin = false, class: cls, id, style: userStyle, ...rest } = Astro.props;
+const style = joinStyles(
+  size && `--un-text-size:${SIZES[size] ?? size}`,
+  // links inside coloured text follow that colour, as in the reference
+  color && `--un-text-color:${COLORS[color] ?? color};--un-color-link:currentColor`,
+  styleToString(userStyle),
+);
+---
+
+<span id={id} class:list={['un-text', { 'un-text--thin': thin }, cls]} style={style} {...rest}>
+  <slot />
+</span>

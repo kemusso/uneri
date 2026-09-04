@@ -1,0 +1,51 @@
+---
+/** catalog: Step (spec/parts/step.md §3). Variant order/text must match reference/fixtures/step.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Step from '../../components/Step.astro';
+import StepItem from '../../components/StepItem.astro';
+---
+<Catalog title="Step">
+  <Content data-variant="default">
+    <Step>
+      <StepItem title="ステップ1のタイトル"><p>ステップの説明文です。</p></StepItem>
+      <StepItem title="ステップ2のタイトル"><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+  <Content data-variant="big">
+    <Step variant="big" numStyle="vertical">
+      <StepItem title="ステップ1のタイトル"><p>ステップの説明文です。</p></StepItem>
+      <StepItem title="ステップ2のタイトル"><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+  <Content data-variant="small">
+    <Step variant="small">
+      <StepItem title="ステップ1のタイトル" shape><p>ステップの説明文です。</p></StepItem>
+      <StepItem title="ステップ2のタイトル" shape><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+  <Content data-variant="num">
+    <Step numStyle="num">
+      <StepItem label={null} title="ステップ1のタイトル"><p>ステップの説明文です。</p></StepItem>
+      <StepItem label={null} title="ステップ2のタイトル"><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+  <Content data-variant="horizontal">
+    <Step numStyle="horizontal">
+      <StepItem title="ステップ1のタイトル"><p>ステップの説明文です。</p></StepItem>
+      <StepItem title="ステップ2のタイトル"><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+  <Content data-variant="vertical">
+    <Step numStyle="vertical">
+      <StepItem title="ステップ1のタイトル"><p>ステップの説明文です。</p></StepItem>
+      <StepItem title="ステップ2のタイトル"><p>ステップの説明文です。</p></StepItem>
+    </Step>
+  </Content>
+
+</Catalog>

@@ -1,0 +1,52 @@
+---
+/** catalog: Content (spec/parts/content.md §3). Variant order/text must match reference/fixtures/content.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+---
+<Catalog title="Content">
+  <Content data-variant="paragraph">
+    <p>これは段落のダミーテキストです。日本語ブログの本文はおおむねこのくらいの文字サイズと行間で組まれます。二行目に折り返すくらいの長さにしておきます。</p>
+    <p>二つ目の段落です。段落同士の間隔を確認します。</p>
+  </Content>
+
+  <Content data-variant="link">
+    <p>本文中の<a href="#">リンクテキスト</a>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="strong">
+    <p>本文中の<strong>太字テキスト</strong>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="image">
+    <figure class="un-image"><img src="/catalog/sample.svg" alt="" width="800" height="450" /><figcaption>画像のキャプション</figcaption></figure>
+  </Content>
+
+  <Content data-variant="blockquote">
+    <blockquote><p>引用文のダミーテキストです。引用ブロックの見た目を確認します。</p><cite>出典名</cite></blockquote>
+  </Content>
+
+  <Content data-variant="code-inline">
+    <p>本文中の<code>inline code</code>と、その周囲の文章です。</p>
+  </Content>
+
+  <Content data-variant="code-block">
+    <pre><code>const answer = 42;
+console.log(answer);</code></pre>
+  </Content>
+
+  <Content data-variant="separator">
+    <hr />
+  </Content>
+
+  <Content data-variant="ul">
+    <ul><li>リスト項目 1</li><li>リスト項目 2</li><li>リスト項目 3<ul><li>入れ子の項目</li></ul></li></ul>
+  </Content>
+
+  <Content data-variant="ol">
+    <ol><li>番号付き 1</li><li>番号付き 2</li><li>番号付き 3</li></ol>
+  </Content>
+
+  <Content data-variant="table-default">
+    <figure class="un-table"><table><thead><tr><th>見出し A</th><th>見出し B</th></tr></thead><tbody><tr><td>セル 1</td><td>セル 2</td></tr><tr><td>セル 3</td><td>セル 4</td></tr></tbody></table></figure>
+  </Content>
+</Catalog>

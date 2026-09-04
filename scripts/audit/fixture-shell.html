@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  Reference fixture shell (spec/04-audit.md §1).
+  Copy to reference/fixtures/<part>.html and put SWELL markup where marked.
+  Each variant MUST be wrapped in <div class="post_content" data-variant="<name>"> … </div>
+  using the same dummy text as src/pages/catalog/<part>.astro.
+-->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fixture: PART</title>
+  <link rel="stylesheet" href="../swell/build/css/main.css">
+  <link rel="stylesheet" href="../swell/build/css/blocks.css">
+  <link rel="stylesheet" href="../swell/build/css/single.css">
+  <link rel="stylesheet" href="../swell/build/css/footer.css">
+  <link rel="stylesheet" href="../swell/build/css/swell-icons.css">
+  <link rel="stylesheet" href="../swell/build/css/swell_custom.css">
+  <style>
+    /* neutralise page chrome so only the article body is compared */
+    body { margin: 0; }
+    [data-variant] { margin: 4em 0; }
+  </style>
+</head>
+<body class="wp-theme-swell -body-solid -index-on -sidebar-off -frame-off single single-post">
+<div id="content" class="l-content l-container">
+<main id="main_content" class="l-mainContent l-article">
+<article class="l-mainContent__inner">
+
+<!-- VARIANTS START -->
+<div class="post_content" data-variant="example">
+  <p>ここに SWELL マークアップ</p>
+</div>
+<!-- VARIANTS END -->
+
+</article>
+</main>
+</div>
+</body>
+</html>

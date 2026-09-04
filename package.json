@@ -1,0 +1,42 @@
+{
+  "name": "uneri",
+  "version": "0.0.0",
+  "description": "Japanese-blog-style content blocks for Astro. Inspired by SWELL.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "astro-component",
+    "blog",
+    "japanese",
+    "blocks"
+  ],
+  "files": [
+    "src/components",
+    "src/styles",
+    "src/icons",
+    "src/index.ts"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles": "./src/styles/index.css",
+    "./components/*": "./src/components/*.astro"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "audit": "node scripts/audit/run.mjs",
+    "audit:standalone": "node scripts/audit/standalone.mjs",
+    "audit:cleanroom": "node scripts/audit/cleanroom.mjs"
+  },
+  "peerDependencies": {
+    "astro": ">=5"
+  },
+  "devDependencies": {
+    "astro": "^7.2.10",
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.62.1",
+    "pngjs": "^7.0.0"
+  }
+}
