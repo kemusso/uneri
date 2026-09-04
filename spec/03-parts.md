@@ -35,9 +35,9 @@
 
 | # | パーツ | コンポーネント | バリアント | 参照 | 状態 |
 |---|---|---|---|---|---|
-| D1 | ボタン | `Button` | normal / solid / line / shiny; size: s / m / l; color: main / red / blue / green（任意色可）; align; `sponsored` | `.swell-block-button` | impl |
+| D1 | ボタン | `Button` | normal / solid / line / shiny; size: s / m / l; color: main / red / blue / green（任意色可）; align; `sponsored` | `.swell-block-button` | pass |
 | D2 | FAQ | `Faq` + `FaqItem` | default / border / box / stripe | `.swell-block-faq` | impl |
-| D3 | アコーディオン | `Accordion` | default / border / main / simple | `.swell-block-accordion` | todo |
+| D3 | アコーディオン | `Accordion` + `AccordionItem` | default / simple / border / main | `.swell-block-accordion` | impl |
 | D4 | タブ | `Tab` | default / simple / bb (下線) / balloon | `.swell-block-tab` | todo |
 | D5 | ステップ | `Step` | default / big / small; numStyle: circle / num / horizontal / vertical | `.swell-block-step` | pass |
 

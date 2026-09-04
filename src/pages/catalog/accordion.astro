@@ -1,0 +1,37 @@
+---
+/** catalog: Accordion (spec/parts/accordion.md §3). Variant order/text must match reference/fixtures/accordion.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Accordion from '../../components/Accordion.astro';
+import AccordionItem from '../../components/AccordionItem.astro';
+---
+<Catalog title="Accordion">
+  <Content data-variant="default">
+    <Accordion>
+      <AccordionItem title="アコーディオンの見出し1"><p>開いたときに出る本文です。</p></AccordionItem>
+      <AccordionItem title="アコーディオンの見出し2"><p>開いたときに出る本文です。</p></AccordionItem>
+    </Accordion>
+  </Content>
+
+  <Content data-variant="simple">
+    <Accordion variant="simple">
+      <AccordionItem title="アコーディオンの見出し1"><p>開いたときに出る本文です。</p></AccordionItem>
+      <AccordionItem title="アコーディオンの見出し2"><p>開いたときに出る本文です。</p></AccordionItem>
+    </Accordion>
+  </Content>
+
+  <Content data-variant="border">
+    <Accordion variant="border">
+      <AccordionItem title="アコーディオンの見出し1"><p>開いたときに出る本文です。</p></AccordionItem>
+      <AccordionItem title="アコーディオンの見出し2"><p>開いたときに出る本文です。</p></AccordionItem>
+    </Accordion>
+  </Content>
+
+  <Content data-variant="main">
+    <Accordion variant="main">
+      <AccordionItem title="アコーディオンの見出し1"><p>開いたときに出る本文です。</p></AccordionItem>
+      <AccordionItem title="アコーディオンの見出し2"><p>開いたときに出る本文です。</p></AccordionItem>
+    </Accordion>
+  </Content>
+
+</Catalog>

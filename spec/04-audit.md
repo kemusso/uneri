@@ -37,7 +37,7 @@ viewport 幅 `375` / `768` / `1200` の 3 通りで、バリアントごとに�
 
 1. グリフだけを透明にした状態（参照は `color: transparent`、実装は塗りを `transparent` / `background-image: none`）でスクリーンショットを撮り、pixel diff はその状態で採る。これで枠・背景・円・罫線・余白は通常どおり厳密に比較される。
 2. グリフの描画領域（通常時とグリフ非表示時の差分ピクセルの外接矩形 = ink box）を参照と実装で比較する。**中心が ±2px** を超える、または**寸法が ±30%（最低 3px）**を超えたら FAIL。形は問わない（別の図形で描くため、ink box の寸法は完全一致し得ない）。
-3. アイコンの疑似要素については `content` / `font-family` / `background-image` / `mask-image` / `background-size` / `background-repeat` / `background-position`（グリフの描き方そのもの）と、参照側が透明な `background-color` を比較から除外する。それ以外（位置・寸法・font-size・line-height・色・border・transform）は通常どおり比較する。
+3. アイコンの疑似要素については `content` / `font-family` / `background-image` / `mask-image` / `background-size` / `background-repeat` / `background-position` と、グリフ自身の箱（`display` / `width` / `height` / `transform-origin`）、参照側が透明な `background-color` を比較から除外する。アイコンフォントのグリフはインラインのテキスト、uneri の mask は塗られた箱で、箱の寸法は原理的に一致しない（位置と大きさは ink box で判定する）。それ以外（位置・寸法・font-size・line-height・色・border・transform）は通常どおり比較する。
 
 ### 2.2 アニメーションを含むパーツの扱い
 

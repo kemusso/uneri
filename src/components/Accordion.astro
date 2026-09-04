@@ -1,0 +1,16 @@
+---
+/** Accordion — アコーディオンの入れ物. spec: spec/parts/accordion.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'simple' | 'border' | 'main';
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-accordion', `un-accordion--${variant}`, cls]} {...rest}>
+  <slot />
+</div>

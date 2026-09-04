@@ -1,6 +1,6 @@
 # Button — ボタン（D1）
 
-- 状態: impl
+- 状態: pass
 - 参照: SWELL ボタンブロック `.swell-block-button` + `.is-style-btn_normal` / `btn_solid` / `btn_line` / `btn_shiny`、サイズ `-size-s` / `-size-l`、色 `red_` / `blue_` / `green_`、`data-align`
 - 依存トークン: `--un-color-main` `--un-color-main-dark` `--un-color-btn-{red,blue,green}` `--un-color-btn-{red,blue,green}-dark` `--un-shadow-btn` `--un-shadow-btn-hover` `--un-radius-btn`
 - ファイル: `src/components/Button.astro`, `src/styles/parts/button.css`, `src/pages/catalog/button.astro`, `reference/fixtures/button.html`

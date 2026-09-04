@@ -1,0 +1,23 @@
+---
+/** AccordionItem — 開閉する 1 項目. spec: spec/parts/accordion.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'details'> {
+  title: string;
+  open?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { title, open = false, class: cls, id, ...rest } = Astro.props;
+---
+
+<details id={id} class:list={['un-accordion__item', cls]} open={open} {...rest}>
+  <summary class="un-accordion__title">
+    <span class="un-accordion__label">{title}</span>
+    <span class="un-accordion__icon" aria-hidden="true">
+      <i class="un-accordion__icon--closed"></i><i class="un-accordion__icon--opened"></i>
+    </span>
+  </summary>
+  <div class="un-accordion__body"><slot /></div>
+</details>

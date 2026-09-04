@@ -10,3 +10,5 @@ export { default as Step } from './components/Step.astro';
 export { default as StepItem } from './components/StepItem.astro';
 export { default as Faq } from './components/Faq.astro';
 export { default as FaqItem } from './components/FaqItem.astro';
+export { default as Accordion } from './components/Accordion.astro';
+export { default as AccordionItem } from './components/AccordionItem.astro';

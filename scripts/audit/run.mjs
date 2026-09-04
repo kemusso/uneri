@@ -74,6 +74,10 @@ const ICON_GLYPH_CSS = {
   impl: '[class*="un-box--icon-"]::before { background-color: transparent !important; } [class*="un-box--big-icon-"]::before { background-image: none !important; }',
 };
 const ICON_PARTS = {
+  accordion: {
+    ref: '.swell-block-accordion__icon i { color: transparent !important; }',
+    impl: '.un-accordion__icon > *::before { background-color: transparent !important; }',
+  },
   box: ICON_GLYPH_CSS, // group variants may hold icon boxes
   list: {
     ref: '.is-style-check_list>li::before, .is-style-good_list>li::before, .is-style-bad_list>li::before, .is-style-triangle_list>li::before { color: transparent !important; }',
@@ -83,7 +87,10 @@ const ICON_PARTS = {
 };
 const iconPart = ICON_PARTS[part] ?? null;
 // glyph-only style props: never comparable between an icon font and an SVG
-const ICON_SKIP_PROPS = new Set(['content', 'font-family', 'background-image', 'mask-image', 'background-size', 'background-repeat', 'background-position']);
+// an icon-font glyph is inline text; a mask is a painted box. Their own metrics can never line up,
+// so the glyph's placement and size are judged by the ink box instead (spec/04-audit.md §2.1).
+const ICON_SKIP_PROPS = new Set(['content', 'font-family', 'background-image', 'mask-image',
+  'background-size', 'background-repeat', 'background-position', 'display', 'width', 'height', 'transform-origin']);
 const isIconPseudo = (rec) => /icomoon/i.test(rec['font-family'] ?? '');
 
 // ---------- build ----------

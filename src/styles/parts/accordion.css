@@ -1,0 +1,141 @@
+/* Accordion — details/summary disclosure. spec: spec/parts/accordion.md */
+
+.un-accordion,
+.un-accordion *,
+.un-accordion::before,
+.un-accordion::after,
+.un-accordion ::before,
+.un-accordion ::after {
+  box-sizing: border-box;
+}
+
+.un-accordion__item {
+  margin-bottom: 1em;
+}
+.un-accordion__item:last-child {
+  margin-bottom: 0;
+}
+.un-accordion :where(.un-accordion__item + .un-accordion__item) {
+  margin-top: 0.5em;
+}
+.un-accordion__label {
+  flex-grow: 1;
+  padding-right: 1em;
+}
+
+.un-accordion__title {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  font-weight: 400;
+  cursor: pointer;
+  list-style: none;
+}
+.un-accordion__title::-webkit-details-marker {
+  display: none;
+}
+
+.un-accordion__body {
+  /* collapsed by default; `details` reveals it, and the values match the reference's closed state */
+  height: 0;
+  padding-right: 1em;
+  padding-left: 1em;
+  opacity: 0;
+  overflow: hidden;
+  transition: padding 0.25s, height 0.25s, opacity 0.25s, visibility 0.25s;
+}
+[open] > .un-accordion__body {
+  height: auto;
+  opacity: 1;
+  overflow: visible;
+}
+
+/* ---- the caret, swapped by the open state ---- */
+.un-accordion__icon {
+  flex-shrink: 0;
+  position: relative;
+  width: 1em;
+  height: calc(1em + 1px);
+  font-size: 1.25em;
+  line-height: 1.8em;
+  text-align: right;
+}
+.un-accordion__icon > * {
+  display: block;
+  width: 1em;
+  height: calc(1em + 1px);
+  font-style: italic;
+  line-height: 1em;
+  transform: scale(1);
+  transition: transform 0.25s, opacity 0.25s;
+  --_caret: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 16 4 8h16z'/%3E%3C/svg%3E");
+}
+.un-accordion__icon > *::before {
+  /* the caret itself, painted like the reference paints its icon-font glyph */
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  font-style: normal;
+  background-color: currentColor;
+  mask-image: var(--_caret);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 1em 1em;
+}
+.un-accordion__icon--opened {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(-0.5);
+  transition: transform 0.25s, opacity 0.25s;
+}
+[open] > .un-accordion__title .un-accordion__icon--closed {
+  opacity: 0;
+  transform: scale(-0.5);
+}
+[open] > .un-accordion__title .un-accordion__icon--opened {
+  opacity: 1;
+  transform: scale(-1);
+}
+
+/* ---- default: grey header ---- */
+.un-accordion--default > :where(.un-accordion__item) > :where(.un-accordion__title) {
+  background: var(--un-color-gray);
+}
+
+/* ---- simple: rules above and below ---- */
+.un-accordion--simple > :where(.un-accordion__item) {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--un-color-border);
+}
+.un-accordion--simple > :where(.un-accordion__item):first-child {
+  border-top: 1px solid var(--un-color-border);
+}
+.un-accordion--simple > :where(.un-accordion__item) > :where(.un-accordion__body),
+.un-accordion--border > :where(.un-accordion__item) > :where(.un-accordion__body) {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  border-top: 1px dashed var(--un-color-border);
+}
+
+/* ---- border: framed items ---- */
+.un-accordion--border > :where(.un-accordion__item) {
+  border: 1px solid var(--un-color-border);
+}
+
+/* ---- main: filled header ---- */
+.un-accordion--main > :where(.un-accordion__item) > :where(.un-accordion__title) {
+  background: var(--un-color-main);
+  color: #fff;
+}
+.un-accordion--main > :where(.un-accordion__item) > :where(.un-accordion__body) {
+  border: 1px solid var(--un-color-main);
+  border-top: 0 none currentColor;
+}
