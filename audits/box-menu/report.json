@@ -1,6 +1,6 @@
 {
-  "part": "capbox",
-  "date": "2026-09-04T13:50:19.629Z",
+  "part": "box-menu",
+  "date": "2026-09-04T13:52:14.219Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -21,18 +21,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 102
+        "h": 188
       },
       "implBox": {
         "w": 345,
-        "h": 102
+        "h": 188
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "small-title",
+      "variant": "default-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -41,18 +41,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 92
+        "h": 188
       },
       "implBox": {
         "w": 345,
-        "h": 92
+        "h": 188
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder",
+      "variant": "horizontal",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -61,18 +61,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 96.375
+        "h": 128
       },
       "implBox": {
         "w": 345,
-        "h": 96.375
+        "h": 128
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder2",
+      "variant": "horizontal-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -81,18 +81,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 96.375
+        "h": 128
       },
       "implBox": {
         "w": 345,
-        "h": 96.375
+        "h": 128
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "inner",
+      "variant": "fill",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -101,18 +101,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 81.5
+        "h": 184
       },
       "implBox": {
         "w": 345,
-        "h": 81.5
+        "h": 184
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "intext",
+      "variant": "fill-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -121,18 +121,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 111.5
+        "h": 184
       },
       "implBox": {
         "w": 345,
-        "h": 111.5
+        "h": 184
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "shadow",
+      "variant": "fill-gradient",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -141,18 +141,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 100
+        "h": 184
       },
       "implBox": {
         "w": 345,
-        "h": 100
+        "h": 184
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset1",
+      "variant": "fill-gradient-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -161,18 +161,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 81.5
+        "h": 184
       },
       "implBox": {
         "w": 345,
-        "h": 81.5
+        "h": 184
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset2",
+      "variant": "flush",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -181,18 +181,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 81.5
+        "h": 182
       },
       "implBox": {
         "w": 345,
-        "h": 81.5
+        "h": 182
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset3",
+      "variant": "flush-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -201,11 +201,131 @@
       },
       "refBox": {
         "w": 345,
-        "h": 81.5
+        "h": 182
       },
       "implBox": {
         "w": 345,
-        "h": 81.5
+        "h": 182
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 188
+      },
+      "implBox": {
+        "w": 345,
+        "h": 188
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 188
+      },
+      "implBox": {
+        "w": 345,
+        "h": 188
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 218
+      },
+      "implBox": {
+        "w": 345,
+        "h": 218
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 218
+      },
+      "implBox": {
+        "w": 345,
+        "h": 218
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 200
+      },
+      "implBox": {
+        "w": 345,
+        "h": 200
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 200
+      },
+      "implBox": {
+        "w": 345,
+        "h": 200
       },
       "styleDiffs": [],
       "ink": null,
@@ -221,18 +341,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 116.796875
+        "h": 200
       },
       "implBox": {
         "w": 706.5625,
-        "h": 116.796875
+        "h": 200
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "small-title",
+      "variant": "default-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -241,18 +361,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 105.96875
+        "h": 200
       },
       "implBox": {
         "w": 706.5625,
-        "h": 105.96875
+        "h": 200
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder",
+      "variant": "horizontal",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -261,18 +381,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 114.1875
+        "h": 136
       },
       "implBox": {
         "w": 706.5625,
-        "h": 114.1875
+        "h": 136
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder2",
+      "variant": "horizontal-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -281,18 +401,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 114.1875
+        "h": 136
       },
       "implBox": {
         "w": 706.5625,
-        "h": 114.1875
+        "h": 136
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "inner",
+      "variant": "fill",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -301,18 +421,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 196
       },
       "implBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "intext",
+      "variant": "fill-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -321,18 +441,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 118.796875
+        "h": 196
       },
       "implBox": {
         "w": 706.5625,
-        "h": 118.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "shadow",
+      "variant": "fill-gradient",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -341,18 +461,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 114.796875
+        "h": 196
       },
       "implBox": {
         "w": 706.5625,
-        "h": 114.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset1",
+      "variant": "fill-gradient-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -361,18 +481,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 196
       },
       "implBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset2",
+      "variant": "flush",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -381,18 +501,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 194
       },
       "implBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 194
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset3",
+      "variant": "flush-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -401,11 +521,131 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 194
       },
       "implBox": {
         "w": 706.5625,
-        "h": 94.796875
+        "h": 194
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 200
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 200
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 200
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 200
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 232
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 232
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 232
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 232
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 212
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 212
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 212
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 212
       },
       "styleDiffs": [],
       "ink": null,
@@ -421,18 +661,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 116.796875
+        "h": 200
       },
       "implBox": {
         "w": 900,
-        "h": 116.796875
+        "h": 200
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "small-title",
+      "variant": "default-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -441,18 +681,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 105.96875
+        "h": 200
       },
       "implBox": {
         "w": 900,
-        "h": 105.96875
+        "h": 200
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder",
+      "variant": "horizontal",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -461,18 +701,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 114.1875
+        "h": 136
       },
       "implBox": {
         "w": 900,
-        "h": 114.1875
+        "h": 136
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "onborder2",
+      "variant": "horizontal-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -481,18 +721,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 114.1875
+        "h": 136
       },
       "implBox": {
         "w": 900,
-        "h": 114.1875
+        "h": 136
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "inner",
+      "variant": "fill",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -501,18 +741,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 196
       },
       "implBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "intext",
+      "variant": "fill-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -521,18 +761,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 118.796875
+        "h": 196
       },
       "implBox": {
         "w": 900,
-        "h": 118.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "shadow",
+      "variant": "fill-gradient",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -541,18 +781,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 114.796875
+        "h": 196
       },
       "implBox": {
         "w": 900,
-        "h": 114.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset1",
+      "variant": "fill-gradient-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -561,18 +801,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 196
       },
       "implBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 196
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset2",
+      "variant": "flush",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -581,18 +821,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 194
       },
       "implBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 194
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "colset3",
+      "variant": "flush-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -601,11 +841,131 @@
       },
       "refBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 194
       },
       "implBox": {
         "w": 900,
-        "h": 94.796875
+        "h": 194
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 200
+      },
+      "implBox": {
+        "w": 900,
+        "h": 200
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-svg-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 200
+      },
+      "implBox": {
+        "w": 900,
+        "h": 200
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 232
+      },
+      "implBox": {
+        "w": 900,
+        "h": 232
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "icon-size-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 232
+      },
+      "implBox": {
+        "w": 900,
+        "h": 232
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 212
+      },
+      "implBox": {
+        "w": 900,
+        "h": 212
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap-large-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 212
+      },
+      "implBox": {
+        "w": 900,
+        "h": 212
       },
       "styleDiffs": [],
       "ink": null,

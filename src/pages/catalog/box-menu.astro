@@ -1,0 +1,91 @@
+---
+/** catalog: BoxMenu (spec/parts/box-menu.md §3). Variant order/text must match reference/fixtures/box-menu.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import BoxMenu from '../../components/BoxMenu.astro';
+import BoxMenuItem from '../../components/BoxMenuItem.astro';
+---
+<Catalog title="BoxMenu">
+  <Content data-variant="default">
+    <BoxMenu gap="4px" iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)">
+      <BoxMenuItem href="#" label="メニュー1" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー2" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー3" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="horizontal">
+    <BoxMenu gap="4px" iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)" direction="horizontal">
+      <BoxMenuItem href="#" label="メニュー1" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー2" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー3" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="fill">
+    <BoxMenu gap="4px" iconSize="2em" variant="fill">
+      <BoxMenuItem href="#" label="メニュー1">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー2">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー3">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="fill-gradient">
+    <BoxMenu gap="4px" iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)" variant="fill">
+      <BoxMenuItem href="#" label="メニュー1">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー2">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー3">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="flush">
+    <BoxMenu iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)">
+      <BoxMenuItem href="#" label="メニュー1" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー2" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー3" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="icon-svg">
+    <BoxMenu gap="4px" iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)">
+      <BoxMenuItem href="#" label="メニュー1">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー2">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+      <BoxMenuItem href="#" label="メニュー3">
+        <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="20" /></svg>
+      </BoxMenuItem>
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="icon-size">
+    <BoxMenu gap="4px" iconSize="3em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)">
+      <BoxMenuItem href="#" label="メニュー1" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー2" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー3" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+    </BoxMenu>
+  </Content>
+
+  <Content data-variant="gap-large">
+    <BoxMenu gap="16px" iconSize="2em" gradient="linear-gradient(90deg,rgb(10,97,163) 0%,rgb(35,131,200) 50%,rgb(14,128,190) 89%)">
+      <BoxMenuItem href="#" label="メニュー1" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー2" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+      <BoxMenuItem href="#" label="メニュー3" icon="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2220%22/%3E%3Cpath d=%22M25 15v20M15 25h20%22/%3E%3C/svg%3E" />
+    </BoxMenu>
+  </Content>
+
+</Catalog>

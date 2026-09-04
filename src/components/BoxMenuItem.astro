@@ -1,0 +1,32 @@
+---
+/** BoxMenuItem — BoxMenu の 1 項目. spec: spec/parts/box-menu.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  href?: string;
+  label: string;
+  /** マスクとして塗るアイコンの URL。インライン SVG を使うときは icon スロットに入れる */
+  icon?: string;
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { href, label, icon, sponsored, class: cls, id, ...rest } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<div id={id} class:list={['un-box-menu__item', cls]} {...rest}>
+  <Tag
+    class="un-box-menu__link"
+    href={href}
+    rel={sponsored ? 'nofollow sponsored noopener' : undefined}
+  >
+    <div class="un-box-menu__figure">
+      {icon
+        ? <span class="un-box-menu__mask" role="img" aria-hidden="true" style={`--_glyph:url(${icon})`} />
+        : <slot name="icon" />}
+    </div>
+    <span class="un-box-menu__text">{label}</span>
+  </Tag>
+</div>

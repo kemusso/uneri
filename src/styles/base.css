@@ -36,9 +36,12 @@
   margin-top: 0;
   margin-bottom: var(--un-block-margin);
 }
-.un-content > :first-child,
-.un-content div > :first-child {
-  /* nothing pushes away from the top edge of the body or of any box inside it */
+.un-content > :first-child {
+  /* nothing pushes away from the top edge of the article body */
+  margin-top: 0;
+}
+.un-content :where(div > :first-child) {
+  /* inside a box the top edge is the box's business, so a part may overrule this */
   margin-top: 0;
 }
 .un-content > :last-child {

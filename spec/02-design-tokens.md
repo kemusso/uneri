@@ -49,6 +49,7 @@
 | `--un-color-balloon-icon-border` | `#ececec` | ふきだしアイコンの縁 |
 | `--un-color-step-arrow` | `#dedede` | ステップ（big）の矢印 |
 | `--un-color-tab-line` | `#ddd` | タブ（simple）の帯と線 |
+| `--un-color-box-menu-border` | `#eee` | ボックスメニューの枠 |
 | `--un-color-colset-1` / `-bg` | `#f59b5f` / `#fff8eb` | キャプションボックスの色セット 1 |
 | `--un-color-colset-2` / `-bg` | `#5fb9f5` / `#edf5ff` | 色セット 2 |
 | `--un-color-colset-3` / `-bg` | `#2fcd90` / `#eafaf2` | 色セット 3 |

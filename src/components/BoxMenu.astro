@@ -1,0 +1,44 @@
+---
+/** BoxMenu — アイコン付きのリンクを並べる. spec: spec/parts/box-menu.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'fill';
+  direction?: 'vertical' | 'horizontal';
+  /** 箱の間隔。省略すると隙間なしで罫線が重なる */
+  gap?: string;
+  iconSize?: string;
+  /** マスクアイコンを塗るグラデーション */
+  gradient?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'default', direction = 'vertical', gap, iconSize, gradient,
+  class: cls, id, style: userStyle, ...rest
+} = Astro.props;
+const style = joinStyles(
+  gap && `--un-box-menu-gap:${gap}`,
+  iconSize && `--un-box-menu-icon-size:${iconSize}`,
+  gradient && `--un-box-menu-gradient:${gradient}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={[
+    'un-box-menu',
+    `un-box-menu--${variant}`,
+    direction === 'horizontal' && 'un-box-menu--horizontal',
+    !gap && 'un-box-menu--flush',
+    cls,
+  ]}
+  style={style}
+  data-gradient={gradient ? '' : undefined}
+  {...rest}
+>
+  <div class="un-box-menu__inner"><slot /></div>
+</div>

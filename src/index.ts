@@ -25,3 +25,5 @@ export { default as Columns } from './components/Columns.astro';
 export { default as Column } from './components/Column.astro';
 export { default as BannerLink } from './components/BannerLink.astro';
 export { default as BlogCard } from './components/BlogCard.astro';
+export { default as BoxMenu } from './components/BoxMenu.astro';
+export { default as BoxMenuItem } from './components/BoxMenuItem.astro';
