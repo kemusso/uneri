@@ -1,0 +1,50 @@
+---
+/** PostListItem — 記事一覧の 1 件. spec: spec/parts/post-list.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'li'> {
+  href: string;
+  heading: string;
+  excerpt?: string;
+  /** サムネイル */
+  src?: string;
+  alt?: string;
+  width?: number | string;
+  height?: number | string;
+  /** サムネイルに重ねるカテゴリ名 */
+  cat?: string;
+  /** 日付（表示文字列と datetime）*/
+  date?: string;
+  datetime?: string;
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  href, heading, excerpt, src, alt = '', width, height, cat, date, datetime,
+  sponsored, class: cls, id, ...rest
+} = Astro.props;
+---
+
+<li class:list={['un-post-list__item', cls]} id={id} {...rest}>
+  <a class="un-post-list__link" href={href} rel={sponsored ? 'nofollow sponsored noopener' : undefined}>
+    {src && (
+      <div class="un-post-list__thumb">
+        <figure class="un-post-list__figure">
+          <img class="un-post-list__img" src={src} alt={alt} width={width} height={height} />
+        </figure>
+        {cat && <span class="un-post-list__cat">{cat}</span>}
+      </div>
+    )}
+    <div class="un-post-list__body">
+      <h2 class="un-post-list__title">{heading}</h2>
+      {excerpt && <div class="un-post-list__excerpt">{excerpt}</div>}
+      <div class="un-post-list__meta">
+        <div class="un-post-list__times">
+          {date && <time class="un-post-list__posted" datetime={datetime}>{date}</time>}
+        </div>
+      </div>
+    </div>
+  </a>
+</li>

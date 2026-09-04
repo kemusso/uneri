@@ -1,0 +1,35 @@
+---
+/** PostList — 記事一覧. spec: spec/parts/post-list.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'ul'> {
+  variant?: 'card' | 'list' | 'list2' | 'thumb' | 'big' | 'simple';
+  /** 列数 */
+  pcColumns?: 1 | 2 | 3;
+  spColumns?: 1 | 2;
+  /** 順位を振る */
+  ranking?: boolean;
+  /** 先頭だけ大きく見せる */
+  firstBig?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'card', pcColumns, spColumns, ranking, firstBig, class: cls, id, ...rest
+} = Astro.props;
+---
+
+<ul
+  id={id}
+  class:list={[
+    'un-post-list',
+    `un-post-list--${variant}`,
+    pcColumns && `un-post-list--pc-col${pcColumns}`,
+    spColumns && `un-post-list--sp-col${spColumns}`,
+    ranking && 'un-post-list--ranking',
+    firstBig && 'un-post-list--first-big',
+    cls,
+  ]}
+  {...rest}
+><slot /></ul>

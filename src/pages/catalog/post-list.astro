@@ -1,0 +1,90 @@
+---
+/** catalog: PostList (spec/parts/post-list.md §3). Variant order/text must match reference/fixtures/post-list.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import PostList from '../../components/PostList.astro';
+import PostListItem from '../../components/PostListItem.astro';
+---
+<Catalog title="PostList">
+  <Content data-variant="card">
+    <PostList variant="card">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="list">
+    <PostList variant="list">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="list2">
+    <PostList variant="list2">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="thumb">
+    <PostList variant="thumb">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="big">
+    <PostList variant="big">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="simple">
+    <PostList variant="simple">
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="card-col2">
+    <PostList variant="card" pcColumns={2}>
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="card-col1">
+    <PostList variant="card" pcColumns={1} spColumns={1}>
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="ranking">
+    <PostList variant="card" ranking>
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル4" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+  <Content data-variant="first-big">
+    <PostList variant="card" firstBig>
+      <PostListItem href="#" heading="記事のタイトル1" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル2" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+      <PostListItem href="#" heading="記事のタイトル3" excerpt="記事の抜粋がここに入ります。" src="/catalog/sample.svg" alt="" width={320} height={180} cat="カテゴリ" date="2026.01.01" datetime="2026-01-01" />
+    </PostList>
+  </Content>
+
+</Catalog>

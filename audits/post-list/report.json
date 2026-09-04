@@ -1,0 +1,1170 @@
+{
+  "part": "post-list",
+  "date": "2026-09-04T14:25:13.872Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "card",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 121,
+          "y": 30,
+          "w": 189,
+          "h": 244
+        },
+        "impl": {
+          "x": 122,
+          "y": 29,
+          "w": 188,
+          "h": 243
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 290.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 290.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 22,
+          "y": 29,
+          "w": 9,
+          "h": 222
+        },
+        "impl": {
+          "x": 22,
+          "y": 28,
+          "w": 9,
+          "h": 221
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list2",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 364.234375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 364.234375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 26,
+          "y": 53,
+          "w": 225,
+          "h": 250
+        },
+        "impl": {
+          "x": 26,
+          "y": 52,
+          "w": 225,
+          "h": 249
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "thumb",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 233.9375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 233.9375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 121,
+          "y": 30,
+          "w": 189,
+          "h": 125
+        },
+        "impl": {
+          "x": 122,
+          "y": 29,
+          "w": 188,
+          "h": 124
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 1226.375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 1226.375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 294,
+          "y": 30,
+          "w": 9,
+          "h": 886
+        },
+        "impl": {
+          "x": 295,
+          "y": 29,
+          "w": 8,
+          "h": 885
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 290.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 290.5
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col2",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 121,
+          "y": 30,
+          "w": 189,
+          "h": 244
+        },
+        "impl": {
+          "x": 122,
+          "y": 29,
+          "w": 188,
+          "h": 243
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col1",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 959.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 959.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 301,
+          "y": 30,
+          "w": 9,
+          "h": 648
+        },
+        "impl": {
+          "x": 302,
+          "y": 29,
+          "w": 8,
+          "h": 647
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "ranking",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 471.125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 121,
+          "y": 30,
+          "w": 189,
+          "h": 244
+        },
+        "impl": {
+          "x": 122,
+          "y": 29,
+          "w": 188,
+          "h": 243
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "first-big",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 554.375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 554.375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 121,
+          "y": 30,
+          "w": 189,
+          "h": 327
+        },
+        "impl": {
+          "x": 122,
+          "y": 29,
+          "w": 188,
+          "h": 326
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 302,
+          "y": 29,
+          "w": 372,
+          "h": 340
+        },
+        "impl": {
+          "x": 302,
+          "y": 28,
+          "w": 372,
+          "h": 339
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 535.609375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 535.609375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 32,
+          "y": 29,
+          "w": 11,
+          "h": 388
+        },
+        "impl": {
+          "x": 32,
+          "y": 28,
+          "w": 11,
+          "h": 387
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list2",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 662.21875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 662.21875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 36,
+          "y": 62,
+          "w": 458,
+          "h": 451
+        },
+        "impl": {
+          "x": 36,
+          "y": 61,
+          "w": 458,
+          "h": 449
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "thumb",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 458.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 458.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 302,
+          "y": 29,
+          "w": 372,
+          "h": 239
+        },
+        "impl": {
+          "x": 302,
+          "y": 28,
+          "w": 372,
+          "h": 238
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 1875.921875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 1875.921875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 655,
+          "y": 29,
+          "w": 11,
+          "h": 1325
+        },
+        "impl": {
+          "x": 655,
+          "y": 28,
+          "w": 11,
+          "h": 1324
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 309.25
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 309.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col2",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 302,
+          "y": 29,
+          "w": 372,
+          "h": 340
+        },
+        "impl": {
+          "x": 302,
+          "y": 28,
+          "w": 372,
+          "h": 339
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col1",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 1624.3125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 1624.3125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 663,
+          "y": 29,
+          "w": 11,
+          "h": 1093
+        },
+        "impl": {
+          "x": 663,
+          "y": 28,
+          "w": 11,
+          "h": 1091
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "ranking",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 660.4375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 302,
+          "y": 29,
+          "w": 372,
+          "h": 340
+        },
+        "impl": {
+          "x": 302,
+          "y": 28,
+          "w": 372,
+          "h": 339
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "first-big",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 863.65625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 863.65625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 302,
+          "y": 29,
+          "w": 372,
+          "h": 543
+        },
+        "impl": {
+          "x": 302,
+          "y": 28,
+          "w": 372,
+          "h": 542
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 751.25
+      },
+      "implBox": {
+        "w": 900,
+        "h": 751.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 399,
+          "y": 29,
+          "w": 453,
+          "h": 386
+        },
+        "impl": {
+          "x": 399,
+          "y": 28,
+          "w": 453,
+          "h": 384
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 643.328125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 643.328125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 48,
+          "y": 29,
+          "w": 11,
+          "h": 460
+        },
+        "impl": {
+          "x": 48,
+          "y": 28,
+          "w": 11,
+          "h": 459
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "list2",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 770.03125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 770.03125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 52,
+          "y": 62,
+          "w": 562,
+          "h": 523
+        },
+        "impl": {
+          "x": 52,
+          "y": 61,
+          "w": 562,
+          "h": 521
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "thumb",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 558.5625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 558.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 399,
+          "y": 29,
+          "w": 453,
+          "h": 289
+        },
+        "impl": {
+          "x": 399,
+          "y": 28,
+          "w": 453,
+          "h": 288
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "big",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 2148.359375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 2148.359375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 833,
+          "y": 29,
+          "w": 11,
+          "h": 1507
+        },
+        "impl": {
+          "x": 833,
+          "y": 28,
+          "w": 11,
+          "h": 1505
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 309.25
+      },
+      "implBox": {
+        "w": 900,
+        "h": 309.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col2",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 742.25
+      },
+      "implBox": {
+        "w": 900,
+        "h": 742.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 395,
+          "y": 29,
+          "w": 453,
+          "h": 381
+        },
+        "impl": {
+          "x": 395,
+          "y": 28,
+          "w": 453,
+          "h": 379
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "card-col1",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 1896.75
+      },
+      "implBox": {
+        "w": 900,
+        "h": 1896.75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 841,
+          "y": 29,
+          "w": 11,
+          "h": 1275
+        },
+        "impl": {
+          "x": 841,
+          "y": 28,
+          "w": 11,
+          "h": 1273
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "ranking",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 751.25
+      },
+      "implBox": {
+        "w": 900,
+        "h": 751.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 399,
+          "y": 29,
+          "w": 453,
+          "h": 386
+        },
+        "impl": {
+          "x": 399,
+          "y": 28,
+          "w": 453,
+          "h": 384
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "first-big",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 999.875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 999.875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 399,
+          "y": 29,
+          "w": 453,
+          "h": 634
+        },
+        "impl": {
+          "x": 399,
+          "y": 28,
+          "w": 453,
+          "h": 633
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

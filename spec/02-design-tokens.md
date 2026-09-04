@@ -50,6 +50,8 @@
 | `--un-color-step-arrow` | `#dedede` | ステップ（big）の矢印 |
 | `--un-color-tab-line` | `#ddd` | タブ（simple）の帯と線 |
 | `--un-color-box-menu-border` | `#eee` | ボックスメニューの枠 |
+| `--un-color-rank-1` / `-2` / `-3` | `#f7d305` / `#a5a5a5` / `#c47222` | 順位バッジの地色 |
+| `--un-gradient-rank-1` / `-2` / `-3` | 金 / 銀 / 銅のグラデーション（実測）| 順位バッジ |
 | `--un-color-colset-1` / `-bg` | `#f59b5f` / `#fff8eb` | キャプションボックスの色セット 1 |
 | `--un-color-colset-2` / `-bg` | `#5fb9f5` / `#edf5ff` | 色セット 2 |
 | `--un-color-colset-3` / `-bg` | `#2fcd90` / `#eafaf2` | 色セット 3 |

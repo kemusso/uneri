@@ -42,6 +42,12 @@
   --un-color-step-arrow: #dedede;
   --un-color-tab-line: #ddd;
   --un-color-box-menu-border: #eee;
+  --un-color-rank-1: #f7d305;
+  --un-color-rank-2: #a5a5a5;
+  --un-color-rank-3: #c47222;
+  --un-gradient-rank-1: linear-gradient(to left top, #f7bf05, #fcea7f, #fcd700, #f7d305, #eaca12, #ac9303, #f7d305, #fcea7f, #f7e705, #eaca12, #f7bf05);
+  --un-gradient-rank-2: linear-gradient(to left top, #a5a5a5, #e5e5e5, #ae9c9c, #a5a5a5, #a5a5a5, #7f7f7f, #a5a5a5, #e5e5e5, #a5a5a5, #a5a5a5, #a5a5a5);
+  --un-gradient-rank-3: linear-gradient(to left top, #c46522, #e8b27d, #d07217, #c47222, #b9722e, #834c17, #c47222, #e8b27d, #c48022, #b9722e, #c46522);
   --un-color-colset-1: #f59b5f;
   --un-color-colset-1-bg: #fff8eb;
   --un-color-colset-2: #5fb9f5;

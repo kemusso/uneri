@@ -119,10 +119,13 @@ const measure = async (html, open, close) => {
       const cs = getComputedStyle(el, r.pseudo);
       const v = {};
       for (const p of r.props) v[p] = cs.getPropertyValue(p);
+      // a pseudo-element that is never generated paints nothing, so what it computes to cannot
+      // change how the part looks in or out of the container
+      const absent = r.pseudo && (cs.content === 'none' || cs.content === '' || cs.display === 'none');
       // bare headings are container-scoped by design, so em-based values that resolve against
       // their font-size are not comparable outside the container
       const bareHeading = /^h[1-6]$/i.test(el.tagName) && !/(^|\s)un-[a-z0-9-]+/.test(el.className || '');
-      return { i, v, bareHeading };
+      return { i, v, bareHeading, absent };
     });
   }), rules);
 };
@@ -141,7 +144,7 @@ for (const part of parts) {
       const a = inside[ri], b = outside[ri];
       if (a.length !== b.length) { diffs.push(`${r.selector}${r.pseudo ?? ''}: matched ${a.length} inside, ${b.length} outside`); return; }
       a.forEach((node, n) => {
-        if (node.bareHeading) return;
+        if (node.bareHeading || (node.absent && b[n].absent)) return;
         for (const p of r.props) if (node.v[p] !== b[n].v[p]) diffs.push(`${r.selector}${r.pseudo ?? ''}[${n}] ${p}: in=${node.v[p]} out=${b[n].v[p]}`);
       });
     });

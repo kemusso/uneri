@@ -56,7 +56,7 @@
 | F1 | ブログカード | `BlogCard` | type 1 / 2 / 3; `caption`; 外部リンク; 画像なし | `.p-blogCard` | impl |
 | F2 | バナーリンク | `BannerLink` | shadow / radius / blur / overlay-color; 高さ; 文字の縦位置; `description` | `.swell-block-bannerLink` | impl |
 | F3 | ボックスメニュー | `BoxMenu`, `BoxMenuItem` | default / fill; direction vertical / horizontal; `gap`（なしで罫線を重ねる）; `iconSize`; グラデーション | `.swell-block-box-menu` | impl |
-| F4 | 投稿リスト | `PostList` | card / list / simple / thumb / big; `ranking`; 列数 | `.p-postList` | todo |
+| F4 | 投稿リスト | `PostList`, `PostListItem` | card / list / list2 / thumb / big / simple; `ranking`; `firstBig`; 列数 pc/sp | `.p-postList` | impl |
 
 ## G. レイアウト
 

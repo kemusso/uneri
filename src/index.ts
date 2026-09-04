@@ -29,3 +29,5 @@ export { default as BoxMenu } from './components/BoxMenu.astro';
 export { default as BoxMenuItem } from './components/BoxMenuItem.astro';
 export { default as SecTitle } from './components/SecTitle.astro';
 export { default as FullWide } from './components/FullWide.astro';
+export { default as PostList } from './components/PostList.astro';
+export { default as PostListItem } from './components/PostListItem.astro';
