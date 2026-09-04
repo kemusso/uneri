@@ -1,0 +1,18 @@
+---
+/** Toc — 目次. spec: spec/parts/toc.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'double';
+  title?: string;
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', title = '目次', class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-toc', variant !== 'default' && `un-toc--${variant}`, cls]} {...rest}>
+  <span class="un-toc__title">{title}</span>
+  <ol class="un-toc__list"><slot /></ol>
+</div>

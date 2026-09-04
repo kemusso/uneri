@@ -1,0 +1,19 @@
+---
+/** TocItem — 目次の 1 項目. spec: spec/parts/toc.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'li'> {
+  href: string;
+  label: string;
+  class?: string;
+  id?: string;
+}
+
+const { href, label, class: cls, id, ...rest } = Astro.props;
+const hasChildren = Astro.slots.has('default');
+---
+
+<li id={id} class:list={['un-toc__item', cls]} {...rest}>
+  <a class="un-toc__link" href={href}>{label}</a>
+  {hasChildren && <ol class="un-toc__childList"><slot /></ol>}
+</li>

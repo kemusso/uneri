@@ -1,0 +1,29 @@
+---
+/** catalog: Toc (spec/parts/toc.md §3). Variant order/text must match reference/fixtures/toc.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Toc from '../../components/Toc.astro';
+import TocItem from '../../components/TocItem.astro';
+---
+<Catalog title="Toc">
+  <Content data-variant="default">
+    <Toc>
+      <TocItem href="#h1" label="見出し 1" />
+      <TocItem href="#h2" label="見出し 2" />
+      <TocItem href="#h3" label="見出し 3">
+        <TocItem href="#h3-1" label="小見出し 3-1" />
+      </TocItem>
+    </Toc>
+  </Content>
+
+  <Content data-variant="double">
+    <Toc variant="double">
+      <TocItem href="#h1" label="見出し 1" />
+      <TocItem href="#h2" label="見出し 2" />
+      <TocItem href="#h3" label="見出し 3">
+        <TocItem href="#h3-1" label="小見出し 3-1" />
+      </TocItem>
+    </Toc>
+  </Content>
+
+</Catalog>

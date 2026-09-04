@@ -1,0 +1,255 @@
+{
+  "part": "toc",
+  "date": "2026-09-04T12:53:34.868Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "default",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0.0625
+      },
+      "refBox": {
+        "w": 345,
+        "h": 139.734375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 139.671875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 156,
+          "y": 27,
+          "w": 18,
+          "h": 13
+        },
+        "impl": {
+          "x": 156,
+          "y": 29,
+          "w": 18,
+          "h": 12
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "double",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0.0625
+      },
+      "refBox": {
+        "w": 345,
+        "h": 198.734375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 198.671875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 156,
+          "y": 54,
+          "w": 18,
+          "h": 13
+        },
+        "impl": {
+          "x": 156,
+          "y": 56,
+          "w": 18,
+          "h": 12
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 148.890625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 148.890625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 344,
+          "y": 27,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 343,
+          "y": 29,
+          "w": 20,
+          "h": 13
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "double",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 235.28125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 235.28125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 344,
+          "y": 63,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 343,
+          "y": 65,
+          "w": 20,
+          "h": 13
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 1200,
+      "pixelPct": 0.01,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 148.890625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 148.890625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 441,
+          "y": 27,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 440,
+          "y": 29,
+          "w": 20,
+          "h": 13
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "double",
+      "vw": 1200,
+      "pixelPct": 0.017,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 235.28125
+      },
+      "implBox": {
+        "w": 900,
+        "h": 235.28125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 441,
+          "y": 63,
+          "w": 19,
+          "h": 14
+        },
+        "impl": {
+          "x": 440,
+          "y": 65,
+          "w": 20,
+          "h": 13
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

@@ -79,6 +79,10 @@ const ICON_PARTS = {
     impl: '.un-accordion__icon > *::before { background-color: transparent !important; }',
   },
   box: ICON_GLYPH_CSS, // group variants may hold icon boxes
+  toc: {
+    ref: '.p-toc__ttl::before { color: transparent !important; }',
+    impl: '.un-toc__title::before { background-color: transparent !important; }',
+  },
   list: {
     ref: '.is-style-check_list>li::before, .is-style-good_list>li::before, .is-style-bad_list>li::before, .is-style-triangle_list>li::before { color: transparent !important; }',
     impl: '.un-list--check>li::before, .un-list--good>li::before, .un-list--bad>li::before, .un-list--triangle>li::before { background-color: transparent !important; }',

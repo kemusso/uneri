@@ -11,7 +11,7 @@
 | A1 | 本文基礎 | `Content`（`.un-content`） | p / a / strong / img / blockquote / code / hr の既定スタイルと余白 | `.post_content` | pass |
 | A2 | 見出し | `Heading` または `.un-content h2/h3/h4` | h2 標準 / h2 section-title / h3 / h4 | `.post_content h2` `.is-style-section_ttl` | pass |
 | A3 | テキスト装飾 | `Mark`, `Text` | marker: yellow / blue / green / orange; size: xs / sm / md / lg / xl; color: red / blue / green / main（任意色可）; thin | `.mark_yellow` 等 | impl |
-| A4 | 目次 | `Toc` | default (二重線) / 番号なし | `.p-toc` | todo |
+| A4 | 目次 | `Toc` | default (二重線) / 番号なし | `.p-toc` | impl |
 
 ## B. ボックス
 

@@ -17,3 +17,5 @@ export { default as TabPanel } from './components/TabPanel.astro';
 export { default as CapBox } from './components/CapBox.astro';
 export { default as Dl } from './components/Dl.astro';
 export { default as DlItem } from './components/DlItem.astro';
+export { default as Toc } from './components/Toc.astro';
+export { default as TocItem } from './components/TocItem.astro';
