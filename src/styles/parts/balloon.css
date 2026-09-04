@@ -10,6 +10,8 @@
 }
 
 .un-balloon {
+  /* every balloon answers for its own tail: the switch is reset here, not inherited */
+  --_tail-back-display: none;
   --_bg: var(--un-balloon-bg, var(--un-color-balloon-gray-bg));
   --_line: var(--un-balloon-line, var(--un-color-balloon-gray-line));
   display: flex;
@@ -71,6 +73,7 @@
   line-height: 1.6;
 }
 .un-balloon--border {
+  --_tail-back-display: block;
   /* inherited on purpose: the reference outlines a nested balloon's tail too */
   --_outline-width: 1px;
   --_outline-style: solid;
@@ -93,6 +96,9 @@
   margin-bottom: 0;
 }
 
+.un-balloon--think {
+  --_tail-back-display: block;
+}
 .un-balloon--think > :where(.un-balloon__body) {
   /* the small bubble sits above the balloon, so it needs more room on top */
   padding-top: 8px;
@@ -155,8 +161,10 @@
   background-color: transparent;
 }
 .un-balloon__tail > :where(:last-child) {
-  /* the outline behind it, only drawn when the balloon has a border */
-  display: none;
+  /* the outline behind it, only drawn when the balloon has a border or thinks.
+     The switch is a custom property so a nested balloon answers for its own tail
+     instead of inheriting the one around it */
+  display: var(--_tail-back-display, none);
   z-index: 2;
   left: -10px;
   width: 0;
@@ -169,31 +177,28 @@
 .un-balloon--border .un-balloon__tail > :where(:first-child) {
   left: -8px;
 }
-.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:first-child) {
+.un-balloon--think .un-balloon__tail > :where(:first-child) {
   left: -21px;
 }
 .un-balloon--border .un-balloon__tail > :where(:last-child) {
-  display: block;
   width: 10px;
   height: 16px;
 }
 /* ---- thinking tail: two bubbles instead of a triangle ---- */
-.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > * {
-  display: block;
+.un-balloon--think .un-balloon__tail > * {
   /* the outline is switched on by the border modifier on the root */
   border: var(--_outline-width, 0) var(--_outline-style, none) var(--_outline-color, currentColor);
   border-radius: 50%;
   background: var(--_bg);
 }
 
-.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:first-child) {
+.un-balloon--think .un-balloon__tail > :where(:first-child) {
   top: 0;
   left: -21px;
   width: 8px;
   height: 8px;
 }
-.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:last-child) {
-  display: block;
+.un-balloon--think .un-balloon__tail > :where(:last-child) {
   right: auto;
   bottom: auto;
   top: 8px;
