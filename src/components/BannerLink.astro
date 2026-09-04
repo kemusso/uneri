@@ -1,0 +1,65 @@
+---
+/** BannerLink — 画像バナーリンク. spec: spec/parts/banner-link.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'a'> {
+  href: string;
+  src: string;
+  alt?: string;
+  width?: number | string;
+  height?: number | string;
+  /** バナーの見出しと説明 */
+  heading?: string;
+  description?: string;
+  shadow?: boolean;
+  /** `true` で 8px、文字列でその値 */
+  radius?: boolean | string;
+  blur?: boolean;
+  /** 画像に重ねる色 */
+  overlay?: string;
+  /** バナーの高さ */
+  bannerHeight?: string;
+  align?: 'left' | 'center' | 'right';
+  valign?: 'top' | 'center' | 'bottom';
+  /** アフィリエイトリンクとして rel を付ける */
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  href, src, alt = '', width, height, heading, description,
+  shadow, radius, blur, overlay, bannerHeight, align, valign, sponsored,
+  rel, class: cls, id, style: userStyle, ...rest
+} = Astro.props;
+
+const style = joinStyles(
+  overlay && `background-color:${overlay}`,
+  typeof radius === 'string' && `border-radius:${radius}`,
+  styleToString(userStyle),
+);
+---
+
+<div id={id} class:list={['un-banner-link', cls]}>
+  <a
+    href={href}
+    class:list={[
+      'un-banner-link__a',
+      shadow && 'un-banner-link__a--shadow',
+      radius === true && 'un-banner-link__a--radius',
+      blur && 'un-banner-link__a--blur',
+    ]}
+    style={style}
+    rel={rel ?? (sponsored ? 'nofollow sponsored noopener' : undefined)}
+    {...rest}
+  >
+    <figure class="un-banner-link__figure" style={bannerHeight && `height:${bannerHeight}`}>
+      <img class="un-banner-link__img" src={src} alt={alt} width={width} height={height} />
+    </figure>
+    <div class="un-banner-link__text" data-align={align} data-valign={valign}>
+      <div class="un-banner-link__title">{heading}</div>
+      <div class="un-banner-link__description">{description}</div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,44 @@
+---
+/** catalog: BannerLink (spec/parts/banner-link.md §3). Variant order/text must match reference/fixtures/banner-link.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import BannerLink from '../../components/BannerLink.astro';
+---
+<Catalog title="BannerLink">
+  <Content data-variant="default">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" />
+  </Content>
+
+  <Content data-variant="shadow">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" shadow />
+  </Content>
+
+  <Content data-variant="radius">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" radius />
+  </Content>
+
+  <Content data-variant="blur">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" blur />
+  </Content>
+
+  <Content data-variant="overlay">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" overlay="rgba(30, 29, 26, 0.6)" />
+  </Content>
+
+  <Content data-variant="height">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" bannerHeight="100px" />
+  </Content>
+
+  <Content data-variant="align-center">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" align="center" />
+  </Content>
+
+  <Content data-variant="valign-top">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" valign="top" />
+  </Content>
+
+  <Content data-variant="valign-bottom">
+    <BannerLink href="#" src="/catalog/sample.svg" width={800} height={450} heading="バナーの見出し" description="バナーの説明文です。" valign="bottom" />
+  </Content>
+
+</Catalog>

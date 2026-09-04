@@ -54,7 +54,7 @@
 | # | パーツ | コンポーネント | バリアント | 参照 | 状態 |
 |---|---|---|---|---|---|
 | F1 | ブログカード | `BlogCard` | type 1 / 2 / 3; `label`; 外部リンク | `.p-blogCard` | todo |
-| F2 | バナーリンク | `BannerLink` | shadow / blur / overlay-color; 高さ; 角丸; `subText` | `.swell-block-bannerLink` | todo |
+| F2 | バナーリンク | `BannerLink` | shadow / radius / blur / overlay-color; 高さ; 文字の縦位置; `description` | `.swell-block-bannerLink` | impl |
 | F3 | ボックスメニュー | `BoxMenu` | default / fill; direction vertical / horizontal; 列数; `gap`; `iconSize` | `.swell-block-box-menu` | todo |
 | F4 | 投稿リスト | `PostList` | card / list / simple / thumb / big; `ranking`; 列数 | `.p-postList` | todo |
 
