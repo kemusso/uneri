@@ -47,7 +47,7 @@
 |---|---|---|---|---|---|
 | E1 | テーブル | `Table`, `Cell` | default / simple / double; 先頭列見出し; 縦積み; セルアイコン: double-circle / circle / triangle / close / hatena / check / line (obj / bg, s/m/l); セル背景色; 中央寄せ; 横スクロール; 先頭列固定 | `.wp-block-table` `.swl-cell-bg` | impl |
 | E2 | レビュー | `Review` | default; 星 0.5 刻み; メリット/デメリット | `.swell-block-review` | todo |
-| E3 | リッチカラム | `Columns`, `Column` | default / border / shadow; 列数 pc/tab/sp; `padding`; 列 `bg` | `.swell-block-columns` | todo |
+| E3 | リッチカラム | `Columns`, `Column` | default / border / shadow; 列幅 pc/tab/sp; 余白; 縦位置; 横スクロール; 列 `bg` / `padding` | `.swell-block-columns` | impl |
 
 ## F. リンク・ナビゲーション
 

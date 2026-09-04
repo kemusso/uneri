@@ -1,0 +1,89 @@
+---
+/** catalog: Columns (spec/parts/columns.md §3). Variant order/text must match reference/fixtures/columns.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Columns from '../../components/Columns.astro';
+import Column from '../../components/Column.astro';
+---
+<Catalog title="Columns">
+  <Content data-variant="default">
+    <Columns>
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="gap">
+    <Columns gap="1em" gapY="1em">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="width-25">
+    <Columns pcWidth="25%" tabWidth="33.3%" spWidth="50%">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="border">
+    <Columns variant="border">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="shadow">
+    <Columns variant="shadow">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="valign-top">
+    <Columns valign="top">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="valign-center">
+    <Columns valign="center">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="valign-bottom">
+    <Columns valign="bottom">
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="scrollable">
+    <Columns scroll>
+      <Column><p>列1 のテキスト。</p></Column>
+      <Column><p>列2 のテキスト。</p></Column>
+      <Column><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+  <Content data-variant="column-bg">
+    <Columns>
+      <Column bg="#f7f7f7" padding="1em"><p>列1 のテキスト。</p></Column>
+      <Column bg="#f7f7f7" padding="1em"><p>列2 のテキスト。</p></Column>
+      <Column bg="#f7f7f7" padding="1em"><p>列3 のテキスト。</p></Column>
+    </Columns>
+  </Content>
+
+</Catalog>

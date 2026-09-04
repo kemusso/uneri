@@ -1,0 +1,83 @@
+/* Columns — rich columns. spec: spec/parts/columns.md */
+
+.un-columns,
+.un-columns *,
+.un-columns::before,
+.un-columns::after,
+.un-columns ::before,
+.un-columns ::after {
+  box-sizing: border-box;
+}
+
+.un-columns {
+  /* the gap lives on the columns, so the row is pulled left by one gap to stay flush */
+  --_gap-x: var(--un-columns-gap-x, 1.5rem);
+  --_gap-y: var(--un-columns-gap-y, 1.5rem);
+  --_w: var(--un-columns-width-sp, 100%);
+}
+.un-columns :where(.un-columns__inner) {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: calc(100% + var(--_gap-x));
+  margin-left: calc(var(--_gap-x) * -1);
+  row-gap: var(--_gap-y);
+}
+.un-columns :where(.un-columns__item) {
+  width: calc(var(--_w) - var(--_gap-x));
+  margin-left: var(--_gap-x);
+}
+
+/* ---- vertical alignment of the columns in a row ---- */
+.un-columns[data-valign="top"] :where(.un-columns__inner) {
+  align-items: flex-start;
+}
+.un-columns[data-valign="center"] :where(.un-columns__inner) {
+  align-items: center;
+}
+.un-columns[data-valign="bottom"] :where(.un-columns__inner) {
+  align-items: flex-end;
+}
+
+/* ---- border / shadow ---- */
+.un-columns--border :where(.un-columns__item) {
+  padding: 1rem;
+  border: 1px solid var(--un-color-border);
+}
+.un-columns--shadow :where(.un-columns__item) {
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: var(--un-shadow-box);
+}
+
+/* ---- scroll: one row that runs off the side ---- */
+.un-columns--scroll {
+  overflow: hidden;
+}
+.un-columns--scroll :where(.un-columns__inner) {
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-left: 0;
+  padding-bottom: 16px;
+  row-gap: 0;
+  overflow-x: auto;
+}
+.un-columns--scroll :where(.un-columns__item) {
+  flex-shrink: 0;
+  width: var(--_w);
+}
+.un-columns--scroll :where(.un-columns__inner > :first-child) {
+  margin-left: 0;
+}
+
+@media (min-width: 600px) {
+  .un-columns {
+    --_w: var(--un-columns-width-tab, 50%);
+  }
+}
+
+@media (min-width: 960px) {
+  .un-columns {
+    --_w: var(--un-columns-width-pc, 33.3%);
+  }
+}

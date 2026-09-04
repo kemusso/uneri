@@ -1,0 +1,21 @@
+---
+/** Column — リッチカラムの 1 列. spec: spec/parts/columns.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  bg?: string;
+  padding?: string;
+  class?: string;
+  id?: string;
+}
+
+const { bg, padding, class: cls, id, style: userStyle, ...rest } = Astro.props;
+const style = joinStyles(
+  bg && `background-color:${bg}`,
+  padding && `padding:${padding}`,
+  styleToString(userStyle),
+);
+---
+
+<div id={id} class:list={['un-columns__item', cls]} style={style} {...rest}><slot /></div>

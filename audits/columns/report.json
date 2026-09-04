@@ -1,0 +1,615 @@
+{
+  "part": "columns",
+  "date": "2026-09-04T13:24:04.511Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "default",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 111
+      },
+      "implBox": {
+        "w": 345,
+        "h": 111
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "width-25",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 74.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 74.25
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 208.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 208.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "shadow",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 202.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 202.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-top",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-center",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-bottom",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 121.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "scrollable",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 43
+      },
+      "implBox": {
+        "w": 345,
+        "h": 43
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "column-bg",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 211.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 211.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 73.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 73.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "width-25",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 149.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 149.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "shadow",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 145.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 145.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-top",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-center",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-bottom",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 81.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "scrollable",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 44.796875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 44.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "column-bg",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 145.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 145.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "gap",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "width-25",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 62.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 62.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "shadow",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 60.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 60.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-top",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-center",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "valign-bottom",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "scrollable",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 44.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 44.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "column-bg",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 60.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 60.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    }
+  ]
+}

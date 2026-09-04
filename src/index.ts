@@ -21,3 +21,5 @@ export { default as Toc } from './components/Toc.astro';
 export { default as TocItem } from './components/TocItem.astro';
 export { default as Table } from './components/Table.astro';
 export { default as Cell } from './components/Cell.astro';
+export { default as Columns } from './components/Columns.astro';
+export { default as Column } from './components/Column.astro';

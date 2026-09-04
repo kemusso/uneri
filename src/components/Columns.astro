@@ -1,0 +1,49 @@
+---
+/** Columns — リッチカラム. spec: spec/parts/columns.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  variant?: 'default' | 'border' | 'shadow';
+  /** 列幅（PC / タブレット / スマホ）*/
+  pcWidth?: string;
+  tabWidth?: string;
+  spWidth?: string;
+  /** 列間の余白 */
+  gap?: string;
+  gapY?: string;
+  valign?: 'top' | 'center' | 'bottom';
+  /** 折り返さず横スクロールさせる */
+  scroll?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'default', pcWidth, tabWidth, spWidth, gap, gapY, valign, scroll,
+  class: cls, id, style: userStyle, ...rest
+} = Astro.props;
+const style = joinStyles(
+  pcWidth && `--un-columns-width-pc:${pcWidth}`,
+  tabWidth && `--un-columns-width-tab:${tabWidth}`,
+  spWidth && `--un-columns-width-sp:${spWidth}`,
+  gap && `--un-columns-gap-x:${gap}`,
+  gapY && `--un-columns-gap-y:${gapY}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={[
+    'un-columns',
+    variant !== 'default' && `un-columns--${variant}`,
+    scroll && 'un-columns--scroll',
+    cls,
+  ]}
+  style={style}
+  data-valign={valign}
+  {...rest}
+>
+  <div class="un-columns__inner"><slot /></div>
+</div>
