@@ -1,0 +1,375 @@
+{
+  "part": "review",
+  "date": "2026-09-04T14:39:34.214Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "default",
+      "vw": 375,
+      "pixelPct": 0.03,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 535.90625
+      },
+      "implBox": {
+        "w": 345,
+        "h": 535.90625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 167,
+          "y": 257,
+          "w": 114,
+          "h": 20
+        },
+        "impl": {
+          "x": 168,
+          "y": 256,
+          "w": 114,
+          "h": 21
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "no-image",
+      "vw": 375,
+      "pixelPct": 0.042,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 375.9375
+      },
+      "implBox": {
+        "w": 345,
+        "h": 375.9375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 167,
+          "y": 97,
+          "w": 114,
+          "h": 20
+        },
+        "impl": {
+          "x": 168,
+          "y": 96,
+          "w": 114,
+          "h": 21
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "merits-only",
+      "vw": 375,
+      "pixelPct": 0.033,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 453.40625
+      },
+      "implBox": {
+        "w": 345,
+        "h": 453.40625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 167,
+          "y": 257,
+          "w": 114,
+          "h": 20
+        },
+        "impl": {
+          "x": 168,
+          "y": 256,
+          "w": 114,
+          "h": 21
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 768,
+      "pixelPct": 0.005,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 618.40625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 618.40625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 356,
+          "y": 311,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 357,
+          "y": 310,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "no-image",
+      "vw": 768,
+      "pixelPct": 0.008,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 414.40625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 414.40625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 356,
+          "y": 107,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 357,
+          "y": 106,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "merits-only",
+      "vw": 768,
+      "pixelPct": 0.004,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 527.21875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 527.21875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 356,
+          "y": 311,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 357,
+          "y": 310,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 1200,
+      "pixelPct": 0.004,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 618.40625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 618.40625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 453,
+          "y": 311,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 454,
+          "y": 310,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "no-image",
+      "vw": 1200,
+      "pixelPct": 0.006,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 414.40625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 414.40625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 453,
+          "y": 107,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 454,
+          "y": 106,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "merits-only",
+      "vw": 1200,
+      "pixelPct": 0.003,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 527.21875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 527.21875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 453,
+          "y": 311,
+          "w": 120,
+          "h": 21
+        },
+        "impl": {
+          "x": 454,
+          "y": 310,
+          "w": 120,
+          "h": 22
+        },
+        "delta": {
+          "x": 1,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

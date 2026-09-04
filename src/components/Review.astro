@@ -1,0 +1,69 @@
+---
+/** Review — レビュー. spec: spec/parts/review.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  heading: string;
+  /** 0〜5。0.5 刻みで星になる */
+  rating?: number;
+  ratingLabel?: string;
+  /** 評価に添える言葉 */
+  ratingText?: string;
+  src?: string;
+  alt?: string;
+  width?: number | string;
+  height?: number | string;
+  merits?: string[];
+  demerits?: string[];
+  meritsLabel?: string;
+  demeritsLabel?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  heading, rating, ratingLabel = '総合評価', ratingText,
+  src, alt = '', width, height,
+  merits, demerits, meritsLabel = 'メリット', demeritsLabel = 'デメリット',
+  class: cls, id, ...rest
+} = Astro.props;
+
+/** 0.5 刻みで満・半・空を並べる */
+const stars = rating === undefined ? [] : Array.from({ length: 5 }, (_, i) => {
+  const left = rating - i;
+  return left >= 1 ? 'full' : left >= 0.5 ? 'half' : 'empty';
+});
+---
+
+<div id={id} class:list={['un-review', cls]} {...rest}>
+  {src && (
+    <div class="un-review__image">
+      <img class="un-review__img" src={src} alt={alt} width={width} height={height} />
+    </div>
+  )}
+  <div class="un-review__inner">
+    <div class="un-review__title">{heading}</div>
+    {rating !== undefined && (
+      <div class="un-review__rating">
+        <span class="un-review__label">{ratingLabel}</span>
+        <span class="un-review__stars">
+          {stars.map((s) => <i class:list={['un-review__star', `un-review__star--${s}`]} />)}
+        </span>
+        <span class="un-review__value">{rating}</span>
+        {ratingText && <span class="un-review__str">{ratingText}</span>}
+      </div>
+    )}
+    {merits && (
+      <div class="un-review__merits">
+        <span class="un-review__label">{meritsLabel}</span>
+        <ul class="un-review__list">{merits.map((m) => <li>{m}</li>)}</ul>
+      </div>
+    )}
+    {demerits && (
+      <div class="un-review__demerits">
+        <span class="un-review__label">{demeritsLabel}</span>
+        <ul class="un-review__list">{demerits.map((m) => <li>{m}</li>)}</ul>
+      </div>
+    )}
+  </div>
+</div>

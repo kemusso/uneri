@@ -1,0 +1,20 @@
+---
+/** catalog: Review (spec/parts/review.md §3). Variant order/text must match reference/fixtures/review.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Review from '../../components/Review.astro';
+---
+<Catalog title="Review">
+  <Content data-variant="default">
+    <Review src="/catalog/sample.svg" alt="" width={320} height={180} heading="レビュー対象の名前" rating={4.5} ratingText="とても良い" merits={["いいところ その1", "いいところ その2"]} demerits={["気になるところ"]} />
+  </Content>
+
+  <Content data-variant="no-image">
+    <Review heading="レビュー対象の名前" rating={4.5} ratingText="とても良い" merits={["いいところ その1", "いいところ その2"]} demerits={["気になるところ"]} />
+  </Content>
+
+  <Content data-variant="merits-only">
+    <Review src="/catalog/sample.svg" alt="" width={320} height={180} heading="レビュー対象の名前" rating={4.5} ratingText="とても良い" merits={["いいところ その1", "いいところ その2"]} />
+  </Content>
+
+</Catalog>

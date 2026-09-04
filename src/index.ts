@@ -33,3 +33,4 @@ export { default as PostList } from './components/PostList.astro';
 export { default as PostListItem } from './components/PostListItem.astro';
 export { default as LinkList } from './components/LinkList.astro';
 export { default as LinkListItem } from './components/LinkListItem.astro';
+export { default as Review } from './components/Review.astro';
