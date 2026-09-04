@@ -38,7 +38,7 @@
   left: 23px;
   width: 0;
   height: 100%;
-  border-left: 1px dashed var(--un-color-border);
+  border-left: var(--_line-width, 1px) dashed var(--un-color-border);
 }
 
 .un-step__number {
@@ -110,6 +110,7 @@
 
 /* number layouts */
 .un-step--horizontal {
+  /* variant defaults come later in this file on purpose: with small × horizontal the variant wins */
   --_num-align: flex-end;
 }
 .un-step--horizontal > :where(.un-step__item) > :where(.un-step__number) {
@@ -166,12 +167,12 @@
   display: block;
   top: 18px;
   left: 7px;
-  width: 2px;
   height: calc(100% - 20px);
-  border-left: 2px solid var(--un-color-border);
+  border-left-style: solid;
 }
 .un-step--small {
   --_num-align: center;
+  --_line-width: 2px;
 }
 .un-step--small > :where(.un-step__item) > :where(.un-step__number) {
   display: flex;
@@ -218,7 +219,7 @@
 @media (min-width: 600px) {
   .un-step__item::before {
     display: block;
-    width: 1px;
+    width: var(--_line-width, 1px);
   }
   .un-step--default > :where(.un-step__item) > :where(.un-step__body) {
     margin-left: 0;

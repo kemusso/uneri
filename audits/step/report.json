@@ -1,6 +1,6 @@
 {
   "part": "step",
-  "date": "2026-09-04T00:20:41.278Z",
+  "date": "2026-09-04T00:27:22.980Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -152,6 +152,86 @@
       "pass": true
     },
     {
+      "variant": "big-circle",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 378.5
+      },
+      "implBox": {
+        "w": 345,
+        "h": 378.5
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "small-horizontal",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 198.625
+      },
+      "implBox": {
+        "w": 345,
+        "h": 198.625
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "single",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 90
+      },
+      "implBox": {
+        "w": 345,
+        "h": 90
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "many",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 1440
+      },
+      "implBox": {
+        "w": 345,
+        "h": 1440
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
       "variant": "default",
       "vw": 768,
       "pixelPct": 0,
@@ -292,6 +372,86 @@
       "pass": true
     },
     {
+      "variant": "big-circle",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 398.59375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 398.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "small-horizontal",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 209.6875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 209.6875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "single",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 92.796875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 92.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "many",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 1500.765625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 1500.765625
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
       "variant": "default",
       "vw": 1200,
       "pixelPct": 0,
@@ -426,6 +586,86 @@
       "implBox": {
         "w": 900,
         "h": 322.390625
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "big-circle",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 398.59375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 398.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "small-horizontal",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 209.6875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 209.6875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "single",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 92.796875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 92.796875
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "many",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 1500.765625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 1500.765625
       },
       "styleDiffs": [],
       "ink": null,

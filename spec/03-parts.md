@@ -39,7 +39,7 @@
 | D2 | FAQ | `Faq` | default / border / box / stripe; `color` | `.swell-block-faq` | todo |
 | D3 | アコーディオン | `Accordion` | default / border / main / simple | `.swell-block-accordion` | todo |
 | D4 | タブ | `Tab` | default / simple / bb (下線) / balloon | `.swell-block-tab` | todo |
-| D5 | ステップ | `Step` | default / big / small; numStyle: circle / num / horizontal / vertical | `.swell-block-step` | impl |
+| D5 | ステップ | `Step` | default / big / small; numStyle: circle / num / horizontal / vertical | `.swell-block-step` | pass |
 
 ## E. 表・比較
 

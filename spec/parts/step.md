@@ -1,6 +1,6 @@
 # Step — ステップ（D5）
 
-- 状態: impl
+- 状態: pass
 - 参照: SWELL ステップブロック `.swell-block-step`（`.is-style-default` / `-big` / `-small`）、`data-num-style`（`circle` / `num` / `horizontal` / `vertical`）
 - 依存トークン: `--un-color-main` `--un-color-border` `--un-color-text` `--un-color-step-arrow`
 - ファイル: `src/components/Step.astro`, `src/components/StepItem.astro`, `src/styles/parts/step.css`, `src/pages/catalog/step.astro`, `reference/fixtures/step.html`
@@ -44,7 +44,11 @@ slot: Step は StepItem の並び、StepItem は本文。
 | `num` | `numStyle="num"` + `label={null}` | `data-num-style="num"` | ラベルを出さず数字だけ |
 | `horizontal` | `numStyle="horizontal"` | `data-num-style="horizontal"` | ラベルと数字を横並び |
 | `vertical` | `numStyle="vertical"` | `data-num-style="vertical"` | ラベルと数字を縦並び |
-| `rich-body` | 本文が段落 2 つ＋リスト | 同上 | 本文内ブロックの余白（1em、最後は 0）|
+| `rich-body` | 本文が段落 2 つ＋リスト | `.is-style-default` + `circle` | 本文内ブロックの余白（1em、最後は 0）|
+| `big-circle` | `variant="big"`（既定 numStyle）| `.is-style-big` + `circle` | 掛け合わせ |
+| `small-horizontal` | `variant="small" numStyle="horizontal"` | `.is-style-small` + `horizontal` | 掛け合わせ（番号の揃えは variant 側が勝つ）|
+| `single` | 項目 1 つ | 同上 | 連結線を出さない |
+| `many` | 項目 11 個 | 同上 | 2 桁の連番 |
 
 ## 4. マークアップ
 
@@ -67,7 +71,7 @@ slot: Step は StepItem の並び、StepItem は本文。
 |---|---|---|
 | root | counter-reset | ステップ用カウンタ |
 | item | position | relative |
-| item::before | 連結線 | `border-left: 1px dashed --un-color-border`、top 0 / left 23px / 幅 1px / 高さ 100%。**<600 では出さない** |
+| item::before | 連結線 | `border-left: var(--_line-width, 1px) dashed --un-color-border`、top 0 / left 23px / 幅 1px / 高さ 100%。**<600 では出さない** |
 | number | display / flex-direction / justify-content / line-height / text-align / box-sizing | flex / column / center / 1em / center / content-box |
 | label | padding-bottom | 1px |
 | 最後の item | ::before | なし（連結線は最後に出さない）|
@@ -113,12 +117,12 @@ slot: Step は StepItem の並び、StepItem は本文。
 | number | align-items | center |
 | title | font-size / margin-top / text-align | 1.1em / 0.25em（4.4px @16）/ left |
 | body | margin-top | 0.5em（8px @16）|
-| item::before | 連結線 | left 7px / top 18px / 幅 2px の実線（`--un-color-border`）/ 高さ `calc(100% - 20px)`。<600 でも出す |
+| item::before | 連結線 | left 7px / top 18px / `--_line-width: 2px` の実線（`--un-color-border`）/ 高さ `calc(100% - 20px)`。<600 でも出す |
 | number | margin-left / border-radius | -24px / 50% |
 
 ## 6. 受け入れ基準
 
-- [ ] 全 7 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
+- [ ] 全 11 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
 - [ ] 番号が 1 から連番になる（項目を増やしても続く）
 - [ ] 最後の項目でも連結線・矢印が参照と同じ扱いになる
 - [ ] `.un-content` の外でも成立する
