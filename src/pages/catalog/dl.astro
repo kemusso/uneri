@@ -1,0 +1,30 @@
+---
+/** catalog: Dl (spec/parts/dl.md §3). Variant order/text must match reference/fixtures/dl.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Dl from '../../components/Dl.astro';
+import DlItem from '../../components/DlItem.astro';
+---
+<Catalog title="Dl">
+  <Content data-variant="default">
+    <Dl>
+      <DlItem term="項目A"><p>項目Aの説明をここに表示します。</p></DlItem>
+      <DlItem term="項目B"><p>項目Bの説明をここに表示します。</p></DlItem>
+    </Dl>
+  </Content>
+
+  <Content data-variant="border">
+    <Dl variant="border">
+      <DlItem term="項目A"><p>項目Aの説明をここに表示します。</p></DlItem>
+      <DlItem term="項目B"><p>項目Bの説明をここに表示します。</p></DlItem>
+    </Dl>
+  </Content>
+
+  <Content data-variant="float">
+    <Dl variant="float">
+      <DlItem term="項目A"><p>項目Aの説明をここに表示します。</p></DlItem>
+      <DlItem term="項目B"><p>項目Bの説明をここに表示します。</p></DlItem>
+    </Dl>
+  </Content>
+
+</Catalog>

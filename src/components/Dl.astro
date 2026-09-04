@@ -1,0 +1,19 @@
+---
+/** Dl — 説明リスト. spec: spec/parts/dl.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'dl'> {
+  variant?: 'default' | 'border' | 'float';
+  dtWidth?: string;
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', dtWidth, class: cls, id, style: userStyle, ...rest } = Astro.props;
+const style = joinStyles(dtWidth && `--un-dl-dt-width:${dtWidth}`, styleToString(userStyle));
+---
+
+<dl id={id} class:list={['un-dl', variant !== 'default' && `un-dl--${variant}`, cls]} style={style} {...rest}>
+  <slot />
+</dl>

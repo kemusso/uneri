@@ -1,0 +1,68 @@
+---
+/** catalog: CapBox (spec/parts/capbox.md §3). Variant order/text must match reference/fixtures/capbox.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import CapBox from '../../components/CapBox.astro';
+---
+<Catalog title="CapBox">
+  <Content data-variant="default">
+    <CapBox title="キャプションのタイトル">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="small-title">
+    <CapBox title="キャプションのタイトル" variant="small-title">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="onborder">
+    <CapBox title="キャプションのタイトル" variant="onborder">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="onborder2">
+    <CapBox title="キャプションのタイトル" variant="onborder2">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="inner">
+    <CapBox title="キャプションのタイトル" variant="inner">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="intext">
+    <CapBox title="キャプションのタイトル" variant="intext">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="shadow">
+    <CapBox title="キャプションのタイトル" variant="shadow">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="colset1">
+    <CapBox title="キャプションのタイトル" variant="inner" color="col1">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="colset2">
+    <CapBox title="キャプションのタイトル" variant="inner" color="col2">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+  <Content data-variant="colset3">
+    <CapBox title="キャプションのタイトル" variant="inner" color="col3">
+      <p>キャプションボックスの本文です。</p>
+    </CapBox>
+  </Content>
+
+</Catalog>

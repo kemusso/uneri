@@ -44,7 +44,7 @@ slot: default（ふきだしの中身）
 | `col-yellow` | `color="yellow"` | `data-col="yellow"` | #f9f7d2 / #fbe593 |
 | `think-border` | `tail="think" border` | `.-thinking.-border-on` | 丸のしっぽに 1px の輪郭 |
 | `rich` | 見出し・段落 2 つ・リストを含む | 同上 | ふきだし内のブロック余白 |
-| `nested` | ふきだしの中にふきだし（同じ色）| 同上 | 修飾子が内側に漏れない（角アイコン・思考・枠線が内側に効かない）|
+| `nested` | ふきだしの中にふきだし（内外同色）| 同上 | アイコンの形と body の余白は内側に漏れない。しっぽと枠線は参照と同じく内側にも効く |
 
 ## 4. マークアップ
 
@@ -77,7 +77,7 @@ slot: default（ふきだしの中身）
 | しっぽの入れ物 | 位置 / 寸法 / z-index | absolute（top 16px、left 0。`right` は right 0）/ 0×0 / 1。背景色・線色をここに置き、子が継承する |
 | しっぽ speech | before | `border-width: 8px 10px 8px 0`（左辺は 0）・右辺のみ背景色、10×16、top 0 / left -10px（`border` 時は -8px）、z-index 3 |
 | しっぽ speech | after | 同形で右辺のみ線色、z-index 2。既定は `display: none`、`border` 時のみ 10×16 で表示 |
-| しっぽ think（`border` 併用）| border | 1px・線色（`--_outline-*` を root の修飾子で切り替える。ふきだしごとに `.un-balloon` で初期化し、入れ子に漏らさない）|
+| しっぽ think（`border` 併用）| border | 1px・線色（`--_outline-*` を root の修飾子で切り替える。参照と同じく入れ子のふきだしにも効く）|
 | しっぽ think | before / after | 8px（top 0 / left -21px、z-index 3）と 12px（top 8px / left -16px、z-index 2）の円、背景色 |
 | 色セット | gray / red / blue / green / yellow | bg `#f7f7f7` `#ffebeb` `#e2f6ff` `#d1f8c2` `#f9f7d2` ／ line `#ccc` `#f48789` `#93d2f0` `#9ddd93` `#fbe593` |
 
@@ -93,7 +93,7 @@ slot: default（ふきだしの中身）
 
 ## 7. 備考
 
-- 修飾子の規則は原則 `> :where(...)` の連鎖で自分のふきだしだけに効かせる（詳細度は 1 クラスのまま）。ただし参照が子孫セレクタで内側にも効かせている箇所（`border` の枠線としっぽの位置）は、参照の見た目に合わせて子孫のままにする。
+- 修飾子の規則は参照の書き方に合わせる。参照が子結合子・複合セレクタで自分の要素にだけ効かせている箇所（アイコンの形、`think` の body 余白）は `> :where(...)` で限定し、子孫セレクタで内側にも効かせている箇所（しっぽの形・位置、`border` の枠線）は同じく子孫のままにする。`nested` バリアントで両方の挙動を確かめる。
 - 色は custom property をふきだしごとに置くため、入れ子でも内側が自分の色を持つ。参照は `[data-col] .c-balloon__text` の子孫セレクタで外側の色が内側に漏れるが、そこは追随しない（`nested` バリアントは内外同色にして比較する）。
 
 - 参照には <600px で縦積みにする `-sp-vrtcl`（しっぽを 90° 回転）があるが、まだ再現していない。別途 spec 化する。

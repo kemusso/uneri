@@ -1,0 +1,140 @@
+/* CapBox — captioned box. spec: spec/parts/capbox.md */
+
+.un-capbox,
+.un-capbox *,
+.un-capbox::before,
+.un-capbox::after,
+.un-capbox ::before,
+.un-capbox ::after {
+  box-sizing: border-box;
+}
+
+.un-capbox {
+  --_color: var(--un-capbox-color, var(--un-color-main));
+  --_bg: var(--un-capbox-bg, transparent);
+  --_pad: 1.25em;
+  position: relative;
+}
+
+.un-capbox__title {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  background: var(--_color);
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+}
+.un-capbox__content {
+  clear: both;
+  position: relative;
+  z-index: 0;
+  margin-top: -2px;
+  padding: var(--_pad);
+  border: 1px solid var(--_color);
+  background: var(--_bg);
+}
+
+/* ---- small label ---- */
+.un-capbox--small-title > :where(.un-capbox__title) {
+  float: left;
+  top: 1px;
+  width: fit-content;
+  padding: 0.25em 0.75em;
+  font-size: 0.85em;
+}
+
+/* ---- label sitting on the border ---- */
+.un-capbox--onborder > :where(.un-capbox__title),
+.un-capbox--onborder2 > :where(.un-capbox__title) {
+  display: inline-flex;
+  top: 1em;
+  left: 1em;
+  width: fit-content;
+  padding: 0.5em 0.75em;
+  font-size: 0.85em;
+  line-height: 1;
+}
+.un-capbox--onborder > :where(.un-capbox__title) {
+  background: var(--un-color-bg);
+  color: var(--_color);
+}
+.un-capbox--onborder > :where(.un-capbox__content),
+.un-capbox--onborder2 > :where(.un-capbox__content) {
+  padding-top: calc(var(--_pad) + 0.25em);
+}
+.un-capbox--onborder > :where(.un-capbox__content) {
+  background: var(--un-color-bg);
+}
+
+/* ---- label inside the frame ---- */
+.un-capbox--inner > :where(.un-capbox__content) {
+  padding-top: var(--_pad);
+}
+.un-capbox--inner > :where(.un-capbox__content)::before {
+  /* keeps the first line clear of the label that overlaps the frame */
+  content: "";
+  display: block;
+  visibility: hidden;
+  width: 100%;
+  height: 1em;
+}
+.un-capbox--inner > :where(.un-capbox__title) {
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  min-width: 2em;
+  max-width: 100%;
+  width: fit-content;
+  padding: 0.25em 1em;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+
+/* ---- caption and body share one frame ---- */
+.un-capbox--intext {
+  padding: 1.5em;
+  border: 1px solid var(--_color);
+  background: var(--_bg);
+}
+.un-capbox--intext > :where(.un-capbox__title) {
+  justify-content: flex-start;
+  padding: 0;
+  background-color: transparent;
+  background-image: none;
+  color: var(--_color);
+  text-align: left;
+}
+.un-capbox--intext > :where(.un-capbox__content) {
+  margin-top: 1em;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: none;
+}
+
+/* ---- shadow instead of a frame ---- */
+.un-capbox--shadow {
+  overflow: hidden;
+  box-shadow: var(--un-shadow-box);
+}
+.un-capbox--shadow > :where(.un-capbox__content) {
+  border: 0;
+  background-color: #fff;
+  background-image: none;
+}
+
+@media (min-width: 600px) {
+  .un-capbox {
+    --_pad: 1.5em;
+  }
+  .un-capbox--onborder > :where(.un-capbox__content),
+  .un-capbox--onborder2 > :where(.un-capbox__content) {
+    padding-top: 2em;
+  }
+}

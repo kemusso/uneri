@@ -267,7 +267,7 @@ async function capture(page, variant, hover, glyphCss) {
     await page.evaluate(() => { for (const a of document.getAnimations()) { a.pause(); a.currentTime = 0; } });
   }
   const box = await loc.boundingBox();
-  const styles = await loc.evaluate(COLLECT, { depthMax: 6, props: STYLE_PROPS });
+  const styles = await loc.evaluate(COLLECT, { depthMax: 8, props: STYLE_PROPS });
   // snap the wrapper to an integer y before shooting: a fractional offset changes how 1px
   // borders anti-alias and would show up as a diff that has nothing to do with the part
   await loc.evaluate((el) => {

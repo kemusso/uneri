@@ -12,10 +12,6 @@
 .un-balloon {
   --_bg: var(--un-balloon-bg, var(--un-color-balloon-gray-bg));
   --_line: var(--un-balloon-line, var(--un-color-balloon-gray-line));
-  /* reset per instance, so a balloon nested in a bordered one is not outlined too */
-  --_outline-width: 0;
-  --_outline-style: none;
-  --_outline-color: currentColor;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -75,6 +71,7 @@
   line-height: 1.6;
 }
 .un-balloon--border {
+  /* inherited on purpose: the reference outlines a nested balloon's tail too */
   --_outline-width: 1px;
   --_outline-style: solid;
   --_outline-color: var(--_line);
@@ -134,7 +131,7 @@
   border-color: var(--_line);
   background-color: var(--_bg);
 }
-.un-balloon--right > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) {
+.un-balloon--right .un-balloon__tail {
   right: 0;
   left: auto;
   /* mirrored rather than re-drawn, so both directions stay one shape */
@@ -172,15 +169,14 @@
 .un-balloon--border .un-balloon__tail > :where(:first-child) {
   left: -8px;
 }
-.un-balloon--think .un-balloon__tail > :where(:first-child) {
+.un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:first-child) {
   left: -21px;
 }
-.un-balloon--border > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:last-child) {
+.un-balloon--border .un-balloon__tail > :where(:last-child) {
   display: block;
   width: 10px;
   height: 16px;
 }
-
 /* ---- thinking tail: two bubbles instead of a triangle ---- */
 .un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > * {
   display: block;
@@ -197,6 +193,9 @@
   height: 8px;
 }
 .un-balloon--think > :where(.un-balloon__body) > :where(.un-balloon__text) > :where(.un-balloon__tail) > :where(:last-child) {
+  display: block;
+  right: auto;
+  bottom: auto;
   top: 8px;
   left: -16px;
   width: 12px;

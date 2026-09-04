@@ -20,7 +20,7 @@
 | B1 | ボックス装飾 | `Box` | border-sm / border-sg / border-dm / border-dg / border-left / bg-gray / bg-main-thin / bg-main / stripe / grid / dent / emboss / kakko / big-kakko / note / sticky / balloon / balloon2 | `.is-style-border_sm` 等 | pass |
 | B2 | アイコンボックス（段落） | `Box` (`icon` prop) | good / bad / info / announce / pen / book | `.is-style-icon_good` 等 | pass |
 | B3 | 大アイコンボックス | `Box` (`bigIcon` prop) | good / bad / point / check / batsu / hatena / caution / memo | `.is-style-big_icon_good` 等 | pass |
-| B4 | キャプションボックス | `CapBox` | default / small-title / onborder / onborder2 / inner / intext / shadow; colset: main / 1 / 2 / 3 | `.cap_box.is-style-*` `.-colset-*` | todo |
+| B4 | キャプションボックス | `CapBox` | default / small-title / onborder / onborder2 / inner / intext / shadow; colset: main / 1 / 2 / 3 | `.cap_box.is-style-*` `.-colset-*` | impl |
 | B5 | ふきだし | `Balloon` | dir: left / right; shape: speech / think; border: none / on; icon shape: circle / square | `.c-balloon` | impl |
 
 ## C. リスト
@@ -28,7 +28,7 @@
 | # | パーツ | コンポーネント | バリアント | 参照 | 状態 |
 |---|---|---|---|---|---|
 | C1 | リスト装飾 | `List` | default / note / check / good / bad / triangle / num-circle; `ordered` | `.is-style-*_list` | pass |
-| C2 | 説明リスト | `Dl` | default / border / float | `.swell-block-dl` | todo |
+| C2 | 説明リスト | `Dl` + `DlItem` | default / border / float | `.swell-block-dl` | impl |
 | C3 | リンクリスト | `LinkList` | default / border / button | `.swell-block-linkList` | todo |
 
 ## D. インタラクション

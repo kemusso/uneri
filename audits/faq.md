@@ -2,150 +2,228 @@
 
 verdict: **FAIL**
 
-審査者: 審査エージェント（実装者とは別）。コードの修正は行っていない。
-実行: `node scripts/audit/run.mjs faq --no-build --port 4408`（2 回実行、いずれも同結果）
-      `node scripts/audit/standalone.mjs faq` / `node scripts/audit/cleanroom.mjs`
+審査者: 審査エージェント（実装者とは別）。コードの修正は行っていない。**再審査**（前回 FAIL 3 件に対して）。
+実行:
+- `node scripts/audit/run.mjs faq --no-build --port 4408`
+- `node scripts/audit/standalone.mjs` / `node scripts/audit/cleanroom.mjs`
+- 独自ハーネス（参照 SWELL マークアップと uneri マークアップを同条件で並べ、
+  `dl` 以下の全要素・全疑似要素について `getComputedStyle` の全プロパティ（約 340）と
+  ルート相対 rect を突き合わせ。375/768/1200 × `.un-content` の中／素の div の中 = 6 通り、
+  シナリオ 41 件 = 246 比較）
+
+## 前回 FAIL 項目の解消状況
+
+| # | 前回の指摘 | 判定 |
+|---|---|---|
+| 1 | 回答が 2 ブロック以上のときブロック間の 1em が消える | **解消** |
+| 2 | `.un-content` の外で A の印と回答行が揃わない | **解消** |
+| 3 | fixture が参照サイトの実マークアップ（`data-q="fill-custom"` の塗り四角 Q/A）を再現していない | **未解消（FAIL）** |
+
+### 1 の確認
+
+`faq.css` に `.un-faq .un-faq__a > * { margin-top: 0; margin-bottom: 1em }` と
+`.un-faq .un-faq__a > :last-child { margin-bottom: 0 }` が入り、
+`rich-answer` バリアント（段落 2 つ＋リスト）がカタログと fixture の双方に追加された。
+
+`.un-content` の中で、回答が段落 2 つ＋リスト / 段落 4 つ / 見出し以外の任意ブロックのいずれでも
+**差分 0**（375 / 768 / 1200）。前回の実測値だった `dd` height 96px→80px、
+`p:first-child` margin-bottom 16px→0px はいずれも一致に戻っている。
+`audits/faq/shots/rich-answer-{375,768,1200}-{ref,impl}.png` も目視で一致。
+
+### 2 の確認
+
+素の div（`.un-content` の外）で `.un-faq__a > p` の margin-top は参照・実装とも **0px**。
+`dd::before`（A の印）の `top` も両者 `0.75em`（box / stripe は `1em`）で一致し、
+「A の印が 1 行上に浮く」症状は消えている。
+
+### 3 の確認 — **未解消**
+
+`reference/fixtures/faq.html` には今も `data-q` / `data-a` が無い（5 バリアントすべて）。
+実装側にも印の塗り／枠を表す API は無い。詳細は下記 FAIL 1。
 
 ## 自動計測
 
-`audits/faq/report.json` / `report.md` より。全 24 行（4 バリアント × 3 viewport × 通常/hover）が閾値内。
+`audits/faq/report.json` / `report.md` より。30 行すべて閾値内で **自動判定は PASS**。
 
 | variant | vw | pixel diff | box Δ (w/h) | style diffs |
 |---|---|---|---|---|
-| default / border / box / stripe（+ 各 -hover） | 375 | 0 % | 0/0 | 0 |
-| default / border / box / stripe（+ 各 -hover） | 768 | 0 % | 0/0 | 0 |
-| default / border / box / stripe（+ 各 -hover） | 1200 | 0 % | 0/0 | 0 |
+| default / border / box / stripe / rich-answer（+ 各 -hover） | 375 | 0 % | 0/0 | 0 |
+| 同上 | 768 | 0 % | 0/0 | 0 |
+| 同上 | 1200 | 0 % | 0/0 | 0 |
 
-自動計測は 24/24 PASS。ただし下記のとおり **カタログ／fixture のダミー内容が定義的な性質を露出していない** ため、
-この PASS は部品の合格を意味しない（spec/04-audit.md §2.0）。
-
-### 独自検証で行ったこと
-
-1. **全 CSS プロパティ総当たり**: 参照・実装の `[data-variant]` 配下を深さ 8 まで走査し、
-   `getComputedStyle` が返す全プロパティ（約 340）＋ `::before` / `::after` ＋ 各要素の相対 rect を突き合わせ。
-   カタログと同じ内容では差分 0（ハーネス由来の外側 margin を除く）。
-2. **カタログに出ない内容での再計測**: 項目 1 つ / 3 つ、質問が 2 行に折り返す、回答が複数段落、
-   回答にリスト、回答に見出し、回答がテキストノードのみ、回答が空、FAQ の入れ子、`.un-content` の外、
-   の 9 シナリオ × 4 バリアント × 375/768/1200。→ **回答が複数ブロックの場合と `.un-content` の外で差分**（下記 FAIL 1 / 2）。
-3. **参照 CSS の FAQ 関連ルールを 1 宣言ずつ突き合わせ**（`blocks.css` 17 ルール + `main.css` の `.faq_a>*`）。
-4. **`standalone.mjs` の変異テスト**（リポジトリの複製上で実施、本体は無改変）。
-5. 参照サイト実マークアップ（`reference/swell/demo01-8.html`）と fixture の突き合わせ。
+**この PASS は部品の合格を意味しない。** 比較対象の fixture が
+参照サイトに実在する唯一の FAQ と別物である（FAIL 1）。
 
 ## FAIL 項目（実装者への指示）
 
-### 1. 回答が 2 ブロック以上のとき、ブロック間の 1em が無い（全 4 バリアント / 全 viewport）
+### 1. Q / A の印のスタイル（`data-q` / `data-a`）が fixture・spec・実装のいずれにも無い — 前回からの持ち越し
 
-- 参照: `main.css` の `.c-tabBody__item>*,.cap_box_content>*,.faq_a>*,…{margin-bottom:1em}` により
-  `.faq_a > *` に `margin-bottom: 1em`。最後の子だけ `.post_content dd>:last-child{margin-bottom:0!important}` で 0。
-- 実装: `base.css` の `.un-content div :where(p, ul, ol, dl, …) { margin-bottom: 0 }` が全ての子を 0 にし、
-  `faq.css` が何も戻していない。
-- 実測（1200 / `multip-*`、回答が `<p>` 2 つ）:
-  - `dd.un-faq__a` の height: 参照 **96px** → 実装 **80px**
-  - 回答 2 段落目の y: 参照 **112px** → 実装 **96px**
-  - `.un-faq__a > p:first-child` の margin-bottom: 参照 **16px** → 実装 **0px**
-  - 項目 1 つあたり 16px、`[data-variant]` 全体で 320px → 288px
-  - 回答にリストを置いた場合（`list-*`）: dd height 参照 **128px** → 実装 **116px**（12px）
-  - FAQ を入れ子にした場合（`nest-*`）も同じ原因で 240px → 224px
-- 推定原因: `faq.css` に `.un-faq__a > *` の縦リズム規則が無い。
-  同じ問題を `step.css` は `.un-step .un-step__body > * { margin-top: 0; margin-bottom: 1em }` +
-  `> :last-child { margin-bottom: 0 }` で、`box.css` は `.un-box--group > *` で既に解決している。
-  faq も同じ形（`.un-faq__a > *` / `.un-faq__a > :last-child`）で揃えるべき。
-- 露出しない理由: カタログ・fixture の回答がどちらも `<p>` 1 つだけ。spec/04-audit.md §2.0 の
-  「そのスタイルの定義的な性質が出るダミーテキストを選ぶこと」に反する（fixture-suspect）。
+**事実確認（`reference/swell/demo01-8.html` を読んだ結果、前任者の指摘が正しい）:**
 
-### 2. `.un-content` の外で回答段落が 16px 下がり、A の印と行が揃わない（全 4 バリアント / 全 viewport）
+- 参照サイトに実在する唯一の FAQ ブロックのマークアップ:
+  ```html
+  <dl class="swell-block-faq is-style-faq-border" data-q="fill-custom" data-a="fill-custom">
+  ```
+- `blocks.css`:
+  `[data-q=fill-custom] .faq_q:before{background-color:var(--color_faq_q);color:#fff}` /
+  `[data-a=fill-custom] .faq_a:before{background-color:var(--color_faq_a);color:#fff}`
+- `swell_custom.css`（および `demo01-8.html` のインライン）: `--color_faq_q:#d55656` / `--color_faq_a:#6599b7`
+- したがって参照サイトの実際の見た目は **32×32px の塗り四角に白抜きの Q / A**
+  （Q = 赤 `#d55656`、A = 青 `#6599b7`）。参照 CSS で実際に描画して確認済み。
 
-- 参照: SWELL は `p` の既定 margin をグローバルに 0 にしているため、`.post_content` の外でも
-  `.faq_a > p` の margin-top は **0px**。
-- 実装: `p` の margin リセットが `base.css` の `.un-content …` にしか無いため、`.un-content` の外では
-  UA 既定の `margin-top: 16px` が残る。
-- 実測（1200 / `bare-*`）:
-  - `.un-faq__a > p` の margin-top: 参照 **0px** → 実装 **16px**
-  - `dd.un-faq__a` の height: 参照 **72px** → 実装 **88px**
-  - `dd::before`（A の印）の bottom: 参照 **28px** → 実装 **44px**
-  - 目視: A の印が回答テキストの 1 行上に浮き、行頭が揃わない（スクリーンショットで明瞭）
-- spec/parts/faq.md §6「`.un-content` の外でも成立する」および
-  spec/01-coding-rules.md §2.4「単体で置いたときも崩れないよう、margin 以外の見た目は `.un-content` に依存しない」に違反。
-- 推定原因: FAIL 1 と同根。`.un-faq__a > *` に `margin-top: 0` を含めれば同時に解消する
-  （`step.css` の「the step owns the rhythm inside itself, container or not」と同じ考え方）。
+**よって `spec/parts/faq.md` §5 の**
+「参照サイトは Q/A の色を設定していないため、実測は本文色（#333）」
+**および `spec/02-design-tokens.md` §2.4 の同趣旨の記述は事実と異なる（spec-suspect）。**
+参照サイトは `--color_faq_q` / `--color_faq_a` を明示的に設定している。
 
-### 3. fixture が参照サイトの実マークアップを再現していない（fixture-suspect / spec-suspect）
+**参照が持つ印のスタイル（`blocks.css` の全 8 規則）:**
 
-- 参照サイトに実在する唯一の FAQ（`reference/swell/demo01-8.html`）は
-  `<dl class="swell-block-faq is-style-faq-border" data-q="fill-custom" data-a="fill-custom">`。
-- `blocks.css` の `[data-q=fill-custom] .faq_q:before{background-color:var(--color_faq_q);color:#fff}` /
-  `[data-a=fill-custom] .faq_a:before{background-color:var(--color_faq_a);color:#fff}` と
-  `swell_custom.css` の `--color_faq_q:#d55656` / `--color_faq_a:#6599b7` により、
-  実際の見た目は **32×32px の塗りつぶし四角に白抜きの Q / A**。
-- `reference/fixtures/faq.html` は `data-q` / `data-a` を落としているため、
-  審査は「参照サイトに存在しない、色も地も無い素の Q/A」同士の比較になっている。
-- spec/parts/faq.md §5 の注記「参照サイトは Q/A の色を設定していないため、実測は本文色（#333）」は
-  参照マークアップと矛盾する（spec-suspect）。
-- 実装の `--un-color-faq-q` / `--un-color-faq-a` は文字色しか変えられず、
-  参照サイトの見た目（塗り・白抜き・`box-shadow` による枠線版）は **どの API でも再現できない**。
-- 判定: 参照の唯一の実例を再現できないため FAIL。fixture に `data-q`/`data-a` 相当を足すか、
-  spec §3 に印のスタイル（`fill` / `col` × text/main/custom）を追加するかを実装者・仕様側で決める必要がある。
+| 属性値 | `::before` の効果 |
+|---|---|
+| `col-text` | `box-shadow: 0 0 0 1px currentcolor`（本文色の枠） |
+| `fill-text` | `background-color: var(--color_text); color: #fff` |
+| `col-main` | `box-shadow: 0 0 0 1px currentcolor; color: var(--color_main)` |
+| `fill-main` | `background-color: var(--color_main); color: #fff` |
+| `col-custom` | `box-shadow: 0 0 0 1px currentcolor; color: var(--color_faq_q / _a)` |
+| `fill-custom` | `background-color: var(--color_faq_q / _a); color: #fff` |
+| （加えて）`--swl-faq_icon_radius` | 既定 `0` / `.-icon-rounded` = `10%` / `.-icon-circle` = `50%` |
+
+**実装の状態:**
+
+`--un-color-faq-q` / `--un-color-faq-a` は `.un-faq__q::before { color: … }` にしか流れず、
+**文字色しか変えられない**。参照側には「枠も塗りも無く文字色だけ変える」状態は存在しないため、
+uneri の API は参照のどの状態にも対応していない。塗り（`background-color` + 白抜き）も
+枠（`box-shadow` 1px）も角丸オプションも、どの props でも再現できない。
+
+**必要な対応（実装者・仕様側の判断が要る）:**
+1. `reference/fixtures/faq.html` に参照サイトの実マークアップ（`data-q="fill-custom" data-a="fill-custom"`
+   と `--color_faq_q` / `--color_faq_a` の実値）を含むバリアントを追加する。
+2. `spec/parts/faq.md` §3 に印のスタイル（`fill` / `col` × text / main / custom、および角丸）を
+   バリアントまたは props として定義し、§5 の誤った注記と
+   `spec/02-design-tokens.md` §2.4 の注記を訂正する。
+3. `faq.css` に `background-color` / `color: #fff` / `box-shadow` / `border-radius` の分岐を足す。
+
+判定: 参照サイトの唯一の実例が再現できないため FAIL。
+
+### 2. 回答の中に見出しを置くと縦の余白が参照と大きく違う（全 4 バリアント / 全 viewport、`.un-content` の中）
+
+- 参照: `.faq_a > * { margin-bottom: 1em }` は **(0,1,0)**。
+  `.post_content h3 { margin: 3em 0 2em }` は **(0,1,1)** で勝つため、
+  FAQ の回答の中でも見出しは記事本文どおりの余白を保つ。
+- 実装: `.un-faq .un-faq__a > * { margin-top: 0; margin-bottom: 1em }` が **(0,2,0)** で、
+  `heading.css` の `.un-content h3 { margin: 3em 0 2em }`（(0,1,1)）に勝ってしまう。
+- 実測（1200、回答が `<h3>見出しです</h3><p>本文です。</p>`、border バリアント）:
+
+| 対象 | プロパティ | 参照 | 実装 |
+|---|---|---|---|
+| `.un-faq__a > h3` | margin-top | **62.4px** | **0px** |
+| `.un-faq__a > h3` | margin-bottom | **41.6px** | **20.8px** |
+| `dd.un-faq__a` | height | 199.48px | **116.30px** |
+| `.un-faq__item`（1 つめ）| height | 255.48px | **172.30px** |
+| `[data-variant]` 全体 | height | 400.48px | **317.30px** |
+
+- 375 / 768 でも同じ比率でずれる（375: dd height 166.34px → 100.34px）。
+- 目視: 参照は見出しの上に大きな余白があり、A の印は見出しよりずっと上に浮く。
+  実装は A の印と見出しが同じ行から始まる。まったく違う見え方になる。
+- 露出しない理由: fixture / カタログの回答が段落とリストだけ（`rich-answer` にも見出しが無い）。
+  `standalone.mjs` の `CONTENT_AREA` の子リスト（`p, ul, ol, dl, blockquote, figure, table`）にも
+  見出しが入っていないため、こちらでも拾えない。
+- `spec/parts/faq.md` §5 の「a の子 | margin | 上 0 / 下 1em（最後の子は 0）」は
+  参照の実体（`margin-bottom: 1em` のみ、しかも弱い詳細度）を写し違えている（spec-suspect）。
+  「上 0」を残すなら詳細度を (0,1,0) 相当に落とす（例: `.un-faq__a > *`）か、
+  見出しを対象外にするかを spec で決める必要がある。
 
 ## 目視所見
 
-- `audits/faq/shots/` の `-ref` / `-impl` / `-diff` を 4 バリアント × 3 viewport 分確認。
-  diff は全て空（pixelmatch の残像のみ）。
+- `audits/faq/shots/` の `-ref` / `-impl` / `-diff` を 5 バリアント × 3 viewport × 通常/hover の 30 組すべて確認。
+  diff は全て空。
 - Q / A の印: 位置（left 0 / top 0.75em、box・stripe は left 1em / top 1em）、書体（Arial）、
-  太さ（Q=400 / A=500）、字送り（2em 幅・行高 2em で中央揃え）いずれも参照と一致。
+  太さ（Q=400 / A=500）、2em 角・行高 2em の中央揃え、いずれも fixture との比較では一致。
+  ただし参照サイトの実物は塗り四角である（FAIL 1）。
 - 区切り: border = 2 項目目以降に 1px 実線 + 左右 0.5em、box = 1px 実線の枠 + 質問下に 1px 破線、
-  stripe = 質問に `--un-color-gray` の帯 + 項目間 24px（1.5em と 1em の相殺）。いずれも参照どおり。
-- 質問が 2 行に折り返す場合の折り返し位置・ぶら下がりは参照と一致（`wrapq-*` で差分 0）。
-- 項目 1 つ / 3 つ、回答が見出し・テキストノードのみ・空、のいずれも差分 0。
-- hover: 参照・実装とも FAQ に hover 規則は無く、`forcePseudoState` の対象要素も存在しない。
-  `HOVER_PARTS` に `faq` が入っているが実質的に無検査（tool-suspect、軽微）。
-- **FAIL 1 / 2 は目視で明確に判別できる差**（回答の段落が詰まる／A の印が行から外れる）。
+  stripe = 質問に `--un-color-gray` の帯 + 項目間 24px。いずれも参照どおり。
+- `rich-answer`: 段落間 1em、リスト前 1em、最後の子の下 0 まで参照と一致（前回 FAIL 1 の解消を目視でも確認）。
+- 独自検証で差分 0 だったシナリオ（各 4 バリアント × 375/768/1200、`.un-content` の中）:
+  項目 1 つ / 3 つ、質問が 2 行に折り返す、回答が段落 4 つ、回答がテキストノードのみ、回答が空、
+  回答に `<blockquote>`、回答に `<table>`、FAQ の入れ子。
+- hover: 参照 CSS に `.faq_q` / `.faq_a` の `:hover` 規則は存在しない（`blocks.css` / `main.css` を全走査）。
+  実装にも無い。`HOVER_PARTS` に `faq` が入っているが実質無検査（tool-suspect、軽微）。
 
 ## 仕様適合
 
-- **バリアント網羅**: OK。spec/parts/faq.md §3 の 4 バリアント（default / border / box / stripe）が
-  すべて `src/pages/catalog/faq.astro` と fixture にあり、`box` / `stripe` は SWELL 側にも実ルールがあり
-  既定へのフォールバックではないことを computed style で確認済み
-  （box: item border 1px solid + q border-bottom 1px dashed + padding 20/16/20/64、
-   stripe: q background `rgba(199,199,199,.15)` + item margin-bottom 24px）。
-  `is-style-faq-default` だけは SWELL に対応ルールが無い純粋な no-op クラスだが、
-  SWELL の既定 FAQ が追加 CSS を持たないこと自体が事実なので、fixture の書き方として妥当。
+- **バリアント網羅**: OK。spec §3 の 5 件（default / border / box / stripe / rich-answer）が
+  `src/pages/catalog/faq.astro` と `reference/fixtures/faq.html` の双方にあり、順序・ダミーテキストも一致。
+  `rich-answer` は `variant` の値ではなく「border バリアント + 回答が段落 2 つ＋リスト」という
+  内容シナリオであり、spec §3 の表記どおり。
 - **props**: OK。`Faq`（`variant?: 'default'|'border'|'box'|'stripe'` 既定 `'default'`、`class`、`id`、
   `HTMLAttributes<'dl'>` 拡張）、`FaqItem`（`q: string`、`class`、`id`、`HTMLAttributes<'div'>` 拡張）は
   spec §2 と完全一致。マークアップも spec §4 の `dl > div > dt + dd` どおり。
-- **コーディング規則**: OK。`src/styles/parts/faq.css` を全 17 ルール確認。
-  - `!important` なし。`swell` の文字列なし。リテラル色なし（全て `--un-color-*` 経由）。
-  - 詳細度を数え直した結果、最大は `.un-faq__item + .un-faq__item` の **(0,2,0)**。
-    `.un-faq--border > :where(.un-faq__item) + :where(.un-faq__item)` などは `:where()` が 0 なので (0,1,0)、
-    `:last-child` は数え上げ対象外。上限 (0,2,0) を超える規則は無い。
-  - `.un-content` 前置なし、`@media` なし、`em`/`px` の使い分けも規則どおり。疑似要素にコメントあり。
-  - 軽微（規則違反ではない）: `.un-faq--box > … + … { margin-top: 1em }` は基底規則と重複。
+  （FAIL 1 の印スタイルを spec に入れるなら props も増える。現行 spec §2 との一致という意味では OK。）
+- **コーディング規則**: OK。`src/styles/parts/faq.css` の全規則を確認。
+  - `!important` なし。`swell` の文字列なし。リテラル hex なし（色は全て `--un-color-*` 経由）。
+  - 詳細度を数え直した結果、最大は **(0,2,0)**:
+    `.un-faq__item + .un-faq__item`、`.un-faq .un-faq__a > *`、`.un-faq .un-faq__a > :last-child`
+    （`:last-child` は状態擬似クラスなので数え上げ対象外）。
+    `.un-faq--box > :where(.un-faq__item) > :where(.un-faq__q)::before` などは `:where()` が 0 で (0,1,0)。
+    上限 (0,2,0) を超える規則は無い。
+    ※ 規則違反ではないが、この (0,2,0) が FAIL 2 の原因になっている。
+  - `.un-content` の前置なし、`@media` なし、`em` / `px` の使い分けも規則どおり。
+    疑似要素に `content` と用途コメントあり。
+  - 軽微: `.un-faq--box > … + … { margin-top: 1em }` は基底の `.un-faq__item + .un-faq__item` と重複。
 - **クリーンルーム**: OK（`cleanroom: OK (1900 reference runs indexed)`）。
-- **standalone**: `standalone: OK (4 variants, 280 rules)` と出るが、**この OK は信用できない**（下記）。
+- **standalone**: OK（`standalone: OK (148 variants, 326 rules)`。faq の 5 バリアントも個別に OK）。
+  前回指摘した盲点は塞がっている（下記）。
 
-## ツールの穴（tool-suspect）
+## ツール／fixture の不備
 
-`scripts/audit/standalone.mjs` は FAIL 2 を検出できない。リポジトリの複製上で変異テストを実施した:
+### 前回の tool-suspect は解消
+
+`scripts/audit/standalone.mjs` に
+`CONTENT_AREA = :is(.un-box--group, [class$="__body"], [class$="__text"], [class$="__a"], [class$="__panel"])`
+に対する `> :where(p, ul, ol, dl, blockquote, figure, table)` の margin 検査が追加され、
+前回「構造的に検出不能」とした形の不具合を拾えるようになった。変異テスト
+（リポジトリの複製上で実施。本体は無改変）:
 
 | 変異 | 期待 | 結果 |
 |---|---|---|
-| M1: `.un-content .un-faq__q { padding-left: 5em }` を `faq.css` に追加（クラス付き要素） | 検出 | **FAIL (4/4)** 検出できた |
-| M2: `.un-content .un-faq__a > p { margin-left: 3em }` を `faq.css` に追加 | 検出 | **FAIL (4/4)**（`.un-content` 前置の文字列検査で検出） |
-| M3: 同じ宣言を `base.css` 側に置く（＝実際の不具合と同じ形） | 検出 | **OK と表示（見逃し）** |
+| `.un-faq .un-faq__a > *` から `margin-top: 0` を削除（= 前回 FAIL 2 と同じ形） | 検出 | **FAIL (5/9)** 検出 |
+| `.un-tab .un-tab__panel > *` から `margin-top: 0` を削除 | 検出 | **FAIL (4/9)** 検出 |
+| `faq.css` / `tab.css` に `.un-content` 前置の規則を追加 | 検出 | **FAIL (9/9)** 検出 |
 
-原因: `standalone.mjs` の走査対象が `[class*="un-"]`（＋ `li` の疑似要素）に限られ、
-パーツ内部のクラス無し子要素（`.un-faq__a > p` など）を一切見ない。
-さらに `CRITICAL` プロパティ一覧に `margin-*` が含まれていない。
-このため「`base.css` 経由でコンテナ依存になっているクラス無し子要素の margin」は構造的に検出不能で、
-本審査の FAIL 1・FAIL 2 はどちらもこの穴に落ちている。`DECORATED` にパーツ配下の全子孫を含めるか、
-`CRITICAL` に `margin-top` / `margin-bottom` を足す修正が必要。
+**残る穴**: `CONTENT_AREA` の子リストに見出し（`h2`〜`h4`）が入っていないため、FAIL 2 の形は拾えない。
+
+### fixture-suspect（FAIL 1 と同根）
+
+`reference/fixtures/faq.html` の 5 バリアントはいずれも `data-q` / `data-a` を持たない。
+参照サイトに実在する FAQ は `data-q="fill-custom" data-a="fill-custom"` であり、
+現状の審査は「参照サイトに存在しない、地も枠も無い素の Q/A」同士を比べている。
+
+### 素の div（`.un-content` の外）で残る差（FAIL には数えない）
+
+| 対象 | 参照 | 実装 | 扱い |
+|---|---|---|---|
+| ルート `dl` の margin-top / bottom | 0px | 16px | spec/01-coding-rules.md §2.4 が「パーツの余白（margin）は `.un-content` の文脈で決める」としているので想定内 |
+| `.un-faq__a > :last-child` の margin-bottom | 16px | 0px | 参照は `.post_content dd>:last-child{margin-bottom:0!important}` で container 依存に 0 にしている。実装は container 非依存に 0 にしており、`.un-content` の中では両者一致（0px）。uneri の方針（§2.4「margin 以外の見た目は `.un-content` に依存しない」）に沿った差なので許容 |
+| `overflow-wrap` / `text-size-adjust` | `break-word` / `100%` | `normal` / `auto` | 参照側 `body` の継承値。パーツの責任外 |
+
+### faq 以外のパーツに帰属する観測（記録のみ）
+
+回答の中に `<blockquote>` / `<table>` を置いた場合、参照との差が出るが原因は
+`base.css` / Content パーツ側にある（faq.css は無関係）。faq の FAIL には数えない。
+
+- `blockquote::after`: 参照は `position: absolute` の閉じ引用符、実装は無し（`display: inline` / `position: static`）
+- `blockquote`: 参照は `quotes: none`（グローバル）、実装は `auto`
+- `table` セル: 参照は `background-clip: border-box`、実装は `padding-box`
 
 ## 参照 CSS との宣言レベル突き合わせ（差異のみ）
 
 | 参照（SWELL） | 実装 | 判定 |
 |---|---|---|
-| `.faq_a > * { margin-bottom: 1em }`（`main.css`） | 無し | **FAIL 1** |
-| `[data-q=fill-custom] .faq_q:before { background-color: var(--color_faq_q); color:#fff }` ほか 6 種 | 無し | **FAIL 3** |
-| `.swell-block-faq { --swl-faq_icon_radius: 0 }` / `.-icon-rounded` / `.-icon-circle` | 無し（角丸・円の印オプション） | spec §3 に無いので対象外（要記録） |
-| `.faq_q { font-size: inherit; margin: 0 }` | `margin-left: 0` のみ | 計測値は一致（dt に既定 margin が無いため）。許容 |
+| `[data-q=fill-custom] .faq_q:before{background-color:var(--color_faq_q);color:#fff}` ほか 8 規則 | 無し | **FAIL 1** |
+| `.swell-block-faq{--swl-faq_icon_radius:0}` / `.-icon-rounded`(10%) / `.-icon-circle`(50%) | 無し | **FAIL 1**（同じく印のオプション）|
+| `.faq_a > * { margin-bottom: 1em }` が (0,1,0) | `.un-faq .un-faq__a > *` が (0,2,0) | **FAIL 2** |
+| `.faq_a > * { margin-bottom: 1em }`（margin-top の指定なし） | `margin-top: 0` を追加 | container 非依存化のための追加。`.un-content` の中では一致。許容（FAIL 2 の一因） |
+| `.post_content dd>:last-child{margin-bottom:0!important}` | `.un-faq .un-faq__a > :last-child{margin-bottom:0}` | `.un-content` の中では一致。許容 |
+| `.faq_q { font-size: inherit; margin: 0 }` | `margin-left: 0` のみ | `dt` に既定 margin が無いため計測値は一致。許容 |
 | `.faq_q:before { line-height: 2; width: 2em }`（height 指定なし） | `line-height: 2em; width: 2em; height: 2em` | 計算値 32px で一致。許容 |
-| `.faq_a:before`（font-weight 未指定 → 本文の 500 を継承） | `font-weight: 500` を直値で指定 | 既定では一致。`--un-font-weight` を変えた利用者では参照と挙動が分かれる（軽微） |
+| `.faq_a:before`（font-weight 未指定 → 本文の 500 を継承） | `font-weight: 500` を直値で指定 | 既定では一致。`--un-font-weight` を変えた利用者では挙動が分かれる（軽微、前回から未変更）|

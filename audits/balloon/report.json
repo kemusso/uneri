@@ -1,6 +1,6 @@
 {
   "part": "balloon",
-  "date": "2026-09-04T01:12:13.156Z",
+  "date": "2026-09-04T01:36:25.888Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -9,7 +9,7 @@
     "inkCentrePx": 2,
     "inkSizeRatio": 0.3
   },
-  "verdict": "PASS",
+  "verdict": "FAIL",
   "results": [
     {
       "variant": "left",
@@ -194,7 +194,7 @@
     {
       "variant": "think-border",
       "vw": 375,
-      "pixelPct": 0,
+      "pixelPct": 0.12,
       "box": {
         "w": 0,
         "h": 0
@@ -207,9 +207,46 @@
         "w": 345,
         "h": 74
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     },
     {
       "variant": "rich",
@@ -234,7 +271,7 @@
     {
       "variant": "nested",
       "vw": 375,
-      "pixelPct": 0.017,
+      "pixelPct": 0.135,
       "box": {
         "w": 0,
         "h": 0
@@ -247,9 +284,268 @@
         "w": 345,
         "h": 145.640625
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgb(255, 235, 235)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "width",
+          "ref": "8px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "height",
+          "ref": "8px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "-2px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "bottom",
+          "ref": "-8px",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "display",
+          "ref": "none",
+          "impl": "block"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "top",
+          "ref": "8px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "auto",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "auto",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "left",
+          "ref": "-16px",
+          "impl": "-10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     },
     {
       "variant": "left",
@@ -434,7 +730,7 @@
     {
       "variant": "think-border",
       "vw": 768,
-      "pixelPct": 0,
+      "pixelPct": 0.051,
       "box": {
         "w": 0,
         "h": 0
@@ -447,9 +743,46 @@
         "w": 706.5625,
         "h": 94
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     },
     {
       "variant": "rich",
@@ -474,7 +807,7 @@
     {
       "variant": "nested",
       "vw": 768,
-      "pixelPct": 0.007,
+      "pixelPct": 0.059,
       "box": {
         "w": 0,
         "h": 0
@@ -487,9 +820,268 @@
         "w": 706.5625,
         "h": 177.59375
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgb(255, 235, 235)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "width",
+          "ref": "8px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "height",
+          "ref": "8px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "-2px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "bottom",
+          "ref": "-8px",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "display",
+          "ref": "none",
+          "impl": "block"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "top",
+          "ref": "8px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "auto",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "auto",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "left",
+          "ref": "-16px",
+          "impl": "-10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     },
     {
       "variant": "left",
@@ -674,7 +1266,7 @@
     {
       "variant": "think-border",
       "vw": 1200,
-      "pixelPct": 0,
+      "pixelPct": 0.041,
       "box": {
         "w": 0,
         "h": 0
@@ -687,9 +1279,46 @@
         "w": 900,
         "h": 94
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     },
     {
       "variant": "rich",
@@ -714,7 +1343,7 @@
     {
       "variant": "nested",
       "vw": 1200,
-      "pixelPct": 0.006,
+      "pixelPct": 0.046,
       "box": {
         "w": 0,
         "h": 0
@@ -727,9 +1356,268 @@
         "w": 900,
         "h": 177.59375
       },
-      "styleDiffs": [],
+      "styleDiffs": [
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-right-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgb(255, 235, 235)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "width",
+          "ref": "8px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "height",
+          "ref": "8px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "-2px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "bottom",
+          "ref": "-8px",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "background-color",
+          "ref": "rgb(255, 235, 235)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-right-width",
+          "ref": "1px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-width",
+          "ref": "1px",
+          "impl": "8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-width",
+          "ref": "1px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-left-color",
+          "ref": "rgb(244, 135, 137)",
+          "impl": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-top-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-left-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "border-bottom-right-radius",
+          "ref": "50%",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "display",
+          "ref": "none",
+          "impl": "block"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "top",
+          "ref": "8px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "right",
+          "ref": "auto",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "bottom",
+          "ref": "auto",
+          "impl": "-16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>div[1]>div[1]>div[0]>span[1]>span[1]",
+          "prop": "left",
+          "ref": "-16px",
+          "impl": "-10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "right",
+          "ref": "13px",
+          "impl": "0px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[0]",
+          "prop": "left",
+          "ref": "-21px",
+          "impl": "-8px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "width",
+          "ref": "12px",
+          "impl": "10px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "height",
+          "ref": "12px",
+          "impl": "16px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "right",
+          "ref": "4px",
+          "impl": "6px"
+        },
+        {
+          "path": "div>div[0]>div[1]>div[0]>span[2]>span[1]",
+          "prop": "bottom",
+          "ref": "-20px",
+          "impl": "-24px"
+        }
+      ],
       "ink": null,
-      "pass": true
+      "pass": false
     }
   ]
 }

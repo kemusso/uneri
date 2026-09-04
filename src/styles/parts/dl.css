@@ -1,0 +1,75 @@
+/* Dl — description list. spec: spec/parts/dl.md */
+
+.un-dl,
+.un-dl *,
+.un-dl::before,
+.un-dl::after,
+.un-dl ::before,
+.un-dl ::after {
+  box-sizing: border-box;
+}
+
+.un-dl :where(.un-dl__dt) + :where(.un-dl__dd) + :where(.un-dl__dt) {
+  margin-top: 1em;
+}
+.un-dl--float :where(.un-dl__dt) + :where(.un-dl__dd) + :where(.un-dl__dt) {
+  margin-top: 0;
+}
+.un-dl__dt {
+  font-weight: 700;
+}
+.un-dl .un-dl__dd > * {
+  /* the description owns its rhythm, container or not */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.un-dl__dd {
+  margin-left: 1em;
+  padding: 1em;
+}
+
+/* ---- border: a rule down the left of the term ---- */
+.un-dl--border > :where(.un-dl__dt) {
+  padding-left: 0.75em;
+  border-left: 1px solid var(--un-color-main);
+}
+
+/* ---- float: term and description side by side ---- */
+.un-dl--float {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.un-dl--float > :where(.un-dl__dt) {
+  position: relative;
+  width: var(--un-dl-dt-width, 5.5em);
+  padding: 0.25em 2.5em 0.25em 0;
+}
+.un-dl--float > :where(.un-dl__dt)::after {
+  /* the little dash between term and description */
+  content: "";
+  position: absolute;
+  top: 0.9375em;
+  right: 1em;
+  width: 0.5em;
+  height: 2px;
+  background: var(--un-color-border);
+}
+.un-dl--float > :where(.un-dl__dd) > * {
+  min-width: 0;
+  width: 100%;
+}
+.un-dl--float > :where(.un-dl__dd) {
+  display: block;
+  flex: 0 1 auto;
+  width: calc(100% - var(--un-dl-dt-width, 5.5em));
+  margin-left: 0;
+  padding: 0.25em 0;
+}
+
+@media (min-width: 960px) {
+  .un-dl--float {
+    font-size: 1em;
+  }
+}

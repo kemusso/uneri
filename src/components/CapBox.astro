@@ -1,0 +1,33 @@
+---
+/** CapBox — キャプションボックス. spec: spec/parts/capbox.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'div'> {
+  title: string;
+  variant?: 'default' | 'small-title' | 'onborder' | 'onborder2' | 'inner' | 'intext' | 'shadow';
+  color?: 'main' | 'col1' | 'col2' | 'col3' | (string & {});
+  class?: string;
+  id?: string;
+}
+
+const SETS = new Set(['col1', 'col2', 'col3']);
+const { title, variant = 'default', color = 'main', class: cls, id, style: userStyle, ...rest } = Astro.props;
+
+const n = color.replace('col', '');
+const style = joinStyles(
+  SETS.has(color) && `--un-capbox-color:var(--un-color-colset-${n});--un-capbox-bg:var(--un-color-colset-${n}-bg)`,
+  color !== 'main' && !SETS.has(color) && `--un-capbox-color:${color}`,
+  styleToString(userStyle),
+);
+---
+
+<div
+  id={id}
+  class:list={['un-capbox', variant !== 'default' && `un-capbox--${variant}`, cls]}
+  style={style}
+  {...rest}
+>
+  <div class="un-capbox__title"><span>{title}</span></div>
+  <div class="un-capbox__content"><slot /></div>
+</div>

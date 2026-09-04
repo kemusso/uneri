@@ -1,0 +1,12 @@
+---
+/** DlItem — 説明リストの 1 対. spec: spec/parts/dl.md */
+interface Props {
+  term: string;
+  class?: string;
+}
+
+const { term, class: cls } = Astro.props;
+---
+
+<dt class:list={['un-dl__dt', cls]}>{term}</dt>
+<dd class="un-dl__dd"><slot /></dd>

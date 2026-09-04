@@ -14,3 +14,6 @@ export { default as Accordion } from './components/Accordion.astro';
 export { default as AccordionItem } from './components/AccordionItem.astro';
 export { default as Tab } from './components/Tab.astro';
 export { default as TabPanel } from './components/TabPanel.astro';
+export { default as CapBox } from './components/CapBox.astro';
+export { default as Dl } from './components/Dl.astro';
+export { default as DlItem } from './components/DlItem.astro';
