@@ -1,6 +1,6 @@
 {
-  "part": "content",
-  "date": "2026-09-04T00:32:42.788Z",
+  "part": "faq",
+  "date": "2026-09-04T00:32:27.589Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -12,7 +12,7 @@
   "verdict": "PASS",
   "results": [
     {
-      "variant": "paragraph",
+      "variant": "default",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -21,18 +21,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 165
+        "h": 225
       },
       "implBox": {
         "w": 345,
-        "h": 165
+        "h": 225
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "link",
+      "variant": "default-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -41,18 +41,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 27
+        "h": 225
       },
       "implBox": {
         "w": 345,
-        "h": 27
+        "h": 225
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "strong",
+      "variant": "border",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -61,18 +61,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 27
+        "h": 241
       },
       "implBox": {
         "w": 345,
-        "h": 27
+        "h": 241
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "image",
+      "variant": "border-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -81,18 +81,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 219.859375
+        "h": 241
       },
       "implBox": {
         "w": 345,
-        "h": 219.859375
+        "h": 241
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "blockquote",
+      "variant": "box",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -101,18 +101,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 132.59375
+        "h": 261
       },
       "implBox": {
         "w": 345,
-        "h": 132.59375
+        "h": 261
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-inline",
+      "variant": "box-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -121,18 +121,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 54
+        "h": 261
       },
       "implBox": {
         "w": 345,
-        "h": 54
+        "h": 261
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-block",
+      "variant": "stripe",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -141,18 +141,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 60.625
+        "h": 262.5
       },
       "implBox": {
         "w": 345,
-        "h": 60.625
+        "h": 262.5
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "separator",
+      "variant": "stripe-hover",
       "vw": 375,
       "pixelPct": 0,
       "box": {
@@ -161,78 +161,18 @@
       },
       "refBox": {
         "w": 345,
-        "h": 1
+        "h": 262.5
       },
       "implBox": {
         "w": 345,
-        "h": 1
+        "h": 262.5
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "ul",
-      "vw": 375,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 345,
-        "h": 101.25
-      },
-      "implBox": {
-        "w": 345,
-        "h": 101.25
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "ol",
-      "vw": 375,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 345,
-        "h": 75
-      },
-      "implBox": {
-        "w": 345,
-        "h": 75
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "table-default",
-      "vw": 375,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 345,
-        "h": 121
-      },
-      "implBox": {
-        "w": 345,
-        "h": 121
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "paragraph",
+      "variant": "default",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -241,18 +181,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 118.390625
+        "h": 240
       },
       "implBox": {
         "w": 706.5625,
-        "h": 118.390625
+        "h": 240
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "link",
+      "variant": "default-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -261,18 +201,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 240
       },
       "implBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 240
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "strong",
+      "variant": "border",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -281,18 +221,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 257
       },
       "implBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 257
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "image",
+      "variant": "border-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -301,18 +241,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 424.9375
+        "h": 257
       },
       "implBox": {
         "w": 706.5625,
-        "h": 424.9375
+        "h": 257
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "blockquote",
+      "variant": "box",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -321,18 +261,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 112.625
+        "h": 278
       },
       "implBox": {
         "w": 706.5625,
-        "h": 112.625
+        "h": 278
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-inline",
+      "variant": "box-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -341,18 +281,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 278
       },
       "implBox": {
         "w": 706.5625,
-        "h": 28.796875
+        "h": 278
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-block",
+      "variant": "stripe",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -361,18 +301,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 66.375
+        "h": 280
       },
       "implBox": {
         "w": 706.5625,
-        "h": 66.375
+        "h": 280
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "separator",
+      "variant": "stripe-hover",
       "vw": 768,
       "pixelPct": 0,
       "box": {
@@ -381,78 +321,18 @@
       },
       "refBox": {
         "w": 706.5625,
-        "h": 1
+        "h": 280
       },
       "implBox": {
         "w": 706.5625,
-        "h": 1
+        "h": 280
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "ul",
-      "vw": 768,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 706.5625,
-        "h": 108
-      },
-      "implBox": {
-        "w": 706.5625,
-        "h": 108
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "ol",
-      "vw": 768,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 706.5625,
-        "h": 80
-      },
-      "implBox": {
-        "w": 706.5625,
-        "h": 80
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "table-default",
-      "vw": 768,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 706.5625,
-        "h": 128.78125
-      },
-      "implBox": {
-        "w": 706.5625,
-        "h": 128.78125
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "paragraph",
+      "variant": "default",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -461,18 +341,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 118.390625
+        "h": 240
       },
       "implBox": {
         "w": 900,
-        "h": 118.390625
+        "h": 240
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "link",
+      "variant": "default-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -481,18 +361,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 240
       },
       "implBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 240
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "strong",
+      "variant": "border",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -501,18 +381,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 257
       },
       "implBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 257
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "image",
+      "variant": "border-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -521,18 +401,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 477.5
+        "h": 257
       },
       "implBox": {
         "w": 900,
-        "h": 477.5
+        "h": 257
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "blockquote",
+      "variant": "box",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -541,18 +421,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 112.625
+        "h": 278
       },
       "implBox": {
         "w": 900,
-        "h": 112.625
+        "h": 278
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-inline",
+      "variant": "box-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -561,18 +441,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 278
       },
       "implBox": {
         "w": 900,
-        "h": 28.796875
+        "h": 278
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "code-block",
+      "variant": "stripe",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -581,18 +461,18 @@
       },
       "refBox": {
         "w": 900,
-        "h": 66.375
+        "h": 280
       },
       "implBox": {
         "w": 900,
-        "h": 66.375
+        "h": 280
       },
       "styleDiffs": [],
       "ink": null,
       "pass": true
     },
     {
-      "variant": "separator",
+      "variant": "stripe-hover",
       "vw": 1200,
       "pixelPct": 0,
       "box": {
@@ -601,71 +481,11 @@
       },
       "refBox": {
         "w": 900,
-        "h": 1
+        "h": 280
       },
       "implBox": {
         "w": 900,
-        "h": 1
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "ul",
-      "vw": 1200,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 900,
-        "h": 108
-      },
-      "implBox": {
-        "w": 900,
-        "h": 108
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "ol",
-      "vw": 1200,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 900,
-        "h": 80
-      },
-      "implBox": {
-        "w": 900,
-        "h": 80
-      },
-      "styleDiffs": [],
-      "ink": null,
-      "pass": true
-    },
-    {
-      "variant": "table-default",
-      "vw": 1200,
-      "pixelPct": 0,
-      "box": {
-        "w": 0,
-        "h": 0
-      },
-      "refBox": {
-        "w": 900,
-        "h": 128.78125
-      },
-      "implBox": {
-        "w": 900,
-        "h": 128.78125
+        "h": 280
       },
       "styleDiffs": [],
       "ink": null,

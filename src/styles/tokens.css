@@ -60,8 +60,8 @@
   --un-color-list-triangle: #f4e03a;
   --un-color-list-bad: #f36060;
 
-  --un-color-faq-q: #d55656;
-  --un-color-faq-a: #6599b7;
+  --un-color-faq-q: currentColor;
+  --un-color-faq-a: currentColor;
 
   --un-color-icon-good: #3cd250;
   --un-color-icon-good-bg: #ecffe9;

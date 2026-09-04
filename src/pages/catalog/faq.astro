@@ -1,0 +1,37 @@
+---
+/** catalog: Faq (spec/parts/faq.md §3). Variant order/text must match reference/fixtures/faq.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Faq from '../../components/Faq.astro';
+import FaqItem from '../../components/FaqItem.astro';
+---
+<Catalog title="Faq">
+  <Content data-variant="default">
+    <Faq>
+      <FaqItem q="よくある質問の1つめです。"><p>質問への回答です。</p></FaqItem>
+      <FaqItem q="よくある質問の2つめです。"><p>質問への回答です。</p></FaqItem>
+    </Faq>
+  </Content>
+
+  <Content data-variant="border">
+    <Faq variant="border">
+      <FaqItem q="よくある質問の1つめです。"><p>質問への回答です。</p></FaqItem>
+      <FaqItem q="よくある質問の2つめです。"><p>質問への回答です。</p></FaqItem>
+    </Faq>
+  </Content>
+
+  <Content data-variant="box">
+    <Faq variant="box">
+      <FaqItem q="よくある質問の1つめです。"><p>質問への回答です。</p></FaqItem>
+      <FaqItem q="よくある質問の2つめです。"><p>質問への回答です。</p></FaqItem>
+    </Faq>
+  </Content>
+
+  <Content data-variant="stripe">
+    <Faq variant="stripe">
+      <FaqItem q="よくある質問の1つめです。"><p>質問への回答です。</p></FaqItem>
+      <FaqItem q="よくある質問の2つめです。"><p>質問への回答です。</p></FaqItem>
+    </Faq>
+  </Content>
+
+</Catalog>

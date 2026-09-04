@@ -1,0 +1,94 @@
+/* Faq — question and answer pairs. spec: spec/parts/faq.md */
+
+.un-faq,
+.un-faq *,
+.un-faq::before,
+.un-faq::after,
+.un-faq ::before,
+.un-faq ::after {
+  box-sizing: border-box;
+}
+
+.un-faq__item + .un-faq__item {
+  margin-top: 1em;
+}
+.un-faq__q,
+.un-faq__a {
+  position: relative;
+  margin-left: 0;
+  padding: 1em 1em 1em 3em;
+  line-height: 1.5;
+}
+.un-faq__q {
+  font-weight: 700;
+}
+.un-faq__q::before,
+.un-faq__a::before {
+  /* the Q / A marks, sitting in the indent the text leaves for them */
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+.un-faq__q::before {
+  content: "Q";
+  color: var(--un-color-faq-q);
+}
+.un-faq__a::before {
+  content: "A";
+  color: var(--un-color-faq-a);
+  font-weight: 500;
+}
+
+/* ---- border: a rule between items ---- */
+.un-faq--border > :where(.un-faq__item) {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+.un-faq--border > :where(.un-faq__item) + :where(.un-faq__item) {
+  padding-top: 1em;
+  border-top: 1px solid var(--un-color-border);
+}
+
+/* ---- box: each item framed ---- */
+.un-faq--box > :where(.un-faq__item) {
+  border: 1px solid var(--un-color-border);
+}
+.un-faq--box > :where(.un-faq__item) + :where(.un-faq__item) {
+  margin-top: 1em;
+}
+.un-faq--box > :where(.un-faq__item) > :where(.un-faq__q) {
+  padding: 1.25em 1em 1.25em 4em;
+  border-bottom: 1px dashed var(--un-color-border);
+}
+.un-faq--box > :where(.un-faq__item) > :where(.un-faq__a) {
+  padding: 1.25em 1em 1.25em 4em;
+}
+
+/* ---- stripe: the question on a grey band ---- */
+.un-faq--stripe > :where(.un-faq__item) {
+  margin-bottom: 1.5em;
+}
+.un-faq--stripe > :where(.un-faq__item):last-child {
+  margin-bottom: 0;
+}
+.un-faq--stripe > :where(.un-faq__item) > :where(.un-faq__q) {
+  padding: 1.25em 1em 1.25em 4em;
+  background: var(--un-color-gray);
+}
+.un-faq--stripe > :where(.un-faq__item) > :where(.un-faq__a) {
+  padding: 1.25em 1em 1.25em 4em;
+}
+
+.un-faq--box > :where(.un-faq__item) > :where(.un-faq__q)::before,
+.un-faq--box > :where(.un-faq__item) > :where(.un-faq__a)::before,
+.un-faq--stripe > :where(.un-faq__item) > :where(.un-faq__q)::before,
+.un-faq--stripe > :where(.un-faq__item) > :where(.un-faq__a)::before {
+  top: 1em;
+  left: 1em;
+}

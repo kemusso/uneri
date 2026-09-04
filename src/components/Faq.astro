@@ -1,0 +1,16 @@
+---
+/** Faq — よくある質問の入れ物. spec: spec/parts/faq.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'dl'> {
+  variant?: 'default' | 'border' | 'box' | 'stripe';
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', class: cls, id, ...rest } = Astro.props;
+---
+
+<dl id={id} class:list={['un-faq', variant !== 'default' && `un-faq--${variant}`, cls]} {...rest}>
+  <slot />
+</dl>

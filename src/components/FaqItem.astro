@@ -1,0 +1,17 @@
+---
+/** FaqItem — 質問と回答 1 組. spec: spec/parts/faq.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  q: string;
+  class?: string;
+  id?: string;
+}
+
+const { q, class: cls, id, ...rest } = Astro.props;
+---
+
+<div id={id} class:list={['un-faq__item', cls]} {...rest}>
+  <dt class="un-faq__q">{q}</dt>
+  <dd class="un-faq__a"><slot /></dd>
+</div>

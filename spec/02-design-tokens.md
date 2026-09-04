@@ -77,10 +77,12 @@
 
 ### 2.4 FAQ
 
+参照サイトは Q/A の色を設定していないため既定は本文色。色を付けたい場合に上書きする。
+
 | トークン | 既定値 |
 |---|---|
-| `--un-color-faq-q` | `#d55656` |
-| `--un-color-faq-a` | `#6599b7` |
+| `--un-color-faq-q` | `currentColor` |
+| `--un-color-faq-a` | `currentColor` |
 
 ### 2.5 アイコン付きボックス（icon / big-icon 系）
 
