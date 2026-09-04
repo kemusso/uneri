@@ -76,7 +76,7 @@ viewport 幅 `375` / `768` / `1200` の 3 通りで、バリアントごとに�
 - `spec/parts/<part>.md` のバリアントが **全て** カタログにあるか。欠けていれば FAIL。
 - props の型・既定値が spec と一致するか（`src/components/<Part>.astro` の `interface Props` を読む）。
 - `spec/01-coding-rules.md` 違反（`!important`、詳細度、命名、`swell` の文字列混入、リテラル色）。1 件でも FAIL。
-- `node scripts/audit/standalone.mjs` が OK であること。素の見出し（container スコープと決めている `heading.css`）、記事本文の要素既定（`un-image` / `un-table` / 修飾子なしの `.un-list`）は比較から外す。全カタログバリアントを「`.un-content` の中」と「同じ文字設定だけを与えた素の div の中」の 2 通りで描画し、`src/styles/parts/*.css` の各ルールが**宣言したプロパティ**を**そのルールが狙った要素・疑似要素**の上で突き合わせる。container 依存があれば必ず差が出る（素の見出しは container スコープと決めているので除外）。
+- `node scripts/audit/standalone.mjs` が OK であること。素の見出し（container スコープと決めている `heading.css`）、記事本文の要素既定（`un-image` / `un-table` / 修飾子なしの `.un-list`）、および `%` や `calc()` で書かれた寸法（中身の高さに依存し、その中身は記事本文側の管轄）は比較から外す。全カタログバリアントを「`.un-content` の中」と「同じ文字設定だけを与えた素の div の中」の 2 通りで描画し、`src/styles/parts/*.css` の各ルールが**宣言したプロパティ**を**そのルールが狙った要素・疑似要素**の上で突き合わせる。container 依存があれば必ず差が出る（素の見出しは container スコープと決めているので除外）。
 - 参照 CSS のある 1 ルール内の「連続する 3 宣言」と同じ並びが `src/styles/` `src/components/` にないこと、`swell` の文字列がないこと（クリーンルーム確認。`scripts/audit/cleanroom.mjs`）。あれば FAIL。単発の宣言（計測値・フォントスタック等）の一致は許容。
 
 ## 6. 報告フォーマット（`audits/<part>.md`）

@@ -21,12 +21,12 @@
 .un-step__item {
   position: relative;
 }
-.un-step--default .un-step__item:last-child,
-.un-step--small .un-step__item:last-child {
+.un-step--default > :where(.un-step__item):last-child,
+.un-step--small > :where(.un-step__item):last-child {
   /* the trailing gap only exists to make room for the connector */
   padding-bottom: 0;
 }
-.un-step .un-step__item:last-child::before {
+.un-step > :where(.un-step__item):last-child::before {
   content: none;
 }
 .un-step__item::before {
@@ -44,6 +44,7 @@
 .un-step__number {
   box-sizing: content-box;
   display: flex;
+  align-items: var(--_num-align, normal);
   justify-content: center;
   flex-direction: column;
   line-height: 1em;
@@ -71,24 +72,24 @@
 .un-step__body {
   margin-top: 1em;
 }
-.un-step__body > * {
+.un-step .un-step__body > * {
   /* the step owns the rhythm inside itself, container or not */
   margin-top: 0;
   margin-bottom: 1em;
 }
-.un-step__body > :last-child {
+.un-step .un-step__body > :last-child {
   margin-bottom: 0;
 }
 
 /* ---- default: a filled circle to the left ---- */
-.un-step--default .un-step__item {
+.un-step--default > :where(.un-step__item) {
   padding: 0 0 3em 64px;
 }
-.un-step--default .un-step__body {
+.un-step--default > :where(.un-step__item) > :where(.un-step__body) {
   /* on narrow screens the body uses the full width instead of staying in the number's column */
   margin-left: -48px;
 }
-.un-step--default .un-step__number {
+.un-step--default > :where(.un-step__item) > :where(.un-step__number) {
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +100,7 @@
   color: #fff;
 }
 
-.un-step--default .un-step__title {
+.un-step--default > :where(.un-step__item) > :where(.un-step__title) {
   display: flex;
   min-height: 48px;
   justify-content: center;
@@ -108,30 +109,26 @@
 }
 
 /* number layouts */
-.un-step--horizontal .un-step__number {
+.un-step--horizontal {
+  --_num-align: flex-end;
+}
+.un-step--horizontal > :where(.un-step__item) > :where(.un-step__number) {
   flex-direction: row;
-  align-items: flex-end;
 }
-.un-step--big .un-step__number {
-  align-items: normal;
-}
-.un-step--big.un-step--horizontal .un-step__number {
-  align-items: flex-end;
-}
-.un-step--horizontal .un-step__label {
+.un-step--horizontal > :where(.un-step__item) > :where(.un-step__number) > :where(.un-step__label) {
   padding-right: 4px;
   padding-bottom: 4px;
 }
 
 /* ---- big: centred header, arrow between steps ---- */
-.un-step--big .un-step__item {
+.un-step--big > :where(.un-step__item) {
   padding: 2em 1em;
   border-bottom: 1px dashed var(--un-color-step-arrow);
 }
-.un-step--big .un-step__item:first-child {
+.un-step--big > :where(.un-step__item):first-child {
   border-top: 1px dashed var(--un-color-step-arrow);
 }
-.un-step--big .un-step__item::before {
+.un-step--big > :where(.un-step__item)::before {
   /* a downward arrow instead of a line */
   display: block;
   top: 100%;
@@ -142,30 +139,30 @@
   border-top-color: var(--un-color-step-arrow);
   transform: translateX(-12px);
 }
-.un-step--big .un-step__number {
+.un-step--big > :where(.un-step__item) > :where(.un-step__number) {
   position: relative;
   margin-bottom: 1em;
   color: var(--un-color-main);
 }
-.un-step--big .un-step__label {
+.un-step--big > :where(.un-step__item) > :where(.un-step__number) > :where(.un-step__label) {
   font-size: 12px;
   line-height: 12px;
 }
-.un-step--big .un-step__number::after {
+.un-step--big > :where(.un-step__item) > :where(.un-step__number)::after {
   font-size: 24px;
   line-height: 24px;
 }
-.un-step--big .un-step__title {
+.un-step--big > :where(.un-step__item) > :where(.un-step__title) {
   font-size: 1.25em;
   line-height: 1.8;
   text-align: center;
 }
 
 /* ---- small: a dot and a one-line header ---- */
-.un-step--small .un-step__item {
+.un-step--small > :where(.un-step__item) {
   padding: 0 0 2em 24px;
 }
-.un-step--small .un-step__item::before {
+.un-step--small > :where(.un-step__item)::before {
   display: block;
   top: 18px;
   left: 7px;
@@ -173,11 +170,13 @@
   height: calc(100% - 20px);
   border-left: 2px solid var(--un-color-border);
 }
-.un-step--small .un-step__number {
+.un-step--small {
+  --_num-align: center;
+}
+.un-step--small > :where(.un-step__item) > :where(.un-step__number) {
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
   width: auto;
   height: auto;
@@ -185,34 +184,34 @@
   border-radius: var(--_round, 0);
   background-color: transparent;
   background-image: none;
-  color: var(--un-color-main);
 }
-.un-step--small .un-step__shape {
+.un-step--small > :where(.un-step__item) > :where(.un-step__number) > :where(.un-step__shape) {
   display: block;
   width: 16px;
   height: 16px;
   margin-right: 8px;
   border: 2px solid var(--un-color-main);
   border-radius: var(--_round, 0);
+  color: var(--un-color-main);
 }
-.un-step--small .un-step__label {
+.un-step--small > :where(.un-step__item) > :where(.un-step__number) > :where(.un-step__label) {
   opacity: 0.8;
   padding-right: 2px;
   padding-bottom: 0;
   font-size: 12px;
   line-height: 12px;
 }
-.un-step--small .un-step__number::after {
+.un-step--small > :where(.un-step__item) > :where(.un-step__number)::after {
   opacity: 0.8;
   font-size: 14px;
   line-height: 14px;
 }
-.un-step--small .un-step__title {
+.un-step--small > :where(.un-step__item) > :where(.un-step__title) {
   margin-top: 0.25em;
   font-size: 1.1em;
   text-align: left;
 }
-.un-step--small .un-step__body {
+.un-step--small > :where(.un-step__item) > :where(.un-step__body) {
   margin-top: 0.5em;
 }
 
@@ -221,10 +220,10 @@
     display: block;
     width: 1px;
   }
-  .un-step--default .un-step__body {
+  .un-step--default > :where(.un-step__item) > :where(.un-step__body) {
     margin-left: 0;
   }
-  .un-step--big .un-step__item {
+  .un-step--big > :where(.un-step__item) {
     padding-right: 2em;
     padding-left: 2em;
   }

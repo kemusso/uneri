@@ -2,145 +2,140 @@
 
 verdict: **FAIL**
 
-`node scripts/audit/run.mjs step --no-build --port 4407` は 18/18 で PASS（pixel 0 / box 0 / style 0）。
-しかし fixture の 6 バリアントは props の組み合わせ空間の一部しか描画しておらず、独自検証で **参照と一致しない箇所を 7 件** 検出した。
+再審査。実行コマンド: `node scripts/audit/run.mjs step --no-build --port 4407`
+併せて審査側で独自の検証ハーネス（12 通りの掛け合わせ・項目数・複数ブロック本文・2 行タイトル・入れ子・`.un-content` 外）を組み、参照 CSS（`reference/swell/build/css/blocks.css`）と実装を突き合わせた。
 
-## 自動計測（scripts/audit/run.mjs）
+## 0. 前回 FAIL 7 件の再検証
 
-| variant | vw | pixel diff | box Δ (w/h) | style diffs |
-|---|---|---|---|---|
-| default | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
-| big | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
-| small | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
-| num | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
-| horizontal | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
-| vertical | 375 / 768 / 1200 | 0 % | 0 / 0 | 0 |
+| # | 前回の指摘 | 今回 |
+|---|---|---|
+| 1 | `small` × 非 circle が丸のまま | **解消**。`x-small-{num,horizontal,vertical}` が 375/768/1200 すべてで pixel diff ≤ 0.01% / box Δ 0 / style diff 0。`num-375-impl.png` でも角の四角を確認 |
+| 2 | `big` × `horizontal` のラベル揃えの競合 | **解消**。`x-big-horizontal` が 3 viewport とも style diff 0 |
+| 3 | 本文が 2 ブロック以上のとき余白が消える | **未解消**（F-1）。`.un-content` の中では依然 0px |
+| 4 | `.un-content` の外で本文余白が変わる | **未解消・悪化**（F-2）。中 0px / 外 16px と逆向きにズレた |
+| 5 | 詳細度 (0,3,0) | **未解消**（F-3）。`--_round` 側は直ったが `.un-step--big.un-step--horizontal .un-step__number` が (0,3,0) のまま |
+| 6 | props と spec の不一致 | **解消**。`label?: string \| null`（既定 `'STEP'`）/ `shape?: boolean`（既定 `false`）が spec §2 と一致 |
+| 7 | 入れ子で default の装飾が漏れる | **一部のみ解消**（F-4）。`__number` の一部だけ塞がれ、`__title` / `big` の番号 / `big` の item / `small` の連結線は今も漏れる |
+| — | fixture の `num` が `vertical` とバイト同一 | **解消**。`num` は `__label` を出さない形になり、カタログも `label={null}` で揃った |
 
-## 独自検証（自動判定の穴）
+## 自動計測（`scripts/audit/run.mjs step`）
 
-参照 (`reference/swell/build/css/{main,blocks}.css` + SWELL マークアップ) と実装 (`dist/_astro/*.css` + uneri マークアップ) を
-同一シェルに並べ、fixture が出さない条件を 31 シナリオ × 375/768/1200 で総当たりした
-（項目 1/3/11 個、本文の複数段落・リスト・図、2 行タイトル、`variant`×`numStyle` 全掛け合わせ、
-`.un-content` の内外、入れ子）。root/item/number/label/title/body と `::before` / `::after` の
-computed style（深さ 6）+ 各要素の bounding rect + pixel diff を比較。
+| variant | vw | pixel diff | box Δ (w/h) | style diffs | pass |
+|---|---|---|---|---|---|
+| default | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
+| big | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
+| small | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
+| num | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
+| horizontal | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
+| vertical | 375 / 768 / 1200 | 0 % | 0/0 | 0 | ✅ |
 
-| シナリオ | pixel | 高さ Δ | style diffs |
+18/18 セル PASS。ただし **fixture が薄いことによる見逃し**（§ツール・fixture・spec の不備 参照）。
+
+## 独自検証（審査側ハーネス, 90 セル中 21 セル FAIL）
+
+参照は `reference/fixtures/step.html` と同じ SWELL CSS / SWELL マークアップ、実装は `dist/_astro/Catalog.CRCIQ-z-.css` を同じ体裁のページに載せて 375/768/1200 で比較（閾値は spec/04 §3 と同じ）。
+
+**PASS したもの（前回 FAIL の再発なし）**
+- 掛け合わせ全 12 通り `x-{default,big,small}-{circle,num,horizontal,vertical}` × 3 viewport = 36 セル 全 PASS
+- 項目数 1 / 12（連番 10 以上・2 桁）: `n1-*`, `n12-*` 全 PASS
+- タイトル 2 行: `t2-*` 全 PASS
+- 本文空: `eb-default-circle` PASS
+- 同じ variant 同士の入れ子: `nest-default-num` PASS
+
+**FAIL したもの**
+
+| case | @375 | @768 | @1200 |
 |---|---|---|---|
-| `small` × `num` / `horizontal` / `vertical` | 0.039–0.104 % | 0 | 16 |
-| `big` × `horizontal` | 0.035–0.113 % | 0 | 6 |
-| 本文が 2 段落（default / big / small） | 0.92–2.94 % | −30〜−32 px | 15–17 |
-| 本文が `<p>`+`<ul>` / `<ul>`+`<p>` / `<ul>`×2 | 0.026–0.048 % | −12 px | 9–10 |
-| 本文が 3 段落 | 0.044 % | −32 px | 11 |
+| `mb-default-circle`（本文 p+ul+p） | 3.959 % / hΔ67.5 | 2.012 % / hΔ72 | 1.611 % / hΔ72 |
+| `mb-big-vertical` | 2.18 % / hΔ67.5 | 1.237 % / hΔ72 | 1.138 % / hΔ72 |
+| `mb-small-circle` | 2.415 % / hΔ67.5 | 1.247 % / hΔ72 | 0.995 % / hΔ72 |
+| `nest-default-small` | 3.751 % / hΔ36.6 | 1.898 % / hΔ32.7 | 1.508 % / hΔ32.7 |
+| `nest-default-big` | 4.32 % / hΔ20.5 | 2.203 % / hΔ14 | 1.792 % / hΔ14 |
+| `nest-big-small` | 2.713 % / hΔ24.8 | 1.585 % / hΔ26.2 | 1.437 % / hΔ26.2 |
+| `nest-small-default` | 5.396 % / hΔ1.1 | 4.786 % / hΔ1.2 | 4.619 % / hΔ1.2 |
 
-上記以外（項目 1 個 / 3 個 / 11 個＝2 桁番号、空本文、2 行タイトル、`big`×`circle`/`num`、
-`small` × shape 無し、`horizontal` の 2 行タイトル）は全て一致。
+いずれも閾値（pixel ≤ 0.3 % / box Δ ≤ 1px / style diff 0）を大きく超過。
 
 ## FAIL 項目（実装者への指示）
 
-1. `small` × `num` / `horizontal` / `vertical` @375/768/1200: **番号の丸が角にならない**。
-   `src/styles/parts/step.css:172` `.un-step--small .un-step__number { border-radius: 50% }` と
-   `:181` `.un-step--small .un-step__shape { border-radius: 50% }` が無条件。
-   参照は `[data-num-style=circle] .swell-block-step__number, [data-num-style=circle] … .__shape { border-radius:50% }`
-   で **circle のときだけ** 丸にする（blocks.css）。
-   実測: `border-*-radius` 参照 `0px` → 実装 `50%`（number と `__shape` の 4 隅すべて）。
-   16×16 のドットが参照では四角、実装では丸で描かれる。
-   修正: `.un-step--small.un-step--circle .un-step__number` / `… .un-step__shape` に限定する
-   （spec/01 §3 の (0,2,0) 上限に触れるため、`--circle` を親側に持つなど詳細度に注意）。
+### F-1. 本文が 2 ブロック以上のとき `.un-content` の中でブロック間余白が消える（前回 #3 未解消）
+- 対象: 全 variant の `.un-step__body > *`（最後の子以外）
+- `margin-bottom`: @1200 参照 `16px` → 実装 `0px` / @375 参照 `15px` → 実装 `0px`
+- item 高さが 1 ブロックあたり 24px（@375 は 22.5px）縮み、3 項目で全体が 72px 足りない
+- 原因: 追加された `.un-step__body > *`（詳細度 (0,1,0)）が `src/styles/base.css:29`
+  `.un-content div :where(p, ul, ol, dl, blockquote, pre, figure, table, hr) { margin-bottom: 0 }`（詳細度 (0,1,1)）に負けている。CDP の matched rules で両方マッチした上で後者が勝つことを確認
+- 参照側: `.swell-block-step__body > * { margin-bottom: 1em }` ＋ `.post_content div > :last-child { margin-bottom: 0 !important }`
 
-2. `big` × `horizontal` @375/768/1200: **ラベルが数字のベースラインに揃わない**。
-   `step.css:105` `.un-step--horizontal .un-step__number { align-items: flex-end }` が、
-   同詳細度 (0,2,0) で後ろにある `:135` `.un-step--big .un-step__number { align-items: normal }` に負けている。
-   実測: number の `align-items` 参照 `flex-end` → 実装 `normal`、`.un-step__label` の高さ 参照 `16px` → 実装 `24px`。
-   参照 (blocks.css) は big に `align-items` を書かないので `[data-num-style=horizontal]` の `flex-end` がそのまま効く。
-   修正: `.un-step--big .un-step__number` の `align-items: normal`（初期値と同じで冗長）を削除するか、
-   `--big` ブロックを number layout ブロックより前に置く。
+### F-2. `.un-content` の中と外で本文余白が変わる（前回 #4 未解消・向きが逆転）
+- 同一マークアップ（`<p>` + `<ul>` + `<p>`）の 1 つ目の `<p>` の `margin-bottom`
+  - `.un-content` の中: **0px**
+  - 素の div（`color:#333; font-size:1rem; line-height:1.8` のみ）: **16px**
+- spec/parts/step.md §5「body の子 … コンテナの外でも同じになるようパーツ側で持つ」、spec/01-coding-rules.md §2.4 に反する
+- F-1 と同じ原因
 
-3. 全バリアント @375/768/1200: **本文が 2 ブロック以上のとき、ブロック間の 1em が消える**。
-   `step.css:70` `.un-step__body > p { margin-top:0; margin-bottom:0 }` が全ての余白を殺している。
-   参照は `.swell-block-step__body > * { margin-bottom: 1em }`（main.css）＋
-   `.post_content div > :last-child { margin-bottom: 0 !important }`（main.css）で
-   **ブロック間だけ 1em、最後の 1 つは 0**。
-   実測 @1200 `default` 2 段落: item 高さ 参照 `185.59px` → 実装 `169.59px`、`p` の `margin-bottom` `16px` → `0px`、pixel 1.25 %。
-   @375 では `15px` → `0px`、pixel 2.94 %、box 高さ Δ −30px。`big` / `small` も同様。
-   `<ul>` / `<figure>` / `<h4>` でも同じ（−12px）。
-   修正: `src/styles/parts/box.css:19-27` の group と同じ形にする —
-   `.un-step__body > * { margin-top: 0; margin-bottom: 1em }` ＋ `.un-step__body > :last-child { margin-bottom: 0 }`。
+### F-3. 詳細度が (0,2,0) を超える規則が残っている（前回 #5 未解消）
+- `src/styles/parts/step.css`:
+  ```css
+  .un-step--big.un-step--horizontal .un-step__number { align-items: flex-end; }
+  ```
+  クラス 3 個 = **(0,3,0)**。spec/01-coding-rules.md §3 違反、spec/04 §5 は 1 件でも FAIL
+- 他 45 セレクタは (0,2,0) 以下。`!important` なし / `swell` 文字列なし / リテラル色は `#fff` のみ（白は許容）
 
-4. 全バリアント: **`.un-content` の外で本文の余白が変わる**（spec/parts/step.md §6・spec/01 §2.4/§3 違反）。
-   `step.css` は `> p` しか余白を持たないため、`ul` / `figure` / `h4` はコンテナ内では
-   `base.css:29` `.un-content div :where(p, ul, …) { margin-bottom: 0 }` に頼っており、外では UA 既定が残る。
-   実測（同一マークアップ、幅 800px）:
-   本文 `<p>+<ul>` の item 高さ `.un-content` 内 `120.8px` / 素の div `137.59px`（`ul` の margin `0px` → `16px`）、
-   本文 `<ul>` のみ `88px` / `92.8px`、`<figure>+<p>` `132.8px` / `157.59px`、`<h4>+<p>` `148.47px` / `148.13px`。
-   修正: 3 と同じ（`.un-step__body > *` でパーツ側が余白を持てば内外で一致する）。
+### F-4. 入れ子で親 variant の装飾が内側の Step に漏れる（前回 #7 一部のみ解消）
+参照 CSS は `>`（子結合子）で item / number / title をスコープしている（`.is-style-big>.swell-block-step__item>.swell-block-step__number` 等）が、実装は子孫結合子なので内側の Step まで届く。`__number` の `width/height/background` だけ `.un-step--small .un-step__number` で戻したが残りが未処理。
 
-5. `src/styles/parts/step.css:93` `.un-step--default.un-step--circle .un-step__number` は詳細度 **(0,3,0)**。
-   spec/01 §3 の上限 (0,2,0) 違反。step.css 内で上限を超えるのはこの 1 本のみ。
-
-6. props が spec/parts/step.md §2 と不一致。
-   - spec は `label?: string`（既定 `'STEP'`）を **Step（親）** の prop と定めているが、
-     `src/components/Step.astro` に `label` が無い。`<Step label="手順">` は `...rest` 経由で
-     `<div label="手順">` という無意味な属性として出力され、表示は変わらない。
-   - spec の StepItem は `title` / `class` / `id` のみだが、`src/components/StepItem.astro` は
-     `label?: string`（既定 `'STEP'`）と `shape?: boolean`（既定 `false`）を追加で受けている。
-   どちらかに寄せて spec と実装を一致させること（spec/04 §5）。
-
-7. 入れ子（`small` の Step を `default` の Step 本文に置く）で `default` の装飾が内側に漏れる。
-   参照は `.is-style-small .swell-block-step__number { width:auto; height:auto; color:inherit }` で
-   基底の 48×48 を打ち消すため、内側の number は `804×16px` / 背景 `rgba(0,0,0,0)`。
-   実装は `.un-step--default .un-step__number`（`step.css:84`、子孫結合子・(0,2,0)・先に定義）が
-   `.un-step--small .un-step__number`（`:165`、`width`/`height`/`background` を戻していない）に勝ち、
-   内側の number が **48×48 の `--un-color-main` 塗りつぶし円**になる（実測 `48px×48px` / `rgb(4,56,76)`）。
-   修正: `.un-step--small` / `.un-step--big` の number で `width` / `height` / `background` を明示的に戻す
-   （参照と同じ考え方）。
+- `nest-default-big`（`default` の body に `big`）@1200
+  - 内側 `big` の `.un-step__number`: `background-color` 参照 `rgba(0,0,0,0)` → 実装 `rgb(4,56,76)` / `border-radius` 参照 `0px` → 実装 `50%` / `width` 参照 `740px` → 実装 `48px` / `height` 参照 `37px` → 実装 `48px`
+  - 見た目は「STEP / 1 が中央」のはずが「48px の塗り潰し円」になり数字が読めない
+  - 原因: `.un-step--default .un-step__number`（子孫）が届き、`.un-step--big .un-step__number` が `width/height/background/border-radius` を戻していない
+- `nest-default-small`（`default` の body に `small`）@1200
+  - 内側 `small` の `.un-step__title`: `display` 参照 `block` → 実装 `flex` / `min-height` 参照 `0px` → 実装 `48px` / `flex-direction` 参照 `row` → 実装 `column` / `justify-content` 参照 `normal` → 実装 `center` / `height` 参照 `31.66px` → 実装 `48px`
+  - 原因: `.un-step--default .un-step__title`（子孫）。参照は `.swell-block-step:not(.is-style-big):not(.is-style-small)>.swell-block-step__item>.swell-block-step__title`
+  - @375 では加えて内側 body の `margin-left` 参照 `0px` → 実装 `-48px`（`.un-step--default .un-step__body`）
+- `nest-big-small`（`big` の body に `small`）@1200
+  - 内側 `small` の `.un-step__item`: `border-top-width`/`border-bottom-width` 参照 `0px`（`none`）→ 実装 `1px dashed rgb(222,222,222)` / `padding-left` 参照 `24px` → 実装 `32px` / `padding-right` 参照 `0px` → 実装 `32px`
+  - 内側 `small` の `.un-step__item::before`: 参照は 2px の縦線（`width:2px`）→ 実装は `border:12px solid` の三角（`width:14px`）
+  - 原因: `.un-step--big .un-step__item` / `.un-step--big .un-step__item::before`（子孫）
+- `nest-small-default`（`small` の body に `default`）@375/1200
+  - 内側 `default` の `.un-step__number`: `color` 参照 `rgb(255,255,255)` → 実装 `rgb(4,56,76)` / `background-color` 参照 `rgb(4,56,76)` → 実装 `rgba(0,0,0,0)`
+  - 内側 `default` の `.un-step__item::before` @375: `display` 参照 `none` → 実装 `block` / `width` 参照 `0px` → 実装 `2px`
+  - 原因: `.un-step--small .un-step__number` / `.un-step--small .un-step__item::before`（子孫、かつファイル後方で後勝ち）
 
 ## 目視所見
 
-- `audits/step/shots/` 54 枚（6 バリアント × 3 vw × ref/impl/diff）を確認。fixture が描く範囲では diff は全面白。
-- 番号の丸: `default`（circle）のみ丸、`num` / `horizontal` / `vertical` は角 — 参照と一致。
-- 連結線: `default` 系は ≥600 でのみ縦破線が出て、375 では出ない。`small` は 375 でも 2px の実線が出る。
-  いずれも最後の項目には出ない。参照と一致。
-- `big`: 先頭の上と各項目の下に破線、項目境界の中央に下向きの灰色三角。三角は参照 `translateX(-50%)`、
-  実装 `translateX(-12px)` だが要素幅 24px なので computed の `matrix` は同値。
-- `small`: 16px の輪郭だけの丸 + 8px の右マージン + 2px の縦線、1 行ヘッダ。ラベルと数字は `opacity:.8`。参照と一致。
-- ラベルと数字の配置: `horizontal` は横並び・ラベル右 4px/下 4px、`vertical` / `num` は縦積み。参照と一致
-  （ただし FAIL-2 の通り `big` × `horizontal` だけ崩れる）。
-- 2 桁番号（11 項目）でも丸の中に収まり、連番は途切れない。
+- 6 バリアントは 375/768/1200 とも参照と見分けがつかない（`audits/step/shots/*-{ref,impl}.png`）。`num-375-impl.png` で番号バッジが角の四角、`small-1200-impl.png` で 16px の丸＋2px の縦線を確認
+- `big` の下向き三角（`::before` の 12px ボーダー三角）、破線の連結線、最終項目で線・矢印を出さない扱いはいずれも参照と一致
+- 連番は 12 項目まで 1〜12 で続き、2 桁でもバッジからはみ出さない
+- 本文複数ブロックは目視でも明確に差が出る。参照は段落・リスト・段落が 1em ずつ空くが、実装は詰まって 1 つの塊に見える
+- 入れ子は目視で崩れが明白。内側 `big` の番号が塗り潰しの丸になり、STEP ラベルと数字が読めない
 
 ## 仕様適合
 
-- **バリアント網羅: OK（6/6）**。ただし `num` は実質的に未審査 — 下記 fixture-suspect 参照。
-- **props: NG**。上記 FAIL-6。
-- **コーディング規則: NG**。上記 FAIL-5（詳細度 (0,3,0)）。
-  `!important` なし / ベンダープレフィックスなし / `@media` は `min-width` のみ /
-  リテラル色は `#fff` のみ（規則上許容）/ `swell` 文字列なし / `content:""` にコメントあり。
-- **`node scripts/audit/standalone.mjs step`: OK**（6 variants, 233 rules）— ただし FAIL-4 を見逃している（tool-suspect）。
-- **`node scripts/audit/cleanroom.mjs`: OK**（1900 reference runs indexed）。
+- **バリアント網羅**: OK。spec §3 の 6 バリアントがすべて `src/pages/catalog/step.astro` にあり、`reference/fixtures/step.html` と 1:1
+- **props**: OK。`Step { variant?: 'default'|'big'|'small' = 'default'; numStyle?: 'circle'|'num'|'horizontal'|'vertical' = 'circle'; class?; id? }`、`StepItem { title: string; label?: string|null = 'STEP'; shape?: boolean = false; class?; id? }` が spec §2 と一致
+- **コーディング規則**: **NG**。`.un-step--big.un-step--horizontal .un-step__number` が (0,3,0)（F-3）。`!important` なし / `swell` 文字列なし / リテラル色は `#fff` のみ
+- **クリーンルーム**: OK（`cleanroom: OK (1900 reference runs indexed)`）
+- **standalone**: `standalone: OK (128 variants, 234 rules)` と出るが **見逃し**。実測では `.un-step__body > *` が中 0px / 外 16px（F-2）
 
-## fixture / spec / tool の不備
+## ツール・fixture・spec の不備
 
-- **fixture-suspect**: `reference/fixtures/step.html` の `num` バリアントが `vertical` と完全に同一。
-  `audits/step/shots/num-{375,768,1200}-{ref,impl}.png` は `vertical-*` と **バイト単位で一致**する。
-  SWELL には `[data-num-style=num]` の CSS が 1 本も無く（`blocks.css` の `data-num-style` ルールは
-  `circle` と `horizontal` のみ）、`num` の違いは「`__label` の span を出力しない」というマークアップ差である。
-  spec/parts/step.md §3 の「丸の中が数字だけ」も fixture では再現されていない（`STEP` が出ている）。
-  spec/04 §2.0「そのスタイルの定義的な性質が出るダミーテキストを選ぶこと」に反し、
-  `num` バリアントは事実上未検証。加えて uneri の API には label の span 自体を省く手段が無い。
-- **fixture-suspect**: fixture の `small` は number 側にも `shape u-col-main` を付けているが、
-  実際の SWELL 出力（`reference/swell/ext-step.html`）は `<div class="swell-block-step__number">` で、
-  `u-col-main` は `__shape` にしか付かない。`.is-style-small .swell-block-step__number{color:inherit}` があるため
-  本来の SWELL では小さな丸だけがメインカラーで、`STEP` と数字は本文色になる。
-  fixture・spec・実装は互いに一致しているが、SWELL 既定の見た目とはずれている。
-- **spec-suspect**: spec/parts/step.md §5 の big 表「label / padding / 右 2px（下は 0）」は参照に存在しない。
-  参照の big は `font-size:12px` しか指定せず、label は基底の `padding-bottom:1px` / `padding-right:0` のまま。
-  実装は参照どおりで、spec 側の記述（small 表からの写し間違いと思われる）が誤り。
-- **spec-suspect**: spec §2 の API と §4 のマークアップに `__shape`（small の丸）と項目ごとの label が無く、
-  §5 の small 表にだけ「shape（丸）」が現れる。実装が `shape` prop を足さざるを得ない状態になっている。
-- **tool-suspect**: `scripts/audit/standalone.mjs` は `[class*="un-"]` の要素とその疑似要素しか見ないため、
-  パーツの slot に入った素の `ul` / `figure` / `h4` の余白差（FAIL-4）を検出できない。
-  実際 FAIL-4 が存在する状態で `standalone: OK (6 variants, 233 rules)` を返す。
-- **tool 感度の確認（参考）**: リポジトリのコピーで `.un-step--small .un-step__shape` の
-  `border-radius: 50%` を削除して再ビルドすると `run.mjs` は `small` を FAIL（style diffs 8）にした。
-  ツール自体は敏感で、上記の見逃しは fixture のカバレッジ不足に起因する。
-  なおその破壊時の pixel diff は 0.039–0.104 % で閾値 0.3 % を大きく下回り、
-  **16px 級の装飾の形状差は pixel diff では拾えず computed style 比較だけが検出している**。
+1. **fixture が薄すぎて欠陥を通す**（spec/04-audit.md §2.0 の趣旨に反する）
+   `reference/fixtures/step.html` は 6 バリアントとも **項目 2 個・本文 `<p>` 1 つだけ**。本文 1 ブロックだと `.un-step__body > :last-child { margin-bottom: 0 }` が効いて参照・実装とも 0px になり、F-1 / F-2 が pixel diff にも style diff にも出ない。実際 `run.mjs` は 18/18 セルで 0.000 % を返すのに、本文を p+ul+p にすると 1.0〜4.0 % の差が出る。本文複数ブロックのバリアントを fixture に足すこと
+2. **`scripts/audit/standalone.mjs` の穴**
+   カタログの `[data-variant]` の innerHTML をそのまま中／外で描き比べる作りなので、カタログ本文が `<p>` 1 つである限り `.un-step__body > *` の非最終子が 1 度も評価されない。結果 container 依存があるのに OK と出る。パーツ CSS のセレクタに実際に 2 つ以上マッチする合成マークアップを併用しないと検出できない
+3. **fixture の `small` のマークアップが実際の SWELL 出力と違う**
+   fixture は `<div class="swell-block-step__number shape u-col-main">`。実際の SWELL 出力（`reference/swell/ext-step.html`・`reference/swell/fn-step.html` の 2 例とも）は `<div class="swell-block-step__number">` で、色クラスは `<span class="__shape u-col-main">` 側にしか付かない。`shape` というクラスは SWELL の CSS にも存在しない。
+   `.is-style-small .swell-block-step__number { color: inherit }` があるため、本来 `small` の「STEP」と数字は本文色（#333）で丸だけがメインカラー。fixture が number 側に `u-col-main`（`!important`）を足しているためラベルと数字までメインカラーになっており、spec §5「small / number / color = `--un-color-main`」と実装もそれに追従している。参照として不正確
+4. **spec/parts/step.md の記述が実装より古い**
+   - §5 small の表: 「shape（丸）… 形: 円」「number … border-radius: 50%」と無条件に書いてあるが、実際は `circle` のときだけ丸（非 circle は角）。`--_round` 方式に合わせて条件を書くこと
+   - §3 の `small` 行の props 欄が `variant="small"` だけだが、参照の丸を出すにはカタログどおり StepItem に `shape` が要る（`num` 行は `label={null}` を明記しているので体裁が不揃い）
+
+## FAIL 項目一覧
+
+1. F-1: 本文 2 ブロック以上で `.un-content` 内のブロック間余白が 0（参照 16px @1200 / 15px @375）
+2. F-2: 同一マークアップで `.un-content` の中 0px / 外 16px と container 依存が残る
+3. F-3: `.un-step--big.un-step--horizontal .un-step__number` の詳細度 (0,3,0)
+4. F-4: 入れ子で `.un-step--default .un-step__title` / `.un-step--default .un-step__number` / `.un-step--default .un-step__body` / `.un-step--big .un-step__item(::before)` / `.un-step--small .un-step__number` / `.un-step--small .un-step__item::before` が内側の Step に漏れる
+5. F-5（ツール）: fixture の本文が 1 ブロックしかなく `standalone.mjs` も同じ穴を持つため、F-1 / F-2 を自動検出できない
+6. F-6（fixture）: `small` の number に実 SWELL には無い `u-col-main` が付いており参照色が不正確
+7. F-7（spec）: §5 small の border-radius 記述と §3 `small` 行の props 欄が実装と不一致

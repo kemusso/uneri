@@ -40,10 +40,11 @@ slot: Step は StepItem の並び、StepItem は本文。
 |---|---|---|---|
 | `default` | 既定 | `.is-style-default` + `circle` | 左に丸番号、縦の破線でつなぐ |
 | `big` | `variant="big"` | `.is-style-big` + `vertical` | 番号とタイトルが中央、項目下に三角の矢印 |
-| `small` | `variant="small"` | `.is-style-small` + `circle` | 小さな丸と 2px の縦線、1 行ヘッダ |
+| `small` | `variant="small"` + `StepItem` に `shape` | `.is-style-small` + `circle` | 小さな丸と 2px の縦線、1 行ヘッダ |
 | `num` | `numStyle="num"` + `label={null}` | `data-num-style="num"` | ラベルを出さず数字だけ |
 | `horizontal` | `numStyle="horizontal"` | `data-num-style="horizontal"` | ラベルと数字を横並び |
 | `vertical` | `numStyle="vertical"` | `data-num-style="vertical"` | ラベルと数字を縦並び |
+| `rich-body` | 本文が段落 2 つ＋リスト | 同上 | 本文内ブロックの余白（1em、最後は 0）|
 
 ## 4. マークアップ
 
@@ -83,7 +84,7 @@ slot: Step は StepItem の並び、StepItem は本文。
 | item | padding | 0 0 3em 64px |
 | body（<600）| margin-left | -48px（丸の列を使わず全幅に広げる）|
 | number | 位置 / 寸法 | absolute（left 0 / top 0）/ 48×48 |
-| number（`circle` のみ）| border-radius | 50%（`num` / `horizontal` / `vertical` は角のまま。`--_round` を numStyle 側で切り替え、詳細度を (0,2,0) に収める）|
+| number / shape（`circle` のみ）| border-radius | 50%（`num` / `horizontal` / `vertical` は角のまま。`--_round` を numStyle 側で切り替え、詳細度を (0,2,0) に収める）|
 | number | background / color | `--un-color-main` / #fff |
 | title | display / justify-content / min-height / font-size | flex（column）/ center / 48px / 1.25em |
 | `horizontal` | number の flex-direction / align-items | row（ラベルと数字が横並び）/ flex-end |
@@ -106,7 +107,7 @@ slot: Step は StepItem の並び、StepItem は本文。
 |---|---|---|
 | item | padding | 0 0 2em 24px |
 | number | display / position / flex-direction / align-items / justify-content / color | flex / relative / row / center / flex-start / `--un-color-main` |
-| shape（丸）| 寸法 / 形 / margin-right | 16×16 / 円（2px の枠、中は背景色）/ 8px |
+| shape（丸）| 寸法 / 形 / margin-right / 色 | 16×16 / `circle` のときだけ円（2px の枠、中は背景色）/ 8px / `--un-color-main` |
 | label | font-size / line-height / padding / opacity | 12px / 12px / 右 2px（下は 0）/ 0.8 |
 | number::after | font-size / line-height / opacity | 14px / 14px / 0.8 |
 | number | align-items | center |
@@ -117,7 +118,7 @@ slot: Step は StepItem の並び、StepItem は本文。
 
 ## 6. 受け入れ基準
 
-- [ ] 全 6 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
+- [ ] 全 7 バリアントが 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px
 - [ ] 番号が 1 から連番になる（項目を増やしても続く）
 - [ ] 最後の項目でも連結線・矢印が参照と同じ扱いになる
 - [ ] `.un-content` の外でも成立する

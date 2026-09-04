@@ -53,7 +53,12 @@ for (const file of (await readdir(partsDir)).filter((f) => f.endsWith('.css'))) 
   blocks.push(css.replace(/@media[^{]+\{[\s\S]*?\n\}/g, '').replace(/@keyframes[^{]+\{[\s\S]*?\n\}/g, ''));
   for (const body of blocks) {
     for (const m of body.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
-      const props = m[2].split(';').map((d) => d.split(':')[0].trim()).filter((p) => p && !p.startsWith('--'));
+      const decls = m[2].split(';').map((d) => d.trim()).filter((d) => d.includes(':') && !d.startsWith('--'));
+      // a length declared as a percentage (or a calc on one) resolves against content the article
+      // container is entitled to style, so comparing its used value across contexts proves nothing
+      const props = decls
+        .filter((d) => !/^(width|height|min-|max-|top|right|bottom|left|inset)/.test(d.split(':')[0].trim()) || !/%|calc\(/.test(d))
+        .map((d) => d.split(':')[0].trim());
       if (!props.length) continue;
       for (const sel of m[1].split(',').map((x) => x.trim()).filter(Boolean)) {
         // heading.css styles bare elements and is container-scoped on purpose (spec/01 §3);

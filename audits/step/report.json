@@ -1,6 +1,6 @@
 {
   "part": "step",
-  "date": "2026-09-03T23:46:32.837Z",
+  "date": "2026-09-04T00:04:29.197Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -132,6 +132,26 @@
       "pass": true
     },
     {
+      "variant": "rich-body",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 335.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 335.25
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
       "variant": "default",
       "vw": 768,
       "pixelPct": 0,
@@ -252,6 +272,26 @@
       "pass": true
     },
     {
+      "variant": "rich-body",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 322.390625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 322.390625
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
       "variant": "default",
       "vw": 1200,
       "pixelPct": 0,
@@ -366,6 +406,26 @@
       "implBox": {
         "w": 900,
         "h": 233.59375
+      },
+      "styleDiffs": [],
+      "ink": null,
+      "pass": true
+    },
+    {
+      "variant": "rich-body",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 322.390625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 322.390625
       },
       "styleDiffs": [],
       "ink": null,
