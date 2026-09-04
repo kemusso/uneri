@@ -15,7 +15,7 @@ import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 import { spawnSync } from 'node:child_process';
 import { createServer } from 'node:http';
-import { readFile, mkdir, writeFile, stat } from 'node:fs/promises';
+import { readFile, mkdir, writeFile, stat, rm } from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = path.resolve(new URL('../..', import.meta.url).pathname);
@@ -58,10 +58,10 @@ const HOVER_PARTS = new Set(['button', 'link-list', 'box-menu', 'blog-card', 'ba
 const ANIM_PARTS = new Set(['button']);
 // pausing (instead of removing) keeps animation-* comparable while pinning every animated property
 // to the 0% frame on both sides; transitions are removed so hover end-states are read directly
-// animations only: transitions are left alone so `transition-*` stays comparable; hover states are
-// read after the transition has had time to finish (HOVER_SETTLE_MS)
+// animations only: transitions are left alone so `transition-*` stays comparable; a forced hover
+// finishes its transitions through the Web Animations API before anything is read
 const FREEZE_CSS = '*, *::before, *::after { animation-play-state: paused !important; animation-delay: 0s !important; }';
-const HOVER_SETTLE_MS = 700;
+
 const MOTION_STEPS = 16; // frames sampled across one animation cycle for the filmstrip
 // uneri writes its own keyframes, so the name can never match
 const ANIM_SKIP_PROPS = new Set(['animation-name']);
@@ -112,6 +112,7 @@ const REF_URL = `http://localhost:${port}/reference/fixtures/${part}.html`;
 const IMPL_URL = `http://localhost:${port}/catalog/${part}/`;
 const outDir = path.join(ROOT, 'audits', part);
 const shotDir = path.join(outDir, 'shots');
+await rm(shotDir, { recursive: true, force: true }); // stale shots from an earlier run would mislead the review
 await mkdir(shotDir, { recursive: true });
 
 // ---------- helpers ----------
@@ -227,21 +228,32 @@ async function filmstrip(page, variant) {
 
 // forcing the pseudo-class through CDP is deterministic; moving the mouse is not (the pointer can
 // miss, and the state can be lost between the screenshot and the style read)
+const cdpByPage = new WeakMap();
+async function cdpFor(page) {
+  if (!cdpByPage.has(page)) {
+    const session = await page.context().newCDPSession(page);
+    await session.send('DOM.enable'); await session.send('CSS.enable');
+    cdpByPage.set(page, session);
+  }
+  return cdpByPage.get(page);
+}
 async function forceHover(page, variant, on) {
-  const cdp = await page.context().newCDPSession(page);
-  try {
-    await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
-    const { root } = await cdp.send('DOM.getDocument');
-    const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: `[data-variant="${variant}"] :is(a,button,summary,[role=tab])` });
-    if (nodeId) await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: on ? ['hover'] : [] });
-  } finally { await cdp.detach().catch(() => {}); }
+  const cdp = await cdpFor(page);
+  const { root } = await cdp.send('DOM.getDocument');
+  const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: `[data-variant="${variant}"] :is(a,button,summary,[role=tab])` });
+  if (nodeId) await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: on ? ['hover'] : [] });
 }
 
 async function capture(page, variant, hover, glyphCss) {
   const loc = page.locator(`[data-variant="${variant}"]`).first();
   if (!(await loc.count())) return null;
   await loc.scrollIntoViewIfNeeded();
-  if (hover) { await forceHover(page, variant, true); await page.waitForTimeout(HOVER_SETTLE_MS); }
+  if (hover) {
+    await forceHover(page, variant, true);
+    // jump every transition to its end instead of waiting it out: deterministic and much faster
+    await page.evaluate(() => { for (const a of document.getAnimations()) if (a.constructor.name === 'CSSTransition') a.finish(); });
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => r())));
+  }
   if (ANIM_PARTS.has(part)) {
     // pin every live animation to its first frame: the CSS freeze alone leaves a race between
     // "still paused at 0%" and "animation already dropped by :hover"
@@ -329,7 +341,9 @@ try {
     const variants = await ref.$$eval('[data-variant]', (els) => els.map((e) => e.dataset.variant));
     const implVariants = new Set(await impl.$$eval('[data-variant]', (els) => els.map((e) => e.dataset.variant)));
     for (const v of variants) {
-      for (const hover of HOVER_PARTS.has(part) ? [false, true] : [false]) {
+      // hover is only worth shooting where the part actually reacts to it
+      const hasHoverRule = HOVER_PARTS.has(part);
+      for (const hover of hasHoverRule ? [false, true] : [false]) {
         const tag = hover ? `${v}-hover` : v;
         const R = await capture(ref, v, hover, iconPart?.ref);
         const I = implVariants.has(v) ? await capture(impl, v, hover, iconPart?.impl) : null;
@@ -338,7 +352,12 @@ try {
         await writeFile(path.join(shotDir, `${tag}-${vw}-ref.png`), R.png);
         await writeFile(path.join(shotDir, `${tag}-${vw}-impl.png`), I.png);
         await writeFile(path.join(shotDir, `${tag}-${vw}-diff.png`), pd.png);
-        if (ANIM_PARTS.has(part) && !hover && vw === VIEWPORTS.at(-1)) {
+        const animates = ANIM_PARTS.has(part) && !hover && vw === VIEWPORTS.at(-1)
+          && await ref.evaluate((v) => {
+            const el = document.querySelector(`[data-variant="${v}"]`);
+            return document.getAnimations().some((a) => el.contains(a.effect?.target ?? null));
+          }, v);
+        if (animates) {
           await writeFile(path.join(shotDir, `${tag}-${vw}-ref-motion.png`), await filmstrip(ref, v));
           await writeFile(path.join(shotDir, `${tag}-${vw}-impl-motion.png`), await filmstrip(impl, v));
         }
