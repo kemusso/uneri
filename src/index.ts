@@ -27,3 +27,4 @@ export { default as BannerLink } from './components/BannerLink.astro';
 export { default as BlogCard } from './components/BlogCard.astro';
 export { default as BoxMenu } from './components/BoxMenu.astro';
 export { default as BoxMenuItem } from './components/BoxMenuItem.astro';
+export { default as SecTitle } from './components/SecTitle.astro';

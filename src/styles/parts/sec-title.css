@@ -1,0 +1,21 @@
+/* SecTitle — section heading with a bar down its left. spec: spec/parts/sec-title.md */
+
+.un-sec-title,
+.un-sec-title *,
+.un-sec-title::before,
+.un-sec-title::after,
+.un-sec-title ::before,
+.un-sec-title ::after {
+  box-sizing: border-box;
+}
+
+.un-sec-title {
+  position: relative;
+  padding: 0 0.75em;
+  border-left: 2px solid var(--un-color-main);
+  font-size: 1.25rem;
+}
+.un-sec-title::before {
+  /* whatever the title draws for itself stays behind its text */
+  z-index: 0;
+}

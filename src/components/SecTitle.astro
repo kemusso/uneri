@@ -1,0 +1,15 @@
+---
+/** SecTitle — セクション見出し. spec: spec/parts/sec-title.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  /** 出す要素。既定は div（記事本文の中では見出しの装飾が優先される）*/
+  as?: 'div' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
+  class?: string;
+  id?: string;
+}
+
+const { as: Tag = 'div', class: cls, id, ...rest } = Astro.props;
+---
+
+<Tag id={id} class:list={['un-sec-title', cls]} {...rest}><slot /></Tag>
