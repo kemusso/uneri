@@ -24,3 +24,4 @@ export { default as Cell } from './components/Cell.astro';
 export { default as Columns } from './components/Columns.astro';
 export { default as Column } from './components/Column.astro';
 export { default as BannerLink } from './components/BannerLink.astro';
+export { default as BlogCard } from './components/BlogCard.astro';

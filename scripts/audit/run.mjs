@@ -88,6 +88,10 @@ const ICON_PARTS = {
     impl: '.un-list--check>li::before, .un-list--good>li::before, .un-list--bad>li::before, .un-list--triangle>li::before { background-color: transparent !important; }',
   },
   'icon-box': ICON_GLYPH_CSS,
+  'blog-card': {
+    ref: '.p-blogCard__caption::before { color: transparent !important; }',
+    impl: '.un-blog-card__caption::before { background-color: transparent !important; }',
+  },
   table: {
     ref: '.swl-cell-bg[data-icon]::after { background-color: transparent !important; }',
     impl: '.un-cell-icon[data-icon]::after { background-color: transparent !important; }',
@@ -98,7 +102,10 @@ const iconPart = ICON_PARTS[part] ?? null;
 // an icon-font glyph is inline text; a mask is a painted box. Their own metrics can never line up,
 // so the glyph's placement and size are judged by the ink box instead (spec/04-audit.md §2.1).
 const ICON_SKIP_PROPS = new Set(['content', 'font-family', 'background-image', 'mask-image',
-  'background-size', 'background-repeat', 'background-position', 'display', 'width', 'height', 'transform-origin']);
+  'background-size', 'background-repeat', 'background-position', 'display', 'width', 'height', 'transform-origin',
+  // an icon-font glyph is a baseline-aligned piece of text; a mask is a painted box that has to be
+  // aligned some other way to sit in the same place. Where it lands is judged by the ink box.
+  'vertical-align']);
 const isIconPseudo = (rec) => /icomoon/i.test(rec['font-family'] ?? '');
 
 // ---------- build ----------

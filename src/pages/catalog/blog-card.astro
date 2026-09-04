@@ -1,0 +1,28 @@
+---
+/** catalog: BlogCard (spec/parts/blog-card.md §3). Variant order/text must match reference/fixtures/blog-card.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import BlogCard from '../../components/BlogCard.astro';
+---
+<Catalog title="BlogCard">
+  <Content data-variant="type1">
+    <BlogCard href="#" heading="ブログカードの記事タイトルが入ります" excerpt="記事の抜粋がここに表示されます。長いときは省略されます。" src="/catalog/sample.svg" alt="" width={320} height={180} />
+  </Content>
+
+  <Content data-variant="type2">
+    <BlogCard href="#" heading="ブログカードの記事タイトルが入ります" excerpt="記事の抜粋がここに表示されます。長いときは省略されます。" src="/catalog/sample.svg" alt="" width={320} height={180} type="type2" />
+  </Content>
+
+  <Content data-variant="type3">
+    <BlogCard href="#" heading="ブログカードの記事タイトルが入ります" excerpt="記事の抜粋がここに表示されます。長いときは省略されます。" src="/catalog/sample.svg" alt="" width={320} height={180} type="type3" />
+  </Content>
+
+  <Content data-variant="external">
+    <BlogCard href="#" heading="ブログカードの記事タイトルが入ります" excerpt="記事の抜粋がここに表示されます。長いときは省略されます。" src="/catalog/sample.svg" alt="" width={320} height={180} type="type3" external caption="SWELL" />
+  </Content>
+
+  <Content data-variant="noimg">
+    <BlogCard href="#" heading="ブログカードの記事タイトルが入ります" excerpt="記事の抜粋がここに表示されます。長いときは省略されます。" />
+  </Content>
+
+</Catalog>

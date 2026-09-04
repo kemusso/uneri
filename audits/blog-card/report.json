@@ -1,0 +1,1215 @@
+{
+  "part": "blog-card",
+  "date": "2026-09-04T13:40:35.760Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "type1",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 89.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 89.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 19,
+          "w": 10,
+          "h": 8
+        },
+        "impl": {
+          "x": 37,
+          "y": 20,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type1-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 89.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 89.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 19,
+          "w": 10,
+          "h": 8
+        },
+        "impl": {
+          "x": 37,
+          "y": 20,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 94.46875
+      },
+      "implBox": {
+        "w": 345,
+        "h": 94.46875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 40,
+          "y": 20,
+          "w": 11,
+          "h": 8
+        },
+        "impl": {
+          "x": 40,
+          "y": 21,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 94.46875
+      },
+      "implBox": {
+        "w": 345,
+        "h": 94.46875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 40,
+          "y": 20,
+          "w": 11,
+          "h": 8
+        },
+        "impl": {
+          "x": 40,
+          "y": 21,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 310,
+          "y": 95,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 310,
+          "y": 96,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 310,
+          "y": 95,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 310,
+          "y": 96,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 315,
+          "y": 94,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 315,
+          "y": 95,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "implBox": {
+        "w": 345,
+        "h": 84.8125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 315,
+          "y": 94,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 315,
+          "y": 95,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 19,
+          "w": 10,
+          "h": 8
+        },
+        "impl": {
+          "x": 37,
+          "y": 20,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 37,
+          "y": 19,
+          "w": 10,
+          "h": 8
+        },
+        "impl": {
+          "x": 37,
+          "y": 20,
+          "w": 11,
+          "h": 9
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type1",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 126.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 126.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 54,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 54,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type1-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 126.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 126.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 54,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 54,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 131.546875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 131.546875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 58,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 58,
+          "y": 21,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 131.546875
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 131.546875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 58,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 58,
+          "y": 21,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 676,
+          "y": 130,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 676,
+          "y": 131,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 676,
+          "y": 130,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 676,
+          "y": 131,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 682,
+          "y": 129,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 682,
+          "y": 130,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 125.78125
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 682,
+          "y": 129,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 682,
+          "y": 130,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 80
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 80
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 54,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 54,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 80
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 80
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 54,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 54,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type1",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 145.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 145.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 70,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 70,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type1-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 145.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 145.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 70,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 70,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 150.609375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 150.609375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 74,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 74,
+          "y": 21,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type2-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 150.609375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 150.609375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 74,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 74,
+          "y": 21,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 854,
+          "y": 149,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 854,
+          "y": 150,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "type3-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 854,
+          "y": 149,
+          "w": 7,
+          "h": 6
+        },
+        "impl": {
+          "x": 854,
+          "y": 150,
+          "w": 8,
+          "h": 6
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 859,
+          "y": 148,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 859,
+          "y": 149,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "external-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 144.84375
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 859,
+          "y": 148,
+          "w": 7,
+          "h": 9
+        },
+        "impl": {
+          "x": 859,
+          "y": 149,
+          "w": 7,
+          "h": 8
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 95.6875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 95.6875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 70,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 70,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "noimg-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 95.6875
+      },
+      "implBox": {
+        "w": 900,
+        "h": 95.6875
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 70,
+          "y": 19,
+          "w": 12,
+          "h": 9
+        },
+        "impl": {
+          "x": 70,
+          "y": 20,
+          "w": 12,
+          "h": 9
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 0,
+          "h": 0
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

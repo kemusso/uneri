@@ -1,0 +1,52 @@
+---
+/** BlogCard — 記事へのリンクカード. spec: spec/parts/blog-card.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  href: string;
+  /** カードのタイトル */
+  heading: string;
+  excerpt?: string;
+  /** 左上（type3 は右下）のラベル */
+  caption?: string;
+  src?: string;
+  alt?: string;
+  width?: number | string;
+  height?: number | string;
+  type?: 'type1' | 'type2' | 'type3';
+  /** 外部リンク（ラベルの記号が変わる）*/
+  external?: boolean;
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  href, heading, excerpt, caption = '関連記事', src, alt = '', width, height,
+  type = 'type1', external, sponsored, class: cls, id, ...rest
+} = Astro.props;
+---
+
+<div id={id} class:list={['un-blog-card', !src && 'un-blog-card--noimg', external && 'un-blog-card--external', cls]} {...rest}>
+  <div class="un-blog-card__card" data-type={type}>
+    <div class="un-blog-card__inner">
+      <span class="un-blog-card__caption">{caption}</span>
+      {src && (
+        <div class="un-blog-card__thumb">
+          <figure class="un-blog-card__figure">
+            <img class="un-blog-card__img" src={src} alt={alt} width={width} height={height} />
+          </figure>
+        </div>
+      )}
+      <div class="un-blog-card__body">
+        <a
+          class="un-blog-card__title"
+          href={href}
+          rel={sponsored ? 'nofollow sponsored noopener' : external ? 'noopener' : undefined}
+          target={external ? '_blank' : undefined}
+        >{heading}</a>
+        {excerpt && <span class="un-blog-card__excerpt">{excerpt}</span>}
+      </div>
+    </div>
+  </div>
+</div>

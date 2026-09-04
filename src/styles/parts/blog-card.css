@@ -1,0 +1,192 @@
+/* BlogCard — link card for a post. spec: spec/parts/blog-card.md */
+
+.un-blog-card,
+.un-blog-card *,
+.un-blog-card::before,
+.un-blog-card::after,
+.un-blog-card ::before,
+.un-blog-card ::after {
+  box-sizing: border-box;
+}
+
+.un-blog-card :where(.un-blog-card__card) {
+  display: block;
+  max-width: 880px;
+  transition: box-shadow 0.25s;
+}
+.un-blog-card :where(.un-blog-card__inner) {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 16px 16px;
+  transition: box-shadow 0.25s;
+}
+.un-blog-card :where(.un-blog-card__caption) {
+  display: block;
+  position: absolute;
+  top: -1em;
+  left: 16px;
+  z-index: 1;
+  height: 2em;
+  padding: 0 0.5em;
+  border-radius: var(--un-radius-sm);
+  background-color: var(--un-color-bg);
+  font-size: 11px;
+  line-height: 2em;
+}
+.un-blog-card :where(.un-blog-card__caption)::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 2em;
+  margin-right: 3px;
+  vertical-align: top;
+  background-color: currentColor;
+  mask-image: var(--_glyph, url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M4 26 19 41 46 11%22/%3E%3C/svg%3E"));
+  mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  mask-size: contain;
+}
+.un-blog-card :where(.un-blog-card__thumb) {
+  position: relative;
+  flex-shrink: 0;
+  width: 30%;
+  margin-right: 1em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.un-blog-card .un-blog-card__figure {
+  /* the article body treats a figure as a floated-image holder; a card thumbnail is neither */
+  position: relative;
+  z-index: 0;
+  clear: none;
+  margin: 0;
+  overflow: hidden;
+  text-align: start;
+}
+.un-blog-card .un-blog-card__figure::after {
+  content: none;
+  display: none;
+}
+.un-blog-card .un-blog-card__figure::before {
+  /* the thumbnail keeps a 16:9 box whatever the picture is */
+  content: "";
+  display: block;
+  padding-top: var(--un-ratio-card);
+}
+.un-blog-card .un-blog-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: baseline;
+  transition: transform 0.25s;
+}
+.un-blog-card :where(.un-blog-card__body) {
+  flex-grow: 1;
+}
+.un-blog-card :where(.un-blog-card__title) {
+  display: block;
+  color: var(--un-color-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.un-blog-card :where(.un-blog-card__excerpt) {
+  /* the excerpt only earns its space once the card is wide */
+  display: none;
+  margin-top: 0.5em;
+  opacity: 0.8;
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+/* ---- type 1: a thin frame drawn behind the content ---- */
+.un-blog-card [data-type="type1"] :where(.un-blog-card__inner)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 1px solid;
+  pointer-events: none;
+}
+
+/* ---- type 2: the frame and the caption take the main colour ---- */
+.un-blog-card [data-type="type2"] :where(.un-blog-card__inner) {
+  padding-top: 24px;
+  border: 1px solid var(--un-color-main);
+  border-radius: var(--un-radius-sm);
+}
+.un-blog-card [data-type="type2"] :where(.un-blog-card__caption) {
+  padding: 0 0.75em;
+  background-color: var(--un-color-main);
+  color: #fff;
+}
+
+/* ---- type 3: a floating white card, the caption tucked in the corner ---- */
+.un-blog-card [data-type="type3"] :where(.un-blog-card__inner) {
+  padding: 16px;
+  border-radius: var(--un-radius-sm);
+  background-color: #fff;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+.un-blog-card [data-type="type3"] :where(.un-blog-card__caption) {
+  top: auto;
+  right: 4px;
+  bottom: 2px;
+  left: auto;
+  padding: 0 0.5em;
+  transform: scale(0.8);
+  transform-origin: right bottom;
+  opacity: 0.8;
+  background-color: transparent;
+  font-size: 10px;
+}
+
+/* ---- no thumbnail: the card keeps a minimum height ---- */
+.un-blog-card--noimg :where(.un-blog-card__inner) {
+  min-height: 5em;
+}
+
+/* ---- external link: a different mark in the caption ---- */
+.un-blog-card--external :where(.un-blog-card__caption) {
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%224%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M27 6h17v17%22/%3E%3Cpath d=%22M44 6 22 28%22/%3E%3Cpath d=%22M36 30v14H6V14h14%22/%3E%3C/svg%3E");
+}
+
+/* ---- hover: the card lifts ---- */
+.un-blog-card :where(.un-blog-card__card):hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 12px 28px -12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 960px) {
+  .un-blog-card :where(.un-blog-card__excerpt) {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) {
+  .un-blog-card :where(.un-blog-card__inner) {
+    padding: 25px 24px 24px;
+  }
+  .un-blog-card :where(.un-blog-card__caption) {
+    left: 24px;
+    font-size: 12px;
+  }
+  .un-blog-card :where(.un-blog-card__thumb) {
+    width: 21%;
+  }
+  .un-blog-card [data-type="type2"] :where(.un-blog-card__inner) {
+    padding-top: 28px;
+  }
+  .un-blog-card [data-type="type3"] :where(.un-blog-card__inner) {
+    padding: 24px;
+  }
+  .un-blog-card [data-type="type3"] :where(.un-blog-card__caption) {
+    right: 8px;
+    bottom: 8px;
+  }
+}
