@@ -88,6 +88,10 @@ const ICON_PARTS = {
     impl: '.un-list--check>li::before, .un-list--good>li::before, .un-list--bad>li::before, .un-list--triangle>li::before { background-color: transparent !important; }',
   },
   'icon-box': ICON_GLYPH_CSS,
+  'link-list': {
+    ref: '.swell-block-linkList__icon i { color: transparent !important; }',
+    impl: '.un-link-list__glyph::before { background-color: transparent !important; }',
+  },
   'post-list': {
     ref: '.c-postThumb__cat::before { color: transparent !important; }',
     impl: '.un-post-list__cat::before { background-color: transparent !important; }',

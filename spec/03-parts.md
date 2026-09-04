@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|
 | C1 | リスト装飾 | `List` | default / note / check / good / bad / triangle / num-circle; `ordered` | `.is-style-*_list` | pass |
 | C2 | 説明リスト | `Dl` + `DlItem` | default / border / float | `.swell-block-dl` | impl |
-| C3 | リンクリスト | `LinkList` | default / border / button | `.swell-block-linkList` | todo |
+| C3 | リンクリスト | `LinkList`, `LinkListItem` | default / border / fill / inline / button; 記号の左右 | `.swell-block-linkList` | impl |
 
 ## D. インタラクション
 

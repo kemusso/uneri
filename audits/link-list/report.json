@@ -1,0 +1,1410 @@
+{
+  "part": "link-list",
+  "date": "2026-09-04T14:33:58.585Z",
+  "thresholds": {
+    "pixelPct": 0.3,
+    "boxPx": 1,
+    "colorDist": 3,
+    "lengthPx": 0.5,
+    "inkCentrePx": 2,
+    "inkSizeRatio": 0.3
+  },
+  "verdict": "PASS",
+  "results": [
+    {
+      "variant": "default",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 347,
+          "y": 29,
+          "w": 8,
+          "h": 88
+        },
+        "impl": {
+          "x": 347,
+          "y": 30,
+          "w": 8,
+          "h": 90
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 0,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 347,
+          "y": 29,
+          "w": 15,
+          "h": 88
+        },
+        "impl": {
+          "x": 347,
+          "y": 30,
+          "w": 16,
+          "h": 90
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 2,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 136.75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 136.75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 340,
+          "y": 39,
+          "w": 7,
+          "h": 104
+        },
+        "impl": {
+          "x": 340,
+          "y": 40,
+          "w": 8,
+          "h": 105
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 136.75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 136.75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 340,
+          "y": 39,
+          "w": 15,
+          "h": 104
+        },
+        "impl": {
+          "x": 340,
+          "y": 40,
+          "w": 16,
+          "h": 105
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 355,
+          "y": 29,
+          "w": 7,
+          "h": 13
+        },
+        "impl": {
+          "x": 354,
+          "y": 30,
+          "w": 9,
+          "h": 15
+        },
+        "delta": {
+          "x": 0,
+          "y": 2,
+          "w": 2,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 60
+      },
+      "implBox": {
+        "w": 345,
+        "h": 60
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 138,
+          "y": 29,
+          "w": 155,
+          "h": 47
+        },
+        "impl": {
+          "x": 138,
+          "y": 30,
+          "w": 155,
+          "h": 48
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex-hover",
+      "vw": 375,
+      "pixelPct": 0.042,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 60
+      },
+      "implBox": {
+        "w": 345,
+        "h": 60
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 138,
+          "y": 29,
+          "w": 155,
+          "h": 47
+        },
+        "impl": {
+          "x": 138,
+          "y": 30,
+          "w": 155,
+          "h": 48
+        },
+        "delta": {
+          "x": 0,
+          "y": 1.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 153.75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 153.75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 338,
+          "y": 40,
+          "w": 7,
+          "h": 120
+        },
+        "impl": {
+          "x": 338,
+          "y": 40,
+          "w": 8,
+          "h": 122
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 153.75
+      },
+      "implBox": {
+        "w": 345,
+        "h": 153.75
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 338,
+          "y": 40,
+          "w": 7,
+          "h": 120
+        },
+        "impl": {
+          "x": 338,
+          "y": 40,
+          "w": 8,
+          "h": 122
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 21,
+          "y": 29,
+          "w": 7,
+          "h": 88
+        },
+        "impl": {
+          "x": 21,
+          "y": 30,
+          "w": 8,
+          "h": 90
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 2,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left-hover",
+      "vw": 375,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "implBox": {
+        "w": 345,
+        "h": 101.25
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 21,
+          "y": 29,
+          "w": 7,
+          "h": 88
+        },
+        "impl": {
+          "x": 21,
+          "y": 30,
+          "w": 8,
+          "h": 90
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 2,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 717,
+          "y": 31,
+          "w": 8,
+          "h": 92
+        },
+        "impl": {
+          "x": 716,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 717,
+          "y": 31,
+          "w": 16,
+          "h": 92
+        },
+        "impl": {
+          "x": 716,
+          "y": 31,
+          "w": 17,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 145.5625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 145.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 709,
+          "y": 42,
+          "w": 8,
+          "h": 108
+        },
+        "impl": {
+          "x": 708,
+          "y": 42,
+          "w": 9,
+          "h": 110
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 145.5625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 145.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 709,
+          "y": 42,
+          "w": 16,
+          "h": 108
+        },
+        "impl": {
+          "x": 708,
+          "y": 42,
+          "w": 17,
+          "h": 110
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 725,
+          "y": 31,
+          "w": 8,
+          "h": 12
+        },
+        "impl": {
+          "x": 724,
+          "y": 31,
+          "w": 9,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 28
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 28
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 155,
+          "y": 31,
+          "w": 322,
+          "h": 13
+        },
+        "impl": {
+          "x": 155,
+          "y": 31,
+          "w": 322,
+          "h": 14
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex-hover",
+      "vw": 768,
+      "pixelPct": 0.066,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 28
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 28
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 155,
+          "y": 31,
+          "w": 322,
+          "h": 13
+        },
+        "impl": {
+          "x": 155,
+          "y": 31,
+          "w": 322,
+          "h": 14
+        },
+        "delta": {
+          "x": 0,
+          "y": 0.5,
+          "w": 0,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 163.5625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 163.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 707,
+          "y": 42,
+          "w": 8,
+          "h": 126
+        },
+        "impl": {
+          "x": 706,
+          "y": 42,
+          "w": 9,
+          "h": 128
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 163.5625
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 163.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 707,
+          "y": 42,
+          "w": 8,
+          "h": 126
+        },
+        "impl": {
+          "x": 706,
+          "y": 42,
+          "w": 9,
+          "h": 128
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 1,
+          "w": 1,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 30,
+          "y": 31,
+          "w": 8,
+          "h": 93
+        },
+        "impl": {
+          "x": 30,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left-hover",
+      "vw": 768,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 30,
+          "y": 31,
+          "w": 8,
+          "h": 93
+        },
+        "impl": {
+          "x": 30,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 894,
+          "y": 31,
+          "w": 8,
+          "h": 93
+        },
+        "impl": {
+          "x": 894,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "default-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 894,
+          "y": 31,
+          "w": 16,
+          "h": 93
+        },
+        "impl": {
+          "x": 894,
+          "y": 31,
+          "w": 17,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 145.5625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 145.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 886,
+          "y": 42,
+          "w": 8,
+          "h": 109
+        },
+        "impl": {
+          "x": 886,
+          "y": 42,
+          "w": 9,
+          "h": 110
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "border-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 145.5625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 145.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 886,
+          "y": 42,
+          "w": 16,
+          "h": 109
+        },
+        "impl": {
+          "x": 886,
+          "y": 42,
+          "w": 17,
+          "h": 110
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fill-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 902,
+          "y": 31,
+          "w": 8,
+          "h": 13
+        },
+        "impl": {
+          "x": 902,
+          "y": 31,
+          "w": 9,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 171,
+          "y": 31,
+          "w": 322,
+          "h": 13
+        },
+        "impl": {
+          "x": 171,
+          "y": 31,
+          "w": 323,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "flex-hover",
+      "vw": 1200,
+      "pixelPct": 0.053,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 28
+      },
+      "implBox": {
+        "w": 900,
+        "h": 28
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 171,
+          "y": 31,
+          "w": 322,
+          "h": 13
+        },
+        "impl": {
+          "x": 171,
+          "y": 31,
+          "w": 323,
+          "h": 14
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 163.5625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 163.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 885,
+          "y": 42,
+          "w": 7,
+          "h": 126
+        },
+        "impl": {
+          "x": 884,
+          "y": 42,
+          "w": 9,
+          "h": 128
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 2,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "button-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 163.5625
+      },
+      "implBox": {
+        "w": 900,
+        "h": 163.5625
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 885,
+          "y": 42,
+          "w": 7,
+          "h": 126
+        },
+        "impl": {
+          "x": 884,
+          "y": 42,
+          "w": 9,
+          "h": 128
+        },
+        "delta": {
+          "x": 0,
+          "y": 1,
+          "w": 2,
+          "h": 2
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 46,
+          "y": 31,
+          "w": 8,
+          "h": 93
+        },
+        "impl": {
+          "x": 46,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "icon-left-hover",
+      "vw": 1200,
+      "pixelPct": 0,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 108
+      },
+      "implBox": {
+        "w": 900,
+        "h": 108
+      },
+      "styleDiffs": [],
+      "ink": {
+        "ref": {
+          "x": 46,
+          "y": 31,
+          "w": 8,
+          "h": 93
+        },
+        "impl": {
+          "x": 46,
+          "y": 31,
+          "w": 9,
+          "h": 94
+        },
+        "delta": {
+          "x": 0.5,
+          "y": 0.5,
+          "w": 1,
+          "h": 1
+        },
+        "pass": true
+      },
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+/** LinkList — リンクの一覧. spec: spec/parts/link-list.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'ul'> {
+  variant?: 'default' | 'button';
+  /** 行の間に罫線を引く */
+  border?: boolean;
+  /** 行をメインカラーで塗る */
+  fill?: boolean;
+  /** 横に並べる */
+  inline?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { variant = 'default', border, fill, inline, class: cls, id, ...rest } = Astro.props;
+---
+
+<ul
+  id={id}
+  class:list={[
+    'un-link-list',
+    variant !== 'default' && `un-link-list--${variant}`,
+    border && 'un-link-list--border',
+    fill && 'un-link-list--fill',
+    inline && 'un-link-list--inline',
+    cls,
+  ]}
+  {...rest}
+><slot /></ul>

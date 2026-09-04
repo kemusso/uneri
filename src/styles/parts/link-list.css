@@ -1,0 +1,145 @@
+/* LinkList — list of links. spec: spec/parts/link-list.md */
+
+.un-link-list,
+.un-link-list *,
+.un-link-list::before,
+.un-link-list::after,
+.un-link-list ::before,
+.un-link-list ::after {
+  box-sizing: border-box;
+}
+
+.un-link-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  padding-left: 0;
+  list-style: none;
+}
+.un-link-list :where(.un-link-list__item) {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.un-link-list :where(.un-link-list__link) {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.25em;
+  color: inherit;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.un-link-list :where(.un-link-list__text) {
+  display: block;
+  margin-right: auto;
+  transition: transform 0.25s;
+}
+.un-link-list :where(.un-link-list__icon) {
+  display: block;
+  flex: 0 0 auto;
+  height: 1.4em;
+  color: var(--un-color-main);
+  font-size: 1.25em;
+  line-height: 1.4;
+  transition: transform 0.25s;
+}
+.un-link-list :where(.un-link-list__glyph)::before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1.4em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-width=%225%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M19 10 34 25 19 40%22/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+  mask-size: contain;
+}
+.un-link-list :where(.un-link-list__icon--right) {
+  order: 2;
+}
+
+/* ---- border: a rule under every row ---- */
+.un-link-list--border {
+  gap: 0;
+}
+.un-link-list--border :where(.un-link-list__item) {
+  border-bottom: 1px solid var(--un-color-border);
+}
+.un-link-list--border :where(.un-link-list__item:first-child) {
+  border-top: 1px solid var(--un-color-border);
+}
+.un-link-list--border :where(.un-link-list__link) {
+  padding: 0.6em 0.5em;
+}
+
+/* ---- fill: the row is painted ---- */
+.un-link-list--fill :where(.un-link-list__link) {
+  background-color: var(--un-color-main);
+  color: #fff;
+}
+/* ---- inline: the rows sit next to each other ---- */
+.un-link-list--inline {
+  gap: 0.5em 0.75em;
+}
+.un-link-list--inline :where(.un-link-list__item) {
+  width: auto;
+}
+
+/* ---- button: an outlined pill ---- */
+.un-link-list--button {
+  gap: 0.5em;
+}
+.un-link-list--button :where(.un-link-list__link) {
+  justify-content: center;
+  padding: 0.6em 1.5em;
+  border: 1px solid var(--un-color-text);
+  border-radius: 100px;
+  text-align: center;
+  transition: background-color 0.25s, color 0.25s;
+}
+.un-link-list--button :where(.un-link-list__icon) {
+  /* the mark hangs into the padding so the label stays centred in the pill */
+  margin-right: -0.75em;
+  color: inherit;
+  transition: all 0s;
+}
+.un-link-list--button :where(.un-link-list__text) {
+  transition: all 0s;
+}
+.un-link-list--button :where(.un-link-list__text) {
+  margin-right: auto;
+  margin-left: auto;
+}
+/* ---- hover: the mark slides on, the row takes the main colour ---- */
+.un-link-list :where(.un-link-list__link):hover {
+  color: var(--un-color-main);
+}
+.un-link-list :where(.un-link-list__link:hover .un-link-list__icon--right) {
+  transform: translateX(0.4em);
+}
+.un-link-list :where(.un-link-list__link:hover .un-link-list__icon--left + .un-link-list__text) {
+  transform: translateX(0.4em);
+}
+.un-link-list--inline :where(.un-link-list__link):hover {
+  text-decoration: underline;
+}
+.un-link-list--fill :where(.un-link-list__link):hover {
+  background-color: transparent;
+  color: var(--un-color-main);
+}
+.un-link-list--button :where(.un-link-list__link):hover {
+  background-color: var(--un-color-text);
+  color: #fff;
+}
+
+/* the pill and the inline row hold still under the pointer */
+.un-link-list--inline :where(.un-link-list__icon, .un-link-list__text),
+.un-link-list--button :where(.un-link-list__icon, .un-link-list__text) {
+  transform: none;
+}

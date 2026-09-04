@@ -1,0 +1,28 @@
+---
+/** LinkListItem — LinkList の 1 行. spec: spec/parts/link-list.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'li'> {
+  href: string;
+  label: string;
+  /** 記号を置く側。`none` で記号なし */
+  icon?: 'left' | 'right' | 'none';
+  sponsored?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const { href, label, icon = 'right', sponsored, class: cls, id, ...rest } = Astro.props;
+---
+
+<li id={id} class:list={['un-link-list__item', cls]} {...rest}>
+  <a class="un-link-list__link" href={href} rel={sponsored ? 'nofollow sponsored noopener' : undefined}>
+    {icon === 'left' && (
+      <span class="un-link-list__icon un-link-list__icon--left" aria-hidden="true"><i class="un-link-list__glyph" /></span>
+    )}
+    <span class="un-link-list__text">{label}</span>
+    {icon === 'right' && (
+      <span class="un-link-list__icon un-link-list__icon--right" aria-hidden="true"><i class="un-link-list__glyph" /></span>
+    )}
+  </a>
+</li>

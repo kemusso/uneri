@@ -31,3 +31,5 @@ export { default as SecTitle } from './components/SecTitle.astro';
 export { default as FullWide } from './components/FullWide.astro';
 export { default as PostList } from './components/PostList.astro';
 export { default as PostListItem } from './components/PostListItem.astro';
+export { default as LinkList } from './components/LinkList.astro';
+export { default as LinkListItem } from './components/LinkListItem.astro';

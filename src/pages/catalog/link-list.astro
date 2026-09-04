@@ -1,0 +1,57 @@
+---
+/** catalog: LinkList (spec/parts/link-list.md §3). Variant order/text must match reference/fixtures/link-list.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import LinkList from '../../components/LinkList.astro';
+import LinkListItem from '../../components/LinkListItem.astro';
+---
+<Catalog title="LinkList">
+  <Content data-variant="default">
+    <LinkList>
+      <LinkListItem href="#" label="リンクの見出し1" />
+      <LinkListItem href="#" label="リンクの見出し2" />
+      <LinkListItem href="#" label="リンクの見出し3" />
+    </LinkList>
+  </Content>
+
+  <Content data-variant="border">
+    <LinkList border>
+      <LinkListItem href="#" label="リンクの見出し1" />
+      <LinkListItem href="#" label="リンクの見出し2" />
+      <LinkListItem href="#" label="リンクの見出し3" />
+    </LinkList>
+  </Content>
+
+  <Content data-variant="fill">
+    <LinkList fill>
+      <LinkListItem href="#" label="リンクの見出し1" />
+      <LinkListItem href="#" label="リンクの見出し2" />
+      <LinkListItem href="#" label="リンクの見出し3" />
+    </LinkList>
+  </Content>
+
+  <Content data-variant="flex">
+    <LinkList inline>
+      <LinkListItem href="#" label="リンクの見出し1" />
+      <LinkListItem href="#" label="リンクの見出し2" />
+      <LinkListItem href="#" label="リンクの見出し3" />
+    </LinkList>
+  </Content>
+
+  <Content data-variant="button">
+    <LinkList variant="button">
+      <LinkListItem href="#" label="リンクの見出し1" />
+      <LinkListItem href="#" label="リンクの見出し2" />
+      <LinkListItem href="#" label="リンクの見出し3" />
+    </LinkList>
+  </Content>
+
+  <Content data-variant="icon-left">
+    <LinkList>
+      <LinkListItem href="#" label="リンクの見出し1" icon="left" />
+      <LinkListItem href="#" label="リンクの見出し2" icon="left" />
+      <LinkListItem href="#" label="リンクの見出し3" icon="left" />
+    </LinkList>
+  </Content>
+
+</Catalog>
