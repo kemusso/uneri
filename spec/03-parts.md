@@ -45,7 +45,7 @@
 
 | # | パーツ | コンポーネント | バリアント | 参照 | 状態 |
 |---|---|---|---|---|---|
-| E1 | テーブル | `Table`, `Cell` | default / simple; セルアイコン: double-circle / circle / triangle / close / hatena / check / line (obj / bg); 横スクロール; 先頭列固定 | `.wp-block-table` `.swl-cell-bg` | todo |
+| E1 | テーブル | `Table`, `Cell` | default / simple / double; 先頭列見出し; 縦積み; セルアイコン: double-circle / circle / triangle / close / hatena / check / line (obj / bg, s/m/l); セル背景色; 中央寄せ; 横スクロール; 先頭列固定 | `.wp-block-table` `.swl-cell-bg` | impl |
 | E2 | レビュー | `Review` | default; 星 0.5 刻み; メリット/デメリット | `.swell-block-review` | todo |
 | E3 | リッチカラム | `Columns`, `Column` | default / border / shadow; 列数 pc/tab/sp; `padding`; 列 `bg` | `.swell-block-columns` | todo |
 

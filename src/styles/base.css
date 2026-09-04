@@ -202,15 +202,14 @@
 }
 
 /* ---- table ---- */
-.un-content table {
+.un-content :where(table) {
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   line-height: 1.6;
   text-align: left;
 }
-.un-content th,
-.un-content td {
+.un-content :where(th, td) {
   position: relative;
   z-index: 0;
   padding: 0.5em 0.75em;
@@ -219,8 +218,11 @@
   text-align: left;
   vertical-align: top;
 }
-.un-content th {
+.un-content :where(th) {
+  background-color: var(--un-color-table-th-bg);
+  font-weight: 700;
+}
+.un-content :where(thead th) {
   background-color: var(--un-color-main);
   color: #fff;
-  font-weight: 700;
 }

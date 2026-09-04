@@ -1,0 +1,291 @@
+/* Table — article table and its cells. spec: spec/parts/table.md */
+
+.un-table,
+.un-table *,
+.un-table::before,
+.un-table::after,
+.un-table ::before,
+.un-table ::after {
+  box-sizing: border-box;
+}
+
+.un-table {
+  margin-right: 0;
+  margin-left: 0;
+}
+.un-table > table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  line-height: 1.6;
+  text-align: left;
+}
+.un-table :where(th, td) {
+  position: relative;
+  z-index: 0;
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--un-color-table-border);
+  background-clip: padding-box;
+  vertical-align: top;
+  text-align: left;
+}
+.un-table :where(th) {
+  background-color: var(--un-color-table-th-bg);
+  font-weight: 700;
+}
+.un-table :where(thead) {
+  /* the browser hands the table's own border colour down to its sections; the head keeps its text colour */
+  border-color: currentColor;
+}
+.un-table :where(thead th) {
+  color: #fff;
+  background-color: var(--un-color-main);
+}
+
+/* ---- simple: horizontal rules only, no filled header ---- */
+.un-table--simple :where(th, td) {
+  border-right: 0;
+  border-left: 0;
+}
+.un-table--simple :where(th) {
+  color: inherit;
+  background-color: transparent;
+}
+.un-table--simple :where(thead th) {
+  color: inherit;
+  background-color: transparent;
+  border-bottom: 4px double var(--un-color-table-border);
+}
+
+/* ---- double: cells sit apart, the whole table framed ---- */
+.un-table--double > table {
+  border: 1px solid var(--un-color-table-border);
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+/* ---- head-column: the first column reads as a header without being one ---- */
+.un-table--head-column :where(tbody tr) > :first-child {
+  z-index: 1;
+  font-weight: 700;
+}
+.un-table--head-column :where(tbody tr) > :first-child::before {
+  /* the tint is painted by an overlay: a collapsed border eats a cell background */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  vertical-align: top;
+  pointer-events: none;
+  background-color: var(--un-color-table-th-bg);
+}
+
+/* ---- horizontal scroll ---- */
+.un-table[data-scroll] > table {
+  min-width: 100%;
+}
+.un-table[data-scroll]:not(.un-table--double) > table {
+  /* the cells drop their right/bottom edges so the scrolled table can draw one clean outline */
+  border-right: 1px solid var(--un-color-table-border);
+  border-bottom: 1px solid var(--un-color-table-border);
+}
+.un-table[data-scroll]:not(.un-table--double) :where(th, td) {
+  border-right: 0;
+  border-bottom: 0;
+}
+.un-table[data-scroll="both"] {
+  max-width: 100%;
+}
+.un-table[data-scroll="both"],
+.un-table[data-scroll="sp"] {
+  padding-bottom: 16px;
+  overflow-x: scroll;
+}
+.un-table[data-scroll] :where(th, td) {
+  min-width: 20vw;
+}
+.un-table[data-scroll][data-min-col="10"] :where(th, td) {
+  min-width: 10vw;
+}
+.un-table[data-scroll][data-min-col="30"] :where(th, td) {
+  min-width: 28vw;
+}
+
+/* ---- fixed first column ---- */
+.un-table--fixed-column > table {
+  /* the sticky column leaves the collapsed right border behind, so the table draws it */
+  border-right: 1px solid var(--un-color-table-border);
+}
+.un-table--fixed-column :where(tr) > :first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  border-right-width: 0;
+  background-color: var(--un-color-bg);
+}
+.un-table--fixed-column :where(thead tr) > :first-child {
+  background-color: var(--un-color-main);
+}
+.un-table--fixed-column :where(tbody tr) > :first-child::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  vertical-align: top;
+  pointer-events: none;
+  background-color: var(--un-color-table-th-bg);
+}
+.un-table--fixed-column:not(.un-table--head-column) :where(tbody tr) > :first-child:not(th)::before {
+  background-color: transparent;
+}
+
+/* ---- cell helpers ---- */
+.un-cell--center {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---- cell icon ---- */
+.un-cell-icon {
+  --_size: 1.5em;
+  display: inline-block;
+  position: static;
+  width: 0;
+  line-height: 1;
+  background-color: var(--un-cell-bg, transparent);
+}
+.un-cell-icon::before {
+  /* fills the whole cell with the cell colour, behind the text */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  text-align: center;
+  pointer-events: none;
+  background-color: inherit;
+}
+.un-cell-icon[data-icon]::after {
+  content: "";
+  pointer-events: none;
+  background-color: var(--_color, currentColor);
+  mask-image: var(--_glyph);
+  mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+}
+.un-cell-icon[data-icon-size="s"] {
+  --_size: 1em;
+}
+.un-cell-icon[data-icon-size="l"] {
+  --_size: 2.5em;
+}
+
+/* icon drawn as an object in the text flow */
+.un-cell-icon[data-icon-type="obj"] {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: var(--_size);
+  height: var(--_size);
+  vertical-align: middle;
+  text-indent: -0.28em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.un-cell-icon[data-icon-type="obj"]::before,
+.un-cell-icon[data-icon-type="obj"]::after {
+  vertical-align: middle;
+}
+.un-cell-icon[data-icon-type="obj"]::after {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  width: var(--_size);
+  height: var(--_size);
+}
+
+/* icon drawn behind the cell text */
+.un-cell-icon[data-icon-type="bg"]::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - var(--_size) / 2);
+  z-index: -1;
+  width: var(--_size);
+  mask-size: auto var(--_size);
+}
+.un-cell-icon[data-icon-type="bg"][data-icon-size="s"]::after {
+  top: 0.25em;
+  right: 0.25em;
+  bottom: auto;
+  left: auto;
+  height: var(--_size);
+}
+.un-cell-icon[data-icon-type="bg"][data-icon-size="l"]::after {
+  opacity: 0.75;
+}
+
+.un-cell-icon[data-icon="double-circle"] {
+  --_color: var(--un-color-cell-double-circle);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2221%22 stroke-width=%223%22/%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2213%22 stroke-width=%223%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="circle"] {
+  --_color: var(--un-color-cell-circle);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Ccircle cx=%2225%22 cy=%2225%22 r=%2221%22 stroke-width=%223%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="triangle"] {
+  --_color: var(--un-color-cell-triangle);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M25 6 46 44H4Z%22 stroke-width=%223%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="close"] {
+  --_color: var(--un-color-cell-close);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M8 8 42 42M42 8 8 42%22 stroke-width=%224%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="hatena"] {
+  --_color: var(--un-color-cell-hatena);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M14 16a11 11 0 1 1 11 11v6%22 stroke-width=%225%22/%3E%3Cpath d=%22M25 43h.01%22 stroke-width=%227%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="line"] {
+  --_color: var(--un-color-cell-line);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M11 25h28%22 stroke-width=%224%22 stroke-linecap=%22butt%22/%3E%3C/svg%3E");
+}
+.un-cell-icon[data-icon="check"] {
+  --_color: var(--un-color-cell-check);
+  --_glyph: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22 fill=%22none%22 stroke=%22black%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M5 28 18 41 45 12%22 stroke-width=%224.5%22/%3E%3C/svg%3E");
+}
+
+/* ---- stack: every cell becomes a full-width block on narrow screens ---- */
+@media (max-width: 959px) {
+  .un-table--stack :where(table, thead, tbody, tfoot, tr, th, td) {
+    display: block;
+    width: auto;
+  }
+  .un-table--stack :where(th, td) {
+    margin-top: -1px;
+    padding: 1em;
+  }
+  .un-table--stack :where(tbody) > :first-child > :first-child {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 960px) {
+  .un-table[data-scroll] :where(th, td) {
+    min-width: 160px;
+  }
+  .un-table[data-scroll][data-min-col="10"] :where(th, td) {
+    min-width: 80px;
+  }
+  .un-table[data-scroll][data-min-col="30"] :where(th, td) {
+    min-width: 240px;
+  }
+  .un-table[data-scroll="sp"] {
+    padding-bottom: 0;
+    overflow-x: visible;
+  }
+  .un-table[data-scroll="pc"] {
+    max-width: 100%;
+    padding-bottom: 16px;
+    overflow-x: scroll;
+  }
+}

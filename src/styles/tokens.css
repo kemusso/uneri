@@ -15,6 +15,7 @@
   --un-color-gradient-2: #87e7ff;
   --un-color-code-bg: #f7f7f7;
   --un-color-table-border: #dcdcdc;
+  --un-color-table-th-bg: rgba(150, 150, 150, 0.05);
   --un-color-quote-rule: rgba(180, 180, 180, 0.75);
   --un-color-heading-rule: rgba(150, 150, 150, 0.2);
   --un-color-note-text: #5f5a59;
@@ -66,6 +67,14 @@
   --un-color-list-good: #86dd7b;
   --un-color-list-triangle: #f4e03a;
   --un-color-list-bad: #f36060;
+
+  --un-color-cell-double-circle: #ffc977;
+  --un-color-cell-circle: #94e29c;
+  --un-color-cell-triangle: #eeda2f;
+  --un-color-cell-close: #ec9191;
+  --un-color-cell-hatena: #93c9da;
+  --un-color-cell-line: #9b9b9b;
+  --un-color-cell-check: #94e29c;
 
   --un-color-faq-q: currentColor;
   --un-color-faq-a: currentColor;

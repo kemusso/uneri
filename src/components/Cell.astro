@@ -1,0 +1,38 @@
+---
+/** Cell — 表のセル（アイコン・背景色つき）. spec: spec/parts/table.md */
+import type { HTMLAttributes } from 'astro/types';
+import { joinStyles, styleToString } from '../lib/style';
+
+interface Props extends HTMLAttributes<'td'> {
+  as?: 'td' | 'th';
+  icon?: 'double-circle' | 'circle' | 'triangle' | 'close' | 'hatena' | 'line' | 'check';
+  /** `obj` は文中に置く、`bg` はセルの背面に敷く */
+  iconType?: 'obj' | 'bg';
+  iconSize?: 's' | 'm' | 'l';
+  /** セル全体の背景色 */
+  bg?: string;
+  center?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  as: Tag = 'td', icon, iconType = 'obj', iconSize = 'm', bg, center,
+  class: cls, id, style: userStyle, ...rest
+} = Astro.props;
+const style = joinStyles(bg && `--un-cell-bg:${bg}`, styleToString(userStyle));
+const needsSpan = Boolean(icon || bg);
+---
+
+<Tag id={id} class:list={[cls]} {...rest}>
+  {needsSpan && (
+    <span
+      class="un-cell-icon"
+      style={style}
+      data-icon={icon}
+      data-icon-type={icon ? iconType : undefined}
+      data-icon-size={icon && iconSize !== 'm' ? iconSize : undefined}
+    />
+  )}
+  {center ? <span class="un-cell--center"><slot /></span> : <slot />}
+</Tag>

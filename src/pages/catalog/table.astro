@@ -1,0 +1,255 @@
+---
+/** catalog: Table (spec/parts/table.md §3). Variant order/text must match reference/fixtures/table.html */
+import Catalog from '../../layouts/Catalog.astro';
+import Content from '../../components/Content.astro';
+import Table from '../../components/Table.astro';
+import Cell from '../../components/Cell.astro';
+---
+<Catalog title="Table">
+  <Content data-variant="default">
+    <Table>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="simple">
+    <Table variant="simple">
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="double">
+    <Table variant="double">
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="head-column">
+    <Table headColumn>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><td>料金</td><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><td>サポート</td><td>メール</td><td>チャット</td></tr>
+      <tr><td>備考</td><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="stack">
+    <Table stack>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="scroll">
+    <Table scroll="both" minColWidth={20}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="scroll-pc">
+    <Table scroll="pc" minColWidth={20}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="scroll-sp">
+    <Table scroll="sp" minColWidth={20}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="min-width-10">
+    <Table scroll="both" minColWidth={10}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="min-width-30">
+    <Table scroll="both" minColWidth={30}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="fixed-column">
+    <Table scroll="both" minColWidth={20} fixedColumn>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="centered">
+    <Table>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><Cell center>月1,000円</Cell><Cell center>月2,000円</Cell></tr>
+      <tr><th>サポート</th><Cell center>メール</Cell><Cell center>チャット</Cell></tr>
+      <tr><th>備考</th><Cell center>初月無料</Cell><Cell center>年払い割引あり</Cell></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="cell-bg">
+    <Table>
+    <tbody><tr><th>評価</th><Cell bg="#fff5f0">テキスト</Cell><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-double-circle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="double-circle" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-circle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-triangle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="triangle" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-close">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="close" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-hatena">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="hatena" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-line">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="line" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-check">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="check" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-double-circle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="double-circle" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-circle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-triangle">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="triangle" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-close">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="close" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-hatena">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="hatena" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-line">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="line" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-check">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="check" iconType="bg" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-size-s">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" iconSize="s" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-obj-size-l">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" iconSize="l" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-size-s">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" iconType="bg" iconSize="s" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="icon-bg-size-l">
+    <Table>
+    <tbody><tr><th>評価</th><Cell icon="circle" iconType="bg" iconSize="l" /><td>説明テキスト</td></tr></tbody>
+    </Table>
+  </Content>
+
+</Catalog>

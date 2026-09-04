@@ -19,3 +19,5 @@ export { default as Dl } from './components/Dl.astro';
 export { default as DlItem } from './components/DlItem.astro';
 export { default as Toc } from './components/Toc.astro';
 export { default as TocItem } from './components/TocItem.astro';
+export { default as Table } from './components/Table.astro';
+export { default as Cell } from './components/Cell.astro';

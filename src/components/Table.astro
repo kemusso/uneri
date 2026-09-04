@@ -1,0 +1,42 @@
+---
+/** Table — 記事内の表. spec: spec/parts/table.md */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'figure'> {
+  variant?: 'default' | 'simple' | 'double';
+  /** 先頭列を見出しとして見せる（`th` にはしない） */
+  headColumn?: boolean;
+  /** 狭い画面でセルを縦積みにする */
+  stack?: boolean;
+  /** 横スクロールさせる幅 */
+  scroll?: 'sp' | 'pc' | 'both';
+  /** 横スクロール時の列の最小幅 */
+  minColWidth?: 10 | 20 | 30;
+  /** 先頭列を固定する（横スクロール時）*/
+  fixedColumn?: boolean;
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'default', headColumn, stack, scroll, minColWidth,
+  fixedColumn, class: cls, id, ...rest
+} = Astro.props;
+---
+
+<figure
+  id={id}
+  class:list={[
+    'un-table',
+    variant !== 'default' && `un-table--${variant}`,
+    headColumn && 'un-table--head-column',
+    stack && 'un-table--stack',
+    fixedColumn && 'un-table--fixed-column',
+    cls,
+  ]}
+  data-scroll={scroll}
+  data-min-col={minColWidth ? String(minColWidth) : undefined}
+  {...rest}
+>
+  <table><slot /></table>
+</figure>

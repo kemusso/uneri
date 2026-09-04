@@ -88,6 +88,10 @@ const ICON_PARTS = {
     impl: '.un-list--check>li::before, .un-list--good>li::before, .un-list--bad>li::before, .un-list--triangle>li::before { background-color: transparent !important; }',
   },
   'icon-box': ICON_GLYPH_CSS,
+  table: {
+    ref: '.swl-cell-bg[data-icon]::after { background-color: transparent !important; }',
+    impl: '.un-cell-icon[data-icon]::after { background-color: transparent !important; }',
+  },
 };
 const iconPart = ICON_PARTS[part] ?? null;
 // glyph-only style props: never comparable between an icon font and an SVG
