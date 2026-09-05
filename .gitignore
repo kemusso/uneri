@@ -5,3 +5,5 @@ dist
 reference/swell/
 reference/fixtures/
 audits/**/shots/
+# アフィリエイトサイト本体（別リポジトリ kemusso/affiliate）。ここには入れない
+/affiliate/
