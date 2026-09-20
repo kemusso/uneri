@@ -28,6 +28,8 @@
   background-clip: padding-box;
   vertical-align: top;
   text-align: left;
+  /* narrow columns must break mid-word, or a scrolled comparison table grows a line per cell */
+  word-break: break-all;
 }
 .un-table :where(th) {
   background-color: var(--un-color-table-th-bg);
@@ -86,12 +88,20 @@
 }
 .un-table[data-scroll]:not(.un-table--double) > table {
   /* the cells drop their right/bottom edges so the scrolled table can draw one clean outline */
-  border-right: 1px solid var(--un-color-table-border);
   border-bottom: 1px solid var(--un-color-table-border);
+}
+.un-table[data-scroll]:not(.un-table--double):not(.un-table--simple) > table {
+  /* simple is horizontal rules only, so it takes the bottom edge but never a vertical one */
+  border-right: 1px solid var(--un-color-table-border);
 }
 .un-table[data-scroll]:not(.un-table--double) :where(th, td) {
   border-right: 0;
   border-bottom: 0;
+}
+.un-table--simple[data-scroll]:not(.un-table--double) :where(thead th) {
+  /* the reset above drops every cell's bottom edge; simple's header rule is a feature, not an outline.
+     departs from the reference, which loses the rule here — see spec/parts/table.md §7 */
+  border-bottom: 4px double var(--un-color-table-border);
 }
 .un-table[data-scroll="both"] {
   max-width: 100%;
@@ -123,6 +133,19 @@
   z-index: 3;
   border-right-width: 0;
   background-color: var(--un-color-bg);
+}
+.un-table--fixed-column :where(tr) > :first-child::after {
+  /* the column's right edge. A collapsed border is left behind once the column scrolls, and a cell's
+     box-shadow is not painted under border-collapse: collapse, so the edge is drawn as a box.
+     departs from the reference, which loses the boundary here — see spec/parts/table.md §7 */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  width: 1px;
+  pointer-events: none;
+  background-color: var(--un-color-table-border);
 }
 .un-table--fixed-column :where(thead tr) > :first-child {
   background-color: var(--un-color-main);
