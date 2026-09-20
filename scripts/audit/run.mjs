@@ -50,6 +50,29 @@ const STYLE_PROPS = [
   'visibility', 'pointer-events', 'box-sizing', 'overflow-x', 'overflow-y',
   'background-size', 'background-repeat', 'background-position', 'background-clip',
 ];
+// Deliberate departures from the reference (spec/04-audit.md §3.1). SWELL is the base, not the
+// ceiling: where the reference itself misreads, uneri diverges on purpose and records it here.
+// A listed diff is reported as allowed instead of failing; everything unlisted is still compared strictly.
+const DEVIATIONS = {
+  table: [
+    { variant: /^fixed-column(-scrolled)?$/, path: /\[0\]::after$/, pixelPct: 1,
+      why: 'issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll.' },
+    { variant: /^simple-scroll$/, prop: /^border-bottom-|^height$/, pixelPct: 6, boxPx: 4,
+      why: "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default." },
+  ],
+  toc: [
+    { variant: /^(default|double)$/, path: /^div>div\[0\]>ol\[1\]/, prop: /^(padding-left|width)$/, pixelPct: 2.5,
+      why: 'issue #3: the list reserves a gutter for its markers. The reference reserves none, so "10." and up are clipped wherever the toc meets its container edge.' },
+  ],
+};
+const deviations = DEVIATIONS[part] ?? [];
+const allowedStyle = (variant, d) => deviations.find((x) =>
+  x.variant.test(variant) && (!x.path || x.path.test(d.path)) && (!x.prop || x.prop.test(d.prop)));
+const allowedPixelPct = (variant) => Math.max(THRESH.pixelPct,
+  ...deviations.filter((x) => x.variant.test(variant) && x.pixelPct).map((x) => x.pixelPct));
+const allowedBoxPx = (variant) => Math.max(THRESH.boxPx,
+  ...deviations.filter((x) => x.variant.test(variant) && x.boxPx).map((x) => x.boxPx));
+
 // parts whose hover state matters (spec/04-audit.md §2-5)
 const HOVER_PARTS = new Set(['button', 'link-list', 'box-menu', 'blog-card', 'banner-link', 'accordion', 'faq', 'tab']);
 
@@ -293,6 +316,17 @@ async function capture(page, variant, hover, glyphCss) {
     // "still paused at 0%" and "animation already dropped by :hover"
     await page.evaluate(() => { for (const a of document.getAnimations()) { a.pause(); a.currentTime = 0; } });
   }
+  // a "-scrolled" variant is measured mid-scroll: a sticky column's edge only misbehaves once the
+  // table has actually moved under it, and shooting at scrollLeft 0 hides that (issue #1)
+  if (/-scrolled$/.test(variant)) {
+    await loc.evaluate((el) => {
+      const sc = [el, ...el.querySelectorAll('*')].find((n) => n.scrollWidth > n.clientWidth + 1);
+      // an offset that is deliberately not a whole number of columns: a round one can land a cell
+      // border exactly on the sticky column's edge and fake a boundary that is not there
+      if (sc) sc.scrollLeft = Math.round((sc.scrollWidth - sc.clientWidth) * 0.37);
+    });
+    await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => r())));
+  }
   const box = await loc.boundingBox();
   const styles = await loc.evaluate(COLLECT, { depthMax: 8, props: STYLE_PROPS });
   // snap the wrapper to an integer y before shooting: a fractional offset changes how 1px
@@ -321,7 +355,7 @@ async function capture(page, variant, hover, glyphCss) {
   return { box, png, glyphless, styles };
 }
 
-function diffStyles(ref, impl) {
+function diffStyles(ref, impl, variant) {
   const diffs = [];
   const byPath = new Map(impl.map((r) => [r.path, r]));
   for (const r of ref) {
@@ -346,7 +380,13 @@ function diffStyles(ref, impl) {
   }
   const refPaths = new Set(ref.map((r) => r.path));
   for (const m of impl) if (!refPaths.has(m.path)) diffs.push({ path: m.path, prop: '(element)', ref: '(missing)', impl: m.tag });
-  return diffs;
+  const allowed = [];
+  const failures = [];
+  for (const d of diffs) {
+    const dev = allowedStyle(variant, d);
+    if (dev) allowed.push({ ...d, why: dev.why }); else failures.push(d);
+  }
+  return { diffs: failures, allowed };
 }
 
 function pixelDiff(aBuf, bBuf) {
@@ -398,7 +438,7 @@ try {
         if (R.glyphless) await writeFile(path.join(shotDir, `${tag}-${vw}-ref-noglyph.png`), R.glyphless);
         if (I.glyphless) await writeFile(path.join(shotDir, `${tag}-${vw}-impl-noglyph.png`), I.glyphless);
         const boxD = { w: Math.abs(R.box.width - I.box.width), h: Math.abs(R.box.height - I.box.height) };
-        const sd = diffStyles(R.styles, I.styles);
+        const { diffs: sd, allowed: sdAllowed } = diffStyles(R.styles, I.styles, tag);
         let ink = null;
         if (iconPart) {
           const a = inkBox(R.png, R.glyphless), b = inkBox(I.png, I.glyphless);
@@ -410,8 +450,8 @@ try {
             : !!ink.delta && ink.delta.x <= THRESH.inkCentrePx && ink.delta.y <= THRESH.inkCentrePx
               && ink.delta.w <= Math.max(3, a.w * THRESH.inkSizeRatio) && ink.delta.h <= Math.max(3, a.h * THRESH.inkSizeRatio);
         }
-        results.push({ variant: tag, vw, pixelPct: +pd.pct.toFixed(3), box: boxD, refBox: { w: R.box.width, h: R.box.height }, implBox: { w: I.box.width, h: I.box.height }, styleDiffs: sd, ink,
-          pass: pd.pct <= THRESH.pixelPct && boxD.w <= THRESH.boxPx && boxD.h <= THRESH.boxPx && sd.length === 0 && (!ink || ink.pass) });
+        results.push({ variant: tag, vw, pixelPct: +pd.pct.toFixed(3), box: boxD, refBox: { w: R.box.width, h: R.box.height }, implBox: { w: I.box.width, h: I.box.height }, styleDiffs: sd, allowedDiffs: sdAllowed, ink,
+          pass: pd.pct <= allowedPixelPct(tag) && boxD.w <= allowedBoxPx(tag) && boxD.h <= allowedBoxPx(tag) && sd.length === 0 && (!ink || ink.pass) });
       }
     }
     await ctx.close();
@@ -428,11 +468,11 @@ const inkCol = iconPart ? ' ink Δ (中心x/中心y/w/h) |' : '';
 const inkSep = iconPart ? '---|' : '';
 let md = `# audit(auto): ${part}  ${new Date().toISOString().slice(0, 10)}\n\nverdict: **${verdict}**\n`;
 if (iconPart) md += `\npixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態で計測。グリフは ink box で比較。\n`;
-md += `\n| variant | vw | pixel diff % | box Δ (w/h) |${inkCol} style diffs | pass |\n|---|---|---|---|${inkSep}---|---|\n`;
+md += `\n| variant | vw | pixel diff % | box Δ (w/h) |${inkCol} style diffs | 許容乖離 | pass |\n|---|---|---|---|${inkSep}---|---|---|\n`;
 for (const r of results) {
-  if (r.missing) { md += `| ${r.variant} | ${r.vw} | — | — |${iconPart ? ' — |' : ''} MISSING IN IMPL | ❌ |\n`; continue; }
+  if (r.missing) { md += `| ${r.variant} | ${r.vw} | — | — |${iconPart ? ' — |' : ''} MISSING IN IMPL | — | ❌ |\n`; continue; }
   const inkCell = iconPart ? ` ${r.ink?.delta ? `${r.ink.delta.x}/${r.ink.delta.y}/${r.ink.delta.w}/${r.ink.delta.h}` : r.ink?.ref || r.ink?.impl ? 'ONE SIDE ONLY' : '—'} |` : '';
-  md += `| ${r.variant} | ${r.vw} | ${r.pixelPct} | ${r.box.w}/${r.box.h} |${inkCell} ${r.styleDiffs.length} | ${r.pass ? '✅' : '❌'} |\n`;
+  md += `| ${r.variant} | ${r.vw} | ${r.pixelPct} | ${r.box.w}/${r.box.h} |${inkCell} ${r.styleDiffs.length} | ${r.allowedDiffs?.length ?? 0} | ${r.pass ? '✅' : '❌'} |\n`;
 }
 md += '\n## style diffs\n';
 for (const r of results) {
@@ -440,6 +480,19 @@ for (const r of results) {
   md += `\n### ${r.variant} @${r.vw}\n| element | prop | ref | impl |\n|---|---|---|---|\n`;
   for (const d of r.styleDiffs.slice(0, 40)) md += `| \`${d.path}\` | ${d.prop} | \`${d.ref}\` | \`${d.impl}\` |\n`;
   if (r.styleDiffs.length > 40) md += `| … | ${r.styleDiffs.length - 40} more | | |\n`;
+}
+const anyAllowed = results.some((r) => r.allowedDiffs?.length);
+if (anyAllowed) {
+  md += '\n## 許容乖離（spec/04-audit.md §3.1）\n\n参照と意図的に違う箇所。合否には数えない。\n';
+  const seen = new Set();
+  for (const r of results) {
+    for (const d of r.allowedDiffs ?? []) {
+      const key = `${r.variant}|${d.path}|${d.prop}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      md += `\n- \`${r.variant}\` \`${d.path}\` **${d.prop}**: 参照 \`${d.ref}\` → uneri \`${d.impl}\`\n  - ${d.why}\n`;
+    }
+  }
 }
 await writeFile(path.join(outDir, 'report.md'), md);
 console.log(md);
