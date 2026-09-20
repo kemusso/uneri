@@ -1,6 +1,6 @@
 {
   "part": "sec-title",
-  "date": "2026-09-04T14:42:27.269Z",
+  "date": "2026-09-20T07:30:42.004Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 30.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -48,6 +49,7 @@
         "h": 36
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -68,6 +70,7 @@
         "h": 36
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     }

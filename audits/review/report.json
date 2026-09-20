@@ -1,6 +1,6 @@
 {
   "part": "review",
-  "date": "2026-09-04T14:42:26.423Z",
+  "date": "2026-09-20T07:30:41.136Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 535.90625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 167,
@@ -68,6 +69,7 @@
         "h": 375.9375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 167,
@@ -108,6 +110,7 @@
         "h": 453.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 167,
@@ -148,6 +151,7 @@
         "h": 618.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 356,
@@ -188,6 +192,7 @@
         "h": 414.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 356,
@@ -228,6 +233,7 @@
         "h": 527.21875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 356,
@@ -268,6 +274,7 @@
         "h": 618.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 453,
@@ -308,6 +315,7 @@
         "h": 414.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 453,
@@ -348,6 +356,7 @@
         "h": 527.21875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 453,

@@ -1,6 +1,6 @@
 {
   "part": "list",
-  "date": "2026-09-04T14:42:14.918Z",
+  "date": "2026-09-20T07:30:28.830Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -53,6 +54,7 @@
         "h": 94.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -78,6 +80,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 19,
@@ -118,6 +121,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 19,
@@ -158,6 +162,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 20,
@@ -198,6 +203,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 19,
@@ -238,6 +244,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -263,6 +270,7 @@
         "h": 97.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -288,6 +296,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 19,
@@ -328,6 +337,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -353,6 +363,7 @@
         "h": 47.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -378,6 +389,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -403,6 +415,7 @@
         "h": 74.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -428,6 +441,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -453,6 +467,7 @@
         "h": 74.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -478,6 +493,7 @@
         "h": 47.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -503,6 +519,7 @@
         "h": 75
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -528,6 +545,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -553,6 +571,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -578,6 +597,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 28,
@@ -618,6 +638,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 28,
@@ -658,6 +679,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 29,
@@ -698,6 +720,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 28,
@@ -738,6 +761,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -763,6 +787,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -788,6 +813,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 28,
@@ -828,6 +854,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -853,6 +880,7 @@
         "h": 50.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -878,6 +906,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -903,6 +932,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -928,6 +958,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -953,6 +984,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -978,6 +1010,7 @@
         "h": 50.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1003,6 +1036,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1028,6 +1062,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1053,6 +1088,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1078,6 +1114,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 44,
@@ -1118,6 +1155,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 44,
@@ -1158,6 +1196,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 45,
@@ -1198,6 +1237,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 44,
@@ -1238,6 +1278,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1263,6 +1304,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1288,6 +1330,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 44,
@@ -1328,6 +1371,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1353,6 +1397,7 @@
         "h": 50.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1378,6 +1423,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1403,6 +1449,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1428,6 +1475,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1453,6 +1501,7 @@
         "h": 79.203125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1478,6 +1527,7 @@
         "h": 50.40625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1503,6 +1553,7 @@
         "h": 80
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,

@@ -1,6 +1,6 @@
 {
   "part": "dl",
-  "date": "2026-09-04T14:41:41.520Z",
+  "date": "2026-09-20T07:29:51.471Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 183
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -48,6 +49,7 @@
         "h": 183
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -68,6 +70,7 @@
         "h": 57
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -88,6 +91,7 @@
         "h": 195.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -108,6 +112,7 @@
         "h": 195.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -128,6 +133,7 @@
         "h": 60.78125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -148,6 +154,7 @@
         "h": 195.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -168,6 +175,7 @@
         "h": 195.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -188,6 +196,7 @@
         "h": 64
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     }

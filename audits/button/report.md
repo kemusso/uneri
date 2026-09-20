@@ -1,110 +1,110 @@
-# audit(auto): button  2026-09-04
+# audit(auto): button  2026-09-20
 
 verdict: **PASS**
 
-| variant | vw | pixel diff % | box Δ (w/h) | style diffs | pass |
-|---|---|---|---|---|---|
-| normal | 375 | 0 | 0/0 | 0 | ✅ |
-| normal-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| solid | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| line | 375 | 0 | 0/0 | 0 | ✅ |
-| line-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| size-s | 375 | 0 | 0/0 | 0 | ✅ |
-| size-s-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| size-l | 375 | 0 | 0/0 | 0 | ✅ |
-| size-l-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| color-red | 375 | 0 | 0/0 | 0 | ✅ |
-| color-red-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| color-blue | 375 | 0 | 0/0 | 0 | ✅ |
-| color-blue-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| color-green | 375 | 0 | 0/0 | 0 | ✅ |
-| color-green-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| align-left | 375 | 0 | 0/0 | 0 | ✅ |
-| align-left-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| align-right | 375 | 0 | 0/0 | 0 | ✅ |
-| align-right-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-red | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-red-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-blue | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-blue-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-green | 375 | 0 | 0/0 | 0 | ✅ |
-| solid-green-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny-l | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny-l-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny-long | 375 | 0 | 0/0 | 0 | ✅ |
-| shiny-long-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| stacked | 375 | 0 | 0/0 | 0 | ✅ |
-| stacked-hover | 375 | 0 | 0/0 | 0 | ✅ |
-| normal | 768 | 0 | 0/0 | 0 | ✅ |
-| normal-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| solid | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| line | 768 | 0 | 0/0 | 0 | ✅ |
-| line-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| size-s | 768 | 0 | 0/0 | 0 | ✅ |
-| size-s-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| size-l | 768 | 0 | 0/0 | 0 | ✅ |
-| size-l-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| color-red | 768 | 0 | 0/0 | 0 | ✅ |
-| color-red-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| color-blue | 768 | 0 | 0/0 | 0 | ✅ |
-| color-blue-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| color-green | 768 | 0 | 0/0 | 0 | ✅ |
-| color-green-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| align-left | 768 | 0 | 0/0 | 0 | ✅ |
-| align-left-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| align-right | 768 | 0 | 0/0 | 0 | ✅ |
-| align-right-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-red | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-red-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-blue | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-blue-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-green | 768 | 0 | 0/0 | 0 | ✅ |
-| solid-green-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny-l | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny-l-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny-long | 768 | 0 | 0/0 | 0 | ✅ |
-| shiny-long-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| stacked | 768 | 0 | 0/0 | 0 | ✅ |
-| stacked-hover | 768 | 0 | 0/0 | 0 | ✅ |
-| normal | 1200 | 0 | 0/0 | 0 | ✅ |
-| normal-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| line | 1200 | 0 | 0/0 | 0 | ✅ |
-| line-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| size-s | 1200 | 0 | 0/0 | 0 | ✅ |
-| size-s-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| size-l | 1200 | 0 | 0/0 | 0 | ✅ |
-| size-l-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-red | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-red-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-blue | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-blue-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-green | 1200 | 0 | 0/0 | 0 | ✅ |
-| color-green-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| align-left | 1200 | 0 | 0/0 | 0 | ✅ |
-| align-left-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| align-right | 1200 | 0 | 0/0 | 0 | ✅ |
-| align-right-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-red | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-red-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-blue | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-blue-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-green | 1200 | 0 | 0/0 | 0 | ✅ |
-| solid-green-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny-l | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny-l-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny-long | 1200 | 0 | 0/0 | 0 | ✅ |
-| shiny-long-hover | 1200 | 0 | 0/0 | 0 | ✅ |
-| stacked | 1200 | 0 | 0/0 | 0 | ✅ |
-| stacked-hover | 1200 | 0 | 0/0 | 0 | ✅ |
+| variant | vw | pixel diff % | box Δ (w/h) | style diffs | 許容乖離 | pass |
+|---|---|---|---|---|---|---|
+| normal | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| normal-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| line | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| line-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked-hover | 375 | 0 | 0/0 | 0 | 0 | ✅ |
+| normal | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| normal-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| line | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| line-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked-hover | 768 | 0 | 0/0 | 0 | 0 | ✅ |
+| normal | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| normal-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| line | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| line-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-s-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| size-l-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-red-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-blue-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| color-green-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-left-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| align-right-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-red-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-blue-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| solid-green-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-l-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| shiny-long-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
+| stacked-hover | 1200 | 0 | 0/0 | 0 | 0 | ✅ |
 
 ## style diffs

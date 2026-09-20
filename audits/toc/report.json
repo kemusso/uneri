@@ -1,6 +1,6 @@
 {
   "part": "toc",
-  "date": "2026-09-04T14:42:59.295Z",
+  "date": "2026-09-20T07:31:18.516Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -14,7 +14,7 @@
     {
       "variant": "default",
       "vw": 375,
-      "pixelPct": 0,
+      "pixelPct": 1.514,
       "box": {
         "w": 0,
         "h": 0.0625
@@ -28,6 +28,57 @@
         "h": 139.671875
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "22.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "345px",
+          "impl": "322.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "345px",
+          "impl": "322.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "345px",
+          "impl": "322.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "7.5px",
+          "impl": "22.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "345px",
+          "impl": "322.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "337.5px",
+          "impl": "300px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 156,
@@ -54,7 +105,7 @@
     {
       "variant": "double",
       "vw": 375,
-      "pixelPct": 0,
+      "pixelPct": 1.912,
       "box": {
         "w": 0,
         "h": 0.0625
@@ -68,6 +119,57 @@
         "h": 198.671875
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "22.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "315px",
+          "impl": "292.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "315px",
+          "impl": "292.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "315px",
+          "impl": "292.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "7.5px",
+          "impl": "22.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "315px",
+          "impl": "292.5px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "307.5px",
+          "impl": "270px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 156,
@@ -94,7 +196,7 @@
     {
       "variant": "default",
       "vw": 768,
-      "pixelPct": 0,
+      "pixelPct": 0.923,
       "box": {
         "w": 0,
         "h": 0
@@ -108,6 +210,57 @@
         "h": 148.890625
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "706.562px",
+          "impl": "682.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "706.562px",
+          "impl": "682.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "706.562px",
+          "impl": "682.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "8px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "706.562px",
+          "impl": "682.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "698.562px",
+          "impl": "658.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 344,
@@ -134,7 +287,7 @@
     {
       "variant": "double",
       "vw": 768,
-      "pixelPct": 0,
+      "pixelPct": 1.019,
       "box": {
         "w": 0,
         "h": 0
@@ -148,6 +301,57 @@
         "h": 235.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "642.562px",
+          "impl": "618.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "642.562px",
+          "impl": "618.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "642.562px",
+          "impl": "618.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "8px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "642.562px",
+          "impl": "618.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "634.562px",
+          "impl": "594.562px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 344,
@@ -174,7 +378,7 @@
     {
       "variant": "default",
       "vw": 1200,
-      "pixelPct": 0.01,
+      "pixelPct": 0.744,
       "box": {
         "w": 0,
         "h": 0
@@ -188,6 +392,57 @@
         "h": 148.890625
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "798.547px",
+          "impl": "774.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "798.547px",
+          "impl": "774.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "798.547px",
+          "impl": "774.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "8px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "798.547px",
+          "impl": "774.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "790.547px",
+          "impl": "750.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 441,
@@ -214,7 +469,7 @@
     {
       "variant": "double",
       "vw": 1200,
-      "pixelPct": 0.017,
+      "pixelPct": 0.828,
       "box": {
         "w": 0,
         "h": 0
@@ -228,6 +483,57 @@
         "h": 235.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>div[0]>ol[1]",
+          "prop": "padding-left",
+          "ref": "0px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "734.547px",
+          "impl": "710.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[1]",
+          "prop": "width",
+          "ref": "734.547px",
+          "impl": "710.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]",
+          "prop": "width",
+          "ref": "734.547px",
+          "impl": "710.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "padding-left",
+          "ref": "8px",
+          "impl": "24px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]",
+          "prop": "width",
+          "ref": "734.547px",
+          "impl": "710.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        },
+        {
+          "path": "div>div[0]>ol[1]>li[2]>ol[1]>li[0]",
+          "prop": "width",
+          "ref": "726.547px",
+          "impl": "686.547px",
+          "why": "issue #3: the list reserves a gutter for its markers. The reference reserves none, so \"10.\" and up are clipped wherever the toc meets its container edge."
+        }
+      ],
       "ink": {
         "ref": {
           "x": 441,
