@@ -8,7 +8,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 |---|---|---|---|---|---|---|---|
 | default | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | simple | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
-| simple-scroll | 375 | 5.034 | 0/3 | — | 0 | 22 | ✅ |
+| simple-scroll | 375 | 5.553 | 0/4 | — | 0 | 17 | ✅ |
 | double | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | head-column | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | stack | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
@@ -18,7 +18,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 | min-width-10 | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | min-width-30 | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | fixed-column | 375 | 0 | 0/0 | — | 0 | 4 | ✅ |
-| fixed-column-scrolled | 375 | 0.617 | 0/0 | — | 0 | 4 | ✅ |
+| fixed-column-scrolled | 375 | 0.209 | 0/0 | — | 0 | 4 | ✅ |
 | centered | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | cell-bg | 375 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | icon-obj-double-circle | 375 | 0 | 0/0 | 0/0/2/0 | 0 | 0 | ✅ |
@@ -41,7 +41,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 | icon-bg-size-l | 375 | 0 | 0/0 | 0.5/0/1/0 | 0 | 0 | ✅ |
 | default | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | simple | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
-| simple-scroll | 768 | 3.954 | 0/3 | — | 0 | 22 | ✅ |
+| simple-scroll | 768 | 4.3 | 0/4 | — | 0 | 17 | ✅ |
 | double | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | head-column | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | stack | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
@@ -51,7 +51,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 | min-width-10 | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | min-width-30 | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | fixed-column | 768 | 0 | 0/0 | — | 0 | 4 | ✅ |
-| fixed-column-scrolled | 768 | 0.33 | 0/0 | — | 0 | 4 | ✅ |
+| fixed-column-scrolled | 768 | 0.094 | 0/0 | — | 0 | 4 | ✅ |
 | centered | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | cell-bg | 768 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | icon-obj-double-circle | 768 | 0 | 0/0 | 0/0/0/0 | 0 | 0 | ✅ |
@@ -74,7 +74,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 | icon-bg-size-l | 768 | 0 | 0/0 | 0/0/0/0 | 0 | 0 | ✅ |
 | default | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | simple | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
-| simple-scroll | 1200 | 3.629 | 0/3 | — | 0 | 22 | ✅ |
+| simple-scroll | 1200 | 3.984 | 0/4 | — | 0 | 17 | ✅ |
 | double | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | head-column | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | stack | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
@@ -84,7 +84,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 | min-width-10 | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | min-width-30 | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | fixed-column | 1200 | 0 | 0/0 | — | 0 | 4 | ✅ |
-| fixed-column-scrolled | 1200 | 0.244 | 0/0 | — | 0 | 4 | ✅ |
+| fixed-column-scrolled | 1200 | 0.075 | 0/0 | — | 0 | 4 | ✅ |
 | centered | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | cell-bg | 1200 | 0 | 0/0 | — | 0 | 0 | ✅ |
 | icon-obj-double-circle | 1200 | 0 | 0/0 | 0/0/0/0 | 0 | 0 | ✅ |
@@ -112,19 +112,19 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 
 参照と意図的に違う箇所。合否には数えない。
 
-- `simple-scroll` `div` **height**: 参照 `177px` → uneri `180px`
+- `simple-scroll` `div` **height**: 参照 `177px` → uneri `181px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]` **height**: 参照 `177px` → uneri `180px`
+- `simple-scroll` `div>figure[0]` **height**: 参照 `177px` → uneri `181px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]` **height**: 参照 `161px` → uneri `164px`
+- `simple-scroll` `div>figure[0]>table[0]` **height**: 参照 `161px` → uneri `165px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]>thead[0]` **height**: 参照 `40px` → uneri `41.5px`
+- `simple-scroll` `div>figure[0]>table[0]>thead[0]` **height**: 参照 `40px` → uneri `44px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]` **height**: 参照 `40px` → uneri `41.5px`
+- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]` **height**: 参照 `40px` → uneri `44px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[0]` **border-bottom-width**: 参照 `0px` → uneri `4px`
@@ -136,7 +136,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[0]` **border-bottom-color**: 参照 `rgb(51, 51, 51)` → uneri `rgb(220, 220, 220)`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[0]` **height**: 参照 `40px` → uneri `41.5px`
+- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[0]` **height**: 参照 `40px` → uneri `44px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[1]` **border-bottom-width**: 参照 `0px` → uneri `4px`
@@ -148,7 +148,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[1]` **border-bottom-color**: 参照 `rgb(51, 51, 51)` → uneri `rgb(220, 220, 220)`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[1]` **height**: 参照 `40px` → uneri `41.5px`
+- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[1]` **height**: 参照 `40px` → uneri `44px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[2]` **border-bottom-width**: 参照 `0px` → uneri `4px`
@@ -160,22 +160,7 @@ pixel diff は spec/04-audit.md §2.1 によりグリフを透明にした状態
 - `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[2]` **border-bottom-color**: 参照 `rgb(51, 51, 51)` → uneri `rgb(220, 220, 220)`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
-- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[2]` **height**: 参照 `40px` → uneri `41.5px`
-  - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
-
-- `simple-scroll` `div>figure[0]>table[0]>tbody[1]` **height**: 参照 `120px` → uneri `121.5px`
-  - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
-
-- `simple-scroll` `div>figure[0]>table[0]>tbody[1]>tr[0]` **height**: 参照 `40px` → uneri `41.5px`
-  - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
-
-- `simple-scroll` `div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]` **height**: 参照 `40px` → uneri `41.5px`
-  - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
-
-- `simple-scroll` `div>figure[0]>table[0]>tbody[1]>tr[0]>td[1]` **height**: 参照 `40px` → uneri `41.5px`
-  - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
-
-- `simple-scroll` `div>figure[0]>table[0]>tbody[1]>tr[0]>td[2]` **height**: 参照 `40px` → uneri `41.5px`
+- `simple-scroll` `div>figure[0]>table[0]>thead[0]>tr[0]>th[2]` **height**: 参照 `40px` → uneri `44px`
   - issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default.
 
 - `fixed-column` `div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after` **(pseudo)**: 参照 `absent` → uneri `present`

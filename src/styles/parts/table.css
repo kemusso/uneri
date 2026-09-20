@@ -16,6 +16,9 @@
 .un-table > table {
   width: 100%;
   max-width: 100%;
+  /* the UA sheet gives every table 2px; collapsed borders ignore it, but it is still inherited
+     by every cell and shows up the moment a variant separates its borders */
+  border-spacing: 0;
   border-collapse: collapse;
   line-height: 1.6;
   text-align: left;
@@ -85,6 +88,9 @@
 /* ---- horizontal scroll ---- */
 .un-table[data-scroll] > table {
   min-width: 100%;
+  /* a scrolled table separates its borders: "cells drop their right/bottom edge and the table draws
+     one outline" only adds up when each edge belongs to a cell rather than to the grid between two */
+  border-collapse: separate;
 }
 .un-table[data-scroll]:not(.un-table--double) > table {
   /* the cells drop their right/bottom edges so the scrolled table can draw one clean outline */

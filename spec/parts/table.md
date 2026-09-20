@@ -73,7 +73,8 @@ interface Props extends HTMLAttributes<'td'> {
 
 | 対象 | プロパティ | 値 |
 |---|---|---|
-| table | width / border-collapse / line-height | 100% / collapse / 1.6 |
+| table | width / border-collapse / border-spacing / line-height | 100% / collapse / 0 / 1.6 |
+| table（`[data-scroll]`）| border-collapse | separate。セルが右下の罫線を捨てて表が外枠を引く方式は、罫線が 2 セルの間ではなく各セルに属していて初めて成立する |
 | th, td | padding / border / vertical-align / word-break | 0.5em 0.75em / 1px solid `--un-color-table-border` / top / break-all |
 | thead th | 背景 / 文字 / 太さ | `--un-color-main` / #fff / 700 |
 | tbody th | 背景 | `rgba(150,150,150,.05)`（= `--un-color-table-th-bg`）|
