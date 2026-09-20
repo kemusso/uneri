@@ -78,6 +78,8 @@ interface Props extends HTMLAttributes<'div'> {
 | noimg | inner の min-height | 5em |
 | hover | card の box-shadow | `0 4px 16px rgba(0,0,0,.1), 0 12px 28px -12px rgba(0,0,0,.05)` |
 
+| excerpt | word-break | break-word（長い URL が列幅を押し広げないように）|
+
 ## 6. 受け入れ基準
 
 - [x] 全 5 バリアント（＋ hover）が 375 / 768 / 1200 で pixel diff ≤ 0.3%、box Δ ≤ 1px、style diff 0

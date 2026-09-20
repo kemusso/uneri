@@ -23,7 +23,8 @@ viewport 幅 `375` / `768` / `1200` の 3 通りで、バリアントごとに�
 2. `pixelmatch` で差分ピクセル率を算出
 3. 要素の bounding box（幅・高さ）を比較
 4. ルート要素と子孫（最大深さ 4）の computed style を採取して差分を取る
-   対象プロパティ: `color background-color background-image border-* border-radius box-shadow padding-* margin-* font-size font-weight line-height letter-spacing text-align display gap width height opacity`
+   対象プロパティ: `color background-color background-image border-* border-radius border-collapse border-spacing box-shadow padding-* margin-* font-size font-weight line-height letter-spacing text-align word-break overflow-wrap display gap width height opacity`
+   `border-collapse` / `border-spacing` / `word-break` / `overflow-wrap` はレイアウトを動かすのに長く対象外だった（issue #6）。行高やセル幅の差として間接的にしか出ないため、見落とすと原因の特定が遠回りになる。
 5. `:hover` が意味を持つパーツ（Button, LinkList, BoxMenu, BlogCard, BannerLink, Accordion, Faq, Tab）はホバー状態でも 1〜4 を行う
 6. 結果を `audits/<part>/report.json` と `audits/<part>/report.md` に書く
 

@@ -43,6 +43,7 @@ const STYLE_PROPS = [
   'font-size', 'font-weight', 'font-style', 'line-height', 'letter-spacing', 'text-align', 'text-decoration-line', 'text-decoration-color',
   'flex-direction', 'flex-wrap', 'flex-grow', 'flex-shrink', 'flex-basis', 'align-items', 'align-content', 'justify-content', 'grid-template-columns',
   'object-fit', 'vertical-align',
+  'border-collapse', 'border-spacing', 'word-break', 'overflow-wrap',
   'display', 'gap', 'width', 'min-width', 'max-width', 'height', 'opacity', 'counter-reset', 'counter-increment',
   'transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay',
   'animation-name', 'animation-duration', 'animation-timing-function', 'animation-iteration-count', 'animation-direction', 'animation-fill-mode',
