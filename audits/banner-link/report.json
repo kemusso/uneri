@@ -1,6 +1,6 @@
 {
   "part": "banner-link",
-  "date": "2026-09-04T14:40:43.244Z",
+  "date": "2026-09-20T07:28:45.085Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -48,6 +49,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -68,6 +70,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -88,6 +91,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -108,6 +112,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -128,6 +133,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -148,6 +154,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -168,6 +175,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -188,6 +196,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -208,6 +217,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -228,6 +238,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -248,6 +259,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -268,6 +280,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -288,6 +301,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -308,6 +322,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -328,6 +343,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -348,6 +364,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -368,6 +385,7 @@
         "h": 194.0625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -388,6 +406,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -408,6 +427,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -428,6 +448,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -448,6 +469,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -468,6 +490,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -488,6 +511,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -508,6 +532,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -528,6 +553,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -548,6 +574,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -568,6 +595,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -588,6 +616,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -608,6 +637,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -628,6 +658,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -648,6 +679,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -668,6 +700,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -688,6 +721,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -708,6 +742,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -728,6 +763,7 @@
         "h": 397.4375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -748,6 +784,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -768,6 +805,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -788,6 +826,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -808,6 +847,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -828,6 +868,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -848,6 +889,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -868,6 +910,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -888,6 +931,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -908,6 +952,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -928,6 +973,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -948,6 +994,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -968,6 +1015,7 @@
         "h": 100
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -988,6 +1036,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -1008,6 +1057,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -1028,6 +1078,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -1048,6 +1099,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -1068,6 +1120,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     },
@@ -1088,6 +1141,7 @@
         "h": 488.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": null,
       "pass": true
     }

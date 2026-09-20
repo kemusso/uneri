@@ -1,6 +1,6 @@
 {
   "part": "table",
-  "date": "2026-09-04T14:42:51.114Z",
+  "date": "2026-09-20T07:31:09.507Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 161
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -53,6 +54,188 @@
         "h": 164
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple-scroll",
+      "vw": 375,
+      "pixelPct": 5.034,
+      "box": {
+        "w": 0,
+        "h": 3
+      },
+      "refBox": {
+        "w": 345,
+        "h": 177
+      },
+      "implBox": {
+        "w": 345,
+        "h": 180
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div",
+          "prop": "height",
+          "ref": "177px",
+          "impl": "180px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]",
+          "prop": "height",
+          "ref": "177px",
+          "impl": "180px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]",
+          "prop": "height",
+          "ref": "161px",
+          "impl": "164px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]",
+          "prop": "height",
+          "ref": "120px",
+          "impl": "121.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[1]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[2]",
+          "prop": "height",
+          "ref": "40px",
+          "impl": "41.5px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -78,6 +261,7 @@
         "h": 176
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -103,6 +287,7 @@
         "h": 161
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -128,6 +313,7 @@
         "h": 662
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -153,6 +339,7 @@
         "h": 177
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -178,6 +365,7 @@
         "h": 161
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -203,6 +391,7 @@
         "h": 177
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -228,6 +417,7 @@
         "h": 177
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -253,6 +443,7 @@
         "h": 177
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -278,6 +469,91 @@
         "h": 177
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fixed-column-scrolled",
+      "vw": 375,
+      "pixelPct": 0.617,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 345,
+        "h": 273
+      },
+      "implBox": {
+        "w": 345,
+        "h": 273
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -303,6 +579,7 @@
         "h": 161
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -328,6 +605,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -353,6 +631,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 114,
@@ -393,6 +672,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 115,
@@ -433,6 +713,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 115,
@@ -473,6 +754,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 117,
@@ -513,6 +795,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 118,
@@ -553,6 +836,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 118,
@@ -593,6 +877,7 @@
         "h": 41.28125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 116,
@@ -633,6 +918,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 122,
@@ -673,6 +959,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 123,
@@ -713,6 +1000,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 123,
@@ -753,6 +1041,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 125,
@@ -793,6 +1082,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 127,
@@ -833,6 +1123,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 126,
@@ -873,6 +1164,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 124,
@@ -913,6 +1205,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 118,
@@ -953,6 +1246,7 @@
         "h": 54.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 110,
@@ -993,6 +1287,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 136,
@@ -1033,6 +1328,7 @@
         "h": 41
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 117,
@@ -1073,6 +1369,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1098,6 +1395,188 @@
         "h": 174.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple-scroll",
+      "vw": 768,
+      "pixelPct": 3.954,
+      "box": {
+        "w": 0,
+        "h": 3
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 187.375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 190.375
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div",
+          "prop": "height",
+          "ref": "187.375px",
+          "impl": "190.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]",
+          "prop": "height",
+          "ref": "187.375px",
+          "impl": "190.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]",
+          "prop": "height",
+          "ref": "171.375px",
+          "impl": "174.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]",
+          "prop": "height",
+          "ref": "127.781px",
+          "impl": "129.281px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[1]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[2]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1123,6 +1602,7 @@
         "h": 186.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1148,6 +1628,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1173,6 +1654,7 @@
         "h": 705.125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1198,6 +1680,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1223,6 +1706,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1248,6 +1732,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1273,6 +1758,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1298,6 +1784,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1323,6 +1810,91 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fixed-column-scrolled",
+      "vw": 768,
+      "pixelPct": 0.33,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 706.5625,
+        "h": 187.375
+      },
+      "implBox": {
+        "w": 706.5625,
+        "h": 187.375
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1348,6 +1920,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1373,6 +1946,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1398,6 +1972,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 215,
@@ -1438,6 +2013,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 215,
@@ -1478,6 +2054,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 215,
@@ -1518,6 +2095,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 217,
@@ -1558,6 +2136,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 219,
@@ -1598,6 +2177,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 219,
@@ -1638,6 +2218,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 216,
@@ -1678,6 +2259,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 255,
@@ -1718,6 +2300,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 255,
@@ -1758,6 +2341,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 255,
@@ -1798,6 +2382,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 257,
@@ -1838,6 +2423,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 259,
@@ -1878,6 +2464,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 259,
@@ -1918,6 +2505,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 256,
@@ -1958,6 +2546,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 221,
@@ -1998,6 +2587,7 @@
         "h": 58
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 204,
@@ -2038,6 +2628,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 290,
@@ -2078,6 +2669,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 248,
@@ -2118,6 +2710,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2143,6 +2736,188 @@
         "h": 174.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "simple-scroll",
+      "vw": 1200,
+      "pixelPct": 3.629,
+      "box": {
+        "w": 0,
+        "h": 3
+      },
+      "refBox": {
+        "w": 900,
+        "h": 187.375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 190.375
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div",
+          "prop": "height",
+          "ref": "187.375px",
+          "impl": "190.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]",
+          "prop": "height",
+          "ref": "187.375px",
+          "impl": "190.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]",
+          "prop": "height",
+          "ref": "171.375px",
+          "impl": "174.375px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[1]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-width",
+          "ref": "0px",
+          "impl": "4px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-style",
+          "ref": "none",
+          "impl": "double",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "border-bottom-color",
+          "ref": "rgb(51, 51, 51)",
+          "impl": "rgb(220, 220, 220)",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[2]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]",
+          "prop": "height",
+          "ref": "127.781px",
+          "impl": "129.281px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[1]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>td[2]",
+          "prop": "height",
+          "ref": "42.5938px",
+          "impl": "44.0938px",
+          "why": "issue #2: simple keeps its 4px header rule under scroll, which makes the table 3px taller and shifts every row 1.5px — hence the height, box and pixel allowances. The reference's scroll reset eats the rule and simple becomes indistinguishable from default."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2168,6 +2943,7 @@
         "h": 186.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2193,6 +2969,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2218,6 +2995,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2243,6 +3021,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2268,6 +3047,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2293,6 +3073,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2318,6 +3099,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2343,6 +3125,7 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2368,6 +3151,91 @@
         "h": 187.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
+      "ink": {
+        "ref": null,
+        "impl": null,
+        "delta": null,
+        "pass": true
+      },
+      "pass": true
+    },
+    {
+      "variant": "fixed-column-scrolled",
+      "vw": 1200,
+      "pixelPct": 0.244,
+      "box": {
+        "w": 0,
+        "h": 0
+      },
+      "refBox": {
+        "w": 900,
+        "h": 187.375
+      },
+      "implBox": {
+        "w": 900,
+        "h": 187.375
+      },
+      "styleDiffs": [],
+      "allowedDiffs": [
+        {
+          "path": "div>figure[0]>table[0]>thead[0]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[0]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[1]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        },
+        {
+          "path": "div>figure[0]>table[0]>tbody[1]>tr[2]>th[0]::after",
+          "prop": "(pseudo)",
+          "ref": "absent",
+          "impl": "present",
+          "why": "issue #1: the sticky column draws its own right edge (1px, hence the pixel allowance). The reference leaves the collapsed border behind and the boundary vanishes mid-scroll."
+        }
+      ],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2393,6 +3261,7 @@
         "h": 171.375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2418,6 +3287,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -2443,6 +3313,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 272,
@@ -2483,6 +3354,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 272,
@@ -2523,6 +3395,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 272,
@@ -2563,6 +3436,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 274,
@@ -2603,6 +3477,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 276,
@@ -2643,6 +3518,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 276,
@@ -2683,6 +3559,7 @@
         "h": 43.765625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 273,
@@ -2723,6 +3600,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 326,
@@ -2763,6 +3641,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 326,
@@ -2803,6 +3682,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 326,
@@ -2843,6 +3723,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 328,
@@ -2883,6 +3764,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 330,
@@ -2923,6 +3805,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 330,
@@ -2963,6 +3846,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 327,
@@ -3003,6 +3887,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 280,
@@ -3043,6 +3928,7 @@
         "h": 58
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 258,
@@ -3083,6 +3969,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 371,
@@ -3123,6 +4010,7 @@
         "h": 43.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 319,

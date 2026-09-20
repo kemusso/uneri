@@ -1,6 +1,6 @@
 {
   "part": "box",
-  "date": "2026-09-04T14:41:08.799Z",
+  "date": "2026-09-20T07:29:14.432Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 128
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -53,6 +54,7 @@
         "h": 128
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -78,6 +80,7 @@
         "h": 128
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -103,6 +106,7 @@
         "h": 128
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -128,6 +132,7 @@
         "h": 81
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -153,6 +158,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -178,6 +184,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -203,6 +210,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -228,6 +236,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -253,6 +262,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -278,6 +288,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -303,6 +314,7 @@
         "h": 128
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -328,6 +340,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -353,6 +366,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -378,6 +392,7 @@
         "h": 126
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -403,6 +418,7 @@
         "h": 142.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -428,6 +444,7 @@
         "h": 135
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -453,6 +470,7 @@
         "h": 137
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -478,6 +496,7 @@
         "h": 143
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -503,6 +522,7 @@
         "h": 139.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -528,6 +548,7 @@
         "h": 100.5
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -553,6 +574,7 @@
         "h": 93
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -578,6 +600,7 @@
         "h": 95
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -603,6 +626,7 @@
         "h": 333
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 53,
@@ -643,6 +667,7 @@
         "h": 104
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -668,6 +693,7 @@
         "h": 289.03125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -693,6 +719,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -718,6 +745,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -743,6 +771,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -768,6 +797,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -793,6 +823,7 @@
         "h": 57.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -818,6 +849,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -843,6 +875,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -868,6 +901,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -893,6 +927,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -918,6 +953,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -943,6 +979,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -968,6 +1005,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -993,6 +1031,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1018,6 +1057,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1043,6 +1083,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1068,6 +1109,7 @@
         "h": 129.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1093,6 +1135,7 @@
         "h": 121.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1118,6 +1161,7 @@
         "h": 123.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1143,6 +1187,7 @@
         "h": 139.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1168,6 +1213,7 @@
         "h": 164.796875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1193,6 +1239,7 @@
         "h": 107.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1218,6 +1265,7 @@
         "h": 99.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1243,6 +1291,7 @@
         "h": 101.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1268,6 +1317,7 @@
         "h": 377.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 73,
@@ -1308,6 +1358,7 @@
         "h": 110.78125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1333,6 +1384,7 @@
         "h": 358.828125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1358,6 +1410,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1383,6 +1436,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1408,6 +1462,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1433,6 +1488,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1458,6 +1514,7 @@
         "h": 57.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1483,6 +1540,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1508,6 +1566,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1533,6 +1592,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1558,6 +1618,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1583,6 +1644,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1608,6 +1670,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1633,6 +1696,7 @@
         "h": 107.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1658,6 +1722,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1683,6 +1748,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1708,6 +1774,7 @@
         "h": 105.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1733,6 +1800,7 @@
         "h": 129.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1758,6 +1826,7 @@
         "h": 121.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1783,6 +1852,7 @@
         "h": 123.578125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1808,6 +1878,7 @@
         "h": 139.59375
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1833,6 +1904,7 @@
         "h": 164.796875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1858,6 +1930,7 @@
         "h": 107.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1883,6 +1956,7 @@
         "h": 99.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1908,6 +1982,7 @@
         "h": 101.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1933,6 +2008,7 @@
         "h": 377.1875
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 89,
@@ -1973,6 +2049,7 @@
         "h": 110.78125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1998,6 +2075,7 @@
         "h": 358.828125
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,

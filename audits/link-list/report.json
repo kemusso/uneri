@@ -1,6 +1,6 @@
 {
   "part": "link-list",
-  "date": "2026-09-04T14:42:06.447Z",
+  "date": "2026-09-20T07:30:19.018Z",
   "thresholds": {
     "pixelPct": 0.3,
     "boxPx": 1,
@@ -28,6 +28,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 347,
@@ -68,6 +69,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 347,
@@ -108,6 +110,7 @@
         "h": 136.75
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 340,
@@ -148,6 +151,7 @@
         "h": 136.75
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 340,
@@ -188,6 +192,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -213,6 +218,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 355,
@@ -253,6 +259,7 @@
         "h": 60
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 138,
@@ -293,6 +300,7 @@
         "h": 60
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 138,
@@ -333,6 +341,7 @@
         "h": 153.75
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 338,
@@ -373,6 +382,7 @@
         "h": 153.75
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 338,
@@ -413,6 +423,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 21,
@@ -453,6 +464,7 @@
         "h": 101.25
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 21,
@@ -493,6 +505,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 717,
@@ -533,6 +546,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 717,
@@ -573,6 +587,7 @@
         "h": 145.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 709,
@@ -613,6 +628,7 @@
         "h": 145.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 709,
@@ -653,6 +669,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -678,6 +695,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 725,
@@ -718,6 +736,7 @@
         "h": 28
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 155,
@@ -758,6 +777,7 @@
         "h": 28
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 155,
@@ -798,6 +818,7 @@
         "h": 163.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 707,
@@ -838,6 +859,7 @@
         "h": 163.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 707,
@@ -878,6 +900,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 30,
@@ -918,6 +941,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 30,
@@ -958,6 +982,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 894,
@@ -998,6 +1023,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 894,
@@ -1038,6 +1064,7 @@
         "h": 145.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 886,
@@ -1078,6 +1105,7 @@
         "h": 145.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 886,
@@ -1118,6 +1146,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": null,
         "impl": null,
@@ -1143,6 +1172,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 902,
@@ -1183,6 +1213,7 @@
         "h": 28
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 171,
@@ -1223,6 +1254,7 @@
         "h": 28
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 171,
@@ -1263,6 +1295,7 @@
         "h": 163.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 885,
@@ -1303,6 +1336,7 @@
         "h": 163.5625
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 885,
@@ -1343,6 +1377,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 46,
@@ -1383,6 +1418,7 @@
         "h": 108
       },
       "styleDiffs": [],
+      "allowedDiffs": [],
       "ink": {
         "ref": {
           "x": 46,

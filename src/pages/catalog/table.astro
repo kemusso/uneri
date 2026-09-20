@@ -28,6 +28,17 @@ import Cell from '../../components/Cell.astro';
     </Table>
   </Content>
 
+  <Content data-variant="simple-scroll">
+    <Table variant="simple" scroll="both" minColWidth={20}>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
   <Content data-variant="double">
     <Table variant="double">
     <thead><tr><th>項目</th><th>プランA</th><th>プランB</th></tr></thead>
@@ -123,6 +134,17 @@ import Cell from '../../components/Cell.astro';
       <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td></tr>
       <tr><th>サポート</th><td>メール</td><td>チャット</td></tr>
       <tr><th>備考</th><td>初月無料</td><td>年払い割引あり</td></tr>
+    </tbody>
+    </Table>
+  </Content>
+
+  <Content data-variant="fixed-column-scrolled">
+    <Table scroll="both" minColWidth={20} fixedColumn>
+    <thead><tr><th>項目</th><th>プランA</th><th>プランB</th><th>プランC</th><th>プランD</th><th>プランE</th><th>プランF</th><th>プランG</th></tr></thead>
+    <tbody>
+      <tr><th>料金</th><td>月1,000円</td><td>月2,000円</td><td>月3,000円</td><td>月4,000円</td><td>月5,000円</td><td>月6,000円</td><td>月7,000円</td></tr>
+      <tr><th>サポート</th><td>メール</td><td>チャット</td><td>電話</td><td>訪問</td><td>常駐</td><td>24時間</td><td>専任</td></tr>
+      <tr><th>備考</th><td>初月無料</td><td>年払い割引</td><td>紹介割引</td><td>学割</td><td>乗換割</td><td>継続割</td><td>法人割</td></tr>
     </tbody>
     </Table>
   </Content>

@@ -58,10 +58,10 @@ slot: Toc は TocItem の並び、TocItem は入れ子の `Toc` 用リスト（�
 | title | display / position / font-size / line-height / text-align / margin-bottom | block / relative / 1.2em / 1 / center |
 | title::before | アイコン | 1em 角のリスト記号（参照はアイコンフォント。uneri は SVG マスク）、右に 0.5em |
 | root | max-width / width / margin | 800px / ≥960 で 92% / 左右 auto（中央寄せ）|
-| list | list-style / padding-left | decimal / 0 |
+| list | list-style / padding-left | decimal / 1.5em（参照は 0。意図的乖離）|
 | item | display / margin / line-height / position | list-item / 0.25em 0（2 つめ以降は上 0.5em）/ 1.6 / relative |
 | link | display / color | inline / `--un-color-text` |
-| childList | padding-left | 0.5em |
+| childList | padding-left | 1.5em（参照は 0.5em。意図的乖離）|
 | `double` | 枠 | 上下 `4px double --un-color-border` |
 | `double` | title の margin-bottom | 0.75em |
 | `double` | padding / background | 1.5em 1em（≥600 は 2em）/ 4px の斜めストライプ（`--un-color-gray`、`background-clip: padding-box`）|
@@ -72,7 +72,14 @@ slot: Toc は TocItem の並び、TocItem は入れ子の `Toc` 用リスト（�
 - [ ] 入れ子の項目が字下げされる
 - [ ] `.un-content` の外でも成立する
 
-## 7. 備考
+## 7. 意図的乖離（spec/04-audit.md §3.1）
+
+| 対象 | 参照 | uneri | 理由 |
+|---|---|---|---|
+| `.un-toc__list` の padding-left | `0` | `1.5em` | issue #3。マーカーは `list-style-position: outside` で箱の外に描かれるため、目次が親の左端に接する幅では 2 桁の項番（`10.` 以降）の先頭桁が切れる。`10.` の描画には約 1.4em 要る |
+| `.un-toc__childList` の padding-left | `0.5em` | `1.5em` | 同上。`decimal` のマーカー幅（約 1.3em）より狭いと、子のマーカーが親とほぼ同じ x に並び階層が読めない |
+
+## 8. 備考
 
 - 参照の目次本体は JS で生成されるため、静的 HTML に項目が出ない。fixture は SWELL のクラス名に項目を流し込んで描画し、その結果を実測した。
 - 見出しの自動収集は非目標。Astro 側で見出しを集めて `TocItem` に渡す使い方を想定する。

@@ -39,7 +39,9 @@
 }
 .un-toc__list {
   margin: 0;
-  padding-left: 0;
+  /* the marker is drawn outside the box, so the gutter is ours to reserve: "10." and up need ~1.4em.
+     departs from the reference, which reserves none and clips them — see spec/parts/toc.md §7 */
+  padding-left: 1.5em;
   list-style: decimal;
 }
 .un-toc__item {
@@ -57,7 +59,8 @@
 }
 .un-toc__childList {
   margin: 0;
-  padding-left: 0.5em;
+  /* a child's markers start where its parent's text does, so the two levels read apart */
+  padding-left: 1.5em;
   list-style: decimal;
 }
 

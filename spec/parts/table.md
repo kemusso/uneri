@@ -51,6 +51,8 @@ interface Props extends HTMLAttributes<'td'> {
 | `scroll` / `scroll-pc` / `scroll-sp` | `scroll="both"｜"pc"｜"sp"` | `[data-table-scrollable]` | 横スクロール。セルは右下の罫線を捨て、表が外枠を引く |
 | `min-width-10` / `min-width-30` | `minColWidth={10\|30}` | `min_width10_` / `min_width30_` | 横スクロール時の列の最小幅 |
 | `fixed-column` | `fixedColumn` | `[data-cell1-fixed]` | 先頭列が `position: sticky` で残る |
+| `simple-scroll` | `variant="simple"` + `scroll="both"` | — | simple と横スクロールの組み合わせ。ヘッダー下の二重線が残る |
+| `fixed-column-scrolled` | `fixedColumn` + 8 列 | — | 固定列を実際にスクロールさせた状態（審査は 37% までスクロールして計測）|
 | `centered` | `<Cell center>` | `.swl-cell-text-centered` | セル内のテキストを中央寄せ |
 | `cell-bg` | `<Cell bg="#fff5f0">` | `--the-cell-bg` | セル全体を塗る |
 | `icon-obj-*` / `icon-bg-*` | `<Cell icon="…" iconType="…">` | `.swl-cell-bg[data-icon]` | 7 種のアイコン。`obj` は文中、`bg` はセル背面 |
@@ -72,7 +74,7 @@ interface Props extends HTMLAttributes<'td'> {
 | 対象 | プロパティ | 値 |
 |---|---|---|
 | table | width / border-collapse / line-height | 100% / collapse / 1.6 |
-| th, td | padding / border / vertical-align | 0.5em 0.75em / 1px solid `--un-color-table-border` / top |
+| th, td | padding / border / vertical-align / word-break | 0.5em 0.75em / 1px solid `--un-color-table-border` / top / break-all |
 | thead th | 背景 / 文字 / 太さ | `--un-color-main` / #fff / 700 |
 | tbody th | 背景 | `rgba(150,150,150,.05)`（= `--un-color-table-th-bg`）|
 | thead | border-color | currentColor（表の枠色を継がない）|
@@ -95,7 +97,14 @@ interface Props extends HTMLAttributes<'td'> {
 - [x] アイコン 7 種 × obj / bg の ink box が参照と一致（中心 ±2px / 寸法 ±30%）
 - [x] `.un-content` の外でも成立する
 
-## 7. 備考
+## 7. 意図的乖離（spec/04-audit.md §3.1）
+
+| 対象 | 参照 | uneri | 理由 |
+|---|---|---|---|
+| `fixed-column` の先頭セル右端 | 境界なし | `::after` で 1px の罫線 | issue #1。参照は collapsed border を置き去りにするため、横スクロールすると固定列と次の列の境界が消え、`thead` は同色で塗られているので文字がぶつ切りにしか見えない |
+| `simple` + `scroll` の `thead th` | `border-bottom: 0` | `4px double` | issue #2。参照はスクロール用の罫線リセットが simple のヘッダー二重線まで巻き込み、default と区別できなくなる。表は 3px 高くなり各行が 1.5px 下がる |
+
+## 8. 備考
 
 - アイコンは参照も uneri も SVG マスクだが、字形は uneri の自作。判定は ink box で行う（spec/04-audit.md §2.1）。
 - 参照の `.c-scrollHint`（「横にスクロールできます」の案内）は生成する PHP/JS が手元になくマークアップを観測できないため対象外。

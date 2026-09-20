@@ -51,9 +51,9 @@ const style = joinStyles(
   style={style}
   {...rest}
 >
-  {icon && (
+  {(icon || name) && (
     <div class="un-balloon__icon">
-      <img class="un-balloon__img" src={icon} alt="" width="80" height="80" />
+      {icon && <img class="un-balloon__img" src={icon} alt="" width="80" height="80" />}
       {name && <span class="un-balloon__name">{name}</span>}
     </div>
   )}
